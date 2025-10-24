@@ -177,7 +177,7 @@ export default function BallSpeedCalculator() {
   // Calculate whenever inputs change
   useEffect(() => {
     calculateBallSpeed()
-  }, [currentCalc.clubheadSpeed, currentCalc.smashFactor, currentCalc.launchAngle, currentCalc.spinRate, currentCalc.clubType, calculateBallSpeed])
+  }, [currentCalc.clubheadSpeed, currentCalc.smashFactor, currentCalc.launchAngle, currentCalc.spinRate, currentCalc.clubType])
 
   const saveCalculation = () => {
     if (!currentCalc.clubheadSpeed || results.ballSpeed === 0) return

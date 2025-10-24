@@ -65,7 +65,7 @@ export default function CourseHandicapCalculator() {
   // Calculate whenever relevant fields change
   useEffect(() => {
     calculateCourseHandicap()
-  }, [currentEntry.handicapIndex, currentEntry.courseRating, currentEntry.slopeRating, currentEntry.par, calculateCourseHandicap])
+  }, [currentEntry.handicapIndex, currentEntry.courseRating, currentEntry.slopeRating, currentEntry.par])
 
   const addEntry = () => {
     if (!currentEntry.handicapIndex || !currentEntry.courseRating || !currentEntry.slopeRating || !currentEntry.par) {

@@ -47,7 +47,7 @@ export default function HandicapCalculator() {
       localStorage.setItem('golf-handicap-scores', JSON.stringify(scores))
       calculateHandicap()
     }
-  }, [scores, calculateHandicap])
+  }, [scores])
 
   const addScore = () => {
     if (!currentScore.adjustedGrossScore || !currentScore.courseRating || !currentScore.slopeRating) {
