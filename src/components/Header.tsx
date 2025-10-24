@@ -10,47 +10,64 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo.png"
-                alt="Butchers Near Me"
-                width={180}
-                height={50}
+                src="/welton-golf-logo.png"
+                alt="Welton Golf Logo"
+                width={48}
+                height={48}
                 className="h-12 w-auto"
-                priority
               />
             </Link>
           </div>
 
-          {/* City Links */}
+          {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-6">
             <Link
-              href="/greater-london"
-              className="text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm font-medium"
+              href="/handicap-calculator"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
             >
-              London Butchers
+              Handicap Calculator
             </Link>
             <Link
-              href="/greater-manchester/manchester"
-              className="text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm font-medium"
+              href="/course-handicap-calculator"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
             >
-              Manchester Butchers
+              Course Handicap
             </Link>
             <Link
-              href="/merseyside/liverpool"
-              className="text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm font-medium"
+              href="/stableford-calculator"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
             >
-              Liverpool Butchers
+              Stableford
             </Link>
             <Link
-              href="/bristol/bristol"
-              className="text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 transition-colors text-sm font-medium"
+              href="/ball-speed-calculator"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
             >
-              Bristol Butchers
+              Ball Speed
+            </Link>
+            <Link
+              href="/course-directory"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
+            >
+              Course Directory
+            </Link>
+            <Link
+              href="#golf-apps"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
+            >
+              Golf Apps
+            </Link>
+            <Link
+              href="#features"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
+            >
+              Features
             </Link>
           </div>
 
           <div className="flex items-center gap-4">
             <Button size="sm" asChild>
-              <Link href="/#browse-all-butchers">Browse Butchers</Link>
+              <Link href="#golf-apps">Explore Apps</Link>
             </Button>
           </div>
         </div>

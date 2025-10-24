@@ -1,196 +1,54 @@
-import { MetadataRoute } from 'next';
-import { createClient } from '@/lib/supabase';
+import { MetadataRoute } from 'next'
 
-interface County {
-  slug: string;
-  created_at: string;
-}
-
-interface CityTown {
-  full_path: string;
-  created_at: string;
-}
-
-interface Butcher {
-  full_url_path: string;
-  created_at: string;
-}
-
-async function getCounties(): Promise<County[]> {
-  try {
-    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      console.warn('Missing Supabase environment variables, returning empty counties');
-      return [];
-    }
-
-    const supabase = createClient(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-    );
-
-    if (!supabase) {
-      console.warn('Supabase client not available');
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('public_locations')
-      .select('slug, created_at')
-      .eq('type', 'county');
-
-    if (error) {
-      console.error('Error fetching counties for sitemap:', error);
-      return [];
-    }
-
-    return data || [];
-  } catch {
-    return [];
-  }
-}
-
-async function getCitiesAndTowns(): Promise<CityTown[]> {
-  try {
-    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      console.warn('Missing Supabase environment variables, returning empty cities/towns');
-      return [];
-    }
-
-    const supabase = createClient(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-    );
-
-    if (!supabase) {
-      console.warn('Supabase client not available');
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('public_locations')
-      .select('full_path, created_at')
-      .in('type', ['city', 'town']);
-
-    if (error) {
-      console.error('Error fetching cities and towns for sitemap:', error);
-      return [];
-    }
-
-    return data || [];
-  } catch {
-    return [];
-  }
-}
-
-async function getButchers(): Promise<Butcher[]> {
-  try {
-    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      console.warn('Missing Supabase environment variables, returning empty butchers');
-      return [];
-    }
-
-    const supabase = createClient(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-    );
-
-    if (!supabase) {
-      console.warn('Supabase client not available');
-      return [];
-    }
-
-    const { data, error } = await supabase
-      .from('public_butchers')
-      .select('full_url_path, created_at')
-      .not('full_url_path', 'is', null);
-
-    if (error) {
-      console.error('Error fetching butchers for sitemap:', error);
-      return [];
-    }
-
-    return data || [];
-  } catch {
-    return [];
-  }
-}
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://butchersnearme.co.uk';
-
-  const counties = await getCounties();
-  const citiesAndTowns = await getCitiesAndTowns();
-  const butchers = await getButchers();
-
-  // Static pages
-  const staticPages: MetadataRoute.Sitemap = [
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
     {
-      url: baseUrl,
+      url: 'https://weltongolf.com',
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/dashboard`,
+      url: 'https://weltongolf.com/handicap-calculator',
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://weltongolf.com/course-handicap-calculator',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about`,
+      url: 'https://weltongolf.com/stableford-calculator',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: 'https://weltongolf.com/ball-speed-calculator',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/privacy`,
+      url: 'https://weltongolf.com/course-directory',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://weltongolf.com/privacy-policy',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: 'https://weltongolf.com/terms-of-service',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
-  ];
-
-  // County pages
-  const countyPages: MetadataRoute.Sitemap = counties.map((county) => ({
-    url: `${baseUrl}/${county.slug}`,
-    lastModified: new Date(county.created_at),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }));
-
-  // City and town pages
-  const cityTownPages: MetadataRoute.Sitemap = citiesAndTowns
-    .filter(location => location.full_path)
-    .map((location) => ({
-      url: `${baseUrl}/${location.full_path}`,
-      lastModified: new Date(location.created_at),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    }));
-
-  // Butcher pages
-  const butcherPages: MetadataRoute.Sitemap = butchers
-    .filter(butcher => butcher.full_url_path)
-    .map((butcher) => ({
-      url: `${baseUrl}/${butcher.full_url_path}`,
-      lastModified: new Date(butcher.created_at),
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    }));
-
-  return [...staticPages, ...countyPages, ...cityTownPages, ...butcherPages];
+  ]
 }
-
-export const revalidate = 86400; // Revalidate sitemap every 24 hours
