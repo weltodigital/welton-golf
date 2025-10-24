@@ -47,7 +47,7 @@ export default function HandicapCalculator() {
       localStorage.setItem('golf-handicap-scores', JSON.stringify(scores))
       calculateHandicap()
     }
-  }, [scores])
+  }, [scores, calculateHandicap])
 
   const addScore = () => {
     if (!currentScore.adjustedGrossScore || !currentScore.courseRating || !currentScore.slopeRating) {
@@ -142,7 +142,7 @@ export default function HandicapCalculator() {
                   Free Golf Handicap Calculator (WHS)
                 </h1>
                 <p className="text-gray-700 dark:text-gray-300 text-lg">
-                  Calculate your official World Handicap System index instantly. UK's most accurate WHS handicap calculator with course rating and slope rating support.
+                  Calculate your official World Handicap System index instantly. UK&apos;s most accurate WHS handicap calculator with course rating and slope rating support.
                 </p>
               </div>
             </div>

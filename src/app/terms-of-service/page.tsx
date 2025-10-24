@@ -34,7 +34,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
               <p className="text-gray-700 mb-4">
-                By accessing and using Welton Golf's website and golf applications (the "Service"), you accept and agree to be bound by the terms and provision of this agreement.
+                By accessing and using Welton Golf&apos;s website and golf applications (the &quot;Service&quot;), you accept and agree to be bound by the terms and provision of this agreement.
               </p>
             </section>
 

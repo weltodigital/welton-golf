@@ -130,7 +130,7 @@ export default function StablefordCalculator() {
 
       setHoles(updatedHoles)
     }
-  }, [currentRound.courseHandicap])
+  }, [currentRound.courseHandicap, calculateHandicapStrokes, holes])
 
   const saveRound = () => {
     if (!currentRound.courseHandicap) return

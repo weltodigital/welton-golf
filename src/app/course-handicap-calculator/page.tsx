@@ -65,7 +65,7 @@ export default function CourseHandicapCalculator() {
   // Calculate whenever relevant fields change
   useEffect(() => {
     calculateCourseHandicap()
-  }, [currentEntry.handicapIndex, currentEntry.courseRating, currentEntry.slopeRating, currentEntry.par])
+  }, [currentEntry.handicapIndex, currentEntry.courseRating, currentEntry.slopeRating, currentEntry.par, calculateCourseHandicap])
 
   const addEntry = () => {
     if (!currentEntry.handicapIndex || !currentEntry.courseRating || !currentEntry.slopeRating || !currentEntry.par) {
@@ -344,8 +344,8 @@ export default function CourseHandicapCalculator() {
                 </h3>
                 <p className="text-black mb-4">
                   Course Handicap represents the number of strokes a player receives on a specific golf course.
-                  It adjusts your Handicap Index to account for the difficulty of the particular course and tees you're playing.
-                  This ensures fair play regardless of which course you're playing.
+                  It adjusts your Handicap Index to account for the difficulty of the particular course and tees you&apos;re playing.
+                  This ensures fair play regardless of which course you&apos;re playing.
                 </p>
               </div>
 
@@ -391,7 +391,7 @@ export default function CourseHandicapCalculator() {
                   <h4 className="font-semibold mb-3 text-black">Important Notes:</h4>
                   <p className="text-sm text-black mb-2">
                     Your Course Handicap may differ from your Handicap Index because it accounts for the specific
-                    difficulty of the course and tees you're playing from.
+                    difficulty of the course and tees you&apos;re playing from.
                   </p>
                   <p className="text-xs text-black">
                     Always use your most current Handicap Index for accurate calculations.

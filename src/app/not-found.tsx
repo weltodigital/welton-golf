@@ -16,14 +16,14 @@ export default function NotFound() {
               Page Not Found
             </CardTitle>
             <CardDescription className="text-lg">
-              Sorry, we couldn't find the page you're looking for.
+              Sorry, we couldn&apos;t find the page you&apos;re looking for.
             </CardDescription>
           </CardHeader>
 
           <CardContent className="space-y-6">
             <p className="text-slate-600 dark:text-slate-400">
-              The page you're looking for might have moved, or the URL might be incorrect.
-              Don't worry - you can explore our golf applications from the homepage.
+              The page you&apos;re looking for might have moved, or the URL might be incorrect.
+              Don&apos;t worry - you can explore our golf applications from the homepage.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

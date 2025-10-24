@@ -277,7 +277,7 @@ export default function Home() {
             </div>
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
-                What's the difference between course rating and slope rating?
+                What&apos;s the difference between course rating and slope rating?
               </h3>
               <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
                 Course Rating is the expected score for a scratch golfer (0 handicap). Slope Rating (55-155)
@@ -308,7 +308,7 @@ export default function Home() {
         <div className="text-center rounded-lg p-12 text-white" style={{background: `linear-gradient(135deg, #183a37 0%, #9CC69B 100%)`}}>
           <h2 className="text-3xl font-bold mb-4 font-cooper">Start Calculating Your Golf Handicap Today</h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of golfers using the UK's most trusted free World Handicap System calculator.
+            Join thousands of golfers using the UK&apos;s most trusted free World Handicap System calculator.
             Track your progress, improve your game, and maintain an accurate handicap index.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
