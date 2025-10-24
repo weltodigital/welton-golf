@@ -1254,11 +1254,12 @@ export default function CourseDirectory() {
         const matchesPar = selectedPars.length === 0 || selectedPars.includes(data.par.toString())
 
         // Length filter
-        const matchesLength = selectedLengths.length === 0 || (data.length !== null && selectedLengths.some(lengthRange => {
-          return (lengthRange === 'under-5000' && data.length < 5000) ||
-                 (lengthRange === '5000-5500' && data.length >= 5000 && data.length <= 5500) ||
-                 (lengthRange === '5500-6000' && data.length >= 5500 && data.length <= 6000) ||
-                 (lengthRange === 'over-6000' && data.length > 6000)
+        const matchesLength = selectedLengths.length === 0 || (data.length !== null && data.length !== undefined && selectedLengths.some(lengthRange => {
+          const length = data.length!
+          return (lengthRange === 'under-5000' && length < 5000) ||
+                 (lengthRange === '5000-5500' && length >= 5000 && length <= 5500) ||
+                 (lengthRange === '5500-6000' && length >= 5500 && length <= 6000) ||
+                 (lengthRange === 'over-6000' && length > 6000)
         }))
 
         // Course Rating filter
@@ -1605,11 +1606,12 @@ export default function CourseDirectory() {
               const matchesTee = selectedTees.length === 0 || selectedTees.includes(data.teeColor)
               const matchesGender = data.gender === selectedGender
               const matchesPar = selectedPars.length === 0 || selectedPars.includes(data.par.toString())
-              const matchesLength = selectedLengths.length === 0 || (data.length !== null && selectedLengths.some(lengthRange => {
-                return (lengthRange === 'under-5000' && data.length < 5000) ||
-                       (lengthRange === '5000-5500' && data.length >= 5000 && data.length <= 5500) ||
-                       (lengthRange === '5500-6000' && data.length >= 5500 && data.length <= 6000) ||
-                       (lengthRange === 'over-6000' && data.length > 6000)
+              const matchesLength = selectedLengths.length === 0 || (data.length !== null && data.length !== undefined && selectedLengths.some(lengthRange => {
+                const length = data.length!
+                return (lengthRange === 'under-5000' && length < 5000) ||
+                       (lengthRange === '5000-5500' && length >= 5000 && length <= 5500) ||
+                       (lengthRange === '5500-6000' && length >= 5500 && length <= 6000) ||
+                       (lengthRange === 'over-6000' && length > 6000)
               }))
               const matchesCourseRating = selectedCourseRatings.length === 0 || selectedCourseRatings.some(ratingRange => {
                 return (ratingRange === 'under-65' && data.rating < 65) ||
