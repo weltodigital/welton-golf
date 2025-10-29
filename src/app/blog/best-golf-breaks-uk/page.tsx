@@ -34,7 +34,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Book Old Course ballot 2 days in advance. Consider package deals.",
-    whyVisit: "Experience golf's most sacred ground where the game began over 600 years ago.",
+    whyVisit: "Experience golf&apos;s most sacred ground where the game began over 600 years ago.",
     coordinates: { lat: 56.3398, lng: -2.7967 }
   },
   {
@@ -50,7 +50,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "July", "August", "September"],
     difficulty: "Resort Championship",
     bookingTips: "Package deals offer best value. Consider midweek rates.",
-    whyVisit: "Scotland's premier golf resort combining luxury accommodation with world-class golf.",
+    whyVisit: "Scotland&apos;s premier golf resort combining luxury accommodation with world-class golf.",
     coordinates: { lat: 56.2826, lng: -3.7442 }
   },
   {
@@ -82,7 +82,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "September", "October"],
     difficulty: "Championship Links",
     bookingTips: "Book well in advance. Combine with other Ayrshire courses.",
-    whyVisit: "Experience the famous Postage Stamp and one of Scotland's great championship links.",
+    whyVisit: "Experience the famous Postage Stamp and one of Scotland&apos;s great championship links.",
     coordinates: { lat: 55.5508, lng: -4.6508 }
   },
   {
@@ -98,7 +98,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Member introduction required. Book well in advance for weekends.",
-    whyVisit: "Play one of England's finest links courses with impeccable conditions year-round.",
+    whyVisit: "Play one of England&apos;s finest links courses with impeccable conditions year-round.",
     coordinates: { lat: 53.6308, lng: -3.0567 }
   },
   {
@@ -114,7 +114,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship Parkland",
     bookingTips: "Member introduction required. Consider corporate packages.",
-    whyVisit: "Play the home of European Tour golf on one of England's most prestigious courses.",
+    whyVisit: "Play the home of European Tour golf on one of England&apos;s most prestigious courses.",
     coordinates: { lat: 51.4008, lng: -0.6167 }
   },
   {
@@ -146,7 +146,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship Heathland",
     bookingTips: "Member introduction required. Both courses essential.",
-    whyVisit: "Experience England's finest heathland golf on two championship courses.",
+    whyVisit: "Experience England&apos;s finest heathland golf on two championship courses.",
     coordinates: { lat: 51.3908, lng: -0.6408 }
   },
   {
@@ -162,7 +162,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship Links",
     bookingTips: "Both courses excellent. Stay on-site for convenience.",
-    whyVisit: "England's hidden gem offering two championship links courses at exceptional value.",
+    whyVisit: "England&apos;s hidden gem offering two championship links courses at exceptional value.",
     coordinates: { lat: 51.1308, lng: -4.2108 }
   },
   {
@@ -210,7 +210,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Book Championship Course early. Consider staying on-site.",
-    whyVisit: "Test your skills on one of golf's toughest Open Championship venues.",
+    whyVisit: "Test your skills on one of golf&apos;s toughest Open Championship venues.",
     coordinates: { lat: 56.5008, lng: -2.7108 }
   },
   {
@@ -280,7 +280,7 @@ export default function BestGolfBreaksUK() {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Best Golf Breaks in the UK 2024: Ultimate Guide to British Golf Holidays",
-            "description": "Discover the 15 best golf breaks in the UK for 2024. From Scotland's championship links to England's hidden gems. Complete guide with costs, courses, and booking tips.",
+            "description": "Discover the 15 best golf breaks in the UK for 2024. From Scotland&apos;s championship links to England&apos;s hidden gems. Complete guide with costs, courses, and booking tips.",
             "author": {
               "@type": "Organization",
               "name": "Welton Golf",
@@ -340,9 +340,9 @@ export default function BestGolfBreaksUK() {
               Best Golf Breaks in the UK 2024
             </h1>
             <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8">
-              Discover the ultimate guide to Britain's finest golf holidays. From Scotland's legendary links
-              to England's championship courses, Wales' spectacular coastal golf, and Northern Ireland's dramatic
-              mountain-backed courses, we've curated the 15 best golf breaks in the UK for 2024.
+              Discover the ultimate guide to Britain&apos;s finest golf holidays. From Scotland&apos;s legendary links
+              to England&apos;s championship courses, Wales&apos; spectacular coastal golf, and Northern Ireland&apos;s dramatic
+              mountain-backed courses, we&apos;ve curated the 15 best golf breaks in the UK for 2024.
             </p>
 
             {/* Quick Stats */}
@@ -378,12 +378,12 @@ export default function BestGolfBreaksUK() {
               <p className="mb-4">
                 The United Kingdom is the <strong>birthplace of golf</strong>, offering unparalleled variety and
                 quality for golf enthusiasts worldwide. From the windswept links of Scotland where golf began
-                over 600 years ago, to England's prestigious parkland courses and Wales' spectacular coastal
+                over 600 years ago, to England&apos;s prestigious parkland courses and Wales&apos; spectacular coastal
                 layouts, a UK golf break provides experiences you simply cannot find anywhere else.
               </p>
               <p className="mb-4">
                 What makes UK golf breaks special? <strong>Accessibility, heritage, and diversity.</strong> You can
-                play championship courses that have hosted The Open Championship, experience golf's most historic
+                play championship courses that have hosted The Open Championship, experience golf&apos;s most historic
                 venues, and enjoy world-class hospitality all within a relatively compact area. Whether you're
                 seeking the ultimate links challenge or a luxury resort experience, the UK delivers.
               </p>
@@ -402,8 +402,8 @@ export default function BestGolfBreaksUK() {
               Top 15 UK Golf Breaks for 2024
             </h2>
             <p className="text-lg text-slate-700 mb-8">
-              From Scotland's legendary links courses to England's championship parkland venues, Wales' dramatic
-              coastal golf, and Northern Ireland's mountain-backed masterpieces, discover the UK's finest golf
+              From Scotland&apos;s legendary links courses to England&apos;s championship parkland venues, Wales&apos; dramatic
+              coastal golf, and Northern Ireland's mountain-backed masterpieces, discover the UK&apos;s finest golf
               break destinations that combine world-class golf with exceptional accommodation and unforgettable experiences.
             </p>
 
@@ -747,7 +747,7 @@ export default function BestGolfBreaksUK() {
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    What's included in a typical golf break package?
+                    What&apos;s included in a typical golf break package?
                   </h3>
                   <p className="text-slate-700">
                     Standard packages include accommodation, breakfast, and greens fees for featured courses.
