@@ -175,6 +175,13 @@ export default function Header() {
             >
               Course Directory
             </Link>
+
+            <Link
+              href="/blog/best-golf-breaks-uk"
+              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
+            >
+              Golf Breaks UK
+            </Link>
           </div>
         </div>
       </div>
