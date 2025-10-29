@@ -3877,7 +3877,7 @@ export default function CourseDirectory() {
         }
 
         // Course rating filter
-        const rating = selectedGender === 'male' ? courseRatingData?.male : courseRatingData?.female
+        const rating = selectedGender === 'male' ? (courseRatingData as any)?.male : (courseRatingData as any)?.female
         if (selectedCourseRatings.length > 0 && rating) {
           const ratingMatches = selectedCourseRatings.some(ratingRange => {
             if (ratingRange === '60-65') return rating >= 60 && rating <= 65
@@ -3890,7 +3890,7 @@ export default function CourseDirectory() {
         }
 
         // Slope rating filter
-        const slope = selectedGender === 'male' ? slopeRatingData?.male : slopeRatingData?.female
+        const slope = selectedGender === 'male' ? (slopeRatingData as any)?.male : (slopeRatingData as any)?.female
         if (selectedSlopeRatings.length > 0 && slope) {
           const slopeMatches = selectedSlopeRatings.some(slopeRange => {
             if (slopeRange === '55-100') return slope >= 55 && slope <= 100
