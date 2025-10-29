@@ -552,7 +552,7 @@ export default function PlayingTimeEstimator() {
                 <h4 className="font-semibold mb-3 text-black">Why Use Our Playing Time Estimator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Accurate Planning:</strong> Know when you'll finish</p>
+                    <p className="text-black mb-2"><strong>✓ Accurate Planning:</strong> Know when you&apos;ll finish</p>
                     <p className="text-black mb-2"><strong>✓ Multiple Factors:</strong> Considers all timing variables</p>
                     <p className="text-black"><strong>✓ Day Planning:</strong> Schedule other activities confidently</p>
                   </div>

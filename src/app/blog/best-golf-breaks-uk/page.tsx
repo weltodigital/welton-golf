@@ -384,7 +384,7 @@ export default function BestGolfBreaksUK() {
               <p className="mb-4">
                 What makes UK golf breaks special? <strong>Accessibility, heritage, and diversity.</strong> You can
                 play championship courses that have hosted The Open Championship, experience golf&apos;s most historic
-                venues, and enjoy world-class hospitality all within a relatively compact area. Whether you're
+                venues, and enjoy world-class hospitality all within a relatively compact area. Whether you&apos;re
                 seeking the ultimate links challenge or a luxury resort experience, the UK delivers.
               </p>
               <p>
@@ -752,7 +752,7 @@ export default function BestGolfBreaksUK() {
                   <p className="text-slate-700">
                     Standard packages include accommodation, breakfast, and greens fees for featured courses.
                     Premium packages may add meals, spa access, equipment hire, and transfers. Always check
-                    what's included before booking.
+                    what&apos;s included before booking.
                   </p>
                 </div>
               </div>

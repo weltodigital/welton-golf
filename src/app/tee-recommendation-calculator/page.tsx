@@ -527,7 +527,7 @@ export default function TeeRecommendationCalculator() {
                   <ul className="text-sm space-y-2 text-black">
                     <li>• <strong>Black/Gold (Championship):</strong> 6,800+ yards - Tour pros, +handicaps</li>
                     <li>• <strong>Blue (Back Regular):</strong> 6,400-6,800 yards - Low handicaps (0-8)</li>
-                    <li>• <strong>White (Men's Regular):</strong> 6,000-6,400 yards - Mid handicaps (8-18)</li>
+                    <li>• <strong>White (Men&apos;s Regular):</strong> 6,000-6,400 yards - Mid handicaps (8-18)</li>
                     <li>• <strong>Gold/Yellow (Forward):</strong> 5,400-6,000 yards - High handicaps, seniors</li>
                     <li>• <strong>Red (Ladies/Forward):</strong> 5,000-5,600 yards - Beginners, juniors</li>
                   </ul>

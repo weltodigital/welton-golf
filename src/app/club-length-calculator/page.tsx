@@ -431,7 +431,7 @@ export default function ClubLengthCalculator() {
                     Length Adjustment Summary
                   </h3>
                   <div className="text-2xl font-bold text-white mb-2">
-                    {clubRecommendations.totalAdjustment > 0 ? '+' : ''}{clubRecommendations.totalAdjustment}"
+                    {clubRecommendations.totalAdjustment > 0 ? '+' : ''}{clubRecommendations.totalAdjustment}&quot;
                   </div>
                   <div className="text-sm" style={{color: '#183a37'}}>
                     {clubRecommendations.totalAdjustment > 0 ? 'Longer than standard' :
@@ -451,13 +451,13 @@ export default function ClubLengthCalculator() {
                     <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
                       <div className="font-medium text-slate-900 dark:text-white">Height</div>
                       <div className="text-slate-600 dark:text-slate-300">
-                        {clubRecommendations.heightInches}" ({Math.round(clubRecommendations.heightInches * 2.54)}cm)
+                        {clubRecommendations.heightInches}&quot; ({Math.round(clubRecommendations.heightInches * 2.54)}cm)
                       </div>
                     </div>
                     <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
                       <div className="font-medium text-slate-900 dark:text-white">Wrist to Floor</div>
                       <div className="text-slate-600 dark:text-slate-300">
-                        {clubRecommendations.wristToFloorInches}" ({Math.round(clubRecommendations.wristToFloorInches * 2.54)}cm)
+                        {clubRecommendations.wristToFloorInches}&quot; ({Math.round(clubRecommendations.wristToFloorInches * 2.54)}cm)
                       </div>
                     </div>
                   </div>
@@ -474,15 +474,15 @@ export default function ClubLengthCalculator() {
                         <div>
                           <div className="font-medium text-slate-900 dark:text-white">{club}</div>
                           <div className="text-xs text-slate-600 dark:text-slate-400">
-                            Standard: {data.standardLength}"
+                            Standard: {data.standardLength}&quot;
                           </div>
                         </div>
                         <div className="text-right">
                           <div className="font-bold" style={{color: '#183a37'}}>
-                            {data.recommendedLength}"
+                            {data.recommendedLength}&quot;
                           </div>
                           <div className="text-xs text-slate-600 dark:text-slate-400">
-                            ({data.adjustment > 0 ? '+' : ''}{data.adjustment}")
+                            ({data.adjustment > 0 ? '+' : ''}{data.adjustment}&quot;)
                           </div>
                         </div>
                       </div>
@@ -499,18 +499,18 @@ export default function ClubLengthCalculator() {
                     <div className="p-3 bg-slate-50 dark:bg-slate-700 rounded">
                       <div className="flex justify-between">
                         <span>Current Length:</span>
-                        <span>{lengthData.currentLength}"</span>
+                        <span>{lengthData.currentLength}&quot;</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Recommended:</span>
                         <span className="font-bold" style={{color: '#183a37'}}>
-                          {clubRecommendations.primaryClubs['7-Iron'].recommendedLength}"
+                          {clubRecommendations.primaryClubs['7-Iron'].recommendedLength}&quot;
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span>Difference:</span>
                         <span>
-                          {(clubRecommendations.primaryClubs['7-Iron'].recommendedLength - lengthData.currentLength).toFixed(2)}"
+                          {(clubRecommendations.primaryClubs['7-Iron'].recommendedLength - lengthData.currentLength).toFixed(2)}&quot;
                         </span>
                       </div>
                     </div>
@@ -538,16 +538,16 @@ export default function ClubLengthCalculator() {
                   <div className="space-y-1 text-sm">
                     <div className="flex justify-between">
                       <span className="text-slate-600 dark:text-slate-400">Standard:</span>
-                      <span>{data.standardLength}"</span>
+                      <span>{data.standardLength}&quot;</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 dark:text-slate-400">Recommended:</span>
-                      <span className="font-bold" style={{color: '#183a37'}}>{data.recommendedLength}"</span>
+                      <span className="font-bold" style={{color: '#183a37'}}>{data.recommendedLength}&quot;</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 dark:text-slate-400">Adjustment:</span>
                       <span className={data.adjustment >= 0 ? 'text-green-600' : 'text-red-600'}>
-                        {data.adjustment > 0 ? '+' : ''}{data.adjustment}"
+                        {data.adjustment > 0 ? '+' : ''}{data.adjustment}&quot;
                       </span>
                     </div>
                   </div>
@@ -567,7 +567,7 @@ export default function ClubLengthCalculator() {
             <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
               <div>
                 <strong className="text-slate-900 dark:text-white">Wrist-to-Floor Measurement:</strong>
-                <p>Stand upright in golf shoes (or add 1" if barefoot). Let arms hang naturally at your sides. Measure from the prominent wrist bone to the floor. This is the most important measurement for club length.</p>
+                <p>Stand upright in golf shoes (or add 1&quot; if barefoot). Let arms hang naturally at your sides. Measure from the prominent wrist bone to the floor. This is the most important measurement for club length.</p>
               </div>
               <div>
                 <strong className="text-slate-900 dark:text-white">Height Measurement:</strong>

@@ -411,13 +411,13 @@ export default function GripSizeCalculator() {
                     <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
                       <div className="font-medium text-slate-900 dark:text-white">Hand Length</div>
                       <div className="text-slate-600 dark:text-slate-300">
-                        {gripData.handLength}mm ({gripRecommendation.handLengthInches}")
+                        {gripData.handLength}mm ({gripRecommendation.handLengthInches}&quot;)
                       </div>
                     </div>
                     <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
                       <div className="font-medium text-slate-900 dark:text-white">Hand Span</div>
                       <div className="text-slate-600 dark:text-slate-300">
-                        {gripData.handSpan}mm ({gripRecommendation.handSpanInches}")
+                        {gripData.handSpan}mm ({gripRecommendation.handSpanInches}&quot;)
                       </div>
                     </div>
                   </div>
