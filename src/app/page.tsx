@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Calendar, Users, Trophy } from 'lucide-react'
+import { Calendar, Users, Trophy, Activity, Target, MapPin } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -154,6 +154,357 @@ export default function Home() {
                 <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
                   <Link href="/ball-speed-calculator">
                     Calculate Ball Speed
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Swing Speed Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Activity className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Swing Speed Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Calculate your swing speed from ball speed measurements.
+                Determine your player category and equipment recommendations.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Reverse Engineering</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Equipment Fitting</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/swing-speed-calculator">
+                    Calculate Swing Speed
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Club Distance Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Target className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Club Distance Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Build your personalized club distance chart for better course management.
+                Generate estimates or input your actual measured distances.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Distance Charts</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Course Management</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/club-distance-calculator">
+                    Build Distance Chart
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Club Fitting Estimator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Club Fitting Estimator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Get personalized club fitting recommendations based on your measurements and swing characteristics.
+                Optimize shaft flex, lie angles, and grip size for better performance.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Custom Fit</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Performance</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/club-fitting-estimator">
+                    Get Fitting Recommendations
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Wind & Elevation Adjuster */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Activity className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Wind & Elevation Adjuster
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Calculate precise distance adjustments for wind speed, direction, elevation changes, and temperature.
+                Master challenging course conditions with accurate club selection.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Course Management</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Environmental</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/wind-elevation-adjuster">
+                    Calculate Adjustments
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Playing Time Estimator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Calendar className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Playing Time Estimator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Calculate accurate playing times based on group size, course conditions, and pace of play.
+                Plan your golf day and know exactly when your round will finish.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Round Planning</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Time Management</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/playing-time-estimator">
+                    Estimate Playing Time
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Tee Recommendation Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Target className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Tee Recommendation Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Find the perfect tee box for your skill level, distance, and playing goals.
+                Get personalized recommendations based on handicap, age, and experience.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Skill Matching</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Course Selection</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/tee-recommendation-calculator">
+                    Get Tee Recommendation
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Strokes Gained Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Trophy className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Strokes Gained Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Analyze your golf performance with advanced strokes gained statistics.
+                Identify strengths and weaknesses across driving, approach, short game, and putting.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Performance Analysis</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Tour Comparison</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/strokes-gained-calculator">
+                    Analyze Performance
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Range Ball Distance Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Activity className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Range Ball Distance Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Convert driving range distances to accurate on-course yardages.
+                Account for range ball quality differences and environmental factors.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Distance Conversion</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Practice Optimization</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/range-ball-distance-calculator">
+                    Convert Range Distance
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Altitude Distance Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Target className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Altitude Distance Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Calculate accurate distance adjustments for high-elevation golf courses.
+                Account for air density, temperature, and humidity effects at altitude.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Elevation Effects</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Mountain Golf</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/altitude-distance-calculator">
+                    Calculate Altitude Distance
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Grip Size Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Grip Size Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Find your perfect golf grip size based on hand measurements and playing style.
+                Proper grip sizing improves feel, control, and overall performance.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Custom Fitting</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Hand Measurement</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/grip-size-calculator">
+                    Calculate Grip Size
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Shaft Flex Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Activity className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Shaft Flex Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Find your optimal shaft flex based on swing speed, ball flight, and playing characteristics.
+                Proper shaft flex improves distance, accuracy, and feel.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Swing Analysis</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Performance Optimization</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/shaft-flex-calculator">
+                    Calculate Shaft Flex
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Club Length Calculator */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <Target className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Club Length Calculator
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Determine optimal club lengths based on body measurements and swing characteristics.
+                Proper club length improves consistency, posture, and ball striking.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Body Measurement</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Posture Optimization</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/club-length-calculator">
+                    Calculate Club Length
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Golf Trip Planner */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#9CC69B'}}>
+                <MapPin className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 text-center">
+                Golf Trip Planner
+              </h3>
+              <p className="text-slate-700 dark:text-slate-300 text-sm mb-4 text-center">
+                Plan your perfect golf getaway with detailed cost breakdowns and recommendations.
+                Get accurate budgets for destinations worldwide and optimize your golf travel.
+              </p>
+              <div className="mb-4">
+                <div className="flex justify-center gap-2 text-xs text-white mb-2">
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Trip Planning</span>
+                  <span className="px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>Budget Analysis</span>
+                </div>
+              </div>
+              <div className="text-center">
+                <Button asChild className="hover:opacity-90 w-full text-white" style={{backgroundColor: '#183a37'}}>
+                  <Link href="/golf-trip-planner">
+                    Plan Golf Trip
                   </Link>
                 </Button>
               </div>
@@ -315,7 +666,7 @@ export default function Home() {
             <Button size="lg" variant="secondary" className="text-lg px-8 py-3" asChild>
               <Link href="/handicap-calculator">Calculate My Handicap Now</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-black" asChild>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-white text-black hover:bg-white hover:text-black" asChild>
               <Link href="#golf-apps">Explore All Golf Tools</Link>
             </Button>
           </div>

@@ -6,7 +6,9 @@
       "Bash(pkill:*)",
       "Read(//Users/edwelton/Downloads/**)",
       "Bash(node:*)",
-      "WebSearch"
+      "WebSearch",
+      "Read(//Users/edwelton/Documents/**)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
