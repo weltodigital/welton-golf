@@ -342,7 +342,7 @@ export default function BestGolfBreaksUK() {
             <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8">
               Discover the ultimate guide to Britain&apos;s finest golf holidays. From Scotland&apos;s legendary links
               to England&apos;s championship courses, Wales&apos; spectacular coastal golf, and Northern Ireland&apos;s dramatic
-              mountain-backed courses, we've curated the 15 best golf breaks in the UK for 2024.
+              mountain-backed courses, we&apos;ve curated the 15 best golf breaks in the UK for 2024.
             </p>
 
             {/* Quick Stats */}

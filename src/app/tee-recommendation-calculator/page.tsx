@@ -1,12 +1,12 @@
-'use client'
+&apos;use client&apos;
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Calculator, Plus, Trash2, Info, History, Target, Trophy } from 'lucide-react'
+import { useState, useEffect } from &apos;react&apos;
+import Link from &apos;next/link&apos;
+import { Button } from &apos;@/components/ui/button&apos;
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from &apos;@/components/ui/card&apos;
+import { Input } from &apos;@/components/ui/input&apos;
+import { Label } from &apos;@/components/ui/label&apos;
+import { Calculator, Plus, Trash2, Info, History, Target, Trophy } from &apos;lucide-react&apos;
 
 interface TeeRecommendation {
   id: string
@@ -26,16 +26,16 @@ interface TeeRecommendation {
 export default function TeeRecommendationCalculator() {
   const [recommendations, setRecommendations] = useState<TeeRecommendation[]>([])
   const [currentCalc, setCurrentCalc] = useState({
-    playerName: '',
-    handicapIndex: '',
-    driverDistance: '',
-    age: '',
-    experience: 'Intermediate',
-    playingGoal: 'Enjoyment'
+    playerName: &apos;&apos;,
+    handicapIndex: &apos;&apos;,
+    driverDistance: &apos;&apos;,
+    age: &apos;&apos;,
+    experience: &apos;Intermediate&apos;,
+    playingGoal: &apos;Enjoyment&apos;
   })
 
   useEffect(() => {
-    const savedRecommendations = localStorage.getItem('tee-recommendations')
+    const savedRecommendations = localStorage.getItem(&apos;tee-recommendations&apos;)
     if (savedRecommendations) {
       setRecommendations(JSON.parse(savedRecommendations))
     }
@@ -43,7 +43,7 @@ export default function TeeRecommendationCalculator() {
 
   useEffect(() => {
     if (recommendations.length > 0) {
-      localStorage.setItem('tee-recommendations', JSON.stringify(recommendations))
+      localStorage.setItem(&apos;tee-recommendations&apos;, JSON.stringify(recommendations))
     }
   }, [recommendations])
 
@@ -52,128 +52,128 @@ export default function TeeRecommendationCalculator() {
     const alternativeTees: { tee: string; reasoning: string }[] = []
 
     // Base recommendation on handicap and distance
-    let recommendedTee = 'White (Men\'s Regular)'
+    let recommendedTee = &apos;White (Men\&apos;s Regular)&apos;
     let estimatedYardage = 6200
 
     // Handicap-based recommendations
     if (handicap <= 5) {
       if (driverDistance >= 250) {
-        recommendedTee = 'Black/Gold (Championship)'
+        recommendedTee = &apos;Black/Gold (Championship)&apos;
         estimatedYardage = 6800
-        reasoning.push('Low handicap with long driving distance suggests championship tees')
+        reasoning.push(&apos;Low handicap with long driving distance suggests championship tees&apos;)
       } else {
-        recommendedTee = 'Blue (Back Regular)'
+        recommendedTee = &apos;Blue (Back Regular)&apos;
         estimatedYardage = 6400
-        reasoning.push('Low handicap player can handle longer course')
+        reasoning.push(&apos;Low handicap player can handle longer course&apos;)
       }
     } else if (handicap <= 15) {
       if (driverDistance >= 230) {
-        recommendedTee = 'Blue (Back Regular)'
+        recommendedTee = &apos;Blue (Back Regular)&apos;
         estimatedYardage = 6400
-        reasoning.push('Mid-handicap with good distance can play back tees')
+        reasoning.push(&apos;Mid-handicap with good distance can play back tees&apos;)
       } else {
-        recommendedTee = 'White (Men\'s Regular)'
+        recommendedTee = &apos;White (Men\&apos;s Regular)&apos;
         estimatedYardage = 6200
-        reasoning.push('Mid-handicap with average distance suits regular tees')
+        reasoning.push(&apos;Mid-handicap with average distance suits regular tees&apos;)
       }
     } else if (handicap <= 25) {
-      recommendedTee = 'White (Men\'s Regular)'
+      recommendedTee = &apos;White (Men\&apos;s Regular)&apos;
       estimatedYardage = 6200
-      reasoning.push('Higher handicap benefits from moderate length')
+      reasoning.push(&apos;Higher handicap benefits from moderate length&apos;)
     } else {
-      recommendedTee = 'Gold/Yellow (Forward)'
+      recommendedTee = &apos;Gold/Yellow (Forward)&apos;
       estimatedYardage = 5800
-      reasoning.push('High handicap should play shorter course for better scoring')
+      reasoning.push(&apos;High handicap should play shorter course for better scoring&apos;)
     }
 
     // Age adjustments
     if (age >= 65) {
-      if (recommendedTee.includes('Black') || recommendedTee.includes('Blue')) {
-        recommendedTee = 'White (Men\'s Regular)'
+      if (recommendedTee.includes(&apos;Black&apos;) || recommendedTee.includes(&apos;Blue&apos;)) {
+        recommendedTee = &apos;White (Men\&apos;s Regular)&apos;
         estimatedYardage = 6200
-        reasoning.push('Senior golfers often benefit from shorter course')
-      } else if (recommendedTee.includes('White')) {
-        recommendedTee = 'Gold/Yellow (Forward)'
+        reasoning.push(&apos;Senior golfers often benefit from shorter course&apos;)
+      } else if (recommendedTee.includes(&apos;White&apos;)) {
+        recommendedTee = &apos;Gold/Yellow (Forward)&apos;
         estimatedYardage = 5800
-        reasoning.push('Senior golfers may enjoy forward tees more')
+        reasoning.push(&apos;Senior golfers may enjoy forward tees more&apos;)
       }
     }
 
     if (age >= 75) {
-      recommendedTee = 'Gold/Yellow (Forward)'
+      recommendedTee = &apos;Gold/Yellow (Forward)&apos;
       estimatedYardage = 5800
-      reasoning.push('Senior golfers should prioritize enjoyment over challenge')
+      reasoning.push(&apos;Senior golfers should prioritize enjoyment over challenge&apos;)
     }
 
     // Experience adjustments
-    if (experience === 'Beginner') {
-      recommendedTee = 'Gold/Yellow (Forward)'
+    if (experience === &apos;Beginner&apos;) {
+      recommendedTee = &apos;Gold/Yellow (Forward)&apos;
       estimatedYardage = 5800
-      reasoning.push('Beginners should focus on learning, not distance')
-    } else if (experience === 'Advanced' && !recommendedTee.includes('Black')) {
+      reasoning.push(&apos;Beginners should focus on learning, not distance&apos;)
+    } else if (experience === &apos;Advanced&apos; && !recommendedTee.includes(&apos;Black&apos;)) {
       if (driverDistance >= 240) {
         alternativeTees.push({
-          tee: 'Black/Gold (Championship)',
-          reasoning: 'Advanced player could consider championship tees for more challenge'
+          tee: &apos;Black/Gold (Championship)&apos;,
+          reasoning: &apos;Advanced player could consider championship tees for more challenge&apos;
         })
       }
     }
 
     // Playing goal adjustments
-    if (goal === 'Challenge') {
-      if (!recommendedTee.includes('Black') && handicap <= 10) {
+    if (goal === &apos;Challenge&apos;) {
+      if (!recommendedTee.includes(&apos;Black&apos;) && handicap <= 10) {
         alternativeTees.push({
-          tee: 'Black/Gold (Championship)',
-          reasoning: 'For maximum challenge if playing well'
+          tee: &apos;Black/Gold (Championship)&apos;,
+          reasoning: &apos;For maximum challenge if playing well&apos;
         })
       }
-    } else if (goal === 'Fast Play') {
-      if (!recommendedTee.includes('Gold') && !recommendedTee.includes('Yellow')) {
+    } else if (goal === &apos;Fast Play&apos;) {
+      if (!recommendedTee.includes(&apos;Gold&apos;) && !recommendedTee.includes(&apos;Yellow&apos;)) {
         alternativeTees.push({
-          tee: 'Gold/Yellow (Forward)',
-          reasoning: 'Shorter course promotes faster play'
+          tee: &apos;Gold/Yellow (Forward)&apos;,
+          reasoning: &apos;Shorter course promotes faster play&apos;
         })
       }
-    } else if (goal === 'Scoring') {
+    } else if (goal === &apos;Scoring&apos;) {
       // Move one tee up for better scoring
-      if (recommendedTee.includes('Black')) {
-        recommendedTee = 'Blue (Back Regular)'
+      if (recommendedTee.includes(&apos;Black&apos;)) {
+        recommendedTee = &apos;Blue (Back Regular)&apos;
         estimatedYardage = 6400
-        reasoning.push('Moved up one tee for better scoring opportunities')
-      } else if (recommendedTee.includes('Blue')) {
-        recommendedTee = 'White (Men\'s Regular)'
+        reasoning.push(&apos;Moved up one tee for better scoring opportunities&apos;)
+      } else if (recommendedTee.includes(&apos;Blue&apos;)) {
+        recommendedTee = &apos;White (Men\&apos;s Regular)&apos;
         estimatedYardage = 6200
-        reasoning.push('Regular tees provide better scoring chances')
-      } else if (recommendedTee.includes('White')) {
-        recommendedTee = 'Gold/Yellow (Forward)'
+        reasoning.push(&apos;Regular tees provide better scoring chances&apos;)
+      } else if (recommendedTee.includes(&apos;White&apos;)) {
+        recommendedTee = &apos;Gold/Yellow (Forward)&apos;
         estimatedYardage = 5800
-        reasoning.push('Forward tees improve scoring potential')
+        reasoning.push(&apos;Forward tees improve scoring potential&apos;)
       }
     }
 
     // Driver distance specific adjustments
     if (driverDistance < 200) {
-      recommendedTee = 'Gold/Yellow (Forward)'
+      recommendedTee = &apos;Gold/Yellow (Forward)&apos;
       estimatedYardage = 5800
-      reasoning.push('Shorter driving distance benefits from forward tees')
+      reasoning.push(&apos;Shorter driving distance benefits from forward tees&apos;)
     } else if (driverDistance >= 280 && handicap <= 8) {
-      if (!recommendedTee.includes('Black')) {
+      if (!recommendedTee.includes(&apos;Black&apos;)) {
         alternativeTees.push({
-          tee: 'Black/Gold (Championship)',
-          reasoning: 'Long driving distance could handle championship tees'
+          tee: &apos;Black/Gold (Championship)&apos;,
+          reasoning: &apos;Long driving distance could handle championship tees&apos;
         })
       }
     }
 
     // Add alternative recommendations
-    if (recommendedTee.includes('White')) {
+    if (recommendedTee.includes(&apos;White&apos;)) {
       alternativeTees.push({
-        tee: 'Blue (Back Regular)',
-        reasoning: 'Consider back tees if playing particularly well'
+        tee: &apos;Blue (Back Regular)&apos;,
+        reasoning: &apos;Consider back tees if playing particularly well&apos;
       })
       alternativeTees.push({
-        tee: 'Gold/Yellow (Forward)',
-        reasoning: 'Forward tees for more relaxed round'
+        tee: &apos;Gold/Yellow (Forward)&apos;,
+        reasoning: &apos;Forward tees for more relaxed round&apos;
       })
     }
 
@@ -213,12 +213,12 @@ export default function TeeRecommendationCalculator() {
 
     // Clear form
     setCurrentCalc({
-      playerName: '',
-      handicapIndex: '',
-      driverDistance: '',
-      age: '',
-      experience: 'Intermediate',
-      playingGoal: 'Enjoyment'
+      playerName: &apos;&apos;,
+      handicapIndex: &apos;&apos;,
+      driverDistance: &apos;&apos;,
+      age: &apos;&apos;,
+      experience: &apos;Intermediate&apos;,
+      playingGoal: &apos;Enjoyment&apos;
     })
   }
 
@@ -228,15 +228,15 @@ export default function TeeRecommendationCalculator() {
 
   const clearAllRecommendations = () => {
     setRecommendations([])
-    localStorage.removeItem('tee-recommendations')
+    localStorage.removeItem(&apos;tee-recommendations&apos;)
   }
 
   const getTeeColor = (tee: string) => {
-    if (tee.includes('Black') || tee.includes('Championship')) return 'bg-gray-800 text-white'
-    if (tee.includes('Blue')) return 'bg-blue-600 text-white'
-    if (tee.includes('White')) return 'bg-gray-200 text-gray-800'
-    if (tee.includes('Gold') || tee.includes('Yellow')) return 'bg-yellow-400 text-gray-800'
-    return 'bg-gray-400 text-white'
+    if (tee.includes(&apos;Black&apos;) || tee.includes(&apos;Championship&apos;)) return &apos;bg-gray-800 text-white&apos;
+    if (tee.includes(&apos;Blue&apos;)) return &apos;bg-blue-600 text-white&apos;
+    if (tee.includes(&apos;White&apos;)) return &apos;bg-gray-200 text-gray-800&apos;
+    if (tee.includes(&apos;Gold&apos;) || tee.includes(&apos;Yellow&apos;)) return &apos;bg-yellow-400 text-gray-800&apos;
+    return &apos;bg-gray-400 text-white&apos;
   }
 
   return (
@@ -247,14 +247,14 @@ export default function TeeRecommendationCalculator() {
           <nav className="text-sm text-gray-600 mb-4">
             <ol className="flex space-x-2">
               <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Tee Recommendation Calculator</li>
+              <li className="before:content-[&apos;/&apos;] before:mx-2 text-gray-900">Tee Recommendation Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
           <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: &apos;#9CC69B&apos;}}>
                 <Target className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -267,25 +267,25 @@ export default function TeeRecommendationCalculator() {
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: &apos;#9CC69B&apos;, borderColor: &apos;#183a37&apos;}}>
+              <h2 className="text-xl font-semibold mb-3" style={{color: &apos;#183a37&apos;}}>
                 Smart Tee Selection - Free Golf Course Management Tool
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="mb-3" style={{color: &apos;#183a37&apos;}}>
                 Choose the right tee box for optimal challenge and enjoyment. Our calculator considers your handicap,
                 driving distance, age, experience, and playing goals to recommend the perfect starting position.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: &apos;#183a37&apos;}}>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: &apos;#183a37&apos;}}></span>
                   Skill-Based Selection
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: &apos;#183a37&apos;}}></span>
                   Distance Matching
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: &apos;#183a37&apos;}}></span>
                   Goal Optimization
                 </div>
               </div>
@@ -395,7 +395,7 @@ export default function TeeRecommendationCalculator() {
                 <Button
                   onClick={calculateRecommendation}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  style={{backgroundColor: &apos;#183a37&apos;}}
                   disabled={!currentCalc.handicapIndex || !currentCalc.driverDistance || !currentCalc.age}
                 >
                   Get Tee Recommendation
@@ -527,7 +527,7 @@ export default function TeeRecommendationCalculator() {
                   <ul className="text-sm space-y-2 text-black">
                     <li>• <strong>Black/Gold (Championship):</strong> 6,800+ yards - Tour pros, +handicaps</li>
                     <li>• <strong>Blue (Back Regular):</strong> 6,400-6,800 yards - Low handicaps (0-8)</li>
-                    <li>• <strong>White (Men's Regular):</strong> 6,000-6,400 yards - Mid handicaps (8-18)</li>
+                    <li>• <strong>White (Men&apos;s Regular):</strong> 6,000-6,400 yards - Mid handicaps (8-18)</li>
                     <li>• <strong>Gold/Yellow (Forward):</strong> 5,400-6,000 yards - High handicaps, seniors</li>
                     <li>• <strong>Red (Ladies/Forward):</strong> 5,000-5,600 yards - Beginners, juniors</li>
                   </ul>
