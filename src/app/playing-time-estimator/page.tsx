@@ -1,12 +1,12 @@
-&apos;use client&apos;
+'use client'
 
-import { useState, useEffect } from &apos;react&apos;
-import Link from &apos;next/link&apos;
-import { Button } from &apos;@/components/ui/button&apos;
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from &apos;@/components/ui/card&apos;
-import { Input } from &apos;@/components/ui/input&apos;
-import { Label } from &apos;@/components/ui/label&apos;
-import { Calculator, Plus, Trash2, Info, History, Clock, Users } from &apos;lucide-react&apos;
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Calculator, Plus, Trash2, Info, History, Clock, Users } from 'lucide-react'
 
 interface PlayingTimeEstimate {
   id: string
@@ -27,16 +27,16 @@ interface PlayingTimeEstimate {
 export default function PlayingTimeEstimator() {
   const [estimates, setEstimates] = useState<PlayingTimeEstimate[]>([])
   const [currentCalc, setCurrentCalc] = useState({
-    sessionName: &apos;&apos;,
-    groupSize: &apos;4&apos;,
-    courseType: &apos;18 Holes&apos;,
-    pace: &apos;Average&apos;,
-    courseConditions: &apos;Normal&apos;,
-    teeTime: &apos;&apos;
+    sessionName: '',
+    groupSize: '4',
+    courseType: '18 Holes',
+    pace: 'Average',
+    courseConditions: 'Normal',
+    teeTime: ''
   })
 
   useEffect(() => {
-    const savedEstimates = localStorage.getItem(&apos;playing-time-estimates&apos;)
+    const savedEstimates = localStorage.getItem('playing-time-estimates')
     if (savedEstimates) {
       setEstimates(JSON.parse(savedEstimates))
     }
@@ -44,29 +44,29 @@ export default function PlayingTimeEstimator() {
 
   useEffect(() => {
     if (estimates.length > 0) {
-      localStorage.setItem(&apos;playing-time-estimates&apos;, JSON.stringify(estimates))
+      localStorage.setItem('playing-time-estimates', JSON.stringify(estimates))
     }
   }, [estimates])
 
   const getBasePace = (courseType: string, pace: string) => {
     const baseTimes = {
-      &apos;9 Holes&apos;: {
-        &apos;Fast&apos;: 120,      // 2 hours
-        &apos;Average&apos;: 135,   // 2.25 hours
-        &apos;Slow&apos;: 150       // 2.5 hours
+      '9 Holes': {
+        'Fast': 120,      // 2 hours
+        'Average': 135,   // 2.25 hours
+        'Slow': 150       // 2.5 hours
       },
-      &apos;18 Holes&apos;: {
-        &apos;Fast&apos;: 240,      // 4 hours
-        &apos;Average&apos;: 270,   // 4.5 hours
-        &apos;Slow&apos;: 300       // 5 hours
+      '18 Holes': {
+        'Fast': 240,      // 4 hours
+        'Average': 270,   // 4.5 hours
+        'Slow': 300       // 5 hours
       },
-      &apos;Executive&apos;: {
-        &apos;Fast&apos;: 150,      // 2.5 hours
-        &apos;Average&apos;: 180,   // 3 hours
-        &apos;Slow&apos;: 210       // 3.5 hours
+      'Executive': {
+        'Fast': 150,      // 2.5 hours
+        'Average': 180,   // 3 hours
+        'Slow': 210       // 3.5 hours
       }
     }
-    return baseTimes[courseType as keyof typeof baseTimes][pace as keyof typeof baseTimes[&apos;18 Holes&apos;]] || 270
+    return baseTimes[courseType as keyof typeof baseTimes][pace as keyof typeof baseTimes['18 Holes']] || 270
   }
 
   const getGroupAdjustment = (groupSize: number) => {
@@ -84,12 +84,12 @@ export default function PlayingTimeEstimator() {
 
   const getConditionsAdjustment = (conditions: string) => {
     const adjustments = {
-      &apos;Excellent&apos;: -15,    // Perfect conditions, faster play
-      &apos;Good&apos;: -5,          // Good conditions, slightly faster
-      &apos;Normal&apos;: 0,         // Standard conditions
-      &apos;Busy&apos;: 30,          // Crowded course, slower
-      &apos;Poor Weather&apos;: 45,  // Rain, wind, cold
-      &apos;Very Busy&apos;: 60      // Peak times, very slow
+      'Excellent': -15,    // Perfect conditions, faster play
+      'Good': -5,          // Good conditions, slightly faster
+      'Normal': 0,         // Standard conditions
+      'Busy': 30,          // Crowded course, slower
+      'Poor Weather': 45,  // Rain, wind, cold
+      'Very Busy': 60      // Peak times, very slow
     }
     return adjustments[conditions as keyof typeof adjustments] || 0
   }
@@ -106,13 +106,13 @@ export default function PlayingTimeEstimator() {
     const totalMinutes = basePace + groupAdjustment + conditionsAdjustment
 
     // Calculate finish time
-    const [hours, minutes] = currentCalc.teeTime.split(&apos;:&apos;).map(Number)
+    const [hours, minutes] = currentCalc.teeTime.split(':').map(Number)
     const teeTimeMinutes = hours * 60 + minutes
     const finishTimeMinutes = teeTimeMinutes + totalMinutes
 
     const finishHours = Math.floor(finishTimeMinutes / 60) % 24
     const finishMins = finishTimeMinutes % 60
-    const finishTime = `${finishHours.toString().padStart(2, &apos;0&apos;)}:${finishMins.toString().padStart(2, &apos;0&apos;)}`
+    const finishTime = `${finishHours.toString().padStart(2, '0')}:${finishMins.toString().padStart(2, '0')}`
 
     const newEstimate: PlayingTimeEstimate = {
       id: Date.now().toString(),
@@ -134,12 +134,12 @@ export default function PlayingTimeEstimator() {
 
     // Clear form
     setCurrentCalc({
-      sessionName: &apos;&apos;,
-      groupSize: &apos;4&apos;,
-      courseType: &apos;18 Holes&apos;,
-      pace: &apos;Average&apos;,
-      courseConditions: &apos;Normal&apos;,
-      teeTime: &apos;&apos;
+      sessionName: '',
+      groupSize: '4',
+      courseType: '18 Holes',
+      pace: 'Average',
+      courseConditions: 'Normal',
+      teeTime: ''
     })
   }
 
@@ -149,7 +149,7 @@ export default function PlayingTimeEstimator() {
 
   const clearAllEstimates = () => {
     setEstimates([])
-    localStorage.removeItem(&apos;playing-time-estimates&apos;)
+    localStorage.removeItem('playing-time-estimates')
   }
 
   const formatDuration = (minutes: number) => {
@@ -160,22 +160,22 @@ export default function PlayingTimeEstimator() {
 
   const getPaceColor = (pace: string) => {
     switch (pace) {
-      case &apos;Fast&apos;: return &apos;text-green-600&apos;
-      case &apos;Average&apos;: return &apos;text-blue-600&apos;
-      case &apos;Slow&apos;: return &apos;text-orange-600&apos;
-      default: return &apos;text-gray-600&apos;
+      case 'Fast': return 'text-green-600'
+      case 'Average': return 'text-blue-600'
+      case 'Slow': return 'text-orange-600'
+      default: return 'text-gray-600'
     }
   }
 
   const getConditionsColor = (conditions: string) => {
     switch (conditions) {
-      case &apos;Excellent&apos;:
-      case &apos;Good&apos;: return &apos;text-green-600&apos;
-      case &apos;Normal&apos;: return &apos;text-blue-600&apos;
-      case &apos;Busy&apos;:
-      case &apos;Poor Weather&apos;:
-      case &apos;Very Busy&apos;: return &apos;text-red-600&apos;
-      default: return &apos;text-gray-600&apos;
+      case 'Excellent':
+      case 'Good': return 'text-green-600'
+      case 'Normal': return 'text-blue-600'
+      case 'Busy':
+      case 'Poor Weather':
+      case 'Very Busy': return 'text-red-600'
+      default: return 'text-gray-600'
     }
   }
 
@@ -187,14 +187,14 @@ export default function PlayingTimeEstimator() {
           <nav className="text-sm text-gray-600 mb-4">
             <ol className="flex space-x-2">
               <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-[&apos;/&apos;] before:mx-2 text-gray-900">Playing Time Estimator</li>
+              <li className="before:content-['/'] before:mx-2 text-gray-900">Playing Time Estimator</li>
             </ol>
           </nav>
 
           {/* Header */}
           <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: &apos;#9CC69B&apos;}}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
                 <Clock className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -207,25 +207,25 @@ export default function PlayingTimeEstimator() {
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: &apos;#9CC69B&apos;, borderColor: &apos;#183a37&apos;}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: &apos;#183a37&apos;}}>
+            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
                 Round Planning Tool - Free Golf Time Calculator
               </h2>
-              <p className="mb-3" style={{color: &apos;#183a37&apos;}}>
+              <p className="mb-3" style={{color: '#183a37'}}>
                 Plan your golf day perfectly with accurate time estimates. Factor in group size, playing pace, course conditions,
                 and busy periods to know exactly when your round will finish and plan your day accordingly.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: &apos;#183a37&apos;}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: &apos;#183a37&apos;}}></span>
+                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
                   Group Size Impact
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: &apos;#183a37&apos;}}></span>
+                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
                   Course Conditions
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: &apos;#183a37&apos;}}></span>
+                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
                   Pace Analysis
                 </div>
               </div>
@@ -340,7 +340,7 @@ export default function PlayingTimeEstimator() {
                 <Button
                   onClick={calculatePlayingTime}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: &apos;#183a37&apos;}}
+                  style={{backgroundColor: '#183a37'}}
                   disabled={!currentCalc.groupSize || !currentCalc.teeTime}
                 >
                   Calculate Playing Time
@@ -435,14 +435,14 @@ export default function PlayingTimeEstimator() {
                           </div>
                           <div className="flex justify-between">
                             <span>Group adjustment:</span>
-                            <span className={estimate.groupAdjustment >= 0 ? &apos;text-red-600&apos; : &apos;text-green-600&apos;}>
-                              {estimate.groupAdjustment > 0 ? &apos;+&apos; : &apos;&apos;}{formatDuration(Math.abs(estimate.groupAdjustment))}
+                            <span className={estimate.groupAdjustment >= 0 ? 'text-red-600' : 'text-green-600'}>
+                              {estimate.groupAdjustment > 0 ? '+' : ''}{formatDuration(Math.abs(estimate.groupAdjustment))}
                             </span>
                           </div>
                           <div className="flex justify-between">
                             <span>Conditions ({estimate.courseConditions}):</span>
                             <span className={getConditionsColor(estimate.courseConditions)}>
-                              {estimate.conditionsAdjustment > 0 ? &apos;+&apos; : &apos;&apos;}{formatDuration(Math.abs(estimate.conditionsAdjustment))}
+                              {estimate.conditionsAdjustment > 0 ? '+' : ''}{formatDuration(Math.abs(estimate.conditionsAdjustment))}
                             </span>
                           </div>
                         </div>
@@ -552,7 +552,7 @@ export default function PlayingTimeEstimator() {
                 <h4 className="font-semibold mb-3 text-black">Why Use Our Playing Time Estimator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Accurate Planning:</strong> Know when you&apos;ll finish</p>
+                    <p className="text-black mb-2"><strong>✓ Accurate Planning:</strong> Know when you'll finish</p>
                     <p className="text-black mb-2"><strong>✓ Multiple Factors:</strong> Considers all timing variables</p>
                     <p className="text-black"><strong>✓ Day Planning:</strong> Schedule other activities confidently</p>
                   </div>

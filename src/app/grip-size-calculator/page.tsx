@@ -138,12 +138,12 @@ export default function GripSizeCalculator() {
 
     // Calculate core size (internal diameter)
     const coreSizeMap: { [key: string]: string } = {
-      'Junior': '0.560&quot;',
-      'Undersize': '0.580&quot;',
-      'Standard': '0.600&quot;',
-      'Midsize': '0.620&quot;',
-      'Jumbo': '0.640&quot;',
-      'Jumbo Plus': '0.660&quot;'
+      'Junior': '0.560"',
+      'Undersize': '0.580"',
+      'Standard': '0.600"',
+      'Midsize': '0.620"',
+      'Jumbo': '0.640"',
+      'Jumbo Plus': '0.660"'
     }
 
     // Performance benefits
@@ -206,75 +206,75 @@ export default function GripSizeCalculator() {
   }
 
   return (
-    <div className=&quot;min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800&quot;>
-      <div className=&quot;container mx-auto px-4 py-8 max-w-4xl&quot;>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+      <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
-        <div className=&quot;text-center mb-8&quot;>
-          <h1 className=&quot;text-4xl font-bold text-slate-900 dark:text-white mb-4 font-cooper&quot;>
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 font-cooper">
             Golf Grip Size Calculator
           </h1>
-          <p className=&quot;text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto&quot;>
+          <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
             Find your perfect golf grip size based on hand measurements, playing style, and preferences.
             Proper grip size improves feel, control, and overall performance.
           </p>
         </div>
 
-        <div className=&quot;grid lg:grid-cols-2 gap-8&quot;>
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Input Form */}
-          <Card className=&quot;p-6&quot;>
-            <div className=&quot;flex items-center gap-2 mb-6&quot;>
-              <Hand className=&quot;h-6 w-6&quot; style={{color: '#9CC69B'}} />
-              <h2 className=&quot;text-2xl font-semibold text-slate-900 dark:text-white&quot;>
+          <Card className="p-6">
+            <div className="flex items-center gap-2 mb-6">
+              <Hand className="h-6 w-6" style={{color: '#9CC69B'}} />
+              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
                 Hand Measurements & Preferences
               </h2>
             </div>
 
-            <div className=&quot;space-y-6&quot;>
+            <div className="space-y-6">
               {/* Hand Length */}
               <div>
-                <Label htmlFor=&quot;handLength&quot; className=&quot;text-sm font-medium text-slate-700 dark:text-slate-300&quot;>
+                <Label htmlFor="handLength" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Hand Length (mm) *
                 </Label>
-                <p className=&quot;text-xs text-slate-500 dark:text-slate-400 mb-2&quot;>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
                   Measure from wrist crease to tip of middle finger
                 </p>
                 <Input
-                  id=&quot;handLength&quot;
-                  type=&quot;number&quot;
-                  placeholder=&quot;e.g., 180&quot;
+                  id="handLength"
+                  type="number"
+                  placeholder="e.g., 180"
                   value={gripData.handLength || ''}
                   onChange={(e) => setGripData(prev => ({
                     ...prev,
                     handLength: parseFloat(e.target.value) || 0
                   }))}
-                  className=&quot;w-full&quot;
+                  className="w-full"
                 />
               </div>
 
               {/* Hand Span */}
               <div>
-                <Label htmlFor=&quot;handSpan&quot; className=&quot;text-sm font-medium text-slate-700 dark:text-slate-300&quot;>
+                <Label htmlFor="handSpan" className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Hand Span (mm) *
                 </Label>
-                <p className=&quot;text-xs text-slate-500 dark:text-slate-400 mb-2&quot;>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
                   Measure from thumb tip to pinky tip with hand spread wide
                 </p>
                 <Input
-                  id=&quot;handSpan&quot;
-                  type=&quot;number&quot;
-                  placeholder=&quot;e.g., 220&quot;
+                  id="handSpan"
+                  type="number"
+                  placeholder="e.g., 220"
                   value={gripData.handSpan || ''}
                   onChange={(e) => setGripData(prev => ({
                     ...prev,
                     handSpan: parseFloat(e.target.value) || 0
                   }))}
-                  className=&quot;w-full&quot;
+                  className="w-full"
                 />
               </div>
 
               {/* Playing Style */}
               <div>
-                <Label className=&quot;text-sm font-medium text-slate-700 dark:text-slate-300&quot;>
+                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Playing Style
                 </Label>
                 <Select
@@ -282,19 +282,19 @@ export default function GripSizeCalculator() {
                   onValueChange={(value) => setGripData(prev => ({ ...prev, playingStyle: value }))}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder=&quot;Select your playing style&quot; />
+                    <SelectValue placeholder="Select your playing style" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value=&quot;Control/Precision&quot;>Control/Precision</SelectItem>
-                    <SelectItem value=&quot;Balanced&quot;>Balanced</SelectItem>
-                    <SelectItem value=&quot;Power/Distance&quot;>Power/Distance</SelectItem>
+                    <SelectItem value="Control/Precision">Control/Precision</SelectItem>
+                    <SelectItem value="Balanced">Balanced</SelectItem>
+                    <SelectItem value="Power/Distance">Power/Distance</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               {/* Swing Speed */}
               <div>
-                <Label className=&quot;text-sm font-medium text-slate-700 dark:text-slate-300&quot;>
+                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Driver Swing Speed
                 </Label>
                 <Select
@@ -302,20 +302,20 @@ export default function GripSizeCalculator() {
                   onValueChange={(value) => setGripData(prev => ({ ...prev, swingSpeed: value }))}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder=&quot;Select your swing speed&quot; />
+                    <SelectValue placeholder="Select your swing speed" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value=&quot;Slow (< 85 mph)&quot;>Slow (&lt; 85 mph)</SelectItem>
-                    <SelectItem value=&quot;Moderate (85-95 mph)&quot;>Moderate (85-95 mph)</SelectItem>
-                    <SelectItem value=&quot;Fast (95-110 mph)&quot;>Fast (95-110 mph)</SelectItem>
-                    <SelectItem value=&quot;Very Fast (> 110 mph)&quot;>Very Fast (&gt; 110 mph)</SelectItem>
+                    <SelectItem value="Slow (< 85 mph)">Slow (&lt; 85 mph)</SelectItem>
+                    <SelectItem value="Moderate (85-95 mph)">Moderate (85-95 mph)</SelectItem>
+                    <SelectItem value="Fast (95-110 mph)">Fast (95-110 mph)</SelectItem>
+                    <SelectItem value="Very Fast (> 110 mph)">Very Fast (&gt; 110 mph)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               {/* Feel Preference */}
               <div>
-                <Label className=&quot;text-sm font-medium text-slate-700 dark:text-slate-300&quot;>
+                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Feel Preference
                 </Label>
                 <Select
@@ -323,19 +323,19 @@ export default function GripSizeCalculator() {
                   onValueChange={(value) => setGripData(prev => ({ ...prev, feelPreference: value }))}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder=&quot;Select your feel preference&quot; />
+                    <SelectValue placeholder="Select your feel preference" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value=&quot;Soft/Responsive&quot;>Soft/Responsive</SelectItem>
-                    <SelectItem value=&quot;Balanced&quot;>Balanced</SelectItem>
-                    <SelectItem value=&quot;Firm/Stable&quot;>Firm/Stable</SelectItem>
+                    <SelectItem value="Soft/Responsive">Soft/Responsive</SelectItem>
+                    <SelectItem value="Balanced">Balanced</SelectItem>
+                    <SelectItem value="Firm/Stable">Firm/Stable</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               {/* Hand Strength */}
               <div>
-                <Label className=&quot;text-sm font-medium text-slate-700 dark:text-slate-300&quot;>
+                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Hand/Grip Strength
                 </Label>
                 <Select
@@ -343,31 +343,31 @@ export default function GripSizeCalculator() {
                   onValueChange={(value) => setGripData(prev => ({ ...prev, handStrength: value }))}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder=&quot;Select your hand strength&quot; />
+                    <SelectValue placeholder="Select your hand strength" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value=&quot;Weak&quot;>Weak</SelectItem>
-                    <SelectItem value=&quot;Average&quot;>Average</SelectItem>
-                    <SelectItem value=&quot;Strong&quot;>Strong</SelectItem>
-                    <SelectItem value=&quot;Very Strong&quot;>Very Strong</SelectItem>
+                    <SelectItem value="Weak">Weak</SelectItem>
+                    <SelectItem value="Average">Average</SelectItem>
+                    <SelectItem value="Strong">Strong</SelectItem>
+                    <SelectItem value="Very Strong">Very Strong</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               {/* Buttons */}
-              <div className=&quot;flex gap-3 pt-4&quot;>
+              <div className="flex gap-3 pt-4">
                 <Button
                   onClick={handleCalculate}
                   disabled={!gripData.handLength || !gripData.handSpan}
-                  className=&quot;flex-1 text-white&quot;
+                  className="flex-1 text-white"
                   style={{backgroundColor: '#183a37'}}
                 >
                   Calculate Grip Size
                 </Button>
                 <Button
                   onClick={handleReset}
-                  variant=&quot;outline&quot;
-                  className=&quot;px-6&quot;
+                  variant="outline"
+                  className="px-6"
                 >
                   Reset
                 </Button>
@@ -377,47 +377,47 @@ export default function GripSizeCalculator() {
 
           {/* Results */}
           {showResults && gripRecommendation && (
-            <Card className=&quot;p-6&quot;>
-              <div className=&quot;flex items-center gap-2 mb-6&quot;>
-                <Target className=&quot;h-6 w-6&quot; style={{color: '#9CC69B'}} />
-                <h2 className=&quot;text-2xl font-semibold text-slate-900 dark:text-white&quot;>
+            <Card className="p-6">
+              <div className="flex items-center gap-2 mb-6">
+                <Target className="h-6 w-6" style={{color: '#9CC69B'}} />
+                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
                   Grip Size Recommendation
                 </h2>
               </div>
 
-              <div className=&quot;space-y-6&quot;>
+              <div className="space-y-6">
                 {/* Primary Recommendation */}
-                <div className=&quot;p-4 rounded-lg border-2&quot; style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-                  <h3 className=&quot;text-xl font-bold mb-2&quot; style={{color: '#183a37'}}>
+                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+                  <h3 className="text-xl font-bold mb-2" style={{color: '#183a37'}}>
                     Recommended Grip Size
                   </h3>
-                  <div className=&quot;text-3xl font-bold text-white mb-2&quot;>
+                  <div className="text-3xl font-bold text-white mb-2">
                     {gripRecommendation.recommendedSize}
                   </div>
-                  <div className=&quot;text-sm&quot; style={{color: '#183a37'}}>
+                  <div className="text-sm" style={{color: '#183a37'}}>
                     Core Size: {gripRecommendation.coreSize}
                   </div>
-                  <div className=&quot;text-sm&quot; style={{color: '#183a37'}}>
+                  <div className="text-sm" style={{color: '#183a37'}}>
                     Confidence: {gripRecommendation.confidence}
                   </div>
                 </div>
 
                 {/* Hand Measurements Summary */}
                 <div>
-                  <h4 className=&quot;font-semibold text-slate-900 dark:text-white mb-3&quot;>
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
                     Your Hand Measurements
                   </h4>
-                  <div className=&quot;grid grid-cols-2 gap-4 text-sm&quot;>
-                    <div className=&quot;p-3 bg-slate-100 dark:bg-slate-700 rounded&quot;>
-                      <div className=&quot;font-medium text-slate-900 dark:text-white&quot;>Hand Length</div>
-                      <div className=&quot;text-slate-600 dark:text-slate-300&quot;>
-                        {gripData.handLength}mm ({gripRecommendation.handLengthInches}&quot;)
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
+                      <div className="font-medium text-slate-900 dark:text-white">Hand Length</div>
+                      <div className="text-slate-600 dark:text-slate-300">
+                        {gripData.handLength}mm ({gripRecommendation.handLengthInches}")
                       </div>
                     </div>
-                    <div className=&quot;p-3 bg-slate-100 dark:bg-slate-700 rounded&quot;>
-                      <div className=&quot;font-medium text-slate-900 dark:text-white&quot;>Hand Span</div>
-                      <div className=&quot;text-slate-600 dark:text-slate-300&quot;>
-                        {gripData.handSpan}mm ({gripRecommendation.handSpanInches}&quot;)
+                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
+                      <div className="font-medium text-slate-900 dark:text-white">Hand Span</div>
+                      <div className="text-slate-600 dark:text-slate-300">
+                        {gripData.handSpan}mm ({gripRecommendation.handSpanInches}")
                       </div>
                     </div>
                   </div>
@@ -425,13 +425,13 @@ export default function GripSizeCalculator() {
 
                 {/* Benefits */}
                 <div>
-                  <h4 className=&quot;font-semibold text-slate-900 dark:text-white mb-3&quot;>
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
                     Benefits of This Grip Size
                   </h4>
-                  <ul className=&quot;space-y-2&quot;>
+                  <ul className="space-y-2">
                     {gripRecommendation.benefits.map((benefit, index) => (
-                      <li key={index} className=&quot;flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300&quot;>
-                        <TrendingUp className=&quot;h-4 w-4 mt-0.5 flex-shrink-0&quot; style={{color: '#9CC69B'}} />
+                      <li key={index} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+                        <TrendingUp className="h-4 w-4 mt-0.5 flex-shrink-0" style={{color: '#9CC69B'}} />
                         {benefit}
                       </li>
                     ))}
@@ -440,10 +440,10 @@ export default function GripSizeCalculator() {
 
                 {/* Installation Tips */}
                 <div>
-                  <h4 className=&quot;font-semibold text-slate-900 dark:text-white mb-2&quot;>
+                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
                     Installation Notes
                   </h4>
-                  <p className=&quot;text-sm text-slate-700 dark:text-slate-300&quot;>
+                  <p className="text-sm text-slate-700 dark:text-slate-300">
                     {gripRecommendation.installationTips}
                   </p>
                 </div>
@@ -453,44 +453,44 @@ export default function GripSizeCalculator() {
         </div>
 
         {/* Educational Content */}
-        <div className=&quot;mt-12 grid md:grid-cols-2 gap-8&quot;>
-          <Card className=&quot;p-6&quot;>
-            <h3 className=&quot;text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2&quot;>
-              <Ruler className=&quot;h-5 w-5&quot; style={{color: '#9CC69B'}} />
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+          <Card className="p-6">
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <Ruler className="h-5 w-5" style={{color: '#9CC69B'}} />
               How to Measure Your Hands
             </h3>
-            <div className=&quot;space-y-4 text-sm text-slate-700 dark:text-slate-300&quot;>
+            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
               <div>
-                <strong className=&quot;text-slate-900 dark:text-white&quot;>Hand Length:</strong>
+                <strong className="text-slate-900 dark:text-white">Hand Length:</strong>
                 <p>Place your hand flat on a surface. Measure from the wrist crease (where your hand bends) to the tip of your middle finger. Use a ruler or measuring tape for accuracy.</p>
               </div>
               <div>
-                <strong className=&quot;text-slate-900 dark:text-white&quot;>Hand Span:</strong>
+                <strong className="text-slate-900 dark:text-white">Hand Span:</strong>
                 <p>Spread your hand as wide as possible. Measure from the tip of your thumb to the tip of your pinky finger. This measurement helps determine grip circumference needs.</p>
               </div>
               <div>
-                <strong className=&quot;text-slate-900 dark:text-white&quot;>Tips:</strong>
+                <strong className="text-slate-900 dark:text-white">Tips:</strong>
                 <p>Measure both hands and use the larger measurements. Consider having a professional measure you at a golf shop for the most accurate fitting.</p>
               </div>
             </div>
           </Card>
 
-          <Card className=&quot;p-6&quot;>
-            <h3 className=&quot;text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2&quot;>
-              <Target className=&quot;h-5 w-5&quot; style={{color: '#9CC69B'}} />
+          <Card className="p-6">
+            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <Target className="h-5 w-5" style={{color: '#9CC69B'}} />
               Grip Size Impact on Performance
             </h3>
-            <div className=&quot;space-y-4 text-sm text-slate-700 dark:text-slate-300&quot;>
+            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
               <div>
-                <strong className=&quot;text-slate-900 dark:text-white&quot;>Too Small:</strong>
+                <strong className="text-slate-900 dark:text-white">Too Small:</strong>
                 <p>Causes excessive grip pressure, promotes hooks, can lead to hand fatigue and inconsistent ball striking.</p>
               </div>
               <div>
-                <strong className=&quot;text-slate-900 dark:text-white&quot;>Too Large:</strong>
+                <strong className="text-slate-900 dark:text-white">Too Large:</strong>
                 <p>Reduces feel and touch, can promote slices, makes it harder to release the club properly through impact.</p>
               </div>
               <div>
-                <strong className=&quot;text-slate-900 dark:text-white&quot;>Proper Fit:</strong>
+                <strong className="text-slate-900 dark:text-white">Proper Fit:</strong>
                 <p>When gripping properly, your middle and ring fingers should just touch your palm. This allows for optimal grip pressure and club control.</p>
               </div>
             </div>
@@ -498,14 +498,14 @@ export default function GripSizeCalculator() {
         </div>
 
         {/* Additional Information */}
-        <Card className=&quot;mt-8 p-6&quot;>
-          <h3 className=&quot;text-xl font-semibold text-slate-900 dark:text-white mb-4&quot;>
+        <Card className="mt-8 p-6">
+          <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
             Professional Grip Fitting Recommendations
           </h3>
-          <div className=&quot;grid md:grid-cols-3 gap-6 text-sm text-slate-700 dark:text-slate-300&quot;>
+          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-700 dark:text-slate-300">
             <div>
-              <h4 className=&quot;font-semibold text-slate-900 dark:text-white mb-2&quot;>When to Get Fitted</h4>
-              <ul className=&quot;space-y-1 list-disc list-inside&quot;>
+              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">When to Get Fitted</h4>
+              <ul className="space-y-1 list-disc list-inside">
                 <li>Buying new clubs</li>
                 <li>Experiencing hand pain</li>
                 <li>Inconsistent ball flight</li>
@@ -513,8 +513,8 @@ export default function GripSizeCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className=&quot;font-semibold text-slate-900 dark:text-white mb-2&quot;>Grip Materials</h4>
-              <ul className=&quot;space-y-1 list-disc list-inside&quot;>
+              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Grip Materials</h4>
+              <ul className="space-y-1 list-disc list-inside">
                 <li>Rubber: Most common, versatile</li>
                 <li>Cord: Added texture for grip</li>
                 <li>Leather: Traditional feel</li>
@@ -522,8 +522,8 @@ export default function GripSizeCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className=&quot;font-semibold text-slate-900 dark:text-white mb-2&quot;>Maintenance Tips</h4>
-              <ul className=&quot;space-y-1 list-disc list-inside&quot;>
+              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Maintenance Tips</h4>
+              <ul className="space-y-1 list-disc list-inside">
                 <li>Clean regularly with mild soap</li>
                 <li>Replace every 1-2 years</li>
                 <li>Check for wear and slickness</li>
