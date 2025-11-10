@@ -449,10 +449,10 @@ export default function WalesGolfBreaks() {
               Best Golf Breaks in Wales 2025
             </h1>
             <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8">
-              Discover Wales' spectacular golf destinations where championship courses meet stunning landscapes.
-              From the Ryder Cup venue at Celtic Manor to historic links courses beneath Snowdonia's peaks, dramatic
+              Discover Wales&apos; spectacular golf destinations where championship courses meet stunning landscapes.
+              From the Ryder Cup venue at Celtic Manor to historic links courses beneath Snowdonia&apos;s peaks, dramatic
               clifftop golf along the Pembrokeshire coast, and traditional parkland courses in beautiful valleys,
-              we've curated the top 15 golf breaks in Wales for 2025. Perfect for links golf enthusiasts,
+              we&apos;ve curated the top 15 golf breaks in Wales for 2025. Perfect for links golf enthusiasts,
               mountain lovers, and those seeking authentic Welsh hospitality.
             </p>
 
@@ -490,7 +490,7 @@ export default function WalesGolfBreaks() {
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">🏆 Top Wales Golf Destinations</h3>
                 <ol className="text-slate-700 space-y-1">
                   <li><strong>1. Celtic Manor Resort</strong> - 2010 Ryder Cup venue</li>
-                  <li><strong>2. Royal St David's</strong> - Historic links with Snowdonia backdrop</li>
+                  <li><strong>2. Royal St David&apos;s</strong> - Historic links with Snowdonia backdrop</li>
                   <li><strong>3. Royal Porthcawl</strong> - Walker Cup venue, premier links</li>
                   <li><strong>4. The Vale Resort</strong> - European Tour venue near Cardiff</li>
                   <li><strong>5. St. Pierre</strong> - Historic parkland, European Tour heritage</li>
@@ -538,24 +538,24 @@ export default function WalesGolfBreaks() {
             </h2>
             <div className="text-slate-700">
               <p className="mb-4">
-                Wales offers <strong>Europe's most diverse golf destination</strong> in a compact area,
+                Wales offers <strong>Europe&apos;s most diverse golf destination</strong> in a compact area,
                 combining championship courses with spectacular natural beauty, rich culture, and exceptional value.
-                From the Ryder Cup glamour of Celtic Manor to historic links courses beneath Snowdonia's peaks,
+                From the Ryder Cup glamour of Celtic Manor to historic links courses beneath Snowdonia&apos;s peaks,
                 dramatic clifftop golf along pristine coastlines, and traditional courses in beautiful valleys,
                 Wales provides unforgettable golfing experiences steeped in history and natural splendor.
               </p>
               <p className="mb-4">
                 What makes Wales golf breaks special? <strong>Diversity, authenticity, and outstanding value.</strong> You can
-                play championship venues that have tested the world's best, experience traditional links golf in spectacular
+                play championship venues that have tested the world&apos;s best, experience traditional links golf in spectacular
                 coastal settings, and enjoy genuine Welsh hospitality in historic towns and villages. The compact geography
                 means you can experience multiple regions and course styles in a single break, all at prices that
                 represent exceptional value compared to other European golf destinations.
               </p>
               <p>
-                Our comprehensive guide covers <strong>15 carefully selected golf breaks</strong> representing Wales'
+                Our comprehensive guide covers <strong>15 carefully selected golf breaks</strong> representing Wales&apos;
                 finest courses from north to south. Each destination combines outstanding golf with cultural attractions,
                 natural beauty, and accommodation options for every budget. From luxury resorts to traditional
-                guest houses, championship links to historic parkland, we've included the complete spectrum of
+                guest houses, championship links to historic parkland, we&apos;ve included the complete spectrum of
                 Welsh golf experiences.
               </p>
             </div>
@@ -569,7 +569,7 @@ export default function WalesGolfBreaks() {
             <p className="text-lg text-slate-700 mb-8">
               From the championship grandeur of Ryder Cup venues to historic links courses with mountain backdrops,
               dramatic clifftop golf along pristine coastlines, traditional parkland courses through ancient valleys,
-              and authentic Welsh clubs steeped in local culture, discover Wales' finest golf break destinations.
+              and authentic Welsh clubs steeped in local culture, discover Wales&apos; finest golf break destinations.
               Each break combines exceptional golf with stunning landscapes, rich heritage, warm hospitality, and
               outstanding value that makes Wales a premier European golf destination.
             </p>
@@ -776,7 +776,7 @@ export default function WalesGolfBreaks() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900">Historic Links (2-3 months ahead)</h4>
-                      <p className="text-sm">Royal St David's, Aberdovey - popular courses with character</p>
+                      <p className="text-sm">Royal St David&apos;s, Aberdovey - popular courses with character</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900">Traditional Courses (1-2 months ahead)</h4>
@@ -894,7 +894,7 @@ export default function WalesGolfBreaks() {
                     What are the best golf courses in Wales?
                   </h3>
                   <p className="text-slate-700">
-                    The best courses include Celtic Manor Resort (2010 Ryder Cup venue), Royal St David's
+                    The best courses include Celtic Manor Resort (2010 Ryder Cup venue), Royal St David&apos;s
                     (historic links with Snowdonia backdrop), Royal Porthcawl (Walker Cup venue), and
                     The Vale Resort (European Tour venue).
                   </p>

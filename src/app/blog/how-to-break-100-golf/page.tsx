@@ -140,7 +140,7 @@ const jsonLd = {
         {
           "@type": "HowToStep",
           "name": "Avoid Penalty Strokes",
-          "text": "Stay out of water hazards and out-of-bounds. Take safe routes and don't attempt heroic shots that could lead to lost balls.",
+          "text": "Stay out of water hazards and out-of-bounds. Take safe routes and don&apos;t attempt heroic shots that could lead to lost balls.",
           "image": {
             "@type": "ImageObject",
             "url": "https://weltongolf.com/images/course-safety.jpg"
@@ -224,7 +224,7 @@ export default function HowToBreak100Page() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            How to Break 100 in Golf: Complete Beginner's Guide
+            How to Break 100 in Golf: Complete Beginner&apos;s Guide
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Achieve your first sub-100 round with our simple 6-step system designed specifically for beginner golfers.
@@ -273,7 +273,7 @@ export default function HowToBreak100Page() {
           </CardHeader>
           <CardContent className="prose prose-lg max-w-none">
             <p>
-              Breaking 100 is golf's first major milestone and represents the transition from complete beginner to
+              Breaking 100 is golf&apos;s first major milestone and represents the transition from complete beginner to
               someone who understands the basic game. It shows you can complete 18 holes without losing too many
               balls and can make reasonable contact with the ball most of the time.
             </p>
@@ -303,7 +303,7 @@ export default function HowToBreak100Page() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-700">
-                  Focus on the basic building blocks of golf. You don't need perfect technique to break 100,
+                  Focus on the basic building blocks of golf. You don&apos;t need perfect technique to break 100,
                   but you need consistent fundamentals that allow you to make contact with the ball.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -373,7 +373,7 @@ export default function HowToBreak100Page() {
                 </div>
                 <div className="bg-green-50 p-4 rounded-lg">
                   <p className="text-sm text-green-700">
-                    <strong>Don't Be Embarrassed:</strong> Playing from forward tees is smart golf.
+                    <strong>Don&apos;t Be Embarrassed:</strong> Playing from forward tees is smart golf.
                     Even good players move up when learning or in windy conditions.
                   </p>
                 </div>
@@ -392,7 +392,7 @@ export default function HowToBreak100Page() {
               <CardContent className="space-y-4">
                 <p className="text-gray-700">
                   Your main objective should be making clean contact and getting the ball in the air consistently.
-                  Don't worry about distance or perfect accuracy yet - focus on solid strikes.
+                  Don&apos;t worry about distance or perfect accuracy yet - focus on solid strikes.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="space-y-3">
@@ -472,7 +472,7 @@ export default function HowToBreak100Page() {
                     <li>1. Read the general slope (uphill/downhill/sidehill)</li>
                     <li>2. Pick your line and commit to it</li>
                     <li>3. Focus on speed - get the ball to the hole</li>
-                    <li>4. Don't overthink the read on short putts</li>
+                    <li>4. Don&apos;t overthink the read on short putts</li>
                   </ol>
                 </div>
                 <p className="text-sm text-gray-600">
@@ -524,7 +524,7 @@ export default function HowToBreak100Page() {
                     </div>
                     <div className="bg-blue-50 p-3 rounded">
                       <h5 className="font-semibold text-blue-700 text-sm mb-1">Approach Shots:</h5>
-                      <p className="text-xs text-blue-600">Aim for the center of greens. Don't go for tight pin positions near trouble.</p>
+                      <p className="text-xs text-blue-600">Aim for the center of greens. Don&apos;t go for tight pin positions near trouble.</p>
                     </div>
                     <div className="bg-yellow-50 p-3 rounded">
                       <h5 className="font-semibold text-yellow-700 text-sm mb-1">Trouble Shots:</h5>
@@ -546,7 +546,7 @@ export default function HowToBreak100Page() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-700">
-                  Simplicity is key for beginners. Use fewer clubs, focus on fundamentals, and don't overcomplicate
+                  Simplicity is key for beginners. Use fewer clubs, focus on fundamentals, and don&apos;t overcomplicate
                   the game. Golf is challenging enough without adding unnecessary complexity.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -564,7 +564,7 @@ export default function HowToBreak100Page() {
                     <h4 className="font-semibold text-green-700">Mental Approach:</h4>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Focus on having fun</li>
-                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Don't keep score every round</li>
+                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Don&apos;t keep score every round</li>
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Learn course etiquette</li>
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Play with patient partners</li>
                     </ul>
@@ -663,7 +663,7 @@ export default function HowToBreak100Page() {
             </div>
             <div className="mt-6 bg-green-50 p-4 rounded-lg">
               <p className="text-sm text-green-700">
-                <strong>Remember:</strong> Progress isn't always linear. You might shoot 95 one day and 110 the next.
+                <strong>Remember:</strong> Progress isn&apos;t always linear. You might shoot 95 one day and 110 the next.
                 Focus on the overall trend and celebrate small victories along the way.
               </p>
             </div>
@@ -806,7 +806,7 @@ export default function HowToBreak100Page() {
             <p className="text-gray-700 text-center">
               Breaking 100 is an exciting and achievable milestone that marks your entry into the world of golf.
               Focus on the fundamentals, practice patience, and remember that every golfer started exactly where you are now.
-              With consistent practice and the right approach, you'll be celebrating your first sub-100 round sooner than you think.
+              With consistent practice and the right approach, you&apos;ll be celebrating your first sub-100 round sooner than you think.
             </p>
             <div className="text-center space-y-4">
               <p className="text-sm text-gray-600">

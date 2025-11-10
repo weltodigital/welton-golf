@@ -13,7 +13,8 @@
       "Bash(lsof:*)",
       "WebFetch(domain:www.yourgolftravel.com)",
       "WebFetch(domain:golf.com)",
-      "WebFetch(domain:www.todays-golfer.com)"
+      "WebFetch(domain:www.todays-golfer.com)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

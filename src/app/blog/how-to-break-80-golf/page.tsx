@@ -72,7 +72,7 @@ const breakingEightySteps = [
     ],
     practiceTime: "Can implement immediately during next round",
     commonMistakes: ["Going for pins in difficult positions", "Taking on risky shots when safer options exist"],
-    proTip: "If you can't hit a 7-iron pin-high from that distance 7 out of 10 times on the practice range, don't try it on the course."
+    proTip: "If you can&apos;t hit a 7-iron pin-high from that distance 7 out of 10 times on the practice range, don&apos;t try it on the course."
   },
   {
     id: 2,
@@ -137,7 +137,7 @@ const breakingEightySteps = [
     impactLevel: "High",
     description: "Mental mistakes cost more strokes than physical ones. Build mental resilience and focus.",
     keyPoints: [
-      "Stay in the present - don't dwell on bad shots",
+      "Stay in the present - don&apos;t dwell on bad shots",
       "Develop positive self-talk and confidence",
       "Create simple swing thoughts for each shot",
       "Practice visualization and course strategy"
@@ -750,7 +750,7 @@ export default function HowToBreakEighty() {
                       <h4 className="font-bold text-yellow-900 mb-2">⚡ Quick Wins</h4>
                       <p className="text-sm text-yellow-800">
                         Start with course management and putting. These areas show immediate improvement
-                        and don't require swing changes. Many golfers break 80 for the first time just
+                        and don&apos;t require swing changes. Many golfers break 80 for the first time just
                         by playing smarter golf.
                       </p>
                     </div>
@@ -792,7 +792,7 @@ export default function HowToBreakEighty() {
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    What's the most important skill to break 80?
+                    What&apos;s the most important skill to break 80?
                   </h3>
                   <p className="text-slate-700">
                     Course management is the most important skill to break 80. Playing smart, conservative golf and avoiding

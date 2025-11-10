@@ -337,9 +337,9 @@ export default function BournemouthGolfBreaks() {
               Best Golf Breaks in Bournemouth 2025
             </h1>
             <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8">
-              Discover Dorset's premier coastal golf destination where championship heathland courses meet stunning
+              Discover Dorset&apos;s premier coastal golf destination where championship heathland courses meet stunning
               clifftop links golf. From historic tournament venues to luxury resort experiences and dramatic seaside
-              golf, we've curated the top 8 golf breaks around Bournemouth for 2025. Perfect for golf weekends,
+              golf, we&apos;ve curated the top 8 golf breaks around Bournemouth for 2025. Perfect for golf weekends,
               coastal breaks, and championship golf experiences in southern England.
             </p>
 
@@ -425,7 +425,7 @@ export default function BournemouthGolfBreaks() {
             </h2>
             <div className="text-slate-700">
               <p className="mb-4">
-                Bournemouth and the surrounding <strong>Dorset coastline offer England's finest coastal golf destination</strong>,
+                Bournemouth and the surrounding <strong>Dorset coastline offer England&apos;s finest coastal golf destination</strong>,
                 combining championship heathland courses with dramatic clifftop links golf and luxury resort experiences.
                 The region features exceptional golf diversity from historic tournament venues to modern championship designs,
                 all within easy reach of beautiful beaches, vibrant nightlife, and coastal attractions.
@@ -434,13 +434,13 @@ export default function BournemouthGolfBreaks() {
                 What makes Bournemouth golf breaks special? <strong>Variety, accessibility, and coastal beauty.</strong> You can
                 play championship heathland courses like Ferndown Golf Club, experience clifftop drama at Barton-on-Sea,
                 and enjoy luxury resort amenities at The Dorset Golf Resort. The mild coastal climate ensures excellent
-                year-round playing conditions, while Bournemouth's position provides easy access from London and the Midlands.
+                year-round playing conditions, while Bournemouth&apos;s position provides easy access from London and the Midlands.
               </p>
               <p>
                 Our comprehensive guide covers <strong>8 carefully selected golf breaks</strong> representing the best
                 championship golf, coastal experiences, and resort amenities around Bournemouth. Each destination has been
                 chosen for its combination of outstanding golf, excellent accommodation options, and overall holiday experience.
-                From traditional heathland challenges to luxury spa resorts, we've included options for every golfer and budget.
+                From traditional heathland challenges to luxury spa resorts, we&apos;ve included options for every golfer and budget.
               </p>
             </div>
           </Card>
@@ -453,7 +453,7 @@ export default function BournemouthGolfBreaks() {
             <p className="text-lg text-slate-700 mb-8">
               From championship heathland courses steeped in professional tournament history to dramatic clifftop links with
               panoramic sea views, luxury resort experiences with world-class spa facilities, and traditional coastal golf
-              venues, discover Bournemouth and Dorset's finest golf break destinations. Each break combines exceptional
+              venues, discover Bournemouth and Dorset&apos;s finest golf break destinations. Each break combines exceptional
               championship golf with coastal beauty, luxury accommodation, excellent dining, and unforgettable holiday experiences.
             </p>
 

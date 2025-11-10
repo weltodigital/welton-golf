@@ -371,7 +371,7 @@ export default function HowToBreak90Page() {
                 </div>
                 <p className="text-sm text-gray-600">
                   <strong>Pro Tip:</strong> Practice this routine on the range. The more automatic it becomes,
-                  the more confident you'll feel on the course.
+                  the more confident you&apos;ll feel on the course.
                 </p>
               </CardContent>
             </Card>
@@ -456,7 +456,7 @@ export default function HowToBreak90Page() {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Use 3-wood on tight holes</li>
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Driver only when fairway is wide</li>
-                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Develop reliable "go-to" tee shot</li>
+                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Develop reliable &quot;go-to&quot; tee shot</li>
                     </ul>
                   </div>
                 </div>
@@ -602,7 +602,7 @@ export default function HowToBreak90Page() {
                     </p>
                     <ul className="space-y-1 text-sm text-yellow-600">
                       <li>• Take your medicine and punch out</li>
-                      <li>• Don't compound mistakes with heroic attempts</li>
+                      <li>• Don&apos;t compound mistakes with heroic attempts</li>
                       <li>• Minimize damage - bogey is better than double</li>
                       <li>• Live to fight another hole</li>
                     </ul>
@@ -649,7 +649,7 @@ export default function HowToBreak90Page() {
                 </div>
                 <div className="bg-green-50 p-4 rounded-lg">
                   <p className="text-sm text-green-700">
-                    <strong>Practice Focus:</strong> Use statistics to guide practice. If you're missing too many greens,
+                    <strong>Practice Focus:</strong> Use statistics to guide practice. If you&apos;re missing too many greens,
                     work on approach shots. If putts per round is high, spend time on the putting green.
                   </p>
                 </div>
@@ -752,7 +752,7 @@ export default function HowToBreak90Page() {
               </div>
 
               <div>
-                <h3 className="font-semibold text-gray-900 mb-2">What's the most important skill for breaking 90?</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">What&apos;s the most important skill for breaking 90?</h3>
                 <p className="text-gray-700 text-sm">
                   Course management is the most critical skill for breaking 90. Playing within your abilities, avoiding
                   big numbers, and making smart decisions will lower your scores faster than perfect swing mechanics.
@@ -771,7 +771,7 @@ export default function HowToBreak90Page() {
                 <h3 className="font-semibold text-gray-900 mb-2">What clubs are essential for breaking 90?</h3>
                 <p className="text-gray-700 text-sm">
                   Focus on becoming proficient with driver, 7-iron, pitching wedge, and putter. These four clubs can handle
-                  most situations you'll encounter and help you develop consistency before expanding your arsenal.
+                  most situations you&apos;ll encounter and help you develop consistency before expanding your arsenal.
                 </p>
               </div>
 
@@ -832,8 +832,8 @@ export default function HowToBreak90Page() {
           <CardContent className="space-y-4">
             <p className="text-gray-700 text-center">
               Breaking 90 consistently is an achievable goal with the right approach. Focus on the fundamentals,
-              practice smart course management, and be patient with your progress. Remember, every golfer's journey
-              is different, but with dedicated practice and the strategies outlined in this guide, you'll be shooting
+              practice smart course management, and be patient with your progress. Remember, every golfer&apos;s journey
+              is different, but with dedicated practice and the strategies outlined in this guide, you&apos;ll be shooting
               in the 80s sooner than you think.
             </p>
             <div className="text-center space-y-4">
