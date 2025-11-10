@@ -8,7 +8,12 @@
       "Bash(node:*)",
       "WebSearch",
       "Read(//Users/edwelton/Documents/**)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm run dev:*)",
+      "Bash(lsof:*)",
+      "WebFetch(domain:www.yourgolftravel.com)",
+      "WebFetch(domain:golf.com)",
+      "WebFetch(domain:www.todays-golfer.com)"
     ],
     "deny": [],
     "ask": []

@@ -14,11 +14,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    // Blog Articles
     {
       url: 'https://weltongolf.com/blog/best-golf-breaks-uk',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: 'https://weltongolf.com/blog/best-golf-breaks-wales',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://weltongolf.com/blog/best-golf-breaks-bournemouth',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://weltongolf.com/blog/how-to-break-80',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://weltongolf.com/blog/how-to-break-90',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://weltongolf.com/blog/how-to-break-100',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     // Handicap & Scoring Calculators
     {

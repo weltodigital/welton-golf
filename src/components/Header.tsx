@@ -8,6 +8,7 @@ import { useState } from 'react'
 
 export default function Header() {
   const [isCalculatorsOpen, setIsCalculatorsOpen] = useState(false)
+  const [isBlogOpen, setIsBlogOpen] = useState(false)
 
   return (
     <nav className="bg-white dark:bg-slate-800 border-b sticky top-0 z-50">
@@ -169,18 +170,73 @@ export default function Header() {
               )}
             </div>
 
+            {/* Blog Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsBlogOpen(!isBlogOpen)}
+                className="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
+              >
+                Blog
+                <ChevronDown className={`h-4 w-4 transition-transform ${isBlogOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* Blog Dropdown Menu */}
+              {isBlogOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg z-50">
+                  <div className="py-2">
+                    <Link
+                      href="/blog/best-golf-breaks-uk"
+                      className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={() => setIsBlogOpen(false)}
+                    >
+                      Best Golf Breaks UK
+                    </Link>
+                    <Link
+                      href="/blog/best-golf-breaks-wales"
+                      className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={() => setIsBlogOpen(false)}
+                    >
+                      Best Golf Breaks Wales
+                    </Link>
+                    <Link
+                      href="/blog/best-golf-breaks-bournemouth"
+                      className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={() => setIsBlogOpen(false)}
+                    >
+                      Best Golf Breaks Bournemouth
+                    </Link>
+                    <div className="border-t border-slate-200 dark:border-slate-600 my-2"></div>
+                    <Link
+                      href="/blog/how-to-break-80"
+                      className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={() => setIsBlogOpen(false)}
+                    >
+                      How to Break 80
+                    </Link>
+                    <Link
+                      href="/blog/how-to-break-90"
+                      className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={() => setIsBlogOpen(false)}
+                    >
+                      How to Break 90
+                    </Link>
+                    <Link
+                      href="/blog/how-to-break-100"
+                      className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      onClick={() => setIsBlogOpen(false)}
+                    >
+                      How to Break 100
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <Link
               href="/course-directory"
               className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
             >
               Course Directory
-            </Link>
-
-            <Link
-              href="/blog/best-golf-breaks-uk"
-              className="text-slate-700 dark:text-slate-300 hover:opacity-80 transition-colors text-sm font-medium"
-            >
-              Golf Breaks UK
             </Link>
           </div>
         </div>
