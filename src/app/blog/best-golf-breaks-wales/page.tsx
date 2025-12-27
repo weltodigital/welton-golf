@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { MapPin, Star, Calendar, Phone, Globe, Car, Utensils, Bed, Trophy } from 'lucide-react'
@@ -659,11 +660,12 @@ export default function WalesGolfBreaks() {
                       </div>
 
                       <div>
-                        <img
+                        <Image
                           src={walesImages[golfBreak.name as keyof typeof walesImages] || '/images/placeholder-golf-resort.jpg'}
                           alt={`${golfBreak.name} - Golf Course`}
                           className="w-full h-48 object-cover rounded-lg shadow-md"
-                          loading="lazy"
+                          width={400}
+                          height={192}
                         />
                       </div>
                     </div>
