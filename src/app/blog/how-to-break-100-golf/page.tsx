@@ -6,7 +6,7 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "How to Break 100 in Golf: Beginner's Complete Guide to Sub-100 Golf",
-  description: "Break 100 for the first time with our simple 6-step system. Essential golf tips for beginners focusing on fundamentals, course strategy, and avoiding big numbers.",
+  description: "Break 100 for the first time with our simple 6-step system. Essential golf tips for beginners focusing on fundamentals and course strategy.",
   keywords: "how to break 100 in golf, beginner golf tips, golf for beginners, break 100 golf guide, golf fundamentals, beginner golf instruction, golf basics",
   authors: [{ name: "Welton Golf" }],
   openGraph: {

@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Target, TrendingUp, Clock, CheckCircle, AlertTriangle, Trophy, BarChart3, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'How to Break 80 in Golf 2025: 10-Step Guide to Sub-80 Scores | Welton Golf',
-  description: 'Learn how to break 80 in golf with our proven 10-step system. Course management, short game tips, mental strategies. 75% of golfers break 80 using these methods.',
+  title: 'How to Break 80 in Golf: 10-Step Guide to Sub-80 Scores | Welton',
+  description: 'Learn how to break 80 in golf with our proven 10-step system. Course management, short game tips, and mental strategies. 75% success rate.',
   keywords: 'how to break 80 golf, break 80 golf tips, golf scoring tips, how to shoot under 80, golf course management, short game improvement, golf mental game, lower golf scores, golf handicap improvement, sub 80 golf scores, golf strategy tips, breaking 80 consistently',
   openGraph: {
     title: 'How to Break 80 in Golf 2025: 10-Step Proven System',

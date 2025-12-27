@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Golf Course Handicap Calculator (WHS) - Calculate Course Handicap | Welton Golf',
-  description: 'Calculate your golf course handicap instantly using the World Handicap System formula. Free course handicap calculator with handicap index, course rating, and slope rating support.',
+  title: 'Golf Course Handicap Calculator (WHS) - Course Handicap | Welton',
+  description: 'Calculate your golf course handicap using the World Handicap System formula. Course handicap calculator with index, course rating, and slope support.',
   keywords: [
     'golf course handicap calculator',
     'course handicap calculator',

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Stableford Points Calculator - Golf Scoring System Calculator | Welton Golf',
-  description: 'Calculate Stableford points for your golf round with automatic handicap stroke allocation. Free Stableford scoring calculator with 18-hole scorecard and competition scoring.',
+  title: 'Stableford Points Calculator - Golf Scoring System | Welton Golf',
+  description: 'Calculate Stableford points for golf rounds with automatic handicap allocation. Free Stableford scoring calculator with 18-hole scorecard.',
   keywords: [
     'stableford calculator',
     'stableford points calculator',

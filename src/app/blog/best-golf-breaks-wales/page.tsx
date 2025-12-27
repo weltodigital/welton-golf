@@ -6,8 +6,8 @@ import { MapPin, Star, Calendar, Phone, Globe, Car, Utensils, Bed, Trophy } from
 import walesImages from '@/data/walesImages.json'
 
 export const metadata: Metadata = {
-  title: 'Best Golf Breaks in Wales 2025: 15 Top Welsh Courses & Golf Holidays | Welton Golf',
-  description: 'Discover 15 best golf breaks in Wales 2025. Celtic Manor, Royal St David\'s, Royal Porthcawl + 12 more Welsh courses. Championship links, luxury resorts, pricing guide.',
+  title: 'Best Golf Breaks Wales 2025: 15 Top Welsh Courses | Welton Golf',
+  description: 'Discover 15 best golf breaks Wales 2025. Celtic Manor, Royal St David\'s, Royal Porthcawl + 12 more. Championship links, luxury resorts.',
   keywords: 'wales golf breaks 2025, welsh golf holidays, celtic manor golf, royal st davids golf, royal porthcawl golf, wales golf resorts, welsh golf courses, links golf wales',
   openGraph: {
     title: 'Best Golf Breaks in Wales 2025: 15 Top Welsh Courses & Golf Holidays',

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import StructuredData from '@/components/StructuredData'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -85,6 +86,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <StructuredData
+          organization={{
+            name: 'Welton Golf',
+            url: 'https://www.weltongolf.com',
+            description: 'Professional golf tools and World Handicap System calculator. Free golf applications for calculating handicap index, course handicap, and improving your game.',
+            sameAs: [
+              'https://twitter.com/weltongolf'
+            ]
+          }}
+          website={{
+            name: 'Welton Golf',
+            url: 'https://www.weltongolf.com',
+            description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index, track scores, and improve your game.',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: 'https://www.weltongolf.com?q={search_term_string}',
+              'query-input': 'required name=search_term_string'
+            }
+          }}
+        />
         <Header />
         {children}
         <Footer />

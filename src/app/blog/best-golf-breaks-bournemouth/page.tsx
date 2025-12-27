@@ -6,7 +6,7 @@ import { MapPin, Star, Calendar, Phone, Globe, Car, Utensils, Bed, Trophy } from
 import bournemouthImages from '@/data/bournemouthImages.json'
 
 export const metadata: Metadata = {
-  title: 'Best Golf Breaks in Bournemouth 2025: 8 Top Dorset Courses & Coastal Golf Holidays | Welton Golf',
+  title: 'Best Golf Breaks Bournemouth 2025: 8 Top Dorset Courses | Welton Golf',
   description: 'Discover 8 best golf breaks in Bournemouth 2025. Ferndown, Broadstone, Barton-on-Sea + 5 more coastal courses. Championship golf, luxury resorts, pricing guide.',
   keywords: 'bournemouth golf breaks 2025, dorset golf holidays, coastal golf breaks UK, ferndown golf club, broadstone golf club, barton on sea golf, bournemouth golf resorts, dorset golf courses, coastal golf breaks england',
   openGraph: {

@@ -6,8 +6,8 @@ import { MapPin, Star, Calendar, Phone, Globe, Car, Utensils, Bed, Trophy } from
 import resortImages from '@/data/resortImages.json'
 
 export const metadata: Metadata = {
-  title: 'Best Golf Breaks UK 2025: 21 Top Golf Holidays Scotland England Wales | Welton Golf',
-  description: 'Discover 21 best golf breaks UK 2025. Celtic Manor, Gleneagles, Trump Turnberry + 18 more. Championship courses, luxury resorts, pricing guide. Book your perfect UK golf holiday.',
+  title: 'Best Golf Breaks UK 2025: 21 Top Golf Holidays | Welton Golf',
+  description: 'Discover 21 best golf breaks UK 2025. Celtic Manor, Gleneagles, Trump Turnberry + 18 more. Championship courses, luxury resorts, pricing guide.',
   keywords: 'golf breaks UK 2025, best golf holidays UK, UK golf packages, Scotland golf breaks, England golf trips, Wales golf holidays, golf weekends UK, British golf resorts, Celtic Manor golf, Gleneagles golf, Trump Turnberry golf, golf vacation UK, UK links courses, championship golf courses UK, golf resort breaks UK, ryder cup venues golf',
   openGraph: {
     title: 'Best Golf Breaks UK 2025: 21 Top Golf Holidays Scotland England Wales',

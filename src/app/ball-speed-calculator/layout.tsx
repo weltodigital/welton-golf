@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Golf Ball Speed Calculator - Distance & Smash Factor Calculator | Welton Golf',
-  description: 'Calculate golf ball speed, carry distance, and total distance with our physics-based calculator. Analyze smash factor, launch angle, and spin rate for optimal performance.',
+  title: 'Golf Ball Speed Calculator - Distance & Smash Factor | Welton Golf',
+  description: 'Calculate golf ball speed, carry distance, and total distance with physics-based calculator. Analyze smash factor and launch angle for performance.',
   keywords: [
     'golf ball speed calculator',
     'ball speed calculator',

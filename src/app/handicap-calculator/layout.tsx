@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Free Golf Handicap Calculator (WHS) - Calculate Your Official Handicap Index | Welton Golf',
-  description: 'Calculate your official World Handicap System (WHS) index for free. UK\'s most accurate golf handicap calculator with course rating, slope rating, and automatic WHS compliance. Track 20 rounds and get instant handicap updates.',
+  title: 'Golf Handicap Calculator (WHS) - Official Index | Welton Golf',
+  description: 'Calculate your official World Handicap System index for free. Accurate golf handicap calculator with course rating and slope rating support.',
   keywords: [
     'golf handicap calculator',
     'WHS handicap calculator',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     'EGA handicap calculator',
     'R&A handicap system'
   ].join(', '),
-  authors: [{ name: 'Welton Golf', url: 'https://welton-golf.com' }],
+  authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
   creator: 'Welton Golf',
   publisher: 'Welton Golf',
   formatDetection: {
@@ -29,14 +30,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://welton-golf.com'),
+  metadataBase: new URL('https://www.weltongolf.com'),
   alternates: {
     canonical: '/handicap-calculator',
   },
   openGraph: {
-    title: 'Free Golf Handicap Calculator (WHS) - Calculate Your Official Handicap Index',
-    description: 'Calculate your official World Handicap System index for free. UK\'s most accurate golf handicap calculator with automatic WHS compliance.',
-    url: 'https://welton-golf.com/handicap-calculator',
+    title: 'Golf Handicap Calculator (WHS) - Official Index | Welton Golf',
+    description: 'Calculate your official World Handicap System index for free. Accurate golf handicap calculator with course rating and slope rating support.',
+    url: 'https://www.weltongolf.com/handicap-calculator',
     siteName: 'Welton Golf',
     images: [
       {
@@ -51,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Golf Handicap Calculator (WHS) - Calculate Your Official Handicap Index',
-    description: 'Calculate your official World Handicap System index for free. UK\'s most accurate golf handicap calculator.',
+    title: 'Golf Handicap Calculator (WHS) - Official Index | Welton Golf',
+    description: 'Calculate your official World Handicap System index for free. Accurate golf handicap calculator with course rating support.',
     images: ['/golf-handicap-calculator-twitter.jpg'],
     creator: '@weltongolf',
   },
@@ -82,7 +83,7 @@ export default function HandicapCalculatorLayout({
     '@type': 'WebApplication',
     name: 'Golf Handicap Calculator (WHS)',
     description: 'Calculate your official World Handicap System (WHS) index. Free golf handicap calculator with course rating, slope rating, and score tracking.',
-    url: 'https://welton-golf.com/handicap-calculator',
+    url: 'https://www.weltongolf.com/handicap-calculator',
     applicationCategory: 'SportsApplication',
     operatingSystem: 'Any',
     permissions: 'browser',
@@ -95,7 +96,7 @@ export default function HandicapCalculatorLayout({
     creator: {
       '@type': 'Organization',
       name: 'Welton Golf',
-      url: 'https://welton-golf.com',
+      url: 'https://www.weltongolf.com',
     },
     applicationSubCategory: 'Golf Handicap Calculator',
     aggregateRating: {
@@ -123,7 +124,7 @@ export default function HandicapCalculatorLayout({
     isPartOf: {
       '@type': 'WebSite',
       name: 'Welton Golf',
-      url: 'https://welton-golf.com',
+      url: 'https://www.weltongolf.com',
     },
   }
 

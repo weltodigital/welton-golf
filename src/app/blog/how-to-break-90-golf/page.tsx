@@ -5,8 +5,8 @@ import Link from "next/link"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "How to Break 90 in Golf: Complete Step-by-Step Guide for Intermediate Golfers",
-  description: "Master the fundamentals and break 90 consistently with our proven 8-step system. Practical tips for course management, short game improvement, and scoring strategies that work.",
+  title: "How to Break 90 in Golf: Complete Step-by-Step Guide | Welton",
+  description: "Master the fundamentals and break 90 consistently with our proven 8-step system. Practical course management and short game tips.",
   keywords: "how to break 90 in golf, golf tips for breaking 90, intermediate golf instruction, golf course management, golf scoring tips, improve golf handicap, golf practice routine",
   authors: [{ name: "Welton Golf" }],
   openGraph: {
