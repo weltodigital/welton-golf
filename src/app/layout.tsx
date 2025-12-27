@@ -8,8 +8,8 @@ import StructuredData from '@/components/StructuredData'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Golf Handicap Calculator & Professional Golf Tools | Welton Golf',
-  description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index, track scores, and improve your game.',
+  title: 'Welton Golf - Your Complete Golf Companion | Tools, Guides & Course Directory',
+  description: 'Your complete golf companion offering professional handicap tools, course directories, expert guides, and golf travel inspiration. Everything you need to improve your game in one place.',
   keywords: [
     'free golf handicap calculator',
     'WHS handicap calculator',
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Golf Handicap Calculator & Professional Golf Tools | Welton Golf',
-    description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index and improve your game.',
+    title: 'Welton Golf - Your Complete Golf Companion | Tools, Guides & Course Directory',
+    description: 'Your complete golf companion offering professional handicap tools, course directories, expert guides, and golf travel inspiration. Everything you need to improve your game in one place.',
     url: 'https://www.weltongolf.com',
     siteName: 'Welton Golf',
     images: [
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Golf Handicap Calculator & Professional Golf Tools | Welton Golf',
-    description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index and improve your game.',
+    title: 'Welton Golf - Your Complete Golf Companion | Tools, Guides & Course Directory',
+    description: 'Your complete golf companion offering professional handicap tools, course directories, expert guides, and golf travel inspiration.',
     images: ['/golf-apps-homepage-twitter.jpg'],
     creator: '@weltongolf',
   },
@@ -90,7 +90,7 @@ export default function RootLayout({
           organization={{
             name: 'Welton Golf',
             url: 'https://www.weltongolf.com',
-            description: 'Professional golf tools and World Handicap System calculator. Free golf applications for calculating handicap index, course handicap, and improving your game.',
+            description: 'Your complete golf companion offering professional handicap tools, course directories, expert guides, and golf travel inspiration. Everything you need to improve your game in one place.',
             sameAs: [
               'https://twitter.com/weltongolf'
             ]
@@ -98,7 +98,7 @@ export default function RootLayout({
           website={{
             name: 'Welton Golf',
             url: 'https://www.weltongolf.com',
-            description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index, track scores, and improve your game.',
+            description: 'Your complete golf companion offering professional handicap tools, course directories, expert guides, and golf travel inspiration. Everything you need to improve your game in one place.',
             potentialAction: {
               '@type': 'SearchAction',
               target: 'https://www.weltongolf.com?q={search_term_string}',
