@@ -7,8 +7,8 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Free Golf Handicap Calculator (WHS) & Golf Apps | Welton Golf',
-  description: 'Free World Handicap System calculator and professional golf tools. Calculate your WHS handicap index instantly with course rating and slope rating support. UK\'s most trusted golf handicap calculator.',
+  title: 'Golf Handicap Calculator & Professional Golf Tools | Welton Golf',
+  description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index, track scores, and improve your game.',
   keywords: [
     'free golf handicap calculator',
     'WHS handicap calculator',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     'golf handicap tracker free',
     'WHS calculator UK'
   ].join(', '),
-  authors: [{ name: 'Welton Golf', url: 'https://welton-golf.com' }],
+  authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
   creator: 'Welton Golf',
   publisher: 'Welton Golf',
   formatDetection: {
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://welton-golf.com'),
+  metadataBase: new URL('https://www.weltongolf.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Free Golf Handicap Calculator (WHS) & Professional Golf Tools',
-    description: 'Calculate your World Handicap System index for free. Professional golf handicap calculator with course rating, slope rating, and score tracking.',
-    url: 'https://welton-golf.com',
+    title: 'Golf Handicap Calculator & Professional Golf Tools | Welton Golf',
+    description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index and improve your game.',
+    url: 'https://www.weltongolf.com',
     siteName: 'Welton Golf',
     images: [
       {
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Golf Handicap Calculator (WHS) & Professional Golf Tools',
-    description: 'Calculate your World Handicap System index for free. Professional golf handicap calculator.',
+    title: 'Golf Handicap Calculator & Professional Golf Tools | Welton Golf',
+    description: 'Free professional golf tools and World Handicap System calculator. Calculate your golf handicap index and improve your game.',
     images: ['/golf-apps-homepage-twitter.jpg'],
     creator: '@weltongolf',
   },
