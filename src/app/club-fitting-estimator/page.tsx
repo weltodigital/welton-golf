@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -71,7 +71,7 @@ export default function ClubFittingEstimator() {
   }, [fittingSessions])
 
   // Generate fitting recommendations
-  const generateRecommendations = () => {
+  const generateRecommendations = useCallback(() => {
     const recommendations: FittingRecommendation[] = []
 
     const handicap = parseFloat(currentSession.handicap) || 0
@@ -109,7 +109,7 @@ export default function ClubFittingEstimator() {
     recommendations.push(ballRecommendation)
 
     setRecommendations(recommendations)
-  }
+  }, [currentSession])
 
   // Shaft flex recommendation logic
   const getShaftFlexRecommendation = (swingSpeed: number, age: number, ballFlight: string): FittingRecommendation => {
@@ -309,7 +309,7 @@ export default function ClubFittingEstimator() {
     if (currentSession.swingSpeed && currentSession.handicap) {
       generateRecommendations()
     }
-  }, [currentSession])
+  }, [currentSession, generateRecommendations])
 
   const saveFittingSession = () => {
     if (!currentSession.name || recommendations.length === 0) return

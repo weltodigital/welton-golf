@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -52,7 +52,7 @@ export default function BallSpeedCalculator() {
   }, [calculations])
 
   // Calculate ball speed and distances
-  const calculateBallSpeed = () => {
+  const calculateBallSpeed = useCallback(() => {
     const clubSpeed = parseFloat(currentCalc.clubheadSpeed)
     const smash = parseFloat(currentCalc.smashFactor) || getTypicalSmashFactor(currentCalc.clubType)
     const launch = parseFloat(currentCalc.launchAngle) || getTypicalLaunchAngle(currentCalc.clubType)
@@ -82,7 +82,7 @@ export default function BallSpeedCalculator() {
       totalDistance: Math.round(totalDistance),
       efficiency: Math.round(efficiency)
     })
-  }
+  }, [currentCalc.clubheadSpeed, currentCalc.smashFactor, currentCalc.launchAngle, currentCalc.spinRate, currentCalc.clubType])
 
   // Get typical smash factor for club type
   const getTypicalSmashFactor = (clubType: string): number => {
@@ -177,7 +177,7 @@ export default function BallSpeedCalculator() {
   // Calculate whenever inputs change
   useEffect(() => {
     calculateBallSpeed()
-  }, [currentCalc.clubheadSpeed, currentCalc.smashFactor, currentCalc.launchAngle, currentCalc.spinRate, currentCalc.clubType])
+  }, [calculateBallSpeed])
 
   const saveCalculation = () => {
     if (!currentCalc.clubheadSpeed || results.ballSpeed === 0) return

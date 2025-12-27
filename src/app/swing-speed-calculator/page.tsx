@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -48,7 +48,7 @@ export default function SwingSpeedCalculator() {
   }, [calculations])
 
   // Calculate swing speed from ball speed
-  const calculateSwingSpeed = () => {
+  const calculateSwingSpeed = useCallback(() => {
     const ballSpeed = parseFloat(currentCalc.ballSpeed)
     const smash = parseFloat(currentCalc.smashFactor) || getTypicalSmashFactor(currentCalc.clubType)
 
@@ -76,7 +76,7 @@ export default function SwingSpeedCalculator() {
       efficiency: Math.round(efficiency),
       recommendation
     })
-  }
+  }, [currentCalc.ballSpeed, currentCalc.smashFactor, currentCalc.clubType])
 
   // Get typical smash factor for club type
   const getTypicalSmashFactor = (clubType: string): number => {
@@ -147,7 +147,7 @@ export default function SwingSpeedCalculator() {
   // Calculate whenever inputs change
   useEffect(() => {
     calculateSwingSpeed()
-  }, [currentCalc.ballSpeed, currentCalc.smashFactor, currentCalc.clubType])
+  }, [calculateSwingSpeed])
 
   const saveCalculation = () => {
     if (!currentCalc.ballSpeed || results.swingSpeed === 0) return

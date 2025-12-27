@@ -3801,7 +3801,9 @@ export default function CourseDirectory() {
     return uniqueCounties.sort()
   }, [])
 
-  const teeTypes = ['white', 'yellow', 'black', 'red', 'blue', 'purple', 'green', 'gold', 'orange', 'red 2017', 'red - 2018', 'red 2019', 'red/yellow', 'white/blue', 'blue 3-11', 'red 3-11', 'blue - new', 'white - new', 'red - new', 'red composite', 'white composite', 'yellow composite', 'white comp', 'red comp', 'yellow comp', 'blue women', 'green 2019', 'orange - women', 'green women', 'red - men', 'green - women', 'yellow - women', 'red men', 'navy 55', 'navy 63', 'navy 68', 'navy 37', 'navy 60', 'new red', 'new yellow', 'new white', 'blue 9', 'red combo', 'white combo', '65', '52', '66', '57', '62', '39'].filter(tee => !tee.includes('alternative') && !tee.includes('winter'))
+  const teeTypes = useMemo(() => {
+    return ['white', 'yellow', 'black', 'red', 'blue', 'purple', 'green', 'gold', 'orange', 'red 2017', 'red - 2018', 'red 2019', 'red/yellow', 'white/blue', 'blue 3-11', 'red 3-11', 'blue - new', 'white - new', 'red - new', 'red composite', 'white composite', 'yellow composite', 'white comp', 'red comp', 'yellow comp', 'blue women', 'green 2019', 'orange - women', 'green women', 'red - men', 'green - women', 'yellow - women', 'red men', 'navy 55', 'navy 63', 'navy 68', 'navy 37', 'navy 60', 'new red', 'new yellow', 'new white', 'blue 9', 'red combo', 'white combo', '65', '52', '66', '57', '62', '39'].filter(tee => !tee.includes('alternative') && !tee.includes('winter'))
+  }, [])
 
   const parValues = useMemo(() => {
     const allPars = courseData.flatMap(course => [course.par.male, course.par.female])
@@ -3907,7 +3909,7 @@ export default function CourseDirectory() {
 
       return matchesSearch && matchesCounty && matchesType && hasMatchingTee
     })
-  }, [searchTerm, selectedCounties, selectedTees, selectedPars, selectedLengths, selectedCourseRatings, selectedSlopeRatings, selectedTypes, selectedGender])
+  }, [searchTerm, selectedCounties, selectedTees, selectedPars, selectedLengths, selectedCourseRatings, selectedSlopeRatings, selectedTypes, selectedGender, teeTypes])
 
   // Create sorted and filtered tee data for display
   const sortedAndFilteredTeeData = useMemo(() => {
@@ -4018,7 +4020,7 @@ export default function CourseDirectory() {
       if (aValue > bValue) return sortDirection === 'asc' ? 1 : -1
       return 0
     })
-  }, [filteredCourses, sortField, sortDirection, selectedGender])
+  }, [filteredCourses, sortField, sortDirection, selectedGender, teeTypes])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -67,7 +67,7 @@ export default function StablefordCalculator() {
   }, [rounds])
 
   // Calculate handicap strokes allocation for each hole
-  const calculateHandicapStrokes = (courseHandicap: number) => {
+  const calculateHandicapStrokes = useCallback((courseHandicap: number) => {
     const strokesPerHole = Math.floor(courseHandicap / 18)
     const extraStrokes = courseHandicap % 18
 
@@ -79,7 +79,7 @@ export default function StablefordCalculator() {
       }
       return strokes
     })
-  }
+  }, [holes])
 
   // Calculate Stableford points for a hole
   const calculateStablefordPoints = (grossScore: number, par: number, handicapStrokes: number): number => {
@@ -130,7 +130,7 @@ export default function StablefordCalculator() {
 
       setHoles(updatedHoles)
     }
-  }, [currentRound.courseHandicap])
+  }, [currentRound.courseHandicap, calculateHandicapStrokes, holes])
 
   const saveRound = () => {
     if (!currentRound.courseHandicap) return

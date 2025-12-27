@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -41,14 +41,6 @@ export default function HandicapCalculator() {
     }
   }, [])
 
-  // Save scores to localStorage whenever scores change
-  useEffect(() => {
-    if (scores.length > 0) {
-      localStorage.setItem('golf-handicap-scores', JSON.stringify(scores))
-      calculateHandicap()
-    }
-  }, [scores])
-
   const addScore = () => {
     if (!currentScore.adjustedGrossScore || !currentScore.courseRating || !currentScore.slopeRating) {
       return
@@ -80,7 +72,7 @@ export default function HandicapCalculator() {
     setScores(prev => prev.filter(score => score.id !== id))
   }
 
-  const calculateHandicap = () => {
+  const calculateHandicap = useCallback(() => {
     if (scores.length < 3) {
       setHandicapIndex(null)
       return
@@ -110,7 +102,15 @@ export default function HandicapCalculator() {
 
     // Handicap Index is the average rounded to 1 decimal place
     setHandicapIndex(Math.round(average * 10) / 10)
-  }
+  }, [scores])
+
+  // Save scores to localStorage whenever scores change
+  useEffect(() => {
+    if (scores.length > 0) {
+      localStorage.setItem('golf-handicap-scores', JSON.stringify(scores))
+      calculateHandicap()
+    }
+  }, [scores, calculateHandicap])
 
   const clearAllScores = () => {
     setScores([])

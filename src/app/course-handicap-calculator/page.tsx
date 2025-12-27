@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -45,7 +45,7 @@ export default function CourseHandicapCalculator() {
     }
   }, [courses])
 
-  const calculateCourseHandicap = () => {
+  const calculateCourseHandicap = useCallback(() => {
     if (!currentEntry.handicapIndex || !currentEntry.courseRating || !currentEntry.slopeRating || !currentEntry.par) {
       setCalculatedHandicap(null)
       return
@@ -60,12 +60,12 @@ export default function CourseHandicapCalculator() {
     const courseHandicap = Math.round((handicapIndex * slopeRating / 113) + (courseRating - par))
 
     setCalculatedHandicap(courseHandicap)
-  }
+  }, [currentEntry.handicapIndex, currentEntry.courseRating, currentEntry.slopeRating, currentEntry.par])
 
   // Calculate whenever relevant fields change
   useEffect(() => {
     calculateCourseHandicap()
-  }, [currentEntry.handicapIndex, currentEntry.courseRating, currentEntry.slopeRating, currentEntry.par])
+  }, [calculateCourseHandicap])
 
   const addEntry = () => {
     if (!currentEntry.handicapIndex || !currentEntry.courseRating || !currentEntry.slopeRating || !currentEntry.par) {
