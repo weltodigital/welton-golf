@@ -1,244 +1,49 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Zap, TrendingUp, Target, Activity } from 'lucide-react'
-
-interface ShaftFlexData {
-  swingSpeed: number
-  ballFlight: string
-  distance: number
-  tempo: string
-  age: number
-  strength: string
-  ballStriking: string
-  clubType: string
-}
+import { Zap, Target } from 'lucide-react'
 
 export default function ShaftFlexCalculator() {
-  const [flexData, setFlexData] = useState<ShaftFlexData>({
-    swingSpeed: 0,
-    ballFlight: '',
-    distance: 0,
-    tempo: '',
-    age: 0,
-    strength: '',
-    ballStriking: '',
-    clubType: ''
-  })
-
+  const [swingSpeed, setSwingSpeed] = useState('')
+  const [ballFlight, setBallFlight] = useState('')
+  const [tempo, setTempo] = useState('')
   const [showResults, setShowResults] = useState(false)
+  const [recommendedFlex, setRecommendedFlex] = useState('')
 
-  // Load saved data on component mount
-  useEffect(() => {
-    const savedData = localStorage.getItem('weltonGolf_shaftFlexData')
-    if (savedData) {
-      try {
-        const parsed = JSON.parse(savedData)
-        setFlexData(parsed)
-        if (parsed.swingSpeed > 0) {
-          setShowResults(true)
-        }
-      } catch (error) {
-        console.error('Error loading saved shaft flex data:', error)
-      }
-    }
-  }, [])
+  const calculateShaftFlex = () => {
+    if (!swingSpeed) return
 
-  // Save data whenever it changes
-  useEffect(() => {
-    localStorage.setItem('weltonGolf_shaftFlexData', JSON.stringify(flexData))
-  }, [flexData])
+    const speed = parseFloat(swingSpeed)
 
-  const shaftRecommendation = useMemo(() => {
-    if (flexData.swingSpeed === 0) {
-      return null
-    }
-
-    // Base flex determination by swing speed
-    let baseFlex = 'Regular'
-    if (flexData.swingSpeed < 75) {
-      baseFlex = 'Ladies'
-    } else if (flexData.swingSpeed >= 75 && flexData.swingSpeed < 85) {
-      baseFlex = 'Senior'
-    } else if (flexData.swingSpeed >= 85 && flexData.swingSpeed < 95) {
-      baseFlex = 'Regular'
-    } else if (flexData.swingSpeed >= 95 && flexData.swingSpeed < 105) {
-      baseFlex = 'Stiff'
+    // Basic shaft flex calculation based on swing speed
+    if (speed < 75) {
+      setRecommendedFlex('Ladies')
+    } else if (speed < 85) {
+      setRecommendedFlex('Senior')
+    } else if (speed < 95) {
+      setRecommendedFlex('Regular')
+    } else if (speed < 105) {
+      setRecommendedFlex('Stiff')
     } else {
-      baseFlex = 'Extra Stiff'
+      setRecommendedFlex('Extra Stiff')
     }
 
-    // Adjustments based on other factors
-    let flexAdjustment = 0
+    setShowResults(true)
+  }
 
-    // Ball flight adjustment
-    if (flexData.ballFlight === 'Too Low') {
-      flexAdjustment -= 1 // Softer flex for higher launch
-    } else if (flexData.ballFlight === 'Too High') {
-      flexAdjustment += 1 // Stiffer flex for lower launch
-    }
-
-    // Distance vs swing speed analysis
-    const expectedDistance = flexData.swingSpeed * 2.4 // Rough formula
-    if (flexData.distance > 0) {
-      if (flexData.distance < expectedDistance * 0.9) {
-        flexAdjustment -= 0.5 // Might need softer flex
-      } else if (flexData.distance > expectedDistance * 1.1) {
-        flexAdjustment += 0.5 // Might need stiffer flex
-      }
-    }
-
-    // Tempo adjustment
-    if (flexData.tempo === 'Very Smooth') {
-      flexAdjustment -= 0.5 // Softer flex
-    } else if (flexData.tempo === 'Very Aggressive') {
-      flexAdjustment += 0.5 // Stiffer flex
-    }
-
-    // Age adjustment
-    if (flexData.age > 60) {
-      flexAdjustment -= 0.5 // Generally softer for older players
-    } else if (flexData.age < 25) {
-      flexAdjustment += 0.25 // Might handle stiffer flex
-    }
-
-    // Strength adjustment
-    if (flexData.strength === 'Below Average') {
-      flexAdjustment -= 0.5
-    } else if (flexData.strength === 'Above Average') {
-      flexAdjustment += 0.5
-    }
-
-    // Ball striking adjustment
-    if (flexData.ballStriking === 'Inconsistent') {
-      flexAdjustment -= 0.25 // Softer might help
-    } else if (flexData.ballStriking === 'Very Consistent') {
-      flexAdjustment += 0.25 // Can handle stiffer
-    }
-
-    // Club type adjustment
-    if (flexData.clubType === 'Fairway Woods') {
-      flexAdjustment -= 0.25 // Generally softer than driver
-    } else if (flexData.clubType === 'Hybrids') {
-      flexAdjustment -= 0.5 // Generally softer
-    } else if (flexData.clubType === 'Irons') {
-      flexAdjustment += 0.25 // Generally stiffer than woods
-    }
-
-    // Convert to flex scale
-    const flexScale: { [key: string]: number } = {
-      'Ladies': 1,
-      'Senior': 2,
-      'Regular': 3,
-      'Stiff': 4,
-      'Extra Stiff': 5
-    }
-
-    const baseFlexValue = flexScale[baseFlex]
-    const adjustedFlexValue = Math.round(baseFlexValue + flexAdjustment)
-    const finalFlexValue = Math.max(1, Math.min(5, adjustedFlexValue))
-
-    const flexMap: { [key: number]: string } = {
-      1: 'Ladies',
-      2: 'Senior',
-      3: 'Regular',
-      4: 'Stiff',
-      5: 'Extra Stiff'
-    }
-
-    const recommendedFlex = flexMap[finalFlexValue]
-
-    // Alternative recommendations
-    const getAlternatives = (primary: string) => {
-      const alternatives = []
-      const primaryValue = flexScale[primary]
-
-      if (primaryValue > 1) {
-        alternatives.push(flexMap[primaryValue - 1])
-      }
-      if (primaryValue < 5) {
-        alternatives.push(flexMap[primaryValue + 1])
-      }
-
-      return alternatives
-    }
-
-    // Performance characteristics
-    const getCharacteristics = (flex: string) => {
-      switch (flex) {
-        case 'Ladies':
-          return {
-            launch: 'High',
-            spin: 'High',
-            feel: 'Very Soft',
-            control: 'Moderate',
-            distance: 'Maximized for slower speeds'
-          }
-        case 'Senior':
-          return {
-            launch: 'High',
-            spin: 'Medium-High',
-            feel: 'Soft',
-            control: 'Good',
-            distance: 'Good for moderate speeds'
-          }
-        case 'Regular':
-          return {
-            launch: 'Medium',
-            spin: 'Medium',
-            feel: 'Balanced',
-            control: 'Good',
-            distance: 'Versatile performance'
-          }
-        case 'Stiff':
-          return {
-            launch: 'Medium-Low',
-            spin: 'Medium-Low',
-            feel: 'Firm',
-            control: 'Excellent',
-            distance: 'Good for faster speeds'
-          }
-        case 'Extra Stiff':
-          return {
-            launch: 'Low',
-            spin: 'Low',
-            feel: 'Very Firm',
-            control: 'Maximum',
-            distance: 'Tour-level performance'
-          }
-        default:
-          return {
-            launch: 'Medium',
-            spin: 'Medium',
-            feel: 'Balanced',
-            control: 'Good',
-            distance: 'Versatile'
-          }
-      }
-    }
-
-    // Fitting confidence
-    const getConfidence = () => {
-      if (Math.abs(flexAdjustment) <= 0.25) return 'High'
-      if (Math.abs(flexAdjustment) <= 0.75) return 'Medium'
-      return 'Low - Professional fitting recommended'
-    }
-
-    return {
-      recommendedFlex,
-      alternatives: getAlternatives(recommendedFlex),
-      characteristics: getCharacteristics(recommendedFlex),
-      swingSpeedRange: getSwingSpeedRange(recommendedFlex),
-      confidence: getConfidence(),
-      adjustmentFactor: flexAdjustment.toFixed(1)
-    }
-  }, [flexData])
+  const handleReset = () => {
+    setSwingSpeed('')
+    setBallFlight('')
+    setTempo('')
+    setShowResults(false)
+    setRecommendedFlex('')
+  }
 
   const getSwingSpeedRange = (flex: string) => {
     switch (flex) {
@@ -251,42 +56,18 @@ export default function ShaftFlexCalculator() {
     }
   }
 
-  const handleCalculate = () => {
-    if (flexData.swingSpeed > 0) {
-      setShowResults(true)
-    }
-  }
-
-  const handleReset = () => {
-    setFlexData({
-      swingSpeed: 0,
-      ballFlight: '',
-      distance: 0,
-      tempo: '',
-      age: 0,
-      strength: '',
-      ballStriking: '',
-      clubType: ''
-    })
-    setShowResults(false)
-    localStorage.removeItem('weltonGolf_shaftFlexData')
-  }
-
   return (
-    <div className="min-h-screen bg-white ">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <div>
-          {/* Breadcrumbs */
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
             <li><span className="mx-2 text-slate-400">Shaft Flex Calculator</span></li>
           </ol>
         </nav>
-        </div>
 
-        <div className="text-center mb-8"> {/* Header */}
-          <h1 className="text-4xl font-black text-slate-900 mb-4 tracking-tight">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-black text-slate-900 mb-4">
             Golf Shaft Flex Calculator
           </h1>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -296,22 +77,18 @@ export default function ShaftFlexCalculator() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Input Form */}
           <Card className="p-6">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                <Zap className="h-6 w-6 text-emerald-600" />
-              </div>
+              <Zap className="h-6 w-6 text-emerald-600" />
               <h2 className="text-2xl font-semibold text-slate-900">
                 Swing Analysis
               </h2>
             </div>
 
             <div className="space-y-6">
-              {/* Swing Speed */}
               <div>
                 <Label htmlFor="swingSpeed" className="text-sm font-medium text-slate-600">
-                  Driver Swing Speed (mph) *
+                  Driver Swing Speed (mph)
                 </Label>
                 <p className="text-xs text-slate-600 mb-2">
                   Use a launch monitor or estimate based on distance
@@ -320,24 +97,17 @@ export default function ShaftFlexCalculator() {
                   id="swingSpeed"
                   type="number"
                   placeholder="e.g., 95"
-                  value={flexData.swingSpeed || ''}
-                  onChange={(e) => setFlexData(prev => ({
-                    ...prev,
-                    swingSpeed: parseFloat(e.target.value) || 0
-                  }))}
+                  value={swingSpeed}
+                  onChange={(e) => setSwingSpeed(e.target.value)}
                   className="w-full"
                 />
               </div>
 
-              {/* Ball Flight */}
               <div>
                 <Label className="text-sm font-medium text-slate-600">
                   Current Ball Flight
                 </Label>
-                <Select
-                  value={flexData.ballFlight}
-                  onValueChange={(value) => setFlexData(prev => ({ ...prev, ballFlight: value }))}
-                >
+                <Select value={ballFlight} onValueChange={setBallFlight}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select your typical ball flight" />
                   </SelectTrigger>
@@ -349,36 +119,11 @@ export default function ShaftFlexCalculator() {
                 </Select>
               </div>
 
-              {/* Distance */}
-              <div>
-                <Label htmlFor="distance" className="text-sm font-medium text-slate-600">
-                  Average Driver Distance (yards)
-                </Label>
-                <p className="text-xs text-slate-600 mb-2">
-                  Total distance including roll
-                </p>
-                <Input
-                  id="distance"
-                  type="number"
-                  placeholder="e.g., 240"
-                  value={flexData.distance || ''}
-                  onChange={(e) => setFlexData(prev => ({
-                    ...prev,
-                    distance: parseFloat(e.target.value) || 0
-                  }))}
-                  className="w-full"
-                />
-              </div>
-
-              {/* Tempo */}
               <div>
                 <Label className="text-sm font-medium text-slate-600">
                   Swing Tempo
                 </Label>
-                <Select
-                  value={flexData.tempo}
-                  onValueChange={(value) => setFlexData(prev => ({ ...prev, tempo: value }))}
-                >
+                <Select value={tempo} onValueChange={setTempo}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select your swing tempo" />
                   </SelectTrigger>
@@ -392,92 +137,11 @@ export default function ShaftFlexCalculator() {
                 </Select>
               </div>
 
-              {/* Age */}
-              <div>
-                <Label htmlFor="age" className="text-sm font-medium text-slate-600">
-                  Age
-                </Label>
-                <Input
-                  id="age"
-                  type="number"
-                  placeholder="e.g., 35"
-                  value={flexData.age || ''}
-                  onChange={(e) => setFlexData(prev => ({
-                    ...prev,
-                    age: parseFloat(e.target.value) || 0
-                  }))}
-                  className="w-full"
-                />
-              </div>
-
-              {/* Strength */}
-              <div>
-                <Label className="text-sm font-medium text-slate-600">
-                  Physical Strength
-                </Label>
-                <Select
-                  value={flexData.strength}
-                  onValueChange={(value) => setFlexData(prev => ({ ...prev, strength: value }))}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select your strength level" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Below Average">Below Average</SelectItem>
-                    <SelectItem value="Average">Average</SelectItem>
-                    <SelectItem value="Above Average">Above Average</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Ball Striking */}
-              <div>
-                <Label className="text-sm font-medium text-slate-600">
-                  Ball Striking Consistency
-                </Label>
-                <Select
-                  value={flexData.ballStriking}
-                  onValueChange={(value) => setFlexData(prev => ({ ...prev, ballStriking: value }))}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select your ball striking" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Inconsistent">Inconsistent</SelectItem>
-                    <SelectItem value="Average">Average</SelectItem>
-                    <SelectItem value="Consistent">Consistent</SelectItem>
-                    <SelectItem value="Very Consistent">Very Consistent</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Club Type */}
-              <div>
-                <Label className="text-sm font-medium text-slate-600">
-                  Primary Club Type
-                </Label>
-                <Select
-                  value={flexData.clubType}
-                  onValueChange={(value) => setFlexData(prev => ({ ...prev, clubType: value }))}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select club type for fitting" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Driver">Driver</SelectItem>
-                    <SelectItem value="Fairway Woods">Fairway Woods</SelectItem>
-                    <SelectItem value="Hybrids">Hybrids</SelectItem>
-                    <SelectItem value="Irons">Irons</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Buttons */}
               <div className="flex gap-3 pt-4">
                 <Button
-                  onClick={handleCalculate}
-                  disabled={!flexData.swingSpeed}
-                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0"
+                  onClick={calculateShaftFlex}
+                  disabled={!swingSpeed}
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white"
                 >
                   Calculate Shaft Flex
                 </Button>
@@ -492,36 +156,31 @@ export default function ShaftFlexCalculator() {
             </div>
           </Card>
 
-          {/* Results */}
-          {showResults && shaftRecommendation && (
+          {showResults && (
             <Card className="p-6">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                  <Target className="h-6 w-6 text-emerald-600" />
-                </div>
+                <Target className="h-6 w-6 text-emerald-600" />
                 <h2 className="text-2xl font-semibold text-slate-900">
                   Shaft Flex Recommendation
                 </h2>
               </div>
 
               <div className="space-y-6">
-                {/* Primary Recommendation */}
                 <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
                     Recommended Shaft Flex
                   </h3>
                   <div className="text-3xl font-bold text-emerald-700 mb-2">
-                    {shaftRecommendation.recommendedFlex}
+                    {recommendedFlex}
                   </div>
                   <div className="text-sm text-slate-700">
-                    Swing Speed Range: {shaftRecommendation.swingSpeedRange}
+                    Swing Speed Range: {getSwingSpeedRange(recommendedFlex)}
                   </div>
                   <div className="text-sm text-slate-700">
-                    Confidence: {shaftRecommendation.confidence}
+                    Your Speed: {swingSpeed} mph
                   </div>
                 </div>
 
-                {/* Performance Characteristics */}
                 <div>
                   <h4 className="font-semibold text-slate-900 mb-3">
                     Performance Characteristics
@@ -530,59 +189,30 @@ export default function ShaftFlexCalculator() {
                     <div className="p-3 bg-slate-100 rounded">
                       <div className="font-medium text-slate-900">Launch</div>
                       <div className="text-slate-700">
-                        {shaftRecommendation.characteristics.launch}
-                      </div>
-                    </div>
-                    <div className="p-3 bg-slate-100 rounded">
-                      <div className="font-medium text-slate-900">Spin</div>
-                      <div className="text-slate-700">
-                        {shaftRecommendation.characteristics.spin}
+                        {recommendedFlex === 'Ladies' || recommendedFlex === 'Senior' ? 'High' :
+                         recommendedFlex === 'Regular' ? 'Medium' : 'Low'}
                       </div>
                     </div>
                     <div className="p-3 bg-slate-100 rounded">
                       <div className="font-medium text-slate-900">Feel</div>
                       <div className="text-slate-700">
-                        {shaftRecommendation.characteristics.feel}
-                      </div>
-                    </div>
-                    <div className="p-3 bg-slate-100 rounded">
-                      <div className="font-medium text-slate-900">Control</div>
-                      <div className="text-slate-700">
-                        {shaftRecommendation.characteristics.control}
+                        {recommendedFlex === 'Ladies' || recommendedFlex === 'Senior' ? 'Soft' :
+                         recommendedFlex === 'Regular' ? 'Balanced' : 'Firm'}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Alternative Options */}
-                {shaftRecommendation.alternatives.length > 0 && (
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-3">
-                      Alternative Options
-                    </h4>
-                    <div className="flex gap-2">
-                      {shaftRecommendation.alternatives.map((alt, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-emerald-600 rounded text-sm text-white"
-                        >
-                          {alt}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-xs text-slate-700 mt-2">
-                      Consider testing these alternatives during a professional fitting
-                    </p>
-                  </div>
-                )}
-
-                {/* Expected Performance */}
                 <div>
                   <h4 className="font-semibold text-slate-900 mb-2">
                     Expected Performance
                   </h4>
                   <p className="text-sm text-slate-600">
-                    {shaftRecommendation.characteristics.distance}
+                    {recommendedFlex === 'Ladies' || recommendedFlex === 'Senior'
+                      ? 'Maximized distance for moderate swing speeds with higher launch'
+                      : recommendedFlex === 'Regular'
+                      ? 'Versatile performance with balanced launch and control'
+                      : 'Enhanced control and accuracy for faster swing speeds'}
                   </p>
                 </div>
               </div>
@@ -590,21 +220,19 @@ export default function ShaftFlexCalculator() {
           )}
         </div>
 
-        {/* Educational Content */}
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
-              <Activity className="h-5 w-5 text-emerald-600" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">
               Understanding Shaft Flex
             </h3>
             <div className="space-y-4 text-sm text-slate-600">
               <div>
                 <strong className="text-slate-900">Shaft Flex Basics:</strong>
-                <p>Shaft flex refers to how much the shaft bends during the swing. The right flex helps optimize launch conditions, spin rate, and overall performance.</p>
+                <p>Shaft flex refers to how much the shaft bends during the swing. The right flex helps optimize launch conditions and overall performance.</p>
               </div>
               <div>
                 <strong className="text-slate-900">Flex Options:</strong>
-                <ul className="list-disc list-inside mt-1">
+                <ul className="list-disc list-inside mt-1 space-y-1">
                   <li>Ladies (L): Softest flex, highest launch</li>
                   <li>Senior (A): Soft flex for moderate speeds</li>
                   <li>Regular (R): Most common, balanced performance</li>
@@ -616,18 +244,17 @@ export default function ShaftFlexCalculator() {
           </Card>
 
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-emerald-600" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">
               Impact of Wrong Flex
             </h3>
             <div className="space-y-4 text-sm text-slate-600">
               <div>
                 <strong className="text-slate-900">Too Stiff:</strong>
-                <p>Low ball flight, slice tendency, loss of distance, harsh feel, difficulty getting ball airborne.</p>
+                <p>Low ball flight, slice tendency, loss of distance, difficulty getting ball airborne.</p>
               </div>
               <div>
                 <strong className="text-slate-900">Too Soft:</strong>
-                <p>High ball flight, hook tendency, loss of accuracy, inconsistent contact, loss of control.</p>
+                <p>High ball flight, hook tendency, loss of accuracy, inconsistent contact.</p>
               </div>
               <div>
                 <strong className="text-slate-900">Proper Fit:</strong>
@@ -636,45 +263,6 @@ export default function ShaftFlexCalculator() {
             </div>
           </Card>
         </div>
-
-        {/* Professional Fitting Info */}
-        <Card className="mt-8 p-6">
-          <h3 className="text-xl font-semibold text-slate-900 mb-4">
-            Professional Shaft Fitting Recommendations
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
-            <div>
-              <h4 className="font-semibold text-slate-900 mb-2">Key Measurements</h4>
-              <ul className="space-y-1 list-disc list-inside">
-                <li>Swing speed with launch monitor</li>
-                <li>Ball flight analysis</li>
-                <li>Spin rate measurements</li>
-                <li>Launch angle optimization</li>
-                <li>Dispersion patterns</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-slate-900 mb-2">Shaft Properties</h4>
-              <ul className="space-y-1 list-disc list-inside">
-                <li>Flex profile (tip/butt flex)</li>
-                <li>Kick point (bend location)</li>
-                <li>Weight considerations</li>
-                <li>Torque characteristics</li>
-                <li>Material composition</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-slate-900 mb-2">When to Get Fitted</h4>
-              <ul className="space-y-1 list-disc list-inside">
-                <li>New equipment purchase</li>
-                <li>Significant swing changes</li>
-                <li>Inconsistent ball flight</li>
-                <li>Age-related strength changes</li>
-                <li>Performance plateau</li>
-              </ul>
-            </div>
-          </div>
-        </Card>
       </div>
     </div>
   )
