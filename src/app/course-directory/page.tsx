@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -4023,22 +4024,30 @@ export default function CourseDirectory() {
   }, [filteredCourses, sortField, sortDirection, selectedGender, teeTypes])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+        <div>
+          {/* Breadcrumbs */}
+        <nav className="text-sm text-slate-600 mb-4">
+          <ol className="flex space-x-2">
+            <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+            <li><span className="mx-2 text-slate-400">›</span>Course Directory</li>
+          </ol>
+        </nav>
+        </div>
+
+        <div className="text-center mb-12"> {/* Header */}
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Golf Course Directory
           </h1>
-          <p className="text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-700 max-w-3xl mx-auto">
             Discover golf courses with detailed information including par, slope ratings, course ratings, and more.
           </p>
         </div>
 
-        {/* Filters */}
-        <Card className="mb-8">
+        <Card className="mb-8"> {/* Filters */}
           <CardHeader>
-            <CardTitle className="text-xl font-semibold" style={{ color: '#183a37' }}>
+            <CardTitle className="text-xl font-semibold text-slate-900">
               Search & Filter Courses
             </CardTitle>
           </CardHeader>
@@ -4058,107 +4067,163 @@ export default function CourseDirectory() {
               {/* Gender Filter */}
               <div className="flex items-center gap-4">
                 <label className="text-sm font-medium text-slate-700">Gender:</label>
-                <Select value={selectedGender} onValueChange={setSelectedGender}>
-                  <SelectTrigger className="w-32">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="male">Male</SelectItem>
-                    <SelectItem value="female">Female</SelectItem>
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-32 flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>{selectedGender === 'male' ? 'Male' : 'Female'}</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1">
+                      <button
+                        onClick={() => setSelectedGender('male')}
+                        className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                      >
+                        Male
+                      </button>
+                      <button
+                        onClick={() => setSelectedGender('female')}
+                        className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                      >
+                        Female
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Other Filter Dropdowns */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-4">
                 {/* County Filter */}
-                <Select onValueChange={(value) => toggleFilter(value, selectedCounties, setSelectedCounties)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="County" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {counties.map(county => (
-                      <SelectItem key={county} value={county}>{county}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-full flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>County</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1 max-h-48 overflow-y-auto">
+                      {counties.map(county => (
+                        <button
+                          key={county}
+                          onClick={() => toggleFilter(county, selectedCounties, setSelectedCounties)}
+                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                        >
+                          {county}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
                 {/* Tee Filter */}
-                <Select onValueChange={(value) => toggleFilter(value, selectedTees, setSelectedTees)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Tee" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {teeTypes.map(teeType => (
-                      <SelectItem key={teeType} value={teeType}>
-                        {teeType.charAt(0).toUpperCase() + teeType.slice(1)}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-full flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>Tee</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1 max-h-48 overflow-y-auto">
+                      {teeTypes.map(teeType => (
+                        <button
+                          key={teeType}
+                          onClick={() => toggleFilter(teeType, selectedTees, setSelectedTees)}
+                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                        >
+                          {teeType.charAt(0).toUpperCase() + teeType.slice(1)}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
                 {/* Par Filter */}
-                <Select onValueChange={(value) => toggleFilter(value, selectedPars, setSelectedPars)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Par" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {parValues.map(par => (
-                      <SelectItem key={par} value={par.toString()}>{par}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-full flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>Par</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1 max-h-48 overflow-y-auto">
+                      {parValues.map(par => (
+                        <button
+                          key={par}
+                          onClick={() => toggleFilter(par.toString(), selectedPars, setSelectedPars)}
+                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                        >
+                          {par}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
                 {/* Length Filter */}
-                <Select onValueChange={(value) => toggleFilter(value, selectedLengths, setSelectedLengths)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Length" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="under-5000">Under 5000 yds</SelectItem>
-                    <SelectItem value="5000-5500">5000-5500 yds</SelectItem>
-                    <SelectItem value="5500-6000">5500-6000 yds</SelectItem>
-                    <SelectItem value="over-6000">Over 6000 yds</SelectItem>
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-full flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>Length</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1 max-h-48 overflow-y-auto">
+                      <button onClick={() => toggleFilter('under-5000', selectedLengths, setSelectedLengths)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Under 5000 yds</button>
+                      <button onClick={() => toggleFilter('5000-5500', selectedLengths, setSelectedLengths)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">5000-5500 yds</button>
+                      <button onClick={() => toggleFilter('5500-6000', selectedLengths, setSelectedLengths)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">5500-6000 yds</button>
+                      <button onClick={() => toggleFilter('over-6000', selectedLengths, setSelectedLengths)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Over 6000 yds</button>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Course Rating Filter */}
-                <Select onValueChange={(value) => toggleFilter(value, selectedCourseRatings, setSelectedCourseRatings)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Course Rating" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="under-65">Under 65</SelectItem>
-                    <SelectItem value="65-70">65-70</SelectItem>
-                    <SelectItem value="70-75">70-75</SelectItem>
-                    <SelectItem value="over-75">Over 75</SelectItem>
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-full flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>Course Rating</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1 max-h-48 overflow-y-auto">
+                      <button onClick={() => toggleFilter('under-65', selectedCourseRatings, setSelectedCourseRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Under 65</button>
+                      <button onClick={() => toggleFilter('65-70', selectedCourseRatings, setSelectedCourseRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">65-70</button>
+                      <button onClick={() => toggleFilter('70-75', selectedCourseRatings, setSelectedCourseRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">70-75</button>
+                      <button onClick={() => toggleFilter('over-75', selectedCourseRatings, setSelectedCourseRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Over 75</button>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Slope Rating Filter */}
-                <Select onValueChange={(value) => toggleFilter(value, selectedSlopeRatings, setSelectedSlopeRatings)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Slope Rating" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="under-120">Under 120</SelectItem>
-                    <SelectItem value="120-130">120-130</SelectItem>
-                    <SelectItem value="130-140">130-140</SelectItem>
-                    <SelectItem value="over-140">Over 140</SelectItem>
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-full flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>Slope Rating</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1 max-h-48 overflow-y-auto">
+                      <button onClick={() => toggleFilter('under-120', selectedSlopeRatings, setSelectedSlopeRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Under 120</button>
+                      <button onClick={() => toggleFilter('120-130', selectedSlopeRatings, setSelectedSlopeRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">120-130</button>
+                      <button onClick={() => toggleFilter('130-140', selectedSlopeRatings, setSelectedSlopeRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">130-140</button>
+                      <button onClick={() => toggleFilter('over-140', selectedSlopeRatings, setSelectedSlopeRatings)} className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">Over 140</button>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Type Filter */}
-                <Select onValueChange={(value) => toggleFilter(value, selectedTypes, setSelectedTypes)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {courseTypes.map(type => (
-                      <SelectItem key={type} value={type}>{type}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="relative group">
+                  <button className="w-full flex items-center justify-between px-4 py-2 text-sm border border-slate-300 rounded-md bg-white text-emerald-700 hover:border-emerald-500 transition-colors">
+                    <span>Type</span>
+                    <ChevronDown className="h-4 w-4 text-emerald-600" />
+                  </button>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-slate-300 rounded-md shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="py-1 max-h-48 overflow-y-auto">
+                      {courseTypes.map(type => (
+                        <button
+                          key={type}
+                          onClick={() => toggleFilter(type, selectedTypes, setSelectedTypes)}
+                          className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                        >
+                          {type}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Selected Filters Display */}
@@ -4265,19 +4330,19 @@ export default function CourseDirectory() {
 
         {/* Results Count */}
         <div className="mb-6">
-          <p className="text-slate-600 dark:text-slate-400">
+          <p className="text-slate-600 text-slate-600">
             Showing {sortedAndFilteredTeeData.length} result{sortedAndFilteredTeeData.length !== 1 ? 's' : ''}
           </p>
         </div>
 
         {/* Course List Directory */}
         <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-          {/* Table Header */}
-          <div className="grid grid-cols-10 gap-3 px-4 py-3 bg-gray-50 border-b font-semibold text-xs md:text-sm" style={{ color: '#183a37' }}>
-            <div className="col-span-2 flex items-center">
+          {/* Table Header - Responsive Layout */}
+          <div className="hidden md:grid grid-cols-12 gap-2 px-4 py-3 bg-gray-50 border-b font-semibold text-sm text-emerald-700">
+            <div className="col-span-3 flex items-center">
               <button
                 onClick={() => handleSort('name')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors"
               >
                 Golf Club
                 {sortField === 'name' && (
@@ -4285,21 +4350,10 @@ export default function CourseDirectory() {
                 )}
               </button>
             </div>
-            <div className="col-span-1 flex items-center">
-              <button
-                onClick={() => handleSort('course')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
-              >
-                Course
-                {sortField === 'course' && (
-                  sortDirection === 'asc' ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />
-                )}
-              </button>
-            </div>
-            <div className="col-span-1 flex items-center">
+            <div className="col-span-2 flex items-center">
               <button
                 onClick={() => handleSort('county')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors"
               >
                 County
                 {sortField === 'county' && (
@@ -4307,89 +4361,130 @@ export default function CourseDirectory() {
                 )}
               </button>
             </div>
-            <div className="col-span-1 flex items-center">
+            <div className="col-span-1 flex items-center justify-center">
               <button
                 onClick={() => handleSort('tee')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors text-xs"
               >
                 Tee
                 {sortField === 'tee' && (
-                  sortDirection === 'asc' ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />
+                  sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />
                 )}
               </button>
             </div>
             <div className="col-span-1 flex items-center justify-center">
               <button
                 onClick={() => handleSort('par')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors text-xs"
               >
                 Par
                 {sortField === 'par' && (
-                  sortDirection === 'asc' ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />
+                  sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />
                 )}
               </button>
             </div>
             <div className="col-span-1 flex items-center justify-center">
               <button
                 onClick={() => handleSort('length')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors text-xs"
               >
-                Length (yds)
+                Length
                 {sortField === 'length' && (
-                  sortDirection === 'asc' ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />
+                  sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />
                 )}
               </button>
             </div>
-            <div className="col-span-1 flex items-center justify-center">
+            <div className="col-span-2 flex items-center justify-center">
               <button
                 onClick={() => handleSort('rating')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors text-xs"
               >
                 Course Rating
                 {sortField === 'rating' && (
-                  sortDirection === 'asc' ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />
+                  sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />
                 )}
               </button>
             </div>
             <div className="col-span-1 flex items-center justify-center">
               <button
                 onClick={() => handleSort('slope')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors text-xs"
               >
-                Slope Rating
+                Slope
                 {sortField === 'slope' && (
-                  sortDirection === 'asc' ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />
+                  sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />
                 )}
               </button>
             </div>
-            <div className="col-span-1 flex items-center">
+            <div className="col-span-1 flex items-center justify-center">
               <button
                 onClick={() => handleSort('type')}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors"
+                className="flex items-center gap-1 hover:text-emerald-600 transition-colors text-xs"
               >
                 Type
                 {sortField === 'type' && (
-                  sortDirection === 'asc' ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />
+                  sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />
                 )}
               </button>
             </div>
           </div>
 
-          {/* Course Rows - Each Tee/Gender as Separate Row */}
+          {/* Mobile Header */}
+          <div className="md:hidden px-4 py-3 bg-gray-50 border-b font-semibold text-sm text-emerald-700">
+            Golf Course Directory (Tap to sort)
+          </div>
+
+          {/* Course Rows - Responsive Layout */}
           {sortedAndFilteredTeeData.map((data, index) => (
-            <div key={index} className="grid grid-cols-10 gap-3 px-4 py-2 border-b border-gray-200 hover:bg-gray-50 transition-colors">
-              <div className="col-span-2 font-medium text-slate-900">{data.course.name}</div>
-              <div className="col-span-1 text-slate-600">{data.course.courseName}</div>
-              <div className="col-span-1 text-slate-600">{data.course.county}</div>
-              <div className="col-span-1 text-center">
-                <span className="inline-block w-4 h-4 rounded-full border-2" style={{backgroundColor: data.teeColor}}></span>
-                <span className="ml-1 text-sm">{data.teeColor}</span>
+            <div key={index}>
+              {/* Desktop Layout */}
+              <div className="hidden md:grid grid-cols-12 gap-2 px-4 py-3 border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                <div className="col-span-3 font-medium text-slate-900 text-sm">{data.course.name}</div>
+                <div className="col-span-2 text-slate-600 text-sm">{data.course.county}</div>
+                <div className="col-span-1 text-center text-sm">
+                  <span className="inline-block w-3 h-3 rounded-full border" style={{backgroundColor: data.teeColor}}></span>
+                  <span className="ml-1 text-xs">{data.teeColor}</span>
+                </div>
+                <div className="col-span-1 text-center text-sm">{data.par}</div>
+                <div className="col-span-1 text-center text-sm">{data.length || '-'}</div>
+                <div className="col-span-2 text-center text-sm">{data.rating}</div>
+                <div className="col-span-1 text-center text-sm">{data.slope}</div>
+                <div className="col-span-1 text-center text-sm">{data.course.type}</div>
               </div>
-              <div className="col-span-1 text-center">{data.par}</div>
-              <div className="col-span-1 text-center">{data.length || '-'}</div>
-              <div className="col-span-1 text-center">{data.rating}</div>
-              <div className="col-span-1 text-center">{data.slope}</div>
-              <div className="col-span-1 text-center">{data.course.type}</div>
+
+              {/* Mobile Layout */}
+              <div className="md:hidden px-4 py-4 border-b border-gray-200">
+                <div className="font-medium text-slate-900 text-base mb-2">{data.course.name}</div>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span className="text-slate-500">County:</span>
+                    <span className="ml-2 text-slate-700">{data.course.county}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Type:</span>
+                    <span className="ml-2 text-slate-700">{data.course.type}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Tee:</span>
+                    <span className="ml-2">
+                      <span className="inline-block w-3 h-3 rounded-full border mr-1" style={{backgroundColor: data.teeColor}}></span>
+                      {data.teeColor}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Par:</span>
+                    <span className="ml-2 text-slate-700">{data.par}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Length:</span>
+                    <span className="ml-2 text-slate-700">{data.length || '-'} yds</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500">Rating/Slope:</span>
+                    <span className="ml-2 text-slate-700">{data.rating}/{data.slope}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
 
@@ -4403,9 +4498,10 @@ export default function CourseDirectory() {
         {/* Show loading state */}
         {sortedAndFilteredTeeData.length === 0 && (
           <div className="text-center py-8">
-            <p className="text-slate-600 dark:text-slate-400">Loading courses...</p>
+            <p className="text-slate-600 text-slate-600">Loading courses...</p>
           </div>
         )}
+        </div>
       </div>
     </div>
   )

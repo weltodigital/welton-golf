@@ -393,65 +393,65 @@ export default function ClubFittingEstimator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Breadcrumbs */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Club Fitting Estimator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Club Fitting Estimator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Settings className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+                <Settings className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
                   Golf Club Fitting Estimator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-gray-700 text-lg">
                   Get personalized club fitting recommendations based on your measurements and playing characteristics.
                 </p>
               </div>
             </div>
 
             {/* SEO-rich description */}
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 rounded-lg border-2 bg-emerald-50 border-emerald-200">
+              <h2 className="text-xl font-semibold mb-3 text-emerald-700">
                 Professional Club Fitting Analysis - Free Golf Tool
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="mb-3 text-emerald-700">
                 Discover the optimal equipment specifications for your game. Our fitting estimator analyzes your physical
                 measurements, swing characteristics, and playing style to recommend shaft flex, club length, lie angles, and more.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-emerald-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Personalized Recommendations
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Scientific Fitting Methods
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Equipment Optimization
                 </div>
               </div>
             </div>
 
             {/* Warning Notice */}
-            <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+            <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
               <div className="flex items-start gap-3">
                 <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-amber-800 dark:text-amber-200">
+                  <p className="text-sm text-amber-900">
                     <strong>Professional Fitting Recommended:</strong> This tool provides general estimates based on common fitting principles.
                     For optimal results, consult a certified club fitter with launch monitor analysis.
                   </p>
@@ -462,22 +462,22 @@ export default function ClubFittingEstimator() {
             {/* Current Recommendations */}
             {recommendations.length > 0 && (
               <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-lg font-semibold mb-4 text-slate-900">
                   Fitting Recommendations ({recommendations.length} areas)
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {recommendations.map((rec, index) => (
-                    <div key={index} className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+                    <div key={index} className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold" style={{color: '#183a37'}}>{rec.category}</h4>
+                        <h4 className="font-semibold" className="text-emerald-700">{rec.category}</h4>
                         <span className={`px-2 py-1 rounded-full text-xs border ${getPriorityColor(rec.priority)}`}>
                           {rec.priority}
                         </span>
                       </div>
-                      <div className="text-sm mb-2" style={{color: '#183a37'}}>
+                      <div className="text-sm mb-2" className="text-emerald-700">
                         <strong>Recommendation:</strong> {rec.recommendation}
                       </div>
-                      <div className="text-xs" style={{color: '#183a37'}}>
+                      <div className="text-xs" className="text-emerald-700">
                         {rec.reasoning}
                       </div>
                     </div>
@@ -688,7 +688,7 @@ export default function ClubFittingEstimator() {
                 <Button
                   onClick={saveFittingSession}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                   disabled={!currentSession.name || !currentSession.handicap || !currentSession.swingSpeed}
                 >
                   Save Fitting Analysis
@@ -724,7 +724,7 @@ export default function ClubFittingEstimator() {
               </CardHeader>
               <CardContent>
                 {fittingSessions.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600 text-gray-600">
                     <Settings className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No fitting sessions saved yet.</p>
                     <p className="text-sm">Complete your first analysis above.</p>
@@ -732,9 +732,9 @@ export default function ClubFittingEstimator() {
                 ) : (
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {fittingSessions.map((session) => (
-                      <div key={session.id} className="p-3 rounded-lg" style={{backgroundColor: '#9CC69B'}}>
+                      <div key={session.id} className="p-3 rounded-lg" className="bg-emerald-100 rounded-xl">
                         <div className="flex items-center justify-between mb-2">
-                          <div className="font-medium text-sm" style={{color: '#183a37'}}>
+                          <div className="font-medium text-sm" className="text-emerald-700">
                             {session.name}
                           </div>
                           <div className="flex gap-1">
@@ -756,10 +756,10 @@ export default function ClubFittingEstimator() {
                             </Button>
                           </div>
                         </div>
-                        <div className="text-xs" style={{color: '#183a37'}}>
+                        <div className="text-xs" className="text-emerald-700">
                           {session.playerProfile.handicap} HCP • {session.playerProfile.swingSpeed}mph • {session.recommendations.length} recommendations
                         </div>
-                        <div className="text-xs" style={{color: '#183a37'}}>
+                        <div className="text-xs" className="text-emerald-700">
                           Created: {session.createdAt}
                         </div>
                       </div>
@@ -780,10 +780,10 @@ export default function ClubFittingEstimator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">
                   Complete Guide to Golf Club Fitting
                 </h3>
-                <p className="text-black mb-4">
+                <p className="text-slate-700 mb-4">
                   Proper club fitting is essential for maximizing your potential on the golf course. Our estimator uses established
                   fitting principles to analyze your physical characteristics, swing dynamics, and playing style to recommend
                   optimal equipment specifications.
@@ -792,8 +792,8 @@ export default function ClubFittingEstimator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Key Fitting Elements:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Key Fitting Elements:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Shaft Flex:</strong> Matches your swing speed and tempo</li>
                     <li>• <strong>Club Length:</strong> Based on height and wrist-to-floor measurement</li>
                     <li>• <strong>Lie Angle:</strong> Ensures proper sole contact at impact</li>
@@ -802,8 +802,8 @@ export default function ClubFittingEstimator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Physical Measurements:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Physical Measurements:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Height:</strong> Primary factor for club length</li>
                     <li>• <strong>Wrist-to-Floor:</strong> More accurate than height alone</li>
                     <li>• <strong>Hand Size:</strong> Determines proper grip size</li>
@@ -815,8 +815,8 @@ export default function ClubFittingEstimator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Swing Characteristics:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Swing Characteristics:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Swing Speed:</strong> Primary factor for shaft flex</p>
                     <p><strong>Tempo:</strong> Affects shaft kick point preference</p>
                     <p><strong>Ball Flight:</strong> Indicates launch conditions</p>
@@ -825,8 +825,8 @@ export default function ClubFittingEstimator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Equipment Impact:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Equipment Impact:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Distance:</strong> Proper shaft flex maximizes distance</p>
                     <p><strong>Accuracy:</strong> Correct lie angle improves direction</p>
                     <p><strong>Consistency:</strong> Proper length enhances contact</p>
@@ -838,8 +838,8 @@ export default function ClubFittingEstimator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Shaft Flex Guidelines:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Shaft Flex Guidelines:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Ladies:</strong> &lt; 75 mph swing speed</p>
                     <p><strong>Senior:</strong> 75-84 mph swing speed</p>
                     <p><strong>Regular:</strong> 85-94 mph swing speed</p>
@@ -848,8 +848,8 @@ export default function ClubFittingEstimator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Club Length Adjustments:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Club Length Adjustments:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>+1 inch:</strong> Very tall players (6&apos;4&quot;+)</p>
                     <p><strong>+0.5 inch:</strong> Tall players (6&apos;1&quot; - 6&apos;3&quot;)</p>
                     <p><strong>Standard:</strong> Average height (5&apos;7&quot; - 6&apos;0&quot;)</p>
@@ -859,36 +859,36 @@ export default function ClubFittingEstimator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Club Fitting Estimator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Club Fitting Estimator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Scientific Methods:</strong> Based on established fitting principles
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Comprehensive Analysis:</strong> Covers all major fitting elements
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Personalized Results:</strong> Tailored to your unique characteristics
                     </p>
                   </div>
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Pre-Fitting Preparation:</strong> Know what to expect from a fitting
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Equipment Education:</strong> Understand fitting fundamentals
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Free Analysis:</strong> No cost for basic recommendations
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Important:</strong> This tool provides general estimates based on common fitting principles. For optimal
                   results, we strongly recommend a professional club fitting with a certified fitter using launch monitor
                   technology. Individual swing characteristics can vary significantly from these general guidelines.

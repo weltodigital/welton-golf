@@ -119,55 +119,55 @@ export default function HandicapCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Breadcrumbs */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-white">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Handicap Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Handicap Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Calculator className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Calculator className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2">
                   Free Golf Handicap Calculator (WHS)
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-700 text-lg">
                   Calculate your official World Handicap System index instantly. UK&apos;s most accurate WHS handicap calculator with course rating and slope rating support.
                 </p>
               </div>
             </div>
 
             {/* SEO-rich description */}
-            <div className="mt-6 p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
-              <h2 className="text-xl font-semibold text-green-900 dark:text-green-100 mb-3">
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
+              <h2 className="text-xl font-bold text-emerald-900 mb-3">
                 Official World Handicap System Calculator - Free & Accurate
               </h2>
-              <p className="text-green-800 dark:text-green-200 mb-3">
+              <p className="text-emerald-800 mb-3">
                 Our golf handicap calculator follows the exact World Handicap System (WHS) rules implemented by R&A and USGA.
                 Calculate your handicap index using up to 20 scores with automatic score differential calculations,
                 course rating adjustments, and slope rating considerations.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-green-700 dark:text-green-300">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-emerald-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                   WHS Compliant Algorithm
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                   Course & Slope Rating Support
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                   Free - No Registration Required
                 </div>
               </div>
@@ -266,8 +266,7 @@ export default function HandicapCalculator() {
 
                 <Button
                   onClick={addScore}
-                  className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
                   disabled={!currentScore.adjustedGrossScore || !currentScore.courseRating || !currentScore.slopeRating}
                 >
                   Add Score

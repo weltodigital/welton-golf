@@ -180,52 +180,52 @@ export default function PlayingTimeEstimator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Playing Time Estimator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Playing Time Estimator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Clock className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+                <Clock className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2">
                   Golf Playing Time Estimator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Calculate accurate playing times for your golf rounds based on group size, course conditions, and pace of play.
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Round Planning Tool - Free Golf Time Calculator
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Plan your golf day perfectly with accurate time estimates. Factor in group size, playing pace, course conditions,
                 and busy periods to know exactly when your round will finish and plan your day accordingly.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Group Size Impact
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Course Conditions
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Pace Analysis
                 </div>
               </div>
@@ -340,7 +340,7 @@ export default function PlayingTimeEstimator() {
                 <Button
                   onClick={calculatePlayingTime}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                   disabled={!currentCalc.groupSize || !currentCalc.teeTime}
                 >
                   Calculate Playing Time
@@ -376,7 +376,7 @@ export default function PlayingTimeEstimator() {
               </CardHeader>
               <CardContent>
                 {estimates.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600">
                     <Clock className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No time estimates calculated yet.</p>
                     <p className="text-sm">Calculate your first playing time above.</p>
@@ -384,13 +384,13 @@ export default function PlayingTimeEstimator() {
                 ) : (
                   <div className="space-y-4 max-h-96 overflow-y-auto">
                     {estimates.map((estimate) => (
-                      <div key={estimate.id} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border">
+                      <div key={estimate.id} className="p-4 bg-gray-50 rounded-lg border">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-gray-100">
+                            <h4 className="font-medium text-slate-900">
                               {estimate.sessionName}
                             </h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                            <p className="text-sm text-gray-600">
                               {estimate.createdAt}
                             </p>
                           </div>
@@ -406,22 +406,22 @@ export default function PlayingTimeEstimator() {
 
                         <div className="grid grid-cols-2 gap-4 text-sm mb-3">
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Tee Time:</p>
+                            <p className="text-gray-600">Tee Time:</p>
                             <p className="font-medium">{estimate.teeTime}</p>
                           </div>
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Estimated Finish:</p>
+                            <p className="text-gray-600">Estimated Finish:</p>
                             <p className="font-bold text-lg text-green-600">{estimate.finishTime}</p>
                           </div>
                         </div>
 
                         <div className="grid grid-cols-2 gap-4 text-sm mb-3">
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Total Time:</p>
+                            <p className="text-gray-600">Total Time:</p>
                             <p className="font-medium">{formatDuration(estimate.estimatedTime)}</p>
                           </div>
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Group Size:</p>
+                            <p className="text-gray-600">Group Size:</p>
                             <p className="font-medium">{estimate.groupSize} players</p>
                           </div>
                         </div>
@@ -464,8 +464,8 @@ export default function PlayingTimeEstimator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">Complete Guide to Golf Pace of Play</h3>
-                <p className="text-black mb-4">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Complete Guide to Golf Pace of Play</h3>
+                <p className="text-slate-700 mb-4">
                   Playing time varies significantly based on multiple factors. Understanding these variables helps you
                   plan your golf day better, book appropriate tee times, and manage expectations for your round duration.
                 </p>
@@ -473,8 +473,8 @@ export default function PlayingTimeEstimator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Group Size Impact:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Group Size Impact:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Solo Play:</strong> Fastest option, 30min less than pairs</li>
                     <li>• <strong>2 Players:</strong> Optimal pace, baseline timing</li>
                     <li>• <strong>3 Players:</strong> Add ~15 minutes to round</li>
@@ -483,8 +483,8 @@ export default function PlayingTimeEstimator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Course Type Differences:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Course Type Differences:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>9 Holes:</strong> 2-2.5 hours typically</li>
                     <li>• <strong>18 Holes:</strong> 4-5 hours standard</li>
                     <li>• <strong>Executive:</strong> 2.5-3.5 hours (shorter holes)</li>
@@ -496,8 +496,8 @@ export default function PlayingTimeEstimator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Playing Pace Factors:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Playing Pace Factors:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Fast Players:</strong> Experienced, decisive, good walkers</p>
                     <p><strong>Average Pace:</strong> Most recreational golfers</p>
                     <p><strong>Slow Players:</strong> Beginners, lots of ball searching</p>
@@ -506,8 +506,8 @@ export default function PlayingTimeEstimator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Course Conditions Impact:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Course Conditions Impact:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Excellent:</strong> Perfect weather, light play</p>
                     <p><strong>Good:</strong> Nice conditions, normal pace</p>
                     <p><strong>Normal:</strong> Typical day conditions</p>
@@ -520,8 +520,8 @@ export default function PlayingTimeEstimator() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Time Management Tips:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Time Management Tips:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Ready Golf:</strong> Play when ready, safely</p>
                     <p><strong>Pre-shot Routine:</strong> Consistent, not lengthy</p>
                     <p><strong>Ball Searching:</strong> 3-minute rule maximum</p>
@@ -529,8 +529,8 @@ export default function PlayingTimeEstimator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Optimal Tee Times:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Optimal Tee Times:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Early Morning:</strong> Fastest rounds, less crowded</p>
                     <p><strong>Mid-Morning:</strong> Good pace, warming up</p>
                     <p><strong>Afternoon:</strong> Can be slower, more players</p>
@@ -538,8 +538,8 @@ export default function PlayingTimeEstimator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Seasonal Variations:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Seasonal Variations:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Summer:</strong> Longer days, more daylight</p>
                     <p><strong>Winter:</strong> Shorter rounds, fewer players</p>
                     <p><strong>Peak Season:</strong> Busier, slower rounds</p>
@@ -548,24 +548,24 @@ export default function PlayingTimeEstimator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Playing Time Estimator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Playing Time Estimator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Accurate Planning:</strong> Know when you&apos;ll finish</p>
-                    <p className="text-black mb-2"><strong>✓ Multiple Factors:</strong> Considers all timing variables</p>
-                    <p className="text-black"><strong>✓ Day Planning:</strong> Schedule other activities confidently</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Accurate Planning:</strong> Know when you&apos;ll finish</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Multiple Factors:</strong> Considers all timing variables</p>
+                    <p className="text-slate-700"><strong>✓ Day Planning:</strong> Schedule other activities confidently</p>
                   </div>
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Group Coordination:</strong> Share finish times</p>
-                    <p className="text-black mb-2"><strong>✓ Tee Time Selection:</strong> Choose optimal start times</p>
-                    <p className="text-black"><strong>✓ Free Tool:</strong> No cost for time estimates</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Group Coordination:</strong> Share finish times</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Tee Time Selection:</strong> Choose optimal start times</p>
+                    <p className="text-slate-700"><strong>✓ Free Tool:</strong> No cost for time estimates</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Important:</strong> These estimates are based on typical playing conditions and pace standards.
                   Actual playing time can vary based on specific course layout, weather conditions, group dynamics, and
                   individual playing abilities. Use these estimates as a planning guide and adjust based on your experience.

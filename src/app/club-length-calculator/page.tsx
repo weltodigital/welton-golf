@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -241,25 +242,68 @@ export default function ClubLengthCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 font-cooper">
-            Golf Club Length Calculator
-          </h1>
-          <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
-            Determine your optimal club lengths based on body measurements, swing characteristics, and playing style.
-            Proper club length improves consistency, accuracy, and overall performance.
-          </p>
-        </div>
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto">
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Input Form */}
-          <Card className="p-6">
+          {/* Breadcrumbs */}
+          <nav className="text-sm text-slate-600 mb-4">
+            <ol className="flex space-x-2">
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Club Length Calculator</li>
+            </ol>
+          </nav>
+
+          {/* Header */}
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Ruler className="h-6 w-6 text-emerald-600" />
+              </div>
+              <div>
+                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
+                  Golf Club Length Calculator
+                </h1>
+                <p className="text-slate-700 text-lg">
+                  Determine your optimal club lengths based on body measurements, swing characteristics, and playing style.
+                </p>
+              </div>
+            </div>
+
+            {/* SEO-rich description */}
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
+                Professional Golf Club Length Calculator - Free & Accurate
+              </h2>
+              <p className="text-slate-700 mb-3">
+                Our club length calculator uses precise body measurements and swing characteristics to determine your optimal
+                club specifications. Proper club length improves consistency, accuracy, and overall performance on the course.
+              </p>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
+                  Body Measurement Analysis
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
+                  Swing Characteristic Adjustments
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
+                  Complete Club Set Recommendations
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Input Form */}
+            <Card className="p-6">
             <div className="flex items-center gap-2 mb-6">
-              <Ruler className="h-6 w-6" style={{color: '#9CC69B'}} />
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Ruler className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h2 className="text-2xl font-semibold text-slate-900">
                 Body Measurements & Preferences
               </h2>
             </div>
@@ -267,10 +311,10 @@ export default function ClubLengthCalculator() {
             <div className="space-y-6">
               {/* Height */}
               <div>
-                <Label htmlFor="height" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="height" className="text-sm font-medium text-slate-600">
                   Height *
                 </Label>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+                <p className="text-xs text-slate-600 mb-2">
                   Enter in inches (e.g., 70) or centimeters (e.g., 178)
                 </p>
                 <Input
@@ -288,10 +332,10 @@ export default function ClubLengthCalculator() {
 
               {/* Wrist to Floor */}
               <div>
-                <Label htmlFor="wristToFloor" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="wristToFloor" className="text-sm font-medium text-slate-600">
                   Wrist to Floor Distance *
                 </Label>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+                <p className="text-xs text-slate-600 mb-2">
                   Stand naturally, arms at sides. Measure from wrist crease to floor (inches or cm)
                 </p>
                 <Input
@@ -309,7 +353,7 @@ export default function ClubLengthCalculator() {
 
               {/* Swing Plane */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Natural Swing Plane
                 </Label>
                 <Select
@@ -331,7 +375,7 @@ export default function ClubLengthCalculator() {
 
               {/* Playing Style */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Playing Style Priority
                 </Label>
                 <Select
@@ -351,7 +395,7 @@ export default function ClubLengthCalculator() {
 
               {/* Physical Limitations */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Physical Considerations
                 </Label>
                 <Select
@@ -373,10 +417,10 @@ export default function ClubLengthCalculator() {
 
               {/* Current Club Length (Optional) */}
               <div>
-                <Label htmlFor="currentLength" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="currentLength" className="text-sm font-medium text-slate-600">
                   Current 7-Iron Length (Optional)
                 </Label>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+                <p className="text-xs text-slate-600 mb-2">
                   If known, enter your current 7-iron length for comparison
                 </p>
                 <Input
@@ -398,8 +442,7 @@ export default function ClubLengthCalculator() {
                 <Button
                   onClick={handleCalculate}
                   disabled={!lengthData.height || !lengthData.wristToFloor}
-                  className="flex-1 text-white"
-                  style={{backgroundColor: '#183a37'}}
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
                 >
                   Calculate Club Lengths
                 </Button>
@@ -414,49 +457,51 @@ export default function ClubLengthCalculator() {
             </div>
           </Card>
 
-          {/* Results */}
-          {showResults && clubRecommendations && (
-            <Card className="p-6">
+            {/* Results */}
+            {showResults && clubRecommendations && (
+              <Card className="p-6">
               <div className="flex items-center gap-2 mb-6">
-                <Target className="h-6 w-6" style={{color: '#9CC69B'}} />
-                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                  <Target className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h2 className="text-2xl font-semibold text-slate-900">
                   Club Length Recommendations
                 </h2>
               </div>
 
               <div className="space-y-6">
                 {/* Summary */}
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-                  <h3 className="text-xl font-bold mb-2" style={{color: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">
                     Length Adjustment Summary
                   </h3>
-                  <div className="text-2xl font-bold text-white mb-2">
+                  <div className="text-2xl font-bold text-emerald-700 mb-2">
                     {clubRecommendations.totalAdjustment > 0 ? '+' : ''}{clubRecommendations.totalAdjustment}&quot;
                   </div>
-                  <div className="text-sm" style={{color: '#183a37'}}>
+                  <div className="text-sm text-slate-700">
                     {clubRecommendations.totalAdjustment > 0 ? 'Longer than standard' :
                      clubRecommendations.totalAdjustment < 0 ? 'Shorter than standard' : 'Standard length'}
                   </div>
-                  <div className="text-sm" style={{color: '#183a37'}}>
+                  <div className="text-sm text-slate-700">
                     Confidence: {clubRecommendations.confidence}
                   </div>
                 </div>
 
                 {/* Body Measurements Summary */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                  <h4 className="font-semibold text-slate-900 mb-3">
                     Your Measurements
                   </h4>
                   <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Height</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Height</div>
+                      <div className="text-slate-700">
                         {clubRecommendations.heightInches}&quot; ({Math.round(clubRecommendations.heightInches * 2.54)}cm)
                       </div>
                     </div>
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Wrist to Floor</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Wrist to Floor</div>
+                      <div className="text-slate-700">
                         {clubRecommendations.wristToFloorInches}&quot; ({Math.round(clubRecommendations.wristToFloorInches * 2.54)}cm)
                       </div>
                     </div>
@@ -465,23 +510,23 @@ export default function ClubLengthCalculator() {
 
                 {/* Primary Club Recommendations */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                  <h4 className="font-semibold text-slate-900 mb-3">
                     Key Club Recommendations
                   </h4>
                   <div className="space-y-3">
                     {Object.entries(clubRecommendations.primaryClubs).map(([club, data]) => (
-                      <div key={club} className="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-700 rounded">
+                      <div key={club} className="flex justify-between items-center p-3 bg-slate-50 rounded">
                         <div>
-                          <div className="font-medium text-slate-900 dark:text-white">{club}</div>
-                          <div className="text-xs text-slate-600 dark:text-slate-400">
+                          <div className="font-medium text-slate-900">{club}</div>
+                          <div className="text-xs text-slate-700">
                             Standard: {data.standardLength}&quot;
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="font-bold" style={{color: '#183a37'}}>
+                          <div className="font-bold text-slate-900">
                             {data.recommendedLength}&quot;
                           </div>
-                          <div className="text-xs text-slate-600 dark:text-slate-400">
+                          <div className="text-xs text-slate-700">
                             ({data.adjustment > 0 ? '+' : ''}{data.adjustment}&quot;)
                           </div>
                         </div>
@@ -493,17 +538,17 @@ export default function ClubLengthCalculator() {
                 {/* Current Club Comparison */}
                 {lengthData.currentLength > 0 && (
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
+                    <h4 className="font-semibold text-slate-900 mb-2">
                       Current vs Recommended 7-Iron
                     </h4>
-                    <div className="p-3 bg-slate-50 dark:bg-slate-700 rounded">
+                    <div className="p-3 bg-slate-50 rounded">
                       <div className="flex justify-between">
                         <span>Current Length:</span>
                         <span>{lengthData.currentLength}&quot;</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Recommended:</span>
-                        <span className="font-bold" style={{color: '#183a37'}}>
+                        <span className="font-bold text-slate-900">
                           {clubRecommendations.primaryClubs['7-Iron'].recommendedLength}&quot;
                         </span>
                       </div>
@@ -517,35 +562,37 @@ export default function ClubLengthCalculator() {
                   </div>
                 )}
               </div>
-            </Card>
-          )}
-        </div>
+              </Card>
+            )}
+          </div>
 
-        {/* Full Club Set Recommendations */}
-        {showResults && clubRecommendations && (
-          <Card className="mt-8 p-6">
+          {/* Full Club Set Recommendations */}
+          {showResults && clubRecommendations && (
+            <Card className="mt-8 p-6">
             <div className="flex items-center gap-2 mb-6">
-              <Settings className="h-6 w-6" style={{color: '#9CC69B'}} />
-              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Settings className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h3 className="text-2xl font-semibold text-slate-900">
                 Complete Club Set Recommendations
               </h3>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {Object.entries(clubRecommendations.recommendations).map(([club, data]) => (
-                <div key={club} className="p-4 border border-slate-200 dark:border-slate-600 rounded-lg">
-                  <div className="font-semibold text-slate-900 dark:text-white mb-2">{club}</div>
+                <div key={club} className="p-4 border border-slate-200 rounded-lg">
+                  <div className="font-semibold text-slate-900 mb-2">{club}</div>
                   <div className="space-y-1 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-slate-600 dark:text-slate-400">Standard:</span>
+                      <span className="text-slate-700">Standard:</span>
                       <span>{data.standardLength}&quot;</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-600 dark:text-slate-400">Recommended:</span>
-                      <span className="font-bold" style={{color: '#183a37'}}>{data.recommendedLength}&quot;</span>
+                      <span className="text-slate-700">Recommended:</span>
+                      <span className="font-bold text-slate-900">{data.recommendedLength}&quot;</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-600 dark:text-slate-400">Adjustment:</span>
+                      <span className="text-slate-700">Adjustment:</span>
                       <span className={data.adjustment >= 0 ? 'text-green-600' : 'text-red-600'}>
                         {data.adjustment > 0 ? '+' : ''}{data.adjustment}&quot;
                       </span>
@@ -554,62 +601,62 @@ export default function ClubLengthCalculator() {
                 </div>
               ))}
             </div>
-          </Card>
-        )}
+            </Card>
+          )}
 
-        {/* Educational Content */}
-        <div className="mt-12 grid md:grid-cols-2 gap-8">
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <Ruler className="h-5 w-5" style={{color: '#9CC69B'}} />
+          {/* Educational Content */}
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <Card className="p-6">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <Ruler className="h-5 w-5 text-emerald-600" />
               How to Measure Properly
             </h3>
-            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-4 text-sm text-slate-600">
               <div>
-                <strong className="text-slate-900 dark:text-white">Wrist-to-Floor Measurement:</strong>
+                <strong className="text-slate-900">Wrist-to-Floor Measurement:</strong>
                 <p>Stand upright in golf shoes (or add 1&quot; if barefoot). Let arms hang naturally at your sides. Measure from the prominent wrist bone to the floor. This is the most important measurement for club length.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Height Measurement:</strong>
+                <strong className="text-slate-900">Height Measurement:</strong>
                 <p>Stand against a wall without shoes. Mark the top of your head and measure from floor to mark. Used as a cross-check with wrist-to-floor measurement.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Professional Measurement:</strong>
+                <strong className="text-slate-900">Professional Measurement:</strong>
                 <p>For best results, have a golf professional measure you during a fitting session with proper equipment and technique.</p>
               </div>
             </div>
-          </Card>
+            </Card>
 
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <TrendingUp className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <Card className="p-6">
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <TrendingUp className="h-5 w-5 text-emerald-600" />
               Impact of Club Length
             </h3>
-            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-4 text-sm text-slate-600">
               <div>
-                <strong className="text-slate-900 dark:text-white">Too Long:</strong>
+                <strong className="text-slate-900">Too Long:</strong>
                 <p>Difficulty making solid contact, inconsistent ball striking, tendency to hit fat shots, loss of accuracy and control.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Too Short:</strong>
+                <strong className="text-slate-900">Too Short:</strong>
                 <p>Hunched posture, back strain, inconsistent swing plane, reduced distance potential, early fatigue.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Proper Length:</strong>
+                <strong className="text-slate-900">Proper Length:</strong>
                 <p>Natural posture, consistent contact, optimal swing plane, better accuracy, reduced physical strain, improved performance.</p>
               </div>
             </div>
-          </Card>
-        </div>
+            </Card>
+          </div>
 
-        {/* Additional Information */}
-        <Card className="mt-8 p-6">
-          <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
+          {/* Additional Information */}
+          <Card className="mt-8 p-6">
+          <h3 className="text-xl font-semibold text-slate-900 mb-4">
             Professional Club Fitting Considerations
           </h3>
-          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-700 dark:text-slate-300">
+          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Length Affects</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Length Affects</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Swing plane and posture</li>
                 <li>Contact consistency</li>
@@ -619,7 +666,7 @@ export default function ClubLengthCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Fitting Process</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Fitting Process</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Static measurements</li>
                 <li>Dynamic swing analysis</li>
@@ -629,7 +676,7 @@ export default function ClubLengthCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Adjustment Methods</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Adjustment Methods</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Shaft extension/trimming</li>
                 <li>Grip adjustment</li>
@@ -639,7 +686,8 @@ export default function ClubLengthCalculator() {
               </ul>
             </div>
           </div>
-        </Card>
+          </Card>
+        </div>
       </div>
     </div>
   )

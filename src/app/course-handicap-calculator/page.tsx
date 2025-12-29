@@ -107,55 +107,55 @@ export default function CourseHandicapCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Breadcrumbs */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Course Handicap Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Course Handicap Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Calculator className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Calculator className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
                   Golf Course Handicap Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-700 text-lg">
                   Calculate your course handicap for any golf course using your handicap index, course rating, and slope rating.
                 </p>
               </div>
             </div>
 
             {/* SEO-rich description */}
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Professional Course Handicap Calculator - Free & Accurate
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Our course handicap calculator follows the exact WHS formula to determine how many strokes you receive
                 on a specific golf course. Calculate your course handicap using your current handicap index with
                 automatic adjustments for course rating and slope rating.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   WHS Course Handicap Formula
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Instant Course-Specific Results
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Free - No Registration Required
                 </div>
               </div>
@@ -163,15 +163,15 @@ export default function CourseHandicapCalculator() {
 
             {/* Current Course Handicap Display */}
             {calculatedHandicap !== null && (
-              <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
                 <div className="text-center">
-                  <h2 className="text-2xl font-bold mb-2" style={{color: '#183a37'}}>
+                  <h2 className="text-2xl font-bold mb-2 text-slate-900">
                     Your Course Handicap
                   </h2>
-                  <div className="text-5xl font-bold mb-2" style={{color: '#183a37'}}>
+                  <div className="text-5xl font-bold mb-2 text-emerald-600">
                     {calculatedHandicap}
                   </div>
-                  <p className="text-sm" style={{color: '#183a37'}}>
+                  <p className="text-sm text-slate-700">
                     Strokes you receive on this course
                   </p>
                 </div>
@@ -256,8 +256,7 @@ export default function CourseHandicapCalculator() {
 
                 <Button
                   onClick={addEntry}
-                  className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
                   disabled={!currentEntry.handicapIndex || !currentEntry.courseRating || !currentEntry.slopeRating || !currentEntry.par}
                 >
                   Save Calculation
@@ -293,7 +292,7 @@ export default function CourseHandicapCalculator() {
               </CardHeader>
               <CardContent>
                 {courses.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600">
                     <Calculator className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No calculations saved yet.</p>
                     <p className="text-sm">Calculate your first course handicap above.</p>
@@ -301,15 +300,15 @@ export default function CourseHandicapCalculator() {
                 ) : (
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {courses.map((entry) => (
-                      <div key={entry.id} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: '#9CC69B'}}>
+                      <div key={entry.id} className="flex items-center justify-between p-3 bg-emerald-50 rounded-lg">
                         <div className="flex-1">
-                          <div className="font-medium text-sm" style={{color: '#183a37'}}>
+                          <div className="font-medium text-sm text-slate-900">
                             {entry.courseName}
                           </div>
-                          <div className="text-xs" style={{color: '#183a37'}}>
+                          <div className="text-xs text-slate-700">
                             HI: {entry.handicapIndex} • CR: {entry.courseRating} • SR: {entry.slopeRating} • Par: {entry.par}
                           </div>
-                          <div className="text-sm font-medium px-2 py-1 rounded inline-block text-white mt-1" style={{backgroundColor: '#183a37'}}>
+                          <div className="text-sm font-medium px-2 py-1 bg-emerald-600 rounded inline-block text-white mt-1">
                             Course Handicap: {entry.courseHandicap}
                           </div>
                         </div>
@@ -339,10 +338,10 @@ export default function CourseHandicapCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">
                   Complete Guide to Course Handicap Calculation
                 </h3>
-                <p className="text-black mb-4">
+                <p className="text-slate-700 mb-4">
                   Course Handicap represents the number of strokes a player receives on a specific golf course.
                   It adjusts your Handicap Index to account for the difficulty of the particular course and tees you&apos;re playing.
                   This ensures fair play regardless of which course you&apos;re playing.
@@ -351,8 +350,8 @@ export default function CourseHandicapCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Course Handicap Formula:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Course Handicap Formula:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Course Handicap</strong> = (Handicap Index × Slope Rating ÷ 113) + (Course Rating - Par)</li>
                     <li>• <strong>Slope Rating 113</strong> is the standard difficulty baseline</li>
                     <li>• <strong>Course Rating - Par</strong> adjusts for course difficulty relative to par</li>
@@ -361,8 +360,8 @@ export default function CourseHandicapCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">When to Use Course Handicap:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">When to Use Course Handicap:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Tournament Play:</strong> Determines strokes received in competitions</li>
                     <li>• <strong>Match Play:</strong> Calculate stroke allocation between players</li>
                     <li>• <strong>Different Tees:</strong> Adjust handicap when playing different tee boxes</li>
@@ -374,61 +373,61 @@ export default function CourseHandicapCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Example Calculation:</h4>
-                  <p className="text-sm text-black mb-2">
+                  <h4 className="font-bold text-slate-900 mb-3">Example Calculation:</h4>
+                  <p className="text-sm text-slate-700 mb-2">
                     <strong>Player:</strong> Handicap Index 15.2<br/>
                     <strong>Course:</strong> Rating 72.1, Slope 125, Par 72
                   </p>
-                  <p className="text-sm text-black mb-2">
+                  <p className="text-sm text-slate-700 mb-2">
                     <strong>Calculation:</strong><br/>
                     (15.2 × 125 ÷ 113) + (72.1 - 72) = 16.8 + 0.1 = 16.9
                   </p>
-                  <p className="text-xs text-black">
+                  <p className="text-xs text-slate-700">
                     <strong>Course Handicap:</strong> 17 (rounded to nearest whole number)
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Important Notes:</h4>
-                  <p className="text-sm text-black mb-2">
+                  <h4 className="font-bold text-slate-900 mb-3">Important Notes:</h4>
+                  <p className="text-sm text-slate-700 mb-2">
                     Your Course Handicap may differ from your Handicap Index because it accounts for the specific
                     difficulty of the course and tees you&apos;re playing from.
                   </p>
-                  <p className="text-xs text-black">
+                  <p className="text-xs text-slate-700">
                     Always use your most current Handicap Index for accurate calculations.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Course Handicap Calculator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Course Handicap Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Official WHS Formula:</strong> Uses exact course handicap calculation method
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Instant Results:</strong> Calculate course handicap in real-time
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Save History:</strong> Track calculations for different courses
                     </p>
                   </div>
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Tournament Ready:</strong> Get accurate stroke allocations
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Mobile Friendly:</strong> Calculate on the course or at home
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Free Forever:</strong> No registration or payment required
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Tournament Note:</strong> For official tournament play, verify course handicap calculations
                   with the tournament committee or course pro shop, as some competitions may have specific
                   handicap adjustments or maximums.

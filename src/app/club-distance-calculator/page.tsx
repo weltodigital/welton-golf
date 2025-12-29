@@ -241,54 +241,54 @@ export default function ClubDistanceCalculator() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Breadcrumbs */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Club Distance Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Club Distance Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Target className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+                <Target className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2">
                   Golf Club Distance Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Create and track your personal club distance chart for better course management.
                 </p>
               </div>
             </div>
 
             {/* SEO-rich description */}
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Professional Club Distance Calculator - Free Golf Tool
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Build your personalized club distance chart with carry and total distances. Generate estimated distances
                 based on swing speed and skill level, or input your actual on-course distances for precise yardage management.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Personalized Distance Charts
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Swing Speed Based Estimates
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Course Management Tool
                 </div>
               </div>
@@ -297,12 +297,12 @@ export default function ClubDistanceCalculator() {
             {/* Current Distance Chart */}
             {distances.length > 0 && (
               <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-lg font-semibold mb-4 text-slate-900">
                   Your Distance Chart ({distances.length} clubs)
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
                   {distances.map((distance) => (
-                    <div key={distance.club} className="p-3 rounded-lg border-2 relative" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+                    <div key={distance.club} className="p-3 rounded-lg border-2 relative" className="bg-emerald-50 border border-emerald-100">
                       <button
                         onClick={() => removeClubDistance(distance.club)}
                         className="absolute top-1 right-1 text-red-500 hover:text-red-700"
@@ -310,8 +310,8 @@ export default function ClubDistanceCalculator() {
                         <Trash2 className="h-3 w-3" />
                       </button>
                       <div className="text-center">
-                        <h4 className="text-sm font-semibold mb-1" style={{color: '#183a37'}}>{distance.club}</h4>
-                        <div className="text-xs" style={{color: '#183a37'}}>
+                        <h4 className="text-sm font-semibold mb-1" className="text-slate-900">{distance.club}</h4>
+                        <div className="text-xs" className="text-slate-900">
                           Carry: {distance.carry}y • Total: {distance.total}y
                         </div>
                       </div>
@@ -379,7 +379,7 @@ export default function ClubDistanceCalculator() {
                 <Button
                   onClick={generateDistances}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                   disabled={!currentSet.swingSpeed}
                 >
                   Generate Estimated Distances
@@ -429,7 +429,7 @@ export default function ClubDistanceCalculator() {
                   <Button
                     onClick={addClubDistance}
                     className="w-full mt-3 text-white hover:opacity-90"
-                    style={{backgroundColor: '#183a37'}}
+                    className="bg-emerald-600"
                     disabled={!selectedClub || !carryDistance}
                   >
                     Add/Update Club Distance
@@ -439,7 +439,7 @@ export default function ClubDistanceCalculator() {
                 <Button
                   onClick={saveDistanceSet}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                   disabled={!currentSet.name || distances.length === 0}
                 >
                   Save Distance Chart
@@ -475,7 +475,7 @@ export default function ClubDistanceCalculator() {
               </CardHeader>
               <CardContent>
                 {distanceSets.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600">
                     <Target className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No distance charts saved yet.</p>
                     <p className="text-sm">Create your first chart above.</p>
@@ -483,9 +483,9 @@ export default function ClubDistanceCalculator() {
                 ) : (
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {distanceSets.map((set) => (
-                      <div key={set.id} className="p-3 rounded-lg" style={{backgroundColor: '#9CC69B'}}>
+                      <div key={set.id} className="p-3 rounded-lg" className="bg-emerald-100 rounded-xl">
                         <div className="flex items-center justify-between mb-2">
-                          <div className="font-medium text-sm" style={{color: '#183a37'}}>
+                          <div className="font-medium text-sm text-slate-900">
                             {set.name}
                           </div>
                           <div className="flex gap-1">
@@ -507,10 +507,10 @@ export default function ClubDistanceCalculator() {
                             </Button>
                           </div>
                         </div>
-                        <div className="text-xs" style={{color: '#183a37'}}>
+                        <div className="text-xs" className="text-slate-900">
                           {set.swingSpeed > 0 && `${set.swingSpeed}mph • `}{set.playerLevel} • {set.distances.length} clubs
                         </div>
-                        <div className="text-xs" style={{color: '#183a37'}}>
+                        <div className="text-xs" className="text-slate-900">
                           Created: {set.createdAt}
                         </div>
                       </div>
@@ -531,10 +531,10 @@ export default function ClubDistanceCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">
                   Complete Guide to Golf Club Distance Management
                 </h3>
-                <p className="text-black mb-4">
+                <p className="text-slate-700 mb-4">
                   Knowing your accurate club distances is crucial for course management and scoring. Our calculator helps you
                   build personalized distance charts based on your swing speed and skill level, or input your actual distances
                   from practice sessions and course play.
@@ -543,8 +543,8 @@ export default function ClubDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Two Ways to Build Your Chart:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Two Ways to Build Your Chart:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Auto-Generate:</strong> Enter swing speed and skill level for estimated distances</li>
                     <li>• <strong>Manual Entry:</strong> Input your actual measured distances</li>
                     <li>• <strong>Hybrid Approach:</strong> Generate estimates then fine-tune with real data</li>
@@ -553,8 +553,8 @@ export default function ClubDistanceCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Distance Factors:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Distance Factors:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Carry Distance:</strong> Ball flight distance in the air</li>
                     <li>• <strong>Total Distance:</strong> Carry plus roll (conditions dependent)</li>
                     <li>• <strong>Weather:</strong> Wind, temperature, humidity effects</li>
@@ -566,8 +566,8 @@ export default function ClubDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Measuring Your Distances:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Measuring Your Distances:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Driving Range:</strong> Use GPS or marked targets</p>
                     <p><strong>On Course:</strong> GPS watches or rangefinders</p>
                     <p><strong>Launch Monitor:</strong> Most accurate carry distances</p>
@@ -576,8 +576,8 @@ export default function ClubDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Using Your Chart:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Using Your Chart:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Course Management:</strong> Choose the right club for each shot</p>
                     <p><strong>Gap Analysis:</strong> Identify distance gaps in your set</p>
                     <p><strong>Club Selection:</strong> Account for pin position and hazards</p>
@@ -589,8 +589,8 @@ export default function ClubDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Typical Distance Gaps:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Typical Distance Gaps:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Driver to 3-Wood:</strong> 20-30 yards</p>
                     <p><strong>Woods to Hybrids:</strong> 15-20 yards</p>
                     <p><strong>Long Irons:</strong> 12-15 yards between clubs</p>
@@ -599,8 +599,8 @@ export default function ClubDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Pro Tips:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Pro Tips:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>80% Rule:</strong> Use 80% swing for better accuracy</p>
                     <p><strong>Pin Position:</strong> Adjust for front/back pins</p>
                     <p><strong>Wind Compensation:</strong> Club up/down accordingly</p>
@@ -610,36 +610,36 @@ export default function ClubDistanceCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Club Distance Calculator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Club Distance Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Personalized Charts:</strong> Tailored to your swing and skill level
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Multiple Sets:</strong> Save charts for different conditions
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Easy Updates:</strong> Modify distances as you improve
                     </p>
                   </div>
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Course Management:</strong> Make smarter club selections
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Gap Analysis:</strong> Optimize your club setup
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Free Forever:</strong> No subscription required
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Note:</strong> Distance calculations are estimates based on typical conditions. Actual distances
                   will vary based on weather, course conditions, altitude, and individual swing characteristics. Use this
                   tool as a starting point and adjust based on your on-course experience.

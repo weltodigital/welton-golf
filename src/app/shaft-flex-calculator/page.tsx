@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -272,14 +273,23 @@ export default function ShaftFlexCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 font-cooper">
+        <div>
+          {/* Breadcrumbs */
+        <nav className="text-sm text-slate-600 mb-4">
+          <ol className="flex space-x-2">
+            <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+            <li><span className="mx-2 text-slate-400">›</span>Shaft Flex Calculator</li>
+          </ol>
+        </nav>
+        </div>
+
+        <div className="text-center mb-8"> {/* Header */}
+          <h1 className="text-4xl font-black text-slate-900 mb-4 tracking-tight">
             Golf Shaft Flex Calculator
           </h1>
-          <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Find your optimal shaft flex based on swing speed, ball flight, and playing characteristics.
             Proper shaft flex improves distance, accuracy, and overall performance.
           </p>
@@ -289,8 +299,10 @@ export default function ShaftFlexCalculator() {
           {/* Input Form */}
           <Card className="p-6">
             <div className="flex items-center gap-2 mb-6">
-              <Zap className="h-6 w-6" style={{color: '#9CC69B'}} />
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Zap className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h2 className="text-2xl font-semibold text-slate-900">
                 Swing Analysis
               </h2>
             </div>
@@ -298,10 +310,10 @@ export default function ShaftFlexCalculator() {
             <div className="space-y-6">
               {/* Swing Speed */}
               <div>
-                <Label htmlFor="swingSpeed" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="swingSpeed" className="text-sm font-medium text-slate-600">
                   Driver Swing Speed (mph) *
                 </Label>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+                <p className="text-xs text-slate-600 mb-2">
                   Use a launch monitor or estimate based on distance
                 </p>
                 <Input
@@ -319,7 +331,7 @@ export default function ShaftFlexCalculator() {
 
               {/* Ball Flight */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Current Ball Flight
                 </Label>
                 <Select
@@ -339,10 +351,10 @@ export default function ShaftFlexCalculator() {
 
               {/* Distance */}
               <div>
-                <Label htmlFor="distance" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="distance" className="text-sm font-medium text-slate-600">
                   Average Driver Distance (yards)
                 </Label>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+                <p className="text-xs text-slate-600 mb-2">
                   Total distance including roll
                 </p>
                 <Input
@@ -360,7 +372,7 @@ export default function ShaftFlexCalculator() {
 
               {/* Tempo */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Swing Tempo
                 </Label>
                 <Select
@@ -382,7 +394,7 @@ export default function ShaftFlexCalculator() {
 
               {/* Age */}
               <div>
-                <Label htmlFor="age" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="age" className="text-sm font-medium text-slate-600">
                   Age
                 </Label>
                 <Input
@@ -400,7 +412,7 @@ export default function ShaftFlexCalculator() {
 
               {/* Strength */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Physical Strength
                 </Label>
                 <Select
@@ -420,7 +432,7 @@ export default function ShaftFlexCalculator() {
 
               {/* Ball Striking */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Ball Striking Consistency
                 </Label>
                 <Select
@@ -441,7 +453,7 @@ export default function ShaftFlexCalculator() {
 
               {/* Club Type */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Primary Club Type
                 </Label>
                 <Select
@@ -465,8 +477,7 @@ export default function ShaftFlexCalculator() {
                 <Button
                   onClick={handleCalculate}
                   disabled={!flexData.swingSpeed}
-                  className="flex-1 text-white"
-                  style={{backgroundColor: '#183a37'}}
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0"
                 >
                   Calculate Shaft Flex
                 </Button>
@@ -485,56 +496,58 @@ export default function ShaftFlexCalculator() {
           {showResults && shaftRecommendation && (
             <Card className="p-6">
               <div className="flex items-center gap-2 mb-6">
-                <Target className="h-6 w-6" style={{color: '#9CC69B'}} />
-                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                  <Target className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h2 className="text-2xl font-semibold text-slate-900">
                   Shaft Flex Recommendation
                 </h2>
               </div>
 
               <div className="space-y-6">
                 {/* Primary Recommendation */}
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-                  <h3 className="text-xl font-bold mb-2" style={{color: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">
                     Recommended Shaft Flex
                   </h3>
-                  <div className="text-3xl font-bold text-white mb-2">
+                  <div className="text-3xl font-bold text-emerald-700 mb-2">
                     {shaftRecommendation.recommendedFlex}
                   </div>
-                  <div className="text-sm" style={{color: '#183a37'}}>
+                  <div className="text-sm text-slate-700">
                     Swing Speed Range: {shaftRecommendation.swingSpeedRange}
                   </div>
-                  <div className="text-sm" style={{color: '#183a37'}}>
+                  <div className="text-sm text-slate-700">
                     Confidence: {shaftRecommendation.confidence}
                   </div>
                 </div>
 
                 {/* Performance Characteristics */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                  <h4 className="font-semibold text-slate-900 mb-3">
                     Performance Characteristics
                   </h4>
                   <div className="grid grid-cols-2 gap-3 text-sm">
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Launch</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Launch</div>
+                      <div className="text-slate-700">
                         {shaftRecommendation.characteristics.launch}
                       </div>
                     </div>
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Spin</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Spin</div>
+                      <div className="text-slate-700">
                         {shaftRecommendation.characteristics.spin}
                       </div>
                     </div>
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Feel</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Feel</div>
+                      <div className="text-slate-700">
                         {shaftRecommendation.characteristics.feel}
                       </div>
                     </div>
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Control</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Control</div>
+                      <div className="text-slate-700">
                         {shaftRecommendation.characteristics.control}
                       </div>
                     </div>
@@ -544,21 +557,20 @@ export default function ShaftFlexCalculator() {
                 {/* Alternative Options */}
                 {shaftRecommendation.alternatives.length > 0 && (
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                    <h4 className="font-semibold text-slate-900 mb-3">
                       Alternative Options
                     </h4>
                     <div className="flex gap-2">
                       {shaftRecommendation.alternatives.map((alt, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 rounded text-sm text-white"
-                          style={{backgroundColor: '#183a37'}}
+                          className="px-3 py-1 bg-emerald-600 rounded text-sm text-white"
                         >
                           {alt}
                         </span>
                       ))}
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-2">
+                    <p className="text-xs text-slate-700 mt-2">
                       Consider testing these alternatives during a professional fitting
                     </p>
                   </div>
@@ -566,10 +578,10 @@ export default function ShaftFlexCalculator() {
 
                 {/* Expected Performance */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
+                  <h4 className="font-semibold text-slate-900 mb-2">
                     Expected Performance
                   </h4>
-                  <p className="text-sm text-slate-700 dark:text-slate-300">
+                  <p className="text-sm text-slate-600">
                     {shaftRecommendation.characteristics.distance}
                   </p>
                 </div>
@@ -581,17 +593,17 @@ export default function ShaftFlexCalculator() {
         {/* Educational Content */}
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <Activity className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <Activity className="h-5 w-5 text-emerald-600" />
               Understanding Shaft Flex
             </h3>
-            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-4 text-sm text-slate-600">
               <div>
-                <strong className="text-slate-900 dark:text-white">Shaft Flex Basics:</strong>
+                <strong className="text-slate-900">Shaft Flex Basics:</strong>
                 <p>Shaft flex refers to how much the shaft bends during the swing. The right flex helps optimize launch conditions, spin rate, and overall performance.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Flex Options:</strong>
+                <strong className="text-slate-900">Flex Options:</strong>
                 <ul className="list-disc list-inside mt-1">
                   <li>Ladies (L): Softest flex, highest launch</li>
                   <li>Senior (A): Soft flex for moderate speeds</li>
@@ -604,21 +616,21 @@ export default function ShaftFlexCalculator() {
           </Card>
 
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <TrendingUp className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <TrendingUp className="h-5 w-5 text-emerald-600" />
               Impact of Wrong Flex
             </h3>
-            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-4 text-sm text-slate-600">
               <div>
-                <strong className="text-slate-900 dark:text-white">Too Stiff:</strong>
+                <strong className="text-slate-900">Too Stiff:</strong>
                 <p>Low ball flight, slice tendency, loss of distance, harsh feel, difficulty getting ball airborne.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Too Soft:</strong>
+                <strong className="text-slate-900">Too Soft:</strong>
                 <p>High ball flight, hook tendency, loss of accuracy, inconsistent contact, loss of control.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Proper Fit:</strong>
+                <strong className="text-slate-900">Proper Fit:</strong>
                 <p>Optimal launch angle, good feel, improved accuracy, maximum distance for your swing speed.</p>
               </div>
             </div>
@@ -627,12 +639,12 @@ export default function ShaftFlexCalculator() {
 
         {/* Professional Fitting Info */}
         <Card className="mt-8 p-6">
-          <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
+          <h3 className="text-xl font-semibold text-slate-900 mb-4">
             Professional Shaft Fitting Recommendations
           </h3>
-          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-700 dark:text-slate-300">
+          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Key Measurements</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Key Measurements</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Swing speed with launch monitor</li>
                 <li>Ball flight analysis</li>
@@ -642,7 +654,7 @@ export default function ShaftFlexCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Shaft Properties</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Shaft Properties</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Flex profile (tip/butt flex)</li>
                 <li>Kick point (bend location)</li>
@@ -652,7 +664,7 @@ export default function ShaftFlexCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">When to Get Fitted</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">When to Get Fitted</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>New equipment purchase</li>
                 <li>Significant swing changes</li>

@@ -152,52 +152,52 @@ export default function AltitudeDistanceCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Altitude Distance Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Altitude Distance Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Mountain className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+                <Mountain className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2">
                   Golf Altitude Distance Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Calculate how altitude affects your golf ball distance. Higher elevation means thinner air and longer shots.
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 High Altitude Golf Calculator - Free Elevation Distance Tool
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Playing at elevation? Golf balls fly significantly farther in thinner air. Calculate precise distance
                 adjustments for mountain courses, high-altitude destinations, and varying atmospheric conditions.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Air Density Analysis
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Temperature Effects
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Club Selection
                 </div>
               </div>
@@ -318,7 +318,7 @@ export default function AltitudeDistanceCalculator() {
                 <Button
                   onClick={calculateAltitudeEffect}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                   disabled={!currentCalc.seaLevelDistance || !currentCalc.currentAltitude}
                 >
                   Calculate Altitude Distance
@@ -354,7 +354,7 @@ export default function AltitudeDistanceCalculator() {
               </CardHeader>
               <CardContent>
                 {calculations.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600">
                     <Mountain className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No altitude calculations yet.</p>
                     <p className="text-sm">Calculate your first altitude adjustment above.</p>
@@ -362,13 +362,13 @@ export default function AltitudeDistanceCalculator() {
                 ) : (
                   <div className="space-y-4 max-h-96 overflow-y-auto">
                     {calculations.map((calculation) => (
-                      <div key={calculation.id} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border">
+                      <div key={calculation.id} className="p-4 bg-gray-50 rounded-lg border">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                            <h4 className="font-medium text-slate-900 flex items-center gap-2">
                               🏔️ {calculation.locationName}
                             </h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                            <p className="text-sm text-gray-600">
                               {calculation.createdAt} • {getClubIcon(calculation.club)} {calculation.club}
                             </p>
                           </div>
@@ -384,24 +384,24 @@ export default function AltitudeDistanceCalculator() {
 
                         <div className="grid grid-cols-2 gap-4 text-sm mb-3">
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Sea Level Distance:</p>
+                            <p className="text-gray-600">Sea Level Distance:</p>
                             <p className="font-medium">{calculation.seaLevelDistance} yards</p>
                           </div>
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Altitude Distance:</p>
+                            <p className="text-gray-600">Altitude Distance:</p>
                             <p className="font-bold text-lg text-green-600">{calculation.adjustedDistance} yards</p>
                           </div>
                         </div>
 
                         <div className="mb-3">
                           <div className="flex justify-between items-center">
-                            <span className="text-sm text-gray-600 dark:text-gray-400">Distance Gain:</span>
+                            <span className="text-sm text-gray-600">Distance Gain:</span>
                             <span className={`font-semibold ${getDistanceColor(calculation.distanceGain)}`}>
                               +{calculation.distanceGain} yards
                             </span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-sm text-gray-600 dark:text-gray-400">Altitude:</span>
+                            <span className="text-sm text-gray-600">Altitude:</span>
                             <span className={getAltitudeCategory(calculation.currentAltitude).color}>
                               {calculation.currentAltitude}ft ({getAltitudeCategory(calculation.currentAltitude).category})
                             </span>
@@ -454,8 +454,8 @@ export default function AltitudeDistanceCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">Complete Guide to High Altitude Golf</h3>
-                <p className="text-black mb-4">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Complete Guide to High Altitude Golf</h3>
+                <p className="text-slate-700 mb-4">
                   Altitude dramatically affects golf ball flight due to changes in air density. Understanding these effects
                   is crucial for proper club selection and distance management when playing at elevation.
                 </p>
@@ -463,8 +463,8 @@ export default function AltitudeDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Altitude Distance Effects:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Altitude Distance Effects:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>1,000 feet:</strong> ~2% increase (3-5 yards longer)</li>
                     <li>• <strong>3,000 feet:</strong> ~6% increase (12-15 yards longer)</li>
                     <li>• <strong>5,000 feet:</strong> ~10% increase (20-25 yards longer)</li>
@@ -473,8 +473,8 @@ export default function AltitudeDistanceCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Why Golf Balls Fly Farther:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Why Golf Balls Fly Farther:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Thinner Air:</strong> Less air resistance (drag)</li>
                     <li>• <strong>Lower Air Density:</strong> Reduced atmospheric pressure</li>
                     <li>• <strong>Less Oxygen:</strong> Lighter air molecules</li>
@@ -486,8 +486,8 @@ export default function AltitudeDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Club-Specific Effects:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Club-Specific Effects:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Driver:</strong> Largest distance gain (30-50+ yards)</p>
                     <p><strong>Fairway Woods:</strong> Significant gain (20-35 yards)</p>
                     <p><strong>Long Irons:</strong> Noticeable gain (15-25 yards)</p>
@@ -497,8 +497,8 @@ export default function AltitudeDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Temperature Effects:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Temperature Effects:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Hot Weather:</strong> Ball flies even farther</p>
                     <p><strong>Cold Weather:</strong> Reduces altitude benefit</p>
                     <p><strong>Rule of Thumb:</strong> 1-2 yards per 10°F change</p>
@@ -510,8 +510,8 @@ export default function AltitudeDistanceCalculator() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Course Management:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Course Management:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Club Down:</strong> Use less club than normal</p>
                     <p><strong>Yardage Books:</strong> Adjust all distances</p>
                     <p><strong>Approach Shots:</strong> More club selection precision needed</p>
@@ -519,8 +519,8 @@ export default function AltitudeDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Famous High Altitude Courses:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Famous High Altitude Courses:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Crans-sur-Sierre:</strong> 5,000+ feet (Switzerland)</p>
                     <p><strong>Whistling Straits:</strong> 200+ feet (Wisconsin)</p>
                     <p><strong>Bandon Dunes:</strong> 150+ feet (Oregon)</p>
@@ -528,8 +528,8 @@ export default function AltitudeDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Playing Strategy:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Playing Strategy:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Practice Round:</strong> Essential for distance calibration</p>
                     <p><strong>Range Session:</strong> Test all clubs at altitude</p>
                     <p><strong>Conservative Play:</strong> Avoid flying greens</p>
@@ -540,8 +540,8 @@ export default function AltitudeDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Additional Factors:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Additional Factors:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Humidity:</strong> Lower humidity = more distance</p>
                     <p><strong>Barometric Pressure:</strong> Lower pressure = more distance</p>
                     <p><strong>Ball Type:</strong> Some balls perform better at altitude</p>
@@ -550,8 +550,8 @@ export default function AltitudeDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Acclimatization Tips:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Acclimatization Tips:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Arrive Early:</strong> Play practice rounds</p>
                     <p><strong>Hydration:</strong> Drink more water at altitude</p>
                     <p><strong>Breathing:</strong> May feel winded initially</p>
@@ -561,24 +561,24 @@ export default function AltitudeDistanceCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Altitude Distance Calculator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Altitude Distance Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Precise Calculations:</strong> Scientific air density formulas</p>
-                    <p className="text-black mb-2"><strong>✓ Multiple Factors:</strong> Altitude, temperature, humidity</p>
-                    <p className="text-black"><strong>✓ Course Planning:</strong> Better distance management</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Precise Calculations:</strong> Scientific air density formulas</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Multiple Factors:</strong> Altitude, temperature, humidity</p>
+                    <p className="text-slate-700"><strong>✓ Course Planning:</strong> Better distance management</p>
                   </div>
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Club Selection:</strong> Accurate yardage adjustments</p>
-                    <p className="text-black mb-2"><strong>✓ Performance Tracking:</strong> Compare different elevations</p>
-                    <p className="text-black"><strong>✓ Free Tool:</strong> No cost for altitude calculations</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Club Selection:</strong> Accurate yardage adjustments</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Performance Tracking:</strong> Compare different elevations</p>
+                    <p className="text-slate-700"><strong>✓ Free Tool:</strong> No cost for altitude calculations</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Important:</strong> Altitude effects can vary based on individual swing characteristics, equipment,
                   and specific atmospheric conditions. These calculations provide general estimates based on physics principles.
                   Always verify distances with practice rounds and range sessions when playing at significant elevation.

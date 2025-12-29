@@ -173,54 +173,54 @@ export default function StablefordCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Breadcrumbs */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Stableford Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Stableford Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Target className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Target className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
                   Stableford Points Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Calculate Stableford points for your golf round with automatic handicap stroke allocation and scoring.
                 </p>
               </div>
             </div>
 
             {/* SEO-rich description */}
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Professional Stableford Points Calculator - Free & Accurate
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Our Stableford calculator automatically allocates handicap strokes and calculates points using the official
                 scoring system. Perfect for competitions, casual rounds, and tracking your golf performance.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Official Stableford Scoring
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Auto Handicap Allocation
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   18-Hole Score Tracking
                 </div>
               </div>
@@ -228,15 +228,15 @@ export default function StablefordCalculator() {
 
             {/* Current Total Points Display */}
             {totalPoints > 0 && (
-              <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
                 <div className="text-center">
-                  <h2 className="text-2xl font-bold mb-2" style={{color: '#183a37'}}>
+                  <h2 className="text-2xl font-black text-slate-900 mb-2">
                     Total Stableford Points
                   </h2>
-                  <div className="text-5xl font-bold mb-2" style={{color: '#183a37'}}>
+                  <div className="text-5xl font-black text-emerald-600 mb-2">
                     {totalPoints}
                   </div>
-                  <p className="text-sm" style={{color: '#183a37'}}>
+                  <p className="text-sm text-slate-700">
                     Points for current round
                   </p>
                 </div>
@@ -307,7 +307,7 @@ export default function StablefordCalculator() {
                     </thead>
                     <tbody>
                       {holes.map((hole, index) => (
-                        <tr key={hole.hole} className="border-b hover:bg-gray-50 dark:hover:bg-slate-700">
+                        <tr key={hole.hole} className="border-b hover:bg-slate-50">
                           <td className="p-2 font-medium">{hole.hole}</td>
                           <td className="p-2 text-center">
                             <Input
@@ -333,7 +333,7 @@ export default function StablefordCalculator() {
                           <td className="p-2 text-center">
                             <span
                               className="px-2 py-1 rounded text-white font-medium"
-                              style={{backgroundColor: hole.stablefordPoints > 0 ? '#9CC69B' : '#gray'}}
+                              style={{backgroundColor: hole.stablefordPoints > 0 ? '#10b981' : '#6b7280'}}
                             >
                               {hole.stablefordPoints}
                             </span>
@@ -350,7 +350,7 @@ export default function StablefordCalculator() {
                         <td className="p-2 text-center">
                           <span
                             className="px-3 py-1 rounded text-white font-bold"
-                            style={{backgroundColor: '#183a37'}}
+                            className="bg-emerald-600"
                           >
                             {totalPoints}
                           </span>
@@ -364,13 +364,12 @@ export default function StablefordCalculator() {
                 <div className="mt-6 pt-4 border-t">
                   <Button
                     onClick={saveRound}
-                    className="w-full text-white hover:opacity-90"
-                    style={{backgroundColor: '#183a37'}}
+                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0"
                     disabled={!currentRound.courseHandicap || totalPoints === 0}
                   >
                     Save Round ({totalPoints} points)
                   </Button>
-                  <p className="text-xs text-gray-500 text-center mt-2">
+                  <p className="text-xs text-slate-500 text-center mt-2">
                     Complete your scorecard before saving the round
                   </p>
                 </div>
@@ -406,7 +405,7 @@ export default function StablefordCalculator() {
             </CardHeader>
             <CardContent>
               {rounds.length === 0 ? (
-                <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                <div className="text-center py-8 text-slate-600">
                   <Target className="h-12 w-12 mx-auto mb-4 opacity-50" />
                   <p>No rounds recorded yet.</p>
                   <p className="text-sm">Complete your first Stableford round above.</p>
@@ -414,15 +413,15 @@ export default function StablefordCalculator() {
               ) : (
                 <div className="space-y-3 max-h-96 overflow-y-auto">
                   {rounds.map((round) => (
-                    <div key={round.id} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: '#9CC69B'}}>
+                    <div key={round.id} className="flex items-center justify-between p-3 bg-emerald-50 rounded-lg">
                       <div className="flex-1">
-                        <div className="font-medium text-sm" style={{color: '#183a37'}}>
+                        <div className="font-medium text-sm text-slate-900">
                           {round.courseName}
                         </div>
-                        <div className="text-xs" style={{color: '#183a37'}}>
+                        <div className="text-xs text-slate-700">
                           Course Handicap: {round.courseHandicap}
                         </div>
-                        <div className="text-sm font-medium px-2 py-1 rounded inline-block text-white mt-1" style={{backgroundColor: '#183a37'}}>
+                        <div className="text-sm font-medium px-2 py-1 bg-emerald-600 rounded inline-block text-white mt-1">
                           Total Points: {round.totalPoints}
                         </div>
                       </div>
@@ -451,10 +450,10 @@ export default function StablefordCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">
+                <h3 className="text-lg font-black text-slate-900 mb-3 tracking-tight">
                   Complete Guide to Stableford Points Calculation
                 </h3>
-                <p className="text-black mb-4">
+                <p className="text-slate-700 mb-4">
                   Stableford is a popular golf scoring system where players earn points based on their net score relative to par.
                   This system rewards good play and limits the damage from bad holes, making golf more enjoyable and encouraging.
                 </p>
@@ -462,8 +461,8 @@ export default function StablefordCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Stableford Points System:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Stableford Points System:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Double Eagle or better:</strong> 5 points (Net score 3+ under par)</li>
                     <li>• <strong>Eagle:</strong> 4 points (Net score 2 under par)</li>
                     <li>• <strong>Birdie:</strong> 3 points (Net score 1 under par)</li>
@@ -473,8 +472,8 @@ export default function StablefordCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">How Handicap Strokes Work:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">How Handicap Strokes Work:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Stroke allocation</strong> is based on your course handicap</li>
                     <li>• <strong>Even distribution:</strong> Strokes spread across all 18 holes</li>
                     <li>• <strong>Extra strokes</strong> go to the hardest holes first</li>
@@ -486,61 +485,61 @@ export default function StablefordCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Example Calculation:</h4>
-                  <p className="text-sm text-black mb-2">
+                  <h4 className="font-bold text-slate-900 mb-3">Example Calculation:</h4>
+                  <p className="text-sm text-slate-700 mb-2">
                     <strong>Hole:</strong> Par 4, 1 handicap stroke<br/>
                     <strong>Gross Score:</strong> 6<br/>
                     <strong>Net Score:</strong> 6 - 1 = 5 (1 over par)
                   </p>
-                  <p className="text-sm text-black mb-2">
+                  <p className="text-sm text-slate-700 mb-2">
                     <strong>Result:</strong> 1 Stableford point (Bogey)
                   </p>
-                  <p className="text-xs text-black">
+                  <p className="text-xs text-slate-700">
                     Without the handicap stroke, this would be 0 points (Double Bogey).
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Competition Scoring:</h4>
-                  <p className="text-sm text-black mb-2">
+                  <h4 className="font-bold text-slate-900 mb-3">Competition Scoring:</h4>
+                  <p className="text-sm text-slate-700 mb-2">
                     Stableford competitions are won by the player with the highest total points.
                     Typical winning scores range from 32-42 points depending on conditions.
                   </p>
-                  <p className="text-xs text-black">
+                  <p className="text-xs text-slate-700">
                     36 points represents playing to your handicap (2 points per hole average).
                   </p>
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
                 <h4 className="font-semibold mb-3 text-black">Why Use Our Stableford Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Automatic Stroke Allocation:</strong> No manual calculation needed
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Real-time Scoring:</strong> See points update as you play
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Competition Ready:</strong> Official Stableford scoring rules
                     </p>
                   </div>
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Round History:</strong> Track your Stableford performance
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Mobile Friendly:</strong> Score on the course or at home
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Free Forever:</strong> No registration required
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Competition Note:</strong> For official Stableford competitions, verify handicap stroke
                   allocation with the competition organizer, as some events may use different stroke index systems
                   or have specific local rules.

@@ -414,6 +414,14 @@ export default function HowToBreakEighty() {
 
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-8 max-w-6xl">
+          {/* Breadcrumbs */}
+          <nav className="text-sm text-slate-600 mb-4">
+            <ol className="flex space-x-2">
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2"><Link href="/blog" className="hover:text-emerald-600">Blog</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">How to Break 80</li>
+            </ol>
+          </nav>
 
           {/* Header Section */}
           <div className="text-center mb-12">

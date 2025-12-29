@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -206,14 +207,23 @@ export default function GripSizeCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 font-cooper">
+        <div>
+          {/* Breadcrumbs */
+        <nav className="text-sm text-slate-600 mb-4">
+          <ol className="flex space-x-2">
+            <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+            <li><span className="mx-2 text-slate-400">›</span>Grip Size Calculator</li>
+          </ol>
+        </nav>
+        </div>
+
+        <div className="text-center mb-8"> {/* Header */}
+          <h1 className="text-4xl font-black text-slate-900 mb-4 tracking-tight">
             Golf Grip Size Calculator
           </h1>
-          <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Find your perfect golf grip size based on hand measurements, playing style, and preferences.
             Proper grip size improves feel, control, and overall performance.
           </p>
@@ -223,8 +233,10 @@ export default function GripSizeCalculator() {
           {/* Input Form */}
           <Card className="p-6">
             <div className="flex items-center gap-2 mb-6">
-              <Hand className="h-6 w-6" style={{color: '#9CC69B'}} />
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Hand className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h2 className="text-2xl font-semibold text-slate-900">
                 Hand Measurements & Preferences
               </h2>
             </div>
@@ -232,10 +244,10 @@ export default function GripSizeCalculator() {
             <div className="space-y-6">
               {/* Hand Length */}
               <div>
-                <Label htmlFor="handLength" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="handLength" className="text-sm font-medium text-slate-600">
                   Hand Length (mm) *
                 </Label>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+                <p className="text-xs text-slate-600 mb-2">
                   Measure from wrist crease to tip of middle finger
                 </p>
                 <Input
@@ -253,10 +265,10 @@ export default function GripSizeCalculator() {
 
               {/* Hand Span */}
               <div>
-                <Label htmlFor="handSpan" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="handSpan" className="text-sm font-medium text-slate-600">
                   Hand Span (mm) *
                 </Label>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+                <p className="text-xs text-slate-600 mb-2">
                   Measure from thumb tip to pinky tip with hand spread wide
                 </p>
                 <Input
@@ -274,7 +286,7 @@ export default function GripSizeCalculator() {
 
               {/* Playing Style */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Playing Style
                 </Label>
                 <Select
@@ -294,7 +306,7 @@ export default function GripSizeCalculator() {
 
               {/* Swing Speed */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Driver Swing Speed
                 </Label>
                 <Select
@@ -315,7 +327,7 @@ export default function GripSizeCalculator() {
 
               {/* Feel Preference */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Feel Preference
                 </Label>
                 <Select
@@ -335,7 +347,7 @@ export default function GripSizeCalculator() {
 
               {/* Hand Strength */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Hand/Grip Strength
                 </Label>
                 <Select
@@ -359,8 +371,7 @@ export default function GripSizeCalculator() {
                 <Button
                   onClick={handleCalculate}
                   disabled={!gripData.handLength || !gripData.handSpan}
-                  className="flex-1 text-white"
-                  style={{backgroundColor: '#183a37'}}
+                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0"
                 >
                   Calculate Grip Size
                 </Button>
@@ -379,44 +390,46 @@ export default function GripSizeCalculator() {
           {showResults && gripRecommendation && (
             <Card className="p-6">
               <div className="flex items-center gap-2 mb-6">
-                <Target className="h-6 w-6" style={{color: '#9CC69B'}} />
-                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                  <Target className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h2 className="text-2xl font-semibold text-slate-900">
                   Grip Size Recommendation
                 </h2>
               </div>
 
               <div className="space-y-6">
                 {/* Primary Recommendation */}
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-                  <h3 className="text-xl font-bold mb-2" style={{color: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">
                     Recommended Grip Size
                   </h3>
-                  <div className="text-3xl font-bold text-white mb-2">
+                  <div className="text-3xl font-bold text-emerald-700 mb-2">
                     {gripRecommendation.recommendedSize}
                   </div>
-                  <div className="text-sm" style={{color: '#183a37'}}>
+                  <div className="text-sm text-slate-700">
                     Core Size: {gripRecommendation.coreSize}
                   </div>
-                  <div className="text-sm" style={{color: '#183a37'}}>
+                  <div className="text-sm text-slate-700">
                     Confidence: {gripRecommendation.confidence}
                   </div>
                 </div>
 
                 {/* Hand Measurements Summary */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                  <h4 className="font-semibold text-slate-900 mb-3">
                     Your Hand Measurements
                   </h4>
                   <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Hand Length</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Hand Length</div>
+                      <div className="text-slate-700">
                         {gripData.handLength}mm ({gripRecommendation.handLengthInches}&quot;)
                       </div>
                     </div>
-                    <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
-                      <div className="font-medium text-slate-900 dark:text-white">Hand Span</div>
-                      <div className="text-slate-600 dark:text-slate-300">
+                    <div className="p-3 bg-slate-100 rounded">
+                      <div className="font-medium text-slate-900">Hand Span</div>
+                      <div className="text-slate-700">
                         {gripData.handSpan}mm ({gripRecommendation.handSpanInches}&quot;)
                       </div>
                     </div>
@@ -425,13 +438,13 @@ export default function GripSizeCalculator() {
 
                 {/* Benefits */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                  <h4 className="font-semibold text-slate-900 mb-3">
                     Benefits of This Grip Size
                   </h4>
                   <ul className="space-y-2">
                     {gripRecommendation.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
-                        <TrendingUp className="h-4 w-4 mt-0.5 flex-shrink-0" style={{color: '#9CC69B'}} />
+                      <li key={index} className="flex items-start gap-2 text-sm text-slate-600">
+                        <TrendingUp className="h-4 w-4 mt-0.5 flex-shrink-0 text-emerald-600" />
                         {benefit}
                       </li>
                     ))}
@@ -440,10 +453,10 @@ export default function GripSizeCalculator() {
 
                 {/* Installation Tips */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
+                  <h4 className="font-semibold text-slate-900 mb-2">
                     Installation Notes
                   </h4>
-                  <p className="text-sm text-slate-700 dark:text-slate-300">
+                  <p className="text-sm text-slate-600">
                     {gripRecommendation.installationTips}
                   </p>
                 </div>
@@ -455,42 +468,42 @@ export default function GripSizeCalculator() {
         {/* Educational Content */}
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <Ruler className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <Ruler className="h-5 w-5 text-emerald-600" />
               How to Measure Your Hands
             </h3>
-            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-4 text-sm text-slate-600">
               <div>
-                <strong className="text-slate-900 dark:text-white">Hand Length:</strong>
+                <strong className="text-slate-900">Hand Length:</strong>
                 <p>Place your hand flat on a surface. Measure from the wrist crease (where your hand bends) to the tip of your middle finger. Use a ruler or measuring tape for accuracy.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Hand Span:</strong>
+                <strong className="text-slate-900">Hand Span:</strong>
                 <p>Spread your hand as wide as possible. Measure from the tip of your thumb to the tip of your pinky finger. This measurement helps determine grip circumference needs.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Tips:</strong>
+                <strong className="text-slate-900">Tips:</strong>
                 <p>Measure both hands and use the larger measurements. Consider having a professional measure you at a golf shop for the most accurate fitting.</p>
               </div>
             </div>
           </Card>
 
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <Target className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <Target className="h-5 w-5 text-emerald-600" />
               Grip Size Impact on Performance
             </h3>
-            <div className="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-4 text-sm text-slate-600">
               <div>
-                <strong className="text-slate-900 dark:text-white">Too Small:</strong>
+                <strong className="text-slate-900">Too Small:</strong>
                 <p>Causes excessive grip pressure, promotes hooks, can lead to hand fatigue and inconsistent ball striking.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Too Large:</strong>
+                <strong className="text-slate-900">Too Large:</strong>
                 <p>Reduces feel and touch, can promote slices, makes it harder to release the club properly through impact.</p>
               </div>
               <div>
-                <strong className="text-slate-900 dark:text-white">Proper Fit:</strong>
+                <strong className="text-slate-900">Proper Fit:</strong>
                 <p>When gripping properly, your middle and ring fingers should just touch your palm. This allows for optimal grip pressure and club control.</p>
               </div>
             </div>
@@ -499,12 +512,12 @@ export default function GripSizeCalculator() {
 
         {/* Additional Information */}
         <Card className="mt-8 p-6">
-          <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
+          <h3 className="text-xl font-semibold text-slate-900 mb-4">
             Professional Grip Fitting Recommendations
           </h3>
-          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-700 dark:text-slate-300">
+          <div className="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">When to Get Fitted</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">When to Get Fitted</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Buying new clubs</li>
                 <li>Experiencing hand pain</li>
@@ -513,7 +526,7 @@ export default function GripSizeCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Grip Materials</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Grip Materials</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Rubber: Most common, versatile</li>
                 <li>Cord: Added texture for grip</li>
@@ -522,7 +535,7 @@ export default function GripSizeCalculator() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Maintenance Tips</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Maintenance Tips</h4>
               <ul className="space-y-1 list-disc list-inside">
                 <li>Clean regularly with mild soap</li>
                 <li>Replace every 1-2 years</li>

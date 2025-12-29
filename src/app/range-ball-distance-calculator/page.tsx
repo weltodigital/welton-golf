@@ -144,52 +144,52 @@ export default function RangeBallDistanceCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Range Ball Distance Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Range Ball Distance Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Zap className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+                <Zap className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2">
                   Range Ball Distance Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Convert your driving range distances to accurate on-course yardages by accounting for ball quality differences.
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Practice Range Calibration - Free Golf Distance Tool
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Bridge the gap between range practice and course performance. Range balls typically fly 10-25% shorter
                 than premium golf balls. Know your true distances for better club selection and course management.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Ball Quality Analysis
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Distance Conversion
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Environmental Factors
                 </div>
               </div>
@@ -312,7 +312,7 @@ export default function RangeBallDistanceCalculator() {
                 <Button
                   onClick={calculateOnCourseDistance}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                   disabled={!currentCalc.rangeBallDistance}
                 >
                   Calculate On-Course Distance
@@ -348,7 +348,7 @@ export default function RangeBallDistanceCalculator() {
               </CardHeader>
               <CardContent>
                 {calculations.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600">
                     <Zap className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No distance calculations yet.</p>
                     <p className="text-sm">Convert your first range distance above.</p>
@@ -356,13 +356,13 @@ export default function RangeBallDistanceCalculator() {
                 ) : (
                   <div className="space-y-4 max-h-96 overflow-y-auto">
                     {calculations.map((calculation) => (
-                      <div key={calculation.id} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border">
+                      <div key={calculation.id} className="p-4 bg-gray-50 rounded-lg border">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                            <h4 className="font-medium text-slate-900 flex items-center gap-2">
                               {getClubIcon(calculation.club)} {calculation.sessionName}
                             </h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                            <p className="text-sm text-gray-600">
                               {calculation.createdAt} • {calculation.club}
                             </p>
                           </div>
@@ -378,17 +378,17 @@ export default function RangeBallDistanceCalculator() {
 
                         <div className="grid grid-cols-2 gap-4 text-sm mb-3">
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Range Distance:</p>
+                            <p className="text-gray-600">Range Distance:</p>
                             <p className="font-medium">{calculation.rangeBallDistance} yards</p>
                           </div>
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">On-Course Estimate:</p>
+                            <p className="text-gray-600">On-Course Estimate:</p>
                             <p className="font-bold text-lg text-green-600">{calculation.estimatedOnCourseDistance} yards</p>
                           </div>
                         </div>
 
                         <div className="mb-3">
-                          <p className="text-xs text-gray-600 dark:text-gray-400">Ball Quality:</p>
+                          <p className="text-xs text-gray-600">Ball Quality:</p>
                           <p className="text-sm">{getQualityDescription(calculation.qualityFactor)}</p>
                         </div>
 
@@ -434,8 +434,8 @@ export default function RangeBallDistanceCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">Complete Guide to Range Ball Performance</h3>
-                <p className="text-black mb-4">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Complete Guide to Range Ball Performance</h3>
+                <p className="text-slate-700 mb-4">
                   Range balls are designed differently than premium golf balls to reduce distance for safety and cost reasons.
                   Understanding these differences is crucial for accurate practice and proper club selection on the course.
                 </p>
@@ -443,8 +443,8 @@ export default function RangeBallDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Range Ball Types & Distance Loss:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Range Ball Types & Distance Loss:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Limited Flight Balls:</strong> 20-30% shorter (safety ranges)</li>
                     <li>• <strong>Striped Range Balls:</strong> 15-20% shorter (worn/older balls)</li>
                     <li>• <strong>Standard Range Balls:</strong> 10-18% shorter (typical ranges)</li>
@@ -453,8 +453,8 @@ export default function RangeBallDistanceCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Why Range Balls Fly Shorter:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Why Range Balls Fly Shorter:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Construction:</strong> Harder, less responsive cores</li>
                     <li>• <strong>Dimple Pattern:</strong> Different aerodynamics for reduced flight</li>
                     <li>• <strong>Compression:</strong> Lower compression for durability</li>
@@ -466,8 +466,8 @@ export default function RangeBallDistanceCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Distance Loss by Club:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Distance Loss by Club:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Driver:</strong> 20-40 yard loss typical</p>
                     <p><strong>Fairway Woods:</strong> 15-30 yard loss</p>
                     <p><strong>Long Irons:</strong> 10-20 yard loss</p>
@@ -477,8 +477,8 @@ export default function RangeBallDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Environmental Factors:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Environmental Factors:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Altitude:</strong> +2% distance per 1000 feet</p>
                     <p><strong>Temperature:</strong> +1 yard per 10°F above 70°F</p>
                     <p><strong>Humidity:</strong> Slight distance reduction in high humidity</p>
@@ -490,8 +490,8 @@ export default function RangeBallDistanceCalculator() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Practice Tips:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Practice Tips:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Focus on Contact:</strong> Ball quality affects distance, not strike quality</p>
                     <p><strong>Swing Tempo:</strong> Maintain course swing speed on range</p>
                     <p><strong>Ball Position:</strong> Practice same setup as on course</p>
@@ -499,8 +499,8 @@ export default function RangeBallDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Club Selection Impact:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Club Selection Impact:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Underestimation:</strong> Range practice may lead to longer clubs on course</p>
                     <p><strong>Timing Issues:</strong> Different ball flight affects rhythm</p>
                     <p><strong>Confidence:</strong> Know your true distances for better decisions</p>
@@ -508,8 +508,8 @@ export default function RangeBallDistanceCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Conversion Guidelines:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Conversion Guidelines:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Quick Rule:</strong> Add 15% to range distances</p>
                     <p><strong>Long Clubs:</strong> Add more (20-25% for driver)</p>
                     <p><strong>Short Clubs:</strong> Add less (5-10% for wedges)</p>
@@ -518,24 +518,24 @@ export default function RangeBallDistanceCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Range Ball Distance Calculator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Range Ball Distance Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Accurate Conversion:</strong> Scientific ball quality analysis</p>
-                    <p className="text-black mb-2"><strong>✓ Multiple Ball Types:</strong> Accounts for different range balls</p>
-                    <p className="text-black"><strong>✓ Environmental Factors:</strong> Altitude and temperature adjustments</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Accurate Conversion:</strong> Scientific ball quality analysis</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Multiple Ball Types:</strong> Accounts for different range balls</p>
+                    <p className="text-slate-700"><strong>✓ Environmental Factors:</strong> Altitude and temperature adjustments</p>
                   </div>
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Club-Specific:</strong> Track all clubs in your bag</p>
-                    <p className="text-black mb-2"><strong>✓ Practice Optimization:</strong> Better range session planning</p>
-                    <p className="text-black"><strong>✓ Free Tool:</strong> No cost for distance conversions</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Club-Specific:</strong> Track all clubs in your bag</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Practice Optimization:</strong> Better range session planning</p>
+                    <p className="text-slate-700"><strong>✓ Free Tool:</strong> No cost for distance conversions</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Important:</strong> Range ball performance varies significantly between facilities and ball conditions.
                   These calculations provide general estimates based on typical range ball characteristics. For most accurate
                   results, test your actual distances on the course and adjust calculations based on your experience.

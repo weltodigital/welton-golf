@@ -239,6 +239,15 @@ export default function HowToBreak90Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="container mx-auto px-4 py-8 max-w-4xl">
+        {/* Breadcrumbs */}
+        <nav className="text-sm text-slate-600 mb-4">
+          <ol className="flex space-x-2">
+            <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+            <li className="before:content-['/'] before:mx-2"><Link href="/blog" className="hover:text-emerald-600">Blog</Link></li>
+            <li className="before:content-['/'] before:mx-2 text-slate-900">How to Break 90</li>
+          </ol>
+        </nav>
+
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

@@ -5,7 +5,11 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   title: 'Welton Golf - Your Complete Golf Companion | Tools, Guides & Course Directory',

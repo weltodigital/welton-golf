@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -335,14 +336,23 @@ export default function GolfTripPlanner() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 font-cooper">
+        <div>
+          {/* Breadcrumbs */
+        <nav className="text-sm text-slate-600 mb-4">
+          <ol className="flex space-x-2">
+            <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+            <li><span className="mx-2 text-slate-400">›</span>Golf Trip Planner</li>
+          </ol>
+        </nav>
+        </div>
+
+        <div className="text-center mb-8"> {/* Header */}
+          <h1 className="text-4xl font-black text-slate-900 mb-4 font-cooper">
             Golf Trip Planner
           </h1>
-          <p className="text-lg text-slate-700 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Plan your perfect golf getaway with detailed cost breakdowns, recommendations, and itineraries.
             Get accurate budgets for destinations worldwide and optimize your golf travel experience.
           </p>
@@ -352,8 +362,8 @@ export default function GolfTripPlanner() {
           {/* Input Form */}
           <Card className="p-6">
             <div className="flex items-center gap-2 mb-6">
-              <MapPin className="h-6 w-6" style={{color: '#9CC69B'}} />
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+              <MapPin className="h-6 w-6 text-emerald-600" />
+              <h2 className="text-2xl font-semibold text-slate-900">
                 Trip Details
               </h2>
             </div>
@@ -361,7 +371,7 @@ export default function GolfTripPlanner() {
             <div className="space-y-6">
               {/* Destination */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Destination *
                 </Label>
                 <Select
@@ -390,7 +400,7 @@ export default function GolfTripPlanner() {
 
               {/* Duration */}
               <div>
-                <Label htmlFor="duration" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="duration" className="text-sm font-medium text-slate-600">
                   Trip Duration (nights) *
                 </Label>
                 <Input
@@ -408,7 +418,7 @@ export default function GolfTripPlanner() {
 
               {/* Group Size */}
               <div>
-                <Label htmlFor="groupSize" className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label htmlFor="groupSize" className="text-sm font-medium text-slate-600">
                   Group Size *
                 </Label>
                 <Input
@@ -426,7 +436,7 @@ export default function GolfTripPlanner() {
 
               {/* Accommodation Type */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Accommodation Type
                 </Label>
                 <Select
@@ -448,7 +458,7 @@ export default function GolfTripPlanner() {
 
               {/* Transport Type */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Transport Type
                 </Label>
                 <Select
@@ -470,7 +480,7 @@ export default function GolfTripPlanner() {
 
               {/* Rounds Per Day */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Rounds Per Day
                 </Label>
                 <Select
@@ -490,7 +500,7 @@ export default function GolfTripPlanner() {
 
               {/* Course Type */}
               <div>
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Course Type Preference
                 </Label>
                 <Select
@@ -512,7 +522,7 @@ export default function GolfTripPlanner() {
 
               {/* Additional Options */}
               <div className="space-y-3">
-                <Label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <Label className="text-sm font-medium text-slate-600">
                   Additional Services
                 </Label>
                 <div className="space-y-2">
@@ -523,7 +533,7 @@ export default function GolfTripPlanner() {
                       onChange={(e) => setTripData(prev => ({ ...prev, includeEquipment: e.target.checked }))}
                       className="rounded border-slate-300"
                     />
-                    <span className="text-sm text-slate-700 dark:text-slate-300">Include equipment rental</span>
+                    <span className="text-sm text-slate-600">Include equipment rental</span>
                   </label>
                   <label className="flex items-center space-x-2">
                     <input
@@ -532,7 +542,7 @@ export default function GolfTripPlanner() {
                       onChange={(e) => setTripData(prev => ({ ...prev, includeMeals: e.target.checked }))}
                       className="rounded border-slate-300"
                     />
-                    <span className="text-sm text-slate-700 dark:text-slate-300">Include meals budget</span>
+                    <span className="text-sm text-slate-600">Include meals budget</span>
                   </label>
                   <label className="flex items-center space-x-2">
                     <input
@@ -541,7 +551,7 @@ export default function GolfTripPlanner() {
                       onChange={(e) => setTripData(prev => ({ ...prev, includeActivities: e.target.checked }))}
                       className="rounded border-slate-300"
                     />
-                    <span className="text-sm text-slate-700 dark:text-slate-300">Include non-golf activities</span>
+                    <span className="text-sm text-slate-600">Include non-golf activities</span>
                   </label>
                 </div>
               </div>
@@ -552,7 +562,7 @@ export default function GolfTripPlanner() {
                   onClick={handleCalculate}
                   disabled={!tripData.destination || tripData.duration === 0}
                   className="flex-1 text-white"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                 >
                   Plan Trip
                 </Button>
@@ -571,66 +581,66 @@ export default function GolfTripPlanner() {
           {showResults && tripPlan && (
             <Card className="p-6">
               <div className="flex items-center gap-2 mb-6">
-                <DollarSign className="h-6 w-6" style={{color: '#9CC69B'}} />
-                <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">
+                <DollarSign className="h-6 w-6" className="text-emerald-600" />
+                <h2 className="text-2xl font-semibold text-slate-900">
                   Trip Plan & Budget
                 </h2>
               </div>
 
               <div className="space-y-6">
                 {/* Cost Summary */}
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-                  <h3 className="text-xl font-bold mb-2" style={{color: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
+                  <h3 className="text-xl font-bold mb-2" className="text-slate-900">
                     Total Trip Cost
                   </h3>
                   <div className="text-3xl font-bold text-white mb-2">
                     £{tripPlan.totalCost.toLocaleString()}
                   </div>
-                  <div className="text-lg font-semibold" style={{color: '#183a37'}}>
+                  <div className="text-lg font-semibold" className="text-slate-900">
                     £{tripPlan.costPerPerson.toLocaleString()} per person
                   </div>
-                  <div className="text-sm" style={{color: '#183a37'}}>
+                  <div className="text-sm text-slate-700">
                     {tripData.groupSize} people × {tripData.duration} nights × {tripPlan.schedule.totalRounds} rounds
                   </div>
                 </div>
 
                 {/* Cost Breakdown */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                  <h4 className="font-semibold text-slate-900 mb-3">
                     Cost Breakdown
                   </h4>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between p-2 bg-slate-50 dark:bg-slate-700 rounded">
+                    <div className="flex justify-between p-2 bg-slate-50 rounded">
                       <span>Accommodation ({tripData.duration} nights)</span>
                       <span className="font-medium">£{tripPlan.breakdown.accommodation.toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between p-2 bg-slate-50 dark:bg-slate-700 rounded">
+                    <div className="flex justify-between p-2 bg-slate-50 rounded">
                       <span>Greens Fees ({tripPlan.schedule.totalRounds} rounds)</span>
                       <span className="font-medium">£{tripPlan.breakdown.greensFeesTotal.toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between p-2 bg-slate-50 dark:bg-slate-700 rounded">
+                    <div className="flex justify-between p-2 bg-slate-50 rounded">
                       <span>Transport & Travel</span>
                       <span className="font-medium">£{tripPlan.breakdown.transport.toLocaleString()}</span>
                     </div>
                     {tripPlan.breakdown.meals > 0 && (
-                      <div className="flex justify-between p-2 bg-slate-50 dark:bg-slate-700 rounded">
+                      <div className="flex justify-between p-2 bg-slate-50 rounded">
                         <span>Meals</span>
                         <span className="font-medium">£{tripPlan.breakdown.meals.toLocaleString()}</span>
                       </div>
                     )}
                     {tripPlan.breakdown.equipment > 0 && (
-                      <div className="flex justify-between p-2 bg-slate-50 dark:bg-slate-700 rounded">
+                      <div className="flex justify-between p-2 bg-slate-50 rounded">
                         <span>Equipment Rental</span>
                         <span className="font-medium">£{tripPlan.breakdown.equipment.toLocaleString()}</span>
                       </div>
                     )}
                     {tripPlan.breakdown.activities > 0 && (
-                      <div className="flex justify-between p-2 bg-slate-50 dark:bg-slate-700 rounded">
+                      <div className="flex justify-between p-2 bg-slate-50 rounded">
                         <span>Activities</span>
                         <span className="font-medium">£{tripPlan.breakdown.activities.toLocaleString()}</span>
                       </div>
                     )}
-                    <div className="flex justify-between p-2 bg-slate-50 dark:bg-slate-700 rounded">
+                    <div className="flex justify-between p-2 bg-slate-50 rounded">
                       <span>Miscellaneous (10%)</span>
                       <span className="font-medium">£{tripPlan.breakdown.miscellaneous.toLocaleString()}</span>
                     </div>
@@ -638,12 +648,12 @@ export default function GolfTripPlanner() {
                 </div>
 
                 {/* Per Round Cost */}
-                <div className="p-3 bg-slate-100 dark:bg-slate-700 rounded">
+                <div className="p-3 bg-slate-100 rounded">
                   <div className="text-center">
-                    <div className="text-lg font-bold" style={{color: '#183a37'}}>
+                    <div className="text-lg font-black text-slate-900">
                       £{tripPlan.breakdown.greensFeesPerRound} per round
                     </div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">
+                    <div className="text-sm text-slate-700">
                       Average greens fees
                     </div>
                   </div>
@@ -659,8 +669,8 @@ export default function GolfTripPlanner() {
             {/* Recommendations */}
             <Card className="p-6">
               <div className="flex items-center gap-2 mb-6">
-                <Trophy className="h-6 w-6" style={{color: '#9CC69B'}} />
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                <Trophy className="h-6 w-6" className="text-emerald-600" />
+                <h3 className="text-xl font-semibold text-slate-900">
                   Recommendations
                 </h3>
               </div>
@@ -668,7 +678,7 @@ export default function GolfTripPlanner() {
               <div className="space-y-6">
                 {/* Best Months */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
+                  <h4 className="font-semibold text-slate-900 mb-2">
                     Best Months to Visit
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -676,7 +686,7 @@ export default function GolfTripPlanner() {
                       <span
                         key={month}
                         className="px-3 py-1 rounded text-sm text-white"
-                        style={{backgroundColor: '#183a37'}}
+                        className="bg-emerald-600"
                       >
                         {month}
                       </span>
@@ -686,10 +696,10 @@ export default function GolfTripPlanner() {
 
                 {/* Course Types */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
+                  <h4 className="font-semibold text-slate-900 mb-2">
                     Recommended Course Types
                   </h4>
-                  <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                  <ul className="space-y-1 text-sm text-slate-600">
                     {tripPlan.recommendations.courseTypes.map((type, index) => (
                       <li key={index}>• {type}</li>
                     ))}
@@ -698,10 +708,10 @@ export default function GolfTripPlanner() {
 
                 {/* Packing Tips */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
+                  <h4 className="font-semibold text-slate-900 mb-2">
                     Packing Tips
                   </h4>
-                  <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                  <ul className="space-y-1 text-sm text-slate-600">
                     {tripPlan.recommendations.packingTips.map((tip, index) => (
                       <li key={index}>• {tip}</li>
                     ))}
@@ -710,10 +720,10 @@ export default function GolfTripPlanner() {
 
                 {/* Budget Tips */}
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-2">
+                  <h4 className="font-semibold text-slate-900 mb-2">
                     Money-Saving Tips
                   </h4>
-                  <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                  <ul className="space-y-1 text-sm text-slate-600">
                     {tripPlan.recommendations.budgetTips.slice(0, 3).map((tip, index) => (
                       <li key={index}>• {tip}</li>
                     ))}
@@ -725,28 +735,28 @@ export default function GolfTripPlanner() {
             {/* Itinerary */}
             <Card className="p-6">
               <div className="flex items-center gap-2 mb-6">
-                <Calendar className="h-6 w-6" style={{color: '#9CC69B'}} />
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                <Calendar className="h-6 w-6" className="text-emerald-600" />
+                <h3 className="text-xl font-semibold text-slate-900">
                   Suggested Itinerary
                 </h3>
               </div>
 
               <div className="space-y-3">
                 {tripPlan.schedule.recommendedItinerary.map((day, index) => (
-                  <div key={index} className="p-3 bg-slate-50 dark:bg-slate-700 rounded">
-                    <div className="text-sm text-slate-700 dark:text-slate-300">
+                  <div key={index} className="p-3 bg-slate-50 rounded">
+                    <div className="text-sm text-slate-600">
                       {day}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 p-3 bg-slate-100 dark:bg-slate-700 rounded">
+              <div className="mt-4 p-3 bg-slate-100 rounded">
                 <div className="text-center text-sm">
-                  <div className="font-semibold text-slate-900 dark:text-white">
+                  <div className="font-semibold text-slate-900">
                     Total Golf Rounds: {tripPlan.schedule.totalRounds}
                   </div>
-                  <div className="text-slate-600 dark:text-slate-400">
+                  <div className="text-slate-700">
                     {tripData.roundsPerDay} round{tripData.roundsPerDay !== 1 ? 's' : ''} per day
                   </div>
                 </div>
@@ -758,11 +768,11 @@ export default function GolfTripPlanner() {
         {/* Educational Content */}
         <div className="mt-12 grid md:grid-cols-3 gap-8">
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <Plane className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <Plane className="h-5 w-5" className="text-emerald-600" />
               Planning Tips
             </h3>
-            <div className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-3 text-sm text-slate-600">
               <p><strong>Book Early:</strong> Reserve tee times and accommodation 3-6 months in advance for popular destinations.</p>
               <p><strong>Travel Insurance:</strong> Essential for international golf trips, especially for equipment coverage.</p>
               <p><strong>Weather Backup:</strong> Have indoor alternatives planned for poor weather days.</p>
@@ -771,11 +781,11 @@ export default function GolfTripPlanner() {
           </Card>
 
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <Car className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <Car className="h-5 w-5" className="text-emerald-600" />
               Transport Guide
             </h3>
-            <div className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-3 text-sm text-slate-600">
               <p><strong>Car Rental:</strong> Most flexible option, essential for remote golf courses.</p>
               <p><strong>Private Transfer:</strong> Convenient but more expensive, good for groups.</p>
               <p><strong>Golf Packages:</strong> Often include transfers between courses and accommodation.</p>
@@ -784,11 +794,11 @@ export default function GolfTripPlanner() {
           </Card>
 
           <Card className="p-6">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-              <Hotel className="h-5 w-5" style={{color: '#9CC69B'}} />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+              <Hotel className="h-5 w-5" className="text-emerald-600" />
               Accommodation Tips
             </h3>
-            <div className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+            <div className="space-y-3 text-sm text-slate-600">
               <p><strong>Golf Resorts:</strong> Convenient but can be limiting for exploring different courses.</p>
               <p><strong>Central Location:</strong> Choose accommodation that minimizes travel time to courses.</p>
               <p><strong>Self-Catering:</strong> Can significantly reduce meal costs, especially for longer trips.</p>

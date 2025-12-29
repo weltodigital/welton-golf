@@ -219,54 +219,54 @@ export default function BallSpeedCalculator() {
   const clubTypes = ['Driver', '3-Wood', '5-Wood', '3-Iron', '5-Iron', '7-Iron', '9-Iron', 'Pitching Wedge', 'Sand Wedge']
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Breadcrumbs */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Ball Speed Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Ball Speed Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Zap className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Zap className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
                   Golf Ball Speed Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Calculate ball speed, carry distance, and total distance based on clubhead speed and launch conditions.
                 </p>
               </div>
             </div>
 
             {/* SEO-rich description */}
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Professional Ball Speed Calculator - Free & Accurate
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Our ball speed calculator uses advanced physics models to calculate ball speed, carry distance, and total distance
                 based on your clubhead speed, smash factor, launch angle, and spin rate. Perfect for club fitting and swing analysis.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Physics-Based Calculations
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Multiple Club Types
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Smash Factor Analysis
                 </div>
               </div>
@@ -275,32 +275,32 @@ export default function BallSpeedCalculator() {
             {/* Current Results Display */}
             {results.ballSpeed > 0 && (
               <div className="mt-6 grid md:grid-cols-4 gap-4">
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold mb-1" style={{color: '#183a37'}}>Ball Speed</h3>
-                    <div className="text-2xl font-bold" style={{color: '#183a37'}}>{results.ballSpeed}</div>
-                    <div className="text-xs" style={{color: '#183a37'}}>mph</div>
+                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Ball Speed</h3>
+                    <div className="text-2xl font-black text-emerald-600">{results.ballSpeed}</div>
+                    <div className="text-xs text-slate-700">mph</div>
                   </div>
                 </div>
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold mb-1" style={{color: '#183a37'}}>Carry Distance</h3>
-                    <div className="text-2xl font-bold" style={{color: '#183a37'}}>{results.carryDistance}</div>
-                    <div className="text-xs" style={{color: '#183a37'}}>yards</div>
+                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Carry Distance</h3>
+                    <div className="text-2xl font-black text-emerald-600">{results.carryDistance}</div>
+                    <div className="text-xs text-slate-700">yards</div>
                   </div>
                 </div>
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold mb-1" style={{color: '#183a37'}}>Total Distance</h3>
-                    <div className="text-2xl font-bold" style={{color: '#183a37'}}>{results.totalDistance}</div>
-                    <div className="text-xs" style={{color: '#183a37'}}>yards</div>
+                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Total Distance</h3>
+                    <div className="text-2xl font-black text-emerald-600">{results.totalDistance}</div>
+                    <div className="text-xs text-slate-700">yards</div>
                   </div>
                 </div>
-                <div className="p-4 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
+                <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold mb-1" style={{color: '#183a37'}}>Efficiency</h3>
-                    <div className="text-2xl font-bold" style={{color: '#183a37'}}>{results.efficiency}%</div>
-                    <div className="text-xs" style={{color: '#183a37'}}>smash factor</div>
+                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Efficiency</h3>
+                    <div className="text-2xl font-black text-emerald-600">{results.efficiency}%</div>
+                    <div className="text-xs text-slate-700">smash factor</div>
                   </div>
                 </div>
               </div>
@@ -387,8 +387,7 @@ export default function BallSpeedCalculator() {
 
                 <Button
                   onClick={saveCalculation}
-                  className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0"
                   disabled={!currentCalc.clubheadSpeed || results.ballSpeed === 0}
                 >
                   Save Calculation
@@ -424,7 +423,7 @@ export default function BallSpeedCalculator() {
               </CardHeader>
               <CardContent>
                 {calculations.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-slate-600">
                     <Zap className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No calculations saved yet.</p>
                     <p className="text-sm">Calculate your first ball speed above.</p>
@@ -432,19 +431,19 @@ export default function BallSpeedCalculator() {
                 ) : (
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {calculations.map((calc) => (
-                      <div key={calc.id} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: '#9CC69B'}}>
+                      <div key={calc.id} className="flex items-center justify-between p-3 bg-emerald-50 rounded-lg">
                         <div className="flex-1">
-                          <div className="font-medium text-sm" style={{color: '#183a37'}}>
+                          <div className="font-medium text-sm text-slate-900">
                             {calc.clubType}
                           </div>
-                          <div className="text-xs" style={{color: '#183a37'}}>
+                          <div className="text-xs text-slate-700">
                             Clubhead: {calc.clubheadSpeed}mph • Smash: {calc.smashFactor}
                           </div>
                           <div className="flex gap-2 mt-1">
-                            <span className="text-xs px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>
+                            <span className="text-xs px-2 py-1 bg-emerald-600 rounded text-white">
                               Ball: {calc.ballSpeed}mph
                             </span>
-                            <span className="text-xs px-2 py-1 rounded text-white" style={{backgroundColor: '#183a37'}}>
+                            <span className="text-xs px-2 py-1 bg-emerald-600 rounded text-white">
                               Total: {calc.totalDistance}yds
                             </span>
                           </div>
@@ -475,10 +474,10 @@ export default function BallSpeedCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">
+                <h3 className="text-lg font-black text-slate-900 mb-3 tracking-tight">
                   Complete Guide to Golf Ball Speed and Distance Calculation
                 </h3>
-                <p className="text-black mb-4">
+                <p className="text-slate-700 mb-4">
                   Ball speed is one of the most important factors in determining golf shot distance. Our calculator uses physics-based
                   models to estimate ball speed, carry distance, and total distance based on your swing characteristics and launch conditions.
                 </p>
@@ -486,8 +485,8 @@ export default function BallSpeedCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Key Calculations:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Key Calculations:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Ball Speed</strong> = Clubhead Speed × Smash Factor</li>
                     <li>• <strong>Smash Factor</strong> = Ball Speed ÷ Clubhead Speed</li>
                     <li>• <strong>Optimal Smash Factor:</strong> 1.50 for driver, lower for irons</li>
@@ -496,8 +495,8 @@ export default function BallSpeedCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Factors Affecting Distance:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Factors Affecting Distance:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Ball Speed:</strong> Higher speed = more distance</li>
                     <li>• <strong>Launch Angle:</strong> Optimal angle varies by club</li>
                     <li>• <strong>Spin Rate:</strong> Too much spin reduces distance</li>
@@ -509,8 +508,8 @@ export default function BallSpeedCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Typical Smash Factors:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Typical Smash Factors:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Driver:</strong> 1.40-1.50 (Optimal: 1.50)</p>
                     <p><strong>3-Wood:</strong> 1.38-1.48</p>
                     <p><strong>5-Iron:</strong> 1.32-1.42</p>
@@ -519,8 +518,8 @@ export default function BallSpeedCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Performance Benchmarks:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Performance Benchmarks:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Tour Average (Driver):</strong> 167 mph ball speed</p>
                     <p><strong>Scratch Golfer:</strong> 155 mph ball speed</p>
                     <p><strong>15 Handicap:</strong> 140 mph ball speed</p>
@@ -529,36 +528,36 @@ export default function BallSpeedCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Ball Speed Calculator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Ball Speed Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Physics-Based Model:</strong> Accurate distance calculations
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Multiple Clubs:</strong> Driver through wedges supported
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Optimization Tool:</strong> Find your ideal launch conditions
                     </p>
                   </div>
                   <div>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Fitting Aid:</strong> Compare different equipment setups
                     </p>
-                    <p className="text-black mb-2">
+                    <p className="text-slate-700 mb-2">
                       <strong>✓ Progress Tracking:</strong> Monitor improvements over time
                     </p>
-                    <p className="text-black">
+                    <p className="text-slate-700">
                       <strong>✓ Free Forever:</strong> No registration required
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Note:</strong> This calculator provides estimates based on typical conditions and physics models.
                   Actual distances may vary due to factors like course conditions, altitude, temperature, and individual
                   swing characteristics. For precise fitting, consult a certified club fitter with launch monitor data.

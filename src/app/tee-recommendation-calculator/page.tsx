@@ -240,52 +240,52 @@ export default function TeeRecommendationCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Tee Recommendation Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Tee Recommendation Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <Target className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+                <Target className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2">
                   Golf Tee Recommendation Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Find the perfect tee box for your skill level, distance, and playing goals for maximum enjoyment.
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Smart Tee Selection - Free Golf Course Management Tool
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Choose the right tee box for optimal challenge and enjoyment. Our calculator considers your handicap,
                 driving distance, age, experience, and playing goals to recommend the perfect starting position.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Skill-Based Selection
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Distance Matching
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Goal Optimization
                 </div>
               </div>
@@ -395,7 +395,7 @@ export default function TeeRecommendationCalculator() {
                 <Button
                   onClick={calculateRecommendation}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                   disabled={!currentCalc.handicapIndex || !currentCalc.driverDistance || !currentCalc.age}
                 >
                   Get Tee Recommendation
@@ -431,7 +431,7 @@ export default function TeeRecommendationCalculator() {
               </CardHeader>
               <CardContent>
                 {recommendations.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600">
                     <Target className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No tee recommendations yet.</p>
                     <p className="text-sm">Calculate your first recommendation above.</p>
@@ -439,13 +439,13 @@ export default function TeeRecommendationCalculator() {
                 ) : (
                   <div className="space-y-4 max-h-96 overflow-y-auto">
                     {recommendations.map((recommendation) => (
-                      <div key={recommendation.id} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border">
+                      <div key={recommendation.id} className="p-4 bg-gray-50 rounded-lg border">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-gray-100">
+                            <h4 className="font-medium text-slate-900">
                               {recommendation.playerName}
                             </h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                            <p className="text-sm text-gray-600">
                               {recommendation.createdAt}
                             </p>
                           </div>
@@ -463,33 +463,33 @@ export default function TeeRecommendationCalculator() {
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${getTeeColor(recommendation.recommendedTee)}`}>
                             🏌️ {recommendation.recommendedTee}
                           </span>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                          <p className="text-sm text-gray-600 mt-1">
                             ~{recommendation.totalYardage} yards total
                           </p>
                         </div>
 
                         <div className="grid grid-cols-2 gap-4 text-sm mb-3">
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Handicap:</p>
+                            <p className="text-gray-600">Handicap:</p>
                             <p className="font-medium">{recommendation.handicapIndex}</p>
                           </div>
                           <div>
-                            <p className="text-gray-600 dark:text-gray-400">Driver Distance:</p>
+                            <p className="text-gray-600">Driver Distance:</p>
                             <p className="font-medium">{recommendation.driverDistance} yards</p>
                           </div>
                         </div>
 
                         <div className="text-xs space-y-1 pt-2 border-t">
-                          <p className="font-medium text-gray-700 dark:text-gray-300">Reasoning:</p>
+                          <p className="font-medium text-slate-600">Reasoning:</p>
                           {recommendation.reasoning.map((reason, idx) => (
-                            <p key={idx} className="text-gray-600 dark:text-gray-400">• {reason}</p>
+                            <p key={idx} className="text-gray-600">• {reason}</p>
                           ))}
 
                           {recommendation.alternativeTees.length > 0 && (
                             <div className="mt-2">
-                              <p className="font-medium text-gray-700 dark:text-gray-300">Alternatives:</p>
+                              <p className="font-medium text-slate-600">Alternatives:</p>
                               {recommendation.alternativeTees.map((alt, idx) => (
-                                <p key={idx} className="text-gray-600 dark:text-gray-400">
+                                <p key={idx} className="text-gray-600">
                                   • {alt.tee}: {alt.reasoning}
                                 </p>
                               ))}
@@ -514,8 +514,8 @@ export default function TeeRecommendationCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">Complete Guide to Choosing the Right Tees</h3>
-                <p className="text-black mb-4">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Complete Guide to Choosing the Right Tees</h3>
+                <p className="text-slate-700 mb-4">
                   Selecting the appropriate tee box is crucial for enjoying golf and playing to your potential.
                   The right tees challenge you appropriately while maintaining reasonable scoring opportunities and pace of play.
                 </p>
@@ -523,8 +523,8 @@ export default function TeeRecommendationCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Standard Tee Colors & Distances:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Standard Tee Colors & Distances:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Black/Gold (Championship):</strong> 6,800+ yards - Tour pros, +handicaps</li>
                     <li>• <strong>Blue (Back Regular):</strong> 6,400-6,800 yards - Low handicaps (0-8)</li>
                     <li>• <strong>White (Men&apos;s Regular):</strong> 6,000-6,400 yards - Mid handicaps (8-18)</li>
@@ -533,8 +533,8 @@ export default function TeeRecommendationCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Key Selection Factors:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Key Selection Factors:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Handicap Index:</strong> Primary skill indicator</li>
                     <li>• <strong>Driver Distance:</strong> Determines reachability of holes</li>
                     <li>• <strong>Age & Physical Ability:</strong> Impacts stamina and distance</li>
@@ -546,8 +546,8 @@ export default function TeeRecommendationCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Handicap Guidelines:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Handicap Guidelines:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>+handicap to 5:</strong> Blue or Black tees</p>
                     <p><strong>6 to 15:</strong> White or Blue tees</p>
                     <p><strong>16 to 25:</strong> White or Gold tees</p>
@@ -556,8 +556,8 @@ export default function TeeRecommendationCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Distance Considerations:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Distance Considerations:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>280+ yard driver:</strong> Can play back tees</p>
                     <p><strong>250-280 yard driver:</strong> Blue or White tees</p>
                     <p><strong>220-250 yard driver:</strong> White tees ideal</p>
@@ -569,8 +569,8 @@ export default function TeeRecommendationCalculator() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Age Adjustments:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Age Adjustments:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Under 50:</strong> Play based on skill</p>
                     <p><strong>50-65:</strong> Consider moving up one tee</p>
                     <p><strong>65-75:</strong> Move up 1-2 tees</p>
@@ -578,8 +578,8 @@ export default function TeeRecommendationCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Playing Goals:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Playing Goals:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Challenge:</strong> Play longer tees</p>
                     <p><strong>Scoring:</strong> Move up one tee</p>
                     <p><strong>Fun/Social:</strong> Prioritize enjoyment</p>
@@ -587,8 +587,8 @@ export default function TeeRecommendationCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Course Factors:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Course Factors:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Course Rating:</strong> Higher = more difficult</p>
                     <p><strong>Slope Rating:</strong> 113+ is challenging</p>
                     <p><strong>Course Conditions:</strong> Firm vs. soft</p>
@@ -597,24 +597,24 @@ export default function TeeRecommendationCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Tee Recommendation Calculator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Tee Recommendation Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Personalized Analysis:</strong> Considers multiple factors</p>
-                    <p className="text-black mb-2"><strong>✓ Skill-Based Selection:</strong> Matches your abilities</p>
-                    <p className="text-black"><strong>✓ Goal Optimization:</strong> Aligns with playing objectives</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Personalized Analysis:</strong> Considers multiple factors</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Skill-Based Selection:</strong> Matches your abilities</p>
+                    <p className="text-slate-700"><strong>✓ Goal Optimization:</strong> Aligns with playing objectives</p>
                   </div>
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Alternative Options:</strong> Provides backup choices</p>
-                    <p className="text-black mb-2"><strong>✓ Educational:</strong> Learn tee selection principles</p>
-                    <p className="text-black"><strong>✓ Free Tool:</strong> No cost for recommendations</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Alternative Options:</strong> Provides backup choices</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Educational:</strong> Learn tee selection principles</p>
+                    <p className="text-slate-700"><strong>✓ Free Tool:</strong> No cost for recommendations</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Important:</strong> These recommendations are general guidelines based on typical course setups and playing standards.
                   Specific course difficulty, conditions, and personal preference should also influence your tee selection.
                   When in doubt, choose tees that allow you to enjoy the round and maintain reasonable pace of play.

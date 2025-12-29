@@ -214,56 +214,56 @@ export default function StrokesGainedCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-white ">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="text-sm text-gray-600 mb-4">
+          <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-green-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-gray-900">Strokes Gained Calculator</li>
+              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2 text-slate-900">Strokes Gained Calculator</li>
             </ol>
           </nav>
 
           {/* Header */}
-          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{backgroundColor: '#9CC69B'}}>
-                <TrendingUp className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+                <TrendingUp className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 className="text-4xl font-black text-slate-900 mb-2">
                   Strokes Gained Calculator
                 </h1>
-                <p className="text-gray-700 dark:text-gray-300 text-lg">
+                <p className="text-slate-600 text-lg">
                   Analyze your golf performance with advanced strokes gained statistics to identify strengths and improvement areas.
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 p-6 rounded-lg border-2" style={{backgroundColor: '#9CC69B', borderColor: '#183a37'}}>
-              <h2 className="text-xl font-semibold mb-3" style={{color: '#183a37'}}>
+            <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-3">
                 Professional Golf Analytics - Free Performance Analysis Tool
               </h2>
-              <p className="mb-3" style={{color: '#183a37'}}>
+              <p className="text-slate-700 mb-3">
                 Unlock insights into your game with strokes gained analysis. Compare your performance to tour averages
                 across driving, approach, short game, and putting to identify where to focus your practice efforts.
               </p>
-              <div className="grid md:grid-cols-4 gap-4 text-sm" style={{color: '#183a37'}}>
+              <div className="grid md:grid-cols-4 gap-4 text-sm" className="text-slate-900">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Driving Analysis
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Approach Play
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Short Game
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{backgroundColor: '#183a37'}}></span>
+                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
                   Putting Stats
                 </div>
               </div>
@@ -296,13 +296,13 @@ export default function StrokesGainedCalculator() {
 
                 <div className="border-t pt-4">
                   <h4 className="font-semibold mb-3">Hole-by-Hole Data (Simplified)</h4>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-slate-600 mb-4">
                     Enter basic data for each hole. Full strokes gained requires detailed shot tracking.
                   </p>
 
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {currentRound.holes.map((hole, index) => (
-                      <div key={index} className="p-3 bg-gray-50 dark:bg-gray-800 rounded border">
+                      <div key={index} className="p-3 bg-gray-50 rounded border">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="font-medium">Hole {index + 1}</span>
                         </div>
@@ -355,7 +355,7 @@ export default function StrokesGainedCalculator() {
                 <Button
                   onClick={calculateStrokesGained}
                   className="w-full text-white hover:opacity-90"
-                  style={{backgroundColor: '#183a37'}}
+                  className="bg-emerald-600"
                 >
                   Analyze Round Performance
                 </Button>
@@ -390,7 +390,7 @@ export default function StrokesGainedCalculator() {
               </CardHeader>
               <CardContent>
                 {analyses.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 dark:text-gray-400">
+                  <div className="text-center py-8 text-gray-600">
                     <TrendingUp className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No performance analysis yet.</p>
                     <p className="text-sm">Analyze your first round above.</p>
@@ -398,13 +398,13 @@ export default function StrokesGainedCalculator() {
                 ) : (
                   <div className="space-y-4 max-h-96 overflow-y-auto">
                     {analyses.map((analysis) => (
-                      <div key={analysis.id} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border">
+                      <div key={analysis.id} className="p-4 bg-gray-50 rounded-lg border">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h4 className="font-medium text-gray-900 dark:text-gray-100">
+                            <h4 className="font-medium text-slate-900">
                               {analysis.roundName}
                             </h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                            <p className="text-sm text-gray-600">
                               {analysis.createdAt} • {analysis.totalStrokes} strokes
                             </p>
                           </div>
@@ -419,7 +419,7 @@ export default function StrokesGainedCalculator() {
                         </div>
 
                         <div className="mb-3">
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Total Strokes Gained:</p>
+                          <p className="text-sm text-gray-600">Total Strokes Gained:</p>
                           <p className={`text-lg font-bold ${getPerformanceColor(analysis.sgTotal)}`}>
                             {formatSG(analysis.sgTotal)}
                           </p>
@@ -480,8 +480,8 @@ export default function StrokesGainedCalculator() {
             </CardHeader>
             <CardContent className="prose prose-sm max-w-none">
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3 text-black">Complete Guide to Strokes Gained Analysis</h3>
-                <p className="text-black mb-4">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Complete Guide to Strokes Gained Analysis</h3>
+                <p className="text-slate-700 mb-4">
                   Strokes gained is the most advanced golf statistic, measuring how many strokes better or worse you perform
                   compared to a baseline (typically PGA Tour averages) from any position on the golf course.
                 </p>
@@ -489,8 +489,8 @@ export default function StrokesGainedCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Four Main Categories:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">Four Main Categories:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Strokes Gained: Driving</strong> - Tee shots on par 4s and 5s</li>
                     <li>• <strong>Strokes Gained: Approach</strong> - Shots from 50+ yards to green</li>
                     <li>• <strong>Strokes Gained: Short Game</strong> - Shots from &lt;50 yards around green</li>
@@ -498,8 +498,8 @@ export default function StrokesGainedCalculator() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">How It Works:</h4>
-                  <ul className="text-sm space-y-2 text-black">
+                  <h4 className="font-bold text-slate-900 mb-3">How It Works:</h4>
+                  <ul className="text-sm space-y-2 text-slate-700">
                     <li>• Compares your result to statistical average from that position</li>
                     <li>• Positive numbers = better than average</li>
                     <li>• Negative numbers = worse than average</li>
@@ -510,8 +510,8 @@ export default function StrokesGainedCalculator() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Interpretation Guide:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Interpretation Guide:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>+2.0 or better:</strong> Exceptional performance</p>
                     <p><strong>+1.0 to +2.0:</strong> Very good round</p>
                     <p><strong>0 to +1.0:</strong> Above average</p>
@@ -520,8 +520,8 @@ export default function StrokesGainedCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Benchmarks (vs PGA Tour):</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Benchmarks (vs PGA Tour):</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Scratch Golfer:</strong> -2.5 to -3.5 total</p>
                     <p><strong>5 Handicap:</strong> -4.0 to -5.0 total</p>
                     <p><strong>10 Handicap:</strong> -6.0 to -7.0 total</p>
@@ -530,8 +530,8 @@ export default function StrokesGainedCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Key Insights:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Key Insights:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Putting:</strong> Usually biggest differentiator</p>
                     <p><strong>Approach:</strong> Most important for scoring</p>
                     <p><strong>Driving:</strong> Sets up other shots</p>
@@ -542,8 +542,8 @@ export default function StrokesGainedCalculator() {
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Common Patterns by Skill Level:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Common Patterns by Skill Level:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Beginners:</strong> Lose most strokes driving and approach</p>
                     <p><strong>Mid-handicap:</strong> Short game and putting weaknesses</p>
                     <p><strong>Low handicap:</strong> Small losses across all areas</p>
@@ -552,8 +552,8 @@ export default function StrokesGainedCalculator() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3 text-black">Practice Prioritization:</h4>
-                  <div className="text-sm text-black space-y-1">
+                  <h4 className="font-bold text-slate-900 mb-3">Practice Prioritization:</h4>
+                  <div className="text-sm text-slate-700 space-y-1">
                     <p><strong>Biggest Losses:</strong> Focus practice time here first</p>
                     <p><strong>Approach Shots:</strong> Highest impact on scoring</p>
                     <p><strong>Putting:</strong> Easiest to improve quickly</p>
@@ -563,24 +563,24 @@ export default function StrokesGainedCalculator() {
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold mb-3 text-black">Why Use Our Strokes Gained Calculator?</h4>
+              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
+                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Strokes Gained Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Advanced Analytics:</strong> Professional-level insights</p>
-                    <p className="text-black mb-2"><strong>✓ Strength Identification:</strong> Know your best skills</p>
-                    <p className="text-black"><strong>✓ Weakness Analysis:</strong> Focus improvement efforts</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Advanced Analytics:</strong> Professional-level insights</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Strength Identification:</strong> Know your best skills</p>
+                    <p className="text-slate-700"><strong>✓ Weakness Analysis:</strong> Focus improvement efforts</p>
                   </div>
                   <div>
-                    <p className="text-black mb-2"><strong>✓ Performance Tracking:</strong> Monitor progress over time</p>
-                    <p className="text-black mb-2"><strong>✓ Benchmarking:</strong> Compare to tour standards</p>
-                    <p className="text-black"><strong>✓ Free Analysis:</strong> No cost for insights</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Performance Tracking:</strong> Monitor progress over time</p>
+                    <p className="text-slate-700 mb-2"><strong>✓ Benchmarking:</strong> Compare to tour standards</p>
+                    <p className="text-slate-700"><strong>✓ Free Analysis:</strong> No cost for insights</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-                <p className="text-sm text-black">
+              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                <p className="text-sm text-slate-700">
                   <strong>Important:</strong> This simplified calculator provides basic strokes gained estimates.
                   Professional strokes gained analysis requires detailed shot tracking with precise distances and lie conditions.
                   Use these results as general performance indicators and practice guidance.
