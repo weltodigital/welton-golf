@@ -214,7 +214,7 @@ export default function GripSizeCalculator() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">→</span> Grip Size Calculator</li>
+            <li><span className="mx-2 text-slate-400">{'>'}</span> Grip Size Calculator</li>
           </ol>
         </nav>
         </div>
