@@ -214,7 +214,7 @@ export default function GripSizeCalculator() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">›</span>Grip Size Calculator</li>
+            <li><span className="mx-2 text-slate-400">&gt;</span>Grip Size Calculator</li>
           </ol>
         </nav>
         </div>
@@ -297,9 +297,9 @@ export default function GripSizeCalculator() {
                     <SelectValue placeholder="Select your playing style" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Control/Precision">Control/Precision</SelectItem>
+                    <SelectItem value="Control-Precision">Control/Precision</SelectItem>
                     <SelectItem value="Balanced">Balanced</SelectItem>
-                    <SelectItem value="Power/Distance">Power/Distance</SelectItem>
+                    <SelectItem value="Power-Distance">Power/Distance</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -338,9 +338,9 @@ export default function GripSizeCalculator() {
                     <SelectValue placeholder="Select your feel preference" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Soft/Responsive">Soft/Responsive</SelectItem>
+                    <SelectItem value="Soft-Responsive">Soft/Responsive</SelectItem>
                     <SelectItem value="Balanced">Balanced</SelectItem>
-                    <SelectItem value="Firm/Stable">Firm/Stable</SelectItem>
+                    <SelectItem value="Firm-Stable">Firm/Stable</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

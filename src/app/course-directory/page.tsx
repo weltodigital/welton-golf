@@ -184,7 +184,7 @@ const courseData = [
   {
     id: 6,
     name: "Barton on Sea Golf Club",
-    courseName: "Stroller/Becton",
+    courseName: "Stroller-Becton",
     location: "New Milton",
     county: "Hampshire",
     country: "England",
@@ -215,7 +215,7 @@ const courseData = [
   {
     id: 7,
     name: "Barton on Sea Golf Club",
-    courseName: "Needles/Stroller",
+    courseName: "Needles-Stroller",
     location: "New Milton",
     county: "Hampshire",
     country: "England",
@@ -246,7 +246,7 @@ const courseData = [
   {
     id: 8,
     name: "Barton on Sea Golf Club",
-    courseName: "Becton/Needles",
+    courseName: "Becton-Needles",
     location: "New Milton",
     county: "Hampshire",
     country: "England",
@@ -362,7 +362,7 @@ const courseData = [
   {
     id: 12,
     name: "Wellow Golf Club",
-    courseName: "Embley/Blackwater",
+    courseName: "Embley-Blackwater",
     location: "Romsey",
     county: "Hampshire",
     country: "England",
@@ -407,7 +407,7 @@ const courseData = [
   {
     id: 13,
     name: "Wellow Golf Club",
-    courseName: "Ryedown/Blackwater",
+    courseName: "Ryedown-Blackwater",
     location: "Romsey",
     county: "Hampshire",
     country: "England",
@@ -449,7 +449,7 @@ const courseData = [
   {
     id: 14,
     name: "Wellow Golf Club",
-    courseName: "Ryedown/Embley",
+    courseName: "Ryedown-Embley",
     location: "Romsey",
     county: "Hampshire",
     country: "England",
@@ -810,7 +810,7 @@ const courseData = [
   {
     id: 25,
     name: "Weybrook Park Golf Club",
-    courseName: "East/West B9",
+    courseName: "East-West B9",
     location: "Weybrook Park",
     county: "Hampshire",
     country: "England",
@@ -840,7 +840,7 @@ const courseData = [
   {
     id: 26,
     name: "Weybrook Park Golf Club",
-    courseName: "West B9/East",
+    courseName: "West B9-East",
     location: "Weybrook Park",
     county: "Hampshire",
     country: "England",
@@ -870,7 +870,7 @@ const courseData = [
   {
     id: 27,
     name: "Weybrook Park Golf Club",
-    courseName: "East/West F9",
+    courseName: "East-West F9",
     location: "Weybrook Park",
     county: "Hampshire",
     country: "England",
@@ -900,7 +900,7 @@ const courseData = [
   {
     id: 28,
     name: "Weybrook Park Golf Club",
-    courseName: "West F9/East",
+    courseName: "West F9-East",
     location: "Weybrook Park",
     county: "Hampshire",
     country: "England",
@@ -1225,27 +1225,27 @@ const courseData = [
     courseRating: {
       white: { male: 64.8 },
       yellow: { male: 63, female: 68 }, // Yellow - Women
-      "red/yellow": { female: 66.1 }
+      "red_yellow": { female: 66.1 }
     },
     slopeRating: {
       white: { male: 113 },
       yellow: { male: 113, female: 111 }, // Yellow - Women
-      "red/yellow": { female: 109 }
+      "red_yellow": { female: 109 }
     },
     frontNine: {
       white: { male: 32.4, slope: 113 },
       yellow: { male: 31.5, slope: 113, female: 34, femaleSlope: 111 }, // Yellow - Women
-      "red/yellow": { female: 32.2, femaleSlope: 106 }
+      "red_yellow": { female: 32.2, femaleSlope: 106 }
     },
     backNine: {
       white: { male: 32.4, slope: 113 },
       yellow: { male: 31.5, slope: 113, female: 34, femaleSlope: 111 }, // Yellow - Women
-      "red/yellow": { female: 33.9, femaleSlope: 111 }
+      "red_yellow": { female: 33.9, femaleSlope: 111 }
     },
     length: {
       white: null,
       yellow: null,
-      "red/yellow": null
+      "red_yellow": null
     },
     established: null,
     type: "Parkland"
@@ -3655,19 +3655,19 @@ const courseData = [
       female: 61 // for White/Blue female tees
     },
     courseRating: {
-      "white/blue": { male: 59.3, female: 61.4 }
+      "white_blue": { male: 59.3, female: 61.4 }
     },
     slopeRating: {
-      "white/blue": { male: 93, female: 90 }
+      "white_blue": { male: 93, female: 90 }
     },
     frontNine: {
-      "white/blue": { male: 29.7, female: 30.6, slope: 91, femaleSlope: 90 }
+      "white_blue": { male: 29.7, female: 30.6, slope: 91, femaleSlope: 90 }
     },
     backNine: {
-      "white/blue": { male: 29.6, female: 30.8, slope: 94, femaleSlope: 89 }
+      "white_blue": { male: 29.6, female: 30.8, slope: 94, femaleSlope: 89 }
     },
     length: {
-      "white/blue": 3816 // From CSV data
+      "white_blue": 3816 // From CSV data
     },
     established: null,
     type: "Parkland"
@@ -4031,7 +4031,7 @@ export default function CourseDirectory() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">›</span>Course Directory</li>
+            <li><span className="mx-2 text-slate-400">&gt;</span>Course Directory</li>
           </ol>
         </nav>
         </div>
@@ -4481,7 +4481,7 @@ export default function CourseDirectory() {
                   </div>
                   <div>
                     <span className="text-slate-500">Rating/Slope:</span>
-                    <span className="ml-2 text-slate-700">{data.rating}/{data.slope}</span>
+                    <span className="ml-2 text-slate-700">{data.rating} / {data.slope}</span>
                   </div>
                 </div>
               </div>
@@ -4498,7 +4498,7 @@ export default function CourseDirectory() {
         {/* Show loading state */}
         {sortedAndFilteredTeeData.length === 0 && (
           <div className="text-center py-8">
-            <p className="text-slate-600 text-slate-600">Loading courses...</p>
+            <p className="text-slate-600">Loading courses...</p>
           </div>
         )}
         </div>

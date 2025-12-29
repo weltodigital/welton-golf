@@ -343,7 +343,7 @@ export default function GolfTripPlanner() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">›</span>Golf Trip Planner</li>
+            <li><span className="mx-2 text-slate-400">&gt;</span>Golf Trip Planner</li>
           </ol>
         </nav>
         </div>
@@ -386,7 +386,7 @@ export default function GolfTripPlanner() {
                     <SelectItem value="Ireland">Ireland</SelectItem>
                     <SelectItem value="Spain">Spain</SelectItem>
                     <SelectItem value="Portugal">Portugal</SelectItem>
-                    <SelectItem value="Dubai/UAE">Dubai/UAE</SelectItem>
+                    <SelectItem value="Dubai-UAE">Dubai/UAE</SelectItem>
                     <SelectItem value="USA - Florida">USA - Florida</SelectItem>
                     <SelectItem value="USA - California">USA - California</SelectItem>
                     <SelectItem value="USA - Carolinas">USA - Carolinas</SelectItem>
@@ -447,10 +447,10 @@ export default function GolfTripPlanner() {
                     <SelectValue placeholder="Select accommodation type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Budget Hotel/B&B">Budget Hotel/B&B</SelectItem>
+                    <SelectItem value="Budget Hotel-BB">Budget Hotel/B&B</SelectItem>
                     <SelectItem value="Mid-Range Hotel">Mid-Range Hotel</SelectItem>
-                    <SelectItem value="Luxury Hotel/Resort">Luxury Hotel/Resort</SelectItem>
-                    <SelectItem value="Self-Catering/Apartment">Self-Catering/Apartment</SelectItem>
+                    <SelectItem value="Luxury Hotel-Resort">Luxury Hotel/Resort</SelectItem>
+                    <SelectItem value="Self-Catering-Apartment">Self-Catering/Apartment</SelectItem>
                     <SelectItem value="Golf Resort">Golf Resort</SelectItem>
                   </SelectContent>
                 </Select>
@@ -511,9 +511,9 @@ export default function GolfTripPlanner() {
                     <SelectValue placeholder="Select course type preference" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Municipal/Public">Municipal/Public</SelectItem>
+                    <SelectItem value="Municipal-Public">Municipal/Public</SelectItem>
                     <SelectItem value="Resort Courses">Resort Courses</SelectItem>
-                    <SelectItem value="Championship/Premium">Championship/Premium</SelectItem>
+                    <SelectItem value="Championship-Premium">Championship/Premium</SelectItem>
                     <SelectItem value="Links Courses">Links Courses</SelectItem>
                     <SelectItem value="Mixed Selection">Mixed Selection</SelectItem>
                   </SelectContent>
