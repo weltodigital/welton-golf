@@ -57,8 +57,8 @@ export default function GripSizeCalculator() {
     }
 
     // Base grip size calculation using hand measurements
-    const handLengthInches = gripData.handLength / 25.4 // Convert mm to inches
-    const handSpanInches = gripData.handSpan / 25.4 // Convert mm to inches
+    const handLengthInches = (gripData.handLength / 25.4) // Convert mm to inches
+    const handSpanInches = (gripData.handSpan / 25.4) // Convert mm to inches
 
     // Primary sizing based on hand length (most important factor)
     let baseSize = 'Standard'
@@ -214,7 +214,7 @@ export default function GripSizeCalculator() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">{'>'}</span> Grip Size Calculator</li>
+            <li><span className="mx-2 text-slate-400">Grip Size Calculator</span></li>
           </ol>
         </nav>
         </div>

@@ -1219,7 +1219,7 @@ const courseData = [
     country: "Channel Islands",
     par: {
       male: 64, // for White, Yellow male tees
-      female: 65, // for Red/Yellow female tees
+      female: 65, // for Red and Yellow female tees
       femaleyellow: 64, // for Yellow - Women female tees
     },
     courseRating: {
@@ -3651,8 +3651,8 @@ const courseData = [
     county: "Hampshire",
     country: "England",
     par: {
-      male: 60, // for White/Blue male tees
-      female: 61 // for White/Blue female tees
+      male: 60, // for White and Blue male tees
+      female: 61 // for White and Blue female tees
     },
     courseRating: {
       "white_blue": { male: 59.3, female: 61.4 }
@@ -4031,7 +4031,7 @@ export default function CourseDirectory() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">{'>'}</span> Course Directory</li>
+            <li><span className="mx-2 text-slate-400">Course Directory</span></li>
           </ol>
         </nav>
         </div>

@@ -111,7 +111,7 @@ export default function GolfTripPlanner() {
 
     const multiplier = destinationMultipliers[tripData.destination] || { accommodation: 1.0, greens: 1.0, meals: 1.0, transport: 1.0 }
 
-    // Base costs per night/round/person
+    // Base costs per night per round per person
     const baseCosts = {
       accommodation: {
         'Budget Hotel/B&B': 80,
@@ -343,7 +343,7 @@ export default function GolfTripPlanner() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">{'>'}</span> Golf Trip Planner</li>
+            <li><span className="mx-2 text-slate-400">Golf Trip Planner</span></li>
           </ol>
         </nav>
         </div>
