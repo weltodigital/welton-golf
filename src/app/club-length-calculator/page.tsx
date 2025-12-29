@@ -476,7 +476,7 @@ export default function ClubLengthCalculator() {
                     Length Adjustment Summary
                   </h3>
                   <div className="text-2xl font-bold text-emerald-700 mb-2">
-                    {clubRecommendations.totalAdjustment > 0 ? '+' : ''}{clubRecommendations.totalAdjustment}&quot;
+                    {clubRecommendations.totalAdjustment > 0 ? '+' : ''}{clubRecommendations.totalAdjustment}"
                   </div>
                   <div className="text-sm text-slate-700">
                     {clubRecommendations.totalAdjustment > 0 ? 'Longer than standard' :
@@ -496,13 +496,13 @@ export default function ClubLengthCalculator() {
                     <div className="p-3 bg-slate-100 rounded">
                       <div className="font-medium text-slate-900">Height</div>
                       <div className="text-slate-700">
-                        {clubRecommendations.heightInches}&quot; ({Math.round(clubRecommendations.heightInches * 2.54)}cm)
+                        {clubRecommendations.heightInches}" ({Math.round(clubRecommendations.heightInches * 2.54)}cm)
                       </div>
                     </div>
                     <div className="p-3 bg-slate-100 rounded">
                       <div className="font-medium text-slate-900">Wrist to Floor</div>
                       <div className="text-slate-700">
-                        {clubRecommendations.wristToFloorInches}&quot; ({Math.round(clubRecommendations.wristToFloorInches * 2.54)}cm)
+                        {clubRecommendations.wristToFloorInches}" ({Math.round(clubRecommendations.wristToFloorInches * 2.54)}cm)
                       </div>
                     </div>
                   </div>
@@ -519,15 +519,15 @@ export default function ClubLengthCalculator() {
                         <div>
                           <div className="font-medium text-slate-900">{club}</div>
                           <div className="text-xs text-slate-700">
-                            Standard: {data.standardLength}&quot;
+                            Standard: {data.standardLength}"
                           </div>
                         </div>
                         <div className="text-right">
                           <div className="font-bold text-slate-900">
-                            {data.recommendedLength}&quot;
+                            {data.recommendedLength}"
                           </div>
                           <div className="text-xs text-slate-700">
-                            ({data.adjustment > 0 ? '+' : ''}{data.adjustment}&quot;)
+                            ({data.adjustment > 0 ? '+' : ''}{data.adjustment}")
                           </div>
                         </div>
                       </div>
@@ -544,18 +544,18 @@ export default function ClubLengthCalculator() {
                     <div className="p-3 bg-slate-50 rounded">
                       <div className="flex justify-between">
                         <span>Current Length:</span>
-                        <span>{lengthData.currentLength}&quot;</span>
+                        <span>{lengthData.currentLength}"</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Recommended:</span>
                         <span className="font-bold text-slate-900">
-                          {clubRecommendations.primaryClubs['7-Iron'].recommendedLength}&quot;
+                          {clubRecommendations.primaryClubs['7-Iron'].recommendedLength}"
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span>Difference:</span>
                         <span>
-                          {(clubRecommendations.primaryClubs['7-Iron'].recommendedLength - lengthData.currentLength).toFixed(2)}&quot;
+                          {(clubRecommendations.primaryClubs['7-Iron'].recommendedLength - lengthData.currentLength).toFixed(2)}"
                         </span>
                       </div>
                     </div>
@@ -585,16 +585,16 @@ export default function ClubLengthCalculator() {
                   <div className="space-y-1 text-sm">
                     <div className="flex justify-between">
                       <span className="text-slate-700">Standard:</span>
-                      <span>{data.standardLength}&quot;</span>
+                      <span>{data.standardLength}"</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-700">Recommended:</span>
-                      <span className="font-bold text-slate-900">{data.recommendedLength}&quot;</span>
+                      <span className="font-bold text-slate-900">{data.recommendedLength}"</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-700">Adjustment:</span>
                       <span className={data.adjustment >= 0 ? 'text-green-600' : 'text-red-600'}>
-                        {data.adjustment > 0 ? '+' : ''}{data.adjustment}&quot;
+                        {data.adjustment > 0 ? '+' : ''}{data.adjustment}"
                       </span>
                     </div>
                   </div>
@@ -614,7 +614,7 @@ export default function ClubLengthCalculator() {
             <div className="space-y-4 text-sm text-slate-600">
               <div>
                 <strong className="text-slate-900">Wrist-to-Floor Measurement:</strong>
-                <p>Stand upright in golf shoes (or add 1&quot; if barefoot). Let arms hang naturally at your sides. Measure from the prominent wrist bone to the floor. This is the most important measurement for club length.</p>
+                <p>Stand upright in golf shoes (or add 1" if barefoot). Let arms hang naturally at your sides. Measure from the prominent wrist bone to the floor. This is the most important measurement for club length.</p>
               </div>
               <div>
                 <strong className="text-slate-900">Height Measurement:</strong>

@@ -840,7 +840,7 @@ export default function ClubFittingEstimator() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-3">Shaft Flex Guidelines:</h4>
                   <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Ladies:</strong> &lt; 75 mph swing speed</p>
+                    <p><strong>Ladies:</strong> {'<'} 75 mph swing speed</p>
                     <p><strong>Senior:</strong> 75-84 mph swing speed</p>
                     <p><strong>Regular:</strong> 85-94 mph swing speed</p>
                     <p><strong>Stiff:</strong> 95-104 mph swing speed</p>
@@ -850,11 +850,11 @@ export default function ClubFittingEstimator() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-3">Club Length Adjustments:</h4>
                   <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>+1 inch:</strong> Very tall players (6&apos;4&quot;+)</p>
-                    <p><strong>+0.5 inch:</strong> Tall players (6&apos;1&quot; - 6&apos;3&quot;)</p>
-                    <p><strong>Standard:</strong> Average height (5&apos;7&quot; - 6&apos;0&quot;)</p>
-                    <p><strong>-0.5 inch:</strong> Shorter players (5&apos;4&quot; - 5&apos;6&quot;)</p>
-                    <p><strong>-1 inch:</strong> Very short players (&lt; 5&apos;4&quot;)</p>
+                    <p><strong>+1 inch:</strong> Very tall players (6'4"+)</p>
+                    <p><strong>+0.5 inch:</strong> Tall players (6'1" - 6'3")</p>
+                    <p><strong>Standard:</strong> Average height (5'7" - 6'0")</p>
+                    <p><strong>-0.5 inch:</strong> Shorter players (5'4" - 5'6")</p>
+                    <p><strong>-1 inch:</strong> Very short players ({'<'} 5'4\")</p>
                   </div>
                 </div>
               </div>

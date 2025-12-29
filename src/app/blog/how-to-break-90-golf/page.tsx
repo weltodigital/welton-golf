@@ -465,7 +465,7 @@ export default function HowToBreak90Page() {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Use 3-wood on tight holes</li>
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Driver only when fairway is wide</li>
-                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Develop reliable &quot;go-to&quot; tee shot</li>
+                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Develop reliable \"go-to\" tee shot</li>
                     </ul>
                   </div>
                 </div>

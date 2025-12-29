@@ -562,7 +562,7 @@ export default function TeeRecommendationCalculator() {
                     <p><strong>250-280 yard driver:</strong> Blue or White tees</p>
                     <p><strong>220-250 yard driver:</strong> White tees ideal</p>
                     <p><strong>200-220 yard driver:</strong> Gold/Forward tees</p>
-                    <p><strong>&lt;200 yard driver:</strong> Forward tees recommended</p>
+                    <p><strong>{'<'}200 yard driver:</strong> Forward tees recommended</p>
                   </div>
                 </div>
               </div>

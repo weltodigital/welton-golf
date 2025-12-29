@@ -493,7 +493,7 @@ export default function StrokesGainedCalculator() {
                   <ul className="text-sm space-y-2 text-slate-700">
                     <li>• <strong>Strokes Gained: Driving</strong> - Tee shots on par 4s and 5s</li>
                     <li>• <strong>Strokes Gained: Approach</strong> - Shots from 50+ yards to green</li>
-                    <li>• <strong>Strokes Gained: Short Game</strong> - Shots from &lt;50 yards around green</li>
+                    <li>• <strong>Strokes Gained: Short Game</strong> - Shots from {'<'}50 yards around green</li>
                     <li>• <strong>Strokes Gained: Putting</strong> - All putts on the green</li>
                   </ul>
                 </div>

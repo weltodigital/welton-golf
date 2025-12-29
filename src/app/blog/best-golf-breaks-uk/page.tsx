@@ -70,7 +70,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Book the Twenty Ten Course for the Ryder Cup experience. Spa packages available. The Roman Road offers excellent value. Consider midweek breaks for significant savings.",
-    whyVisit: "Experience the only resort to host the Ryder Cup with world-class facilities and luxury accommodation. The Twenty Ten Course was specially designed for the 2010 Ryder Cup and features dramatic elevation changes and water hazards. The Roman Road course offers a more traditional parkland experience, while the Montgomerie Course provides a challenging heathland-style layout. The resort&apos;s Forum Spa is one of Europe&apos;s finest, and dining options include multiple award-winning restaurants. Located just minutes from the M4, it&apos;s easily accessible from London and the Midlands.",
+    whyVisit: "Experience the only resort to host the Ryder Cup with world-class facilities and luxury accommodation. The Twenty Ten Course was specially designed for the 2010 Ryder Cup and features dramatic elevation changes and water hazards. The Roman Road course offers a more traditional parkland experience, while the Montgomerie Course provides a challenging heathland-style layout. The resort's Forum Spa is one of Europe's finest, and dining options include multiple award-winning restaurants. Located just minutes from the M4, it's easily accessible from London and the Midlands.",
     coordinates: { lat: 51.6108, lng: -2.8767 }
   },
   {
@@ -166,7 +166,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "September", "October"],
     difficulty: "Championship Links",
     bookingTips: "Combine with other Ayrshire courses. Modern links experience. Book accommodation in Troon for easy access to multiple courses. Weather can change quickly.",
-    whyVisit: "Scotland&apos;s newest championship links course with stunning coastal views and modern design. Dundonald Links is a Kyle Phillips design that opened in 2003, quickly establishing itself as one of Scotland&apos;s finest modern courses. The layout features dramatic dunes, strategic bunkering, and spectacular views over the Firth of Clyde to the Isle of Arran. Unlike traditional links, the course was built on a blank canvas, allowing for optimal hole routing and modern amenities while maintaining authentic links characteristics. The course hosted the Scottish Senior Open and has been praised for its challenging yet fair design. Each hole offers multiple route options, rewarding strategic thinking and accurate shot-making. The facility includes an excellent clubhouse with panoramic views, practice facilities, and professional coaching. Located on the Ayrshire coast, it&apos;s perfectly positioned for a links golf tour including nearby Royal Troon, Prestwick, and Western Gailes.",
+    whyVisit: "Scotland's newest championship links course with stunning coastal views and modern design. Dundonald Links is a Kyle Phillips design that opened in 2003, quickly establishing itself as one of Scotland's finest modern courses. The layout features dramatic dunes, strategic bunkering, and spectacular views over the Firth of Clyde to the Isle of Arran. Unlike traditional links, the course was built on a blank canvas, allowing for optimal hole routing and modern amenities while maintaining authentic links characteristics. The course hosted the Scottish Senior Open and has been praised for its challenging yet fair design. Each hole offers multiple route options, rewarding strategic thinking and accurate shot-making. The facility includes an excellent clubhouse with panoramic views, practice facilities, and professional coaching. Located on the Ayrshire coast, it's perfectly positioned for a links golf tour including nearby Royal Troon, Prestwick, and Western Gailes.",
     coordinates: { lat: 55.5308, lng: -4.6308 }
   },
   {
@@ -181,8 +181,8 @@ const golfBreaks = [
     highlights: ["Augusta of the North", "Historic mansion", "Championship courses", "Northumberland National Park", "Luxury spa", "Award-winning restaurant"],
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
-    bookingTips: "Known as &quot;Augusta of the North&quot;. Beautiful Northumberland setting. The Hunting Course is the championship venue. Book spa treatments in advance.",
-    whyVisit: "Experience the &quot;Augusta of the North&quot; with two championship courses in stunning countryside. Slaley Hall earned its nickname through immaculate course conditioning and dramatic elevation changes reminiscent of Augusta National. The Hunting Course is a Dave Thomas design that winds through ancient woodland and across rolling Northumberland hills, featuring strategic water hazards and pristine fairways. The Priestman Course offers a more forgiving but equally scenic experience. The historic Edwardian mansion hotel provides luxury accommodation with period features and modern amenities. Located on the edge of Northumberland National Park, the resort offers easy access to Hadrian&apos;s Wall, historic castles, and the stunning Northumberland coast. The hotel features a luxury spa, award-winning Claret Jug restaurant, and beautiful grounds perfect for walks and outdoor activities.",
+    bookingTips: "Known as \"Augusta of the North\". Beautiful Northumberland setting. The Hunting Course is the championship venue. Book spa treatments in advance.",
+    whyVisit: "Experience the \"Augusta of the North\" with two championship courses in stunning countryside. Slaley Hall earned its nickname through immaculate course conditioning and dramatic elevation changes reminiscent of Augusta National. The Hunting Course is a Dave Thomas design that winds through ancient woodland and across rolling Northumberland hills, featuring strategic water hazards and pristine fairways. The Priestman Course offers a more forgiving but equally scenic experience. The historic Edwardian mansion hotel provides luxury accommodation with period features and modern amenities. Located on the edge of Northumberland National Park, the resort offers easy access to Hadrian's Wall, historic castles, and the stunning Northumberland coast. The hotel features a luxury spa, award-winning Claret Jug restaurant, and beautiful grounds perfect for walks and outdoor activities.",
     coordinates: { lat: 54.9308, lng: -2.0508 }
   },
   {
@@ -214,7 +214,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "American-style course design. Excellent corporate facilities. Book early for tournaments and events. Consider packages with spa treatments.",
-    whyVisit: "Championship golf with American-style design and excellent resort amenities in Oxfordshire. The Oxfordshire is a Rees Jones design that brought American golf course architecture to England, featuring wide fairways, large greens, extensive water hazards, and strategic bunkering. The course demands accuracy and strategic thinking, with water coming into play on multiple holes including the signature island green par-3. The layout provides a refreshing change from traditional British parkland courses, offering a taste of American resort golf. The course has hosted numerous professional tournaments and corporate events, with excellent spectator facilities and championship-standard conditioning. The resort hotel provides modern accommodation with conference facilities, spa treatments, and multiple dining options. Located conveniently between Oxford and London with easy M40 access, it&apos;s popular for corporate golf days and weekend breaks. The practice facilities include a driving range, putting green, and short game area.",
+    whyVisit: "Championship golf with American-style design and excellent resort amenities in Oxfordshire. The Oxfordshire is a Rees Jones design that brought American golf course architecture to England, featuring wide fairways, large greens, extensive water hazards, and strategic bunkering. The course demands accuracy and strategic thinking, with water coming into play on multiple holes including the signature island green par-3. The layout provides a refreshing change from traditional British parkland courses, offering a taste of American resort golf. The course has hosted numerous professional tournaments and corporate events, with excellent spectator facilities and championship-standard conditioning. The resort hotel provides modern accommodation with conference facilities, spa treatments, and multiple dining options. Located conveniently between Oxford and London with easy M40 access, it's popular for corporate golf days and weekend breaks. The practice facilities include a driving range, putting green, and short game area.",
     coordinates: { lat: 51.6708, lng: -1.1608 }
   },
   {
@@ -555,9 +555,9 @@ export default function BestGolfBreaksUK() {
               Best Golf Breaks in the UK 2025
             </h1>
             <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8">
-              Discover the ultimate guide to Britain&apos;s finest golf holidays and weekend breaks. From Scotland&apos;s legendary championship
-              links courses and Open Championship venues to England&apos;s luxury golf resorts and spa hotels, Wales&apos; spectacular
-              Ryder Cup courses, and Northern Ireland&apos;s hidden gems, we&apos;ve curated the top 21 golf breaks in the UK for 2025.
+              Discover the ultimate guide to Britain's finest golf holidays and weekend breaks. From Scotland's legendary championship
+              links courses and Open Championship venues to England's luxury golf resorts and spa hotels, Wales' spectacular
+              Ryder Cup courses, and Northern Ireland's hidden gems, we've curated the top 21 golf breaks in the UK for 2025.
               Perfect for golf weekends, corporate golf days, and luxury golf vacations.
             </p>
 
@@ -595,10 +595,10 @@ export default function BestGolfBreaksUK() {
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">🏆 Top UK Golf Destinations</h3>
                 <ol className="text-slate-700 space-y-1">
                   <li><strong>1. Celtic Manor Resort</strong> - 2010 Ryder Cup venue, Wales</li>
-                  <li><strong>2. Gleneagles</strong> - Scotland&apos;s premier luxury golf resort</li>
+                  <li><strong>2. Gleneagles</strong> - Scotland's premier luxury golf resort</li>
                   <li><strong>3. Trump Turnberry</strong> - Open Championship clifftop links</li>
                   <li><strong>4. The Belfry</strong> - Four-time Ryder Cup host, England</li>
-                  <li><strong>5. Carnoustie Golf Links</strong> - &quot;Golf&apos;s toughest test&quot;</li>
+                  <li><strong>5. Carnoustie Golf Links</strong> - \"Golf's toughest test\"</li>
                 </ol>
               </div>
               <div>
@@ -652,7 +652,7 @@ export default function BestGolfBreaksUK() {
               <p className="mb-4">
                 What makes UK golf breaks special? <strong>Accessibility, heritage, and diversity.</strong> You can
                 play legendary Ryder Cup venues, championship links courses, and luxury resort golf all within a compact area.
-                Whether you&apos;re seeking the ultimate links challenge on Scotland&apos;s rugged coastline or a luxury spa resort experience
+                Whether you're seeking the ultimate links challenge on Scotland's rugged coastline or a luxury spa resort experience
                 in the English countryside, the UK delivers world-class golf tourism.
               </p>
               <p>
@@ -660,7 +660,7 @@ export default function BestGolfBreaksUK() {
                 best value, most memorable experiences, and highest quality golf across England, Scotland, Wales, and Northern Ireland.
                 Each destination has been chosen for its combination of outstanding championship golf,
                 excellent luxury accommodation, and overall golf holiday experience quality. From budget-friendly traditional courses
-                to exclusive luxury golf resorts, we&apos;ve included options for every golfer and budget.
+                to exclusive luxury golf resorts, we've included options for every golfer and budget.
               </p>
             </div>
           </Card>
@@ -671,9 +671,9 @@ export default function BestGolfBreaksUK() {
               Top UK Golf Breaks for 2025
             </h2>
             <p className="text-lg text-slate-700 mb-8">
-              From Scotland&apos;s legendary championship links courses and Open Championship venues to England&apos;s luxury resort venues and spa hotels,
-              Wales&apos; premier golf destinations including Ryder Cup courses, and Northern Ireland&apos;s stunning lakeside courses,
-              discover the UK&apos;s finest golf break destinations that combine world-class championship golf with exceptional luxury accommodation,
+              From Scotland's legendary championship links courses and Open Championship venues to England's luxury resort venues and spa hotels,
+              Wales' premier golf destinations including Ryder Cup courses, and Northern Ireland's stunning lakeside courses,
+              discover the UK's finest golf break destinations that combine world-class championship golf with exceptional luxury accommodation,
               award-winning spas, fine dining, and unforgettable golf holiday experiences. Each golf break includes greens fees,
               luxury accommodation, breakfast, and resort facilities.
             </p>
@@ -832,7 +832,7 @@ export default function BestGolfBreaksUK() {
 
               <div className="text-slate-700">
                 <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  What&apos;s Included in Golf Break Prices?
+                  What's Included in Golf Break Prices?
                 </h3>
                 <ul className="space-y-2 mb-6">
                   <li><strong>Accommodation:</strong> 2-4 nights hotel or resort stay</li>
@@ -1001,7 +1001,7 @@ export default function BestGolfBreaksUK() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    What&apos;s the best time of year for a UK golf break?
+                    What's the best time of year for a UK golf break?
                   </h3>
                   <p className="text-slate-700">
                     The best months are May, June, September, and October. These offer the ideal combination
@@ -1056,12 +1056,12 @@ export default function BestGolfBreaksUK() {
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    What&apos;s included in a typical golf break package?
+                    What's included in a typical golf break package?
                   </h3>
                   <p className="text-slate-700">
                     Standard packages include accommodation, breakfast, and greens fees for featured courses.
                     Premium packages may add meals, spa access, equipment hire, and transfers. Always check
-                    what&apos;s included before booking.
+                    what's included before booking.
                   </p>
                 </div>
               </div>

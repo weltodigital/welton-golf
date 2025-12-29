@@ -214,7 +214,7 @@ export default function GripSizeCalculator() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">&gt;</span>Grip Size Calculator</li>
+            <li><span className="mx-2 text-slate-400">→</span> Grip Size Calculator</li>
           </ol>
         </nav>
         </div>
@@ -317,10 +317,10 @@ export default function GripSizeCalculator() {
                     <SelectValue placeholder="Select your swing speed" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Slow (< 85 mph)">Slow (&lt; 85 mph)</SelectItem>
+                    <SelectItem value="Slow (< 85 mph)">Slow (< 85 mph)</SelectItem>
                     <SelectItem value="Moderate (85-95 mph)">Moderate (85-95 mph)</SelectItem>
                     <SelectItem value="Fast (95-110 mph)">Fast (95-110 mph)</SelectItem>
-                    <SelectItem value="Very Fast (> 110 mph)">Very Fast (&gt; 110 mph)</SelectItem>
+                    <SelectItem value="Very Fast (> 110 mph)">Very Fast (> 110 mph)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -424,13 +424,13 @@ export default function GripSizeCalculator() {
                     <div className="p-3 bg-slate-100 rounded">
                       <div className="font-medium text-slate-900">Hand Length</div>
                       <div className="text-slate-700">
-                        {gripData.handLength}mm ({gripRecommendation.handLengthInches}&quot;)
+                        {gripData.handLength}mm ({gripRecommendation.handLengthInches}")
                       </div>
                     </div>
                     <div className="p-3 bg-slate-100 rounded">
                       <div className="font-medium text-slate-900">Hand Span</div>
                       <div className="text-slate-700">
-                        {gripData.handSpan}mm ({gripRecommendation.handSpanInches}&quot;)
+                        {gripData.handSpan}mm ({gripRecommendation.handSpanInches}")
                       </div>
                     </div>
                   </div>

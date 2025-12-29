@@ -4031,7 +4031,7 @@ export default function CourseDirectory() {
         <nav className="text-sm text-slate-600 mb-4">
           <ol className="flex space-x-2">
             <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">&gt;</span>Course Directory</li>
+            <li><span className="mx-2 text-slate-400">→</span> Course Directory</li>
           </ol>
         </nav>
         </div>
@@ -4481,7 +4481,7 @@ export default function CourseDirectory() {
                   </div>
                   <div>
                     <span className="text-slate-500">Rating/Slope:</span>
-                    <span className="ml-2 text-slate-700">{data.rating} / {data.slope}</span>
+                    <span className="ml-2 text-slate-700">{data.rating} {' / '} {data.slope}</span>
                   </div>
                 </div>
               </div>

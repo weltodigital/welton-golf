@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
               <p className="text-gray-700 mb-4">
-                Welton Golf (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our golf applications and services (the &quot;Service&quot;).
+                Welton Golf (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our golf applications and services (the \"Service\").
               </p>
               <p className="text-gray-700">
                 Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Service.
