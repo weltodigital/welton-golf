@@ -150,7 +150,7 @@ export default function WindElevationAdjuster() {
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 rounded-xl">
                 <Wind className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -173,15 +173,15 @@ export default function WindElevationAdjuster() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Wind Speed & Direction
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Elevation Adjustments
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Temperature Effects
                 </div>
               </div>
@@ -289,8 +289,7 @@ export default function WindElevationAdjuster() {
 
                 <Button
                   onClick={calculateAdjustment}
-                  className="w-full text-white hover:opacity-90"
-                  className="bg-emerald-600"
+                  className="w-full text-white hover:opacity-90 bg-emerald-600"
                   disabled={!currentCalc.baseDistance || !currentCalc.windSpeed || !currentCalc.elevation}
                 >
                   Calculate Adjusted Distance

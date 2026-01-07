@@ -256,7 +256,7 @@ export default function ClubDistanceCalculator() {
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 rounded-xl">
                 <Target className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -280,15 +280,15 @@ export default function ClubDistanceCalculator() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Personalized Distance Charts
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Swing Speed Based Estimates
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Course Management Tool
                 </div>
               </div>
@@ -302,7 +302,7 @@ export default function ClubDistanceCalculator() {
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
                   {distances.map((distance) => (
-                    <div key={distance.club} className="p-3 rounded-lg border-2 relative" className="bg-emerald-50 border border-emerald-100">
+                    <div key={distance.club} className="p-3 rounded-lg border-2 relative bg-emerald-50 border border-emerald-100">
                       <button
                         onClick={() => removeClubDistance(distance.club)}
                         className="absolute top-1 right-1 text-red-500 hover:text-red-700"
@@ -310,8 +310,8 @@ export default function ClubDistanceCalculator() {
                         <Trash2 className="h-3 w-3" />
                       </button>
                       <div className="text-center">
-                        <h4 className="text-sm font-semibold mb-1" className="text-slate-900">{distance.club}</h4>
-                        <div className="text-xs" className="text-slate-900">
+                        <h4 className="text-sm font-semibold mb-1 text-slate-900">{distance.club}</h4>
+                        <div className="text-xs text-slate-900">
                           Carry: {distance.carry}y • Total: {distance.total}y
                         </div>
                       </div>
@@ -378,8 +378,7 @@ export default function ClubDistanceCalculator() {
 
                 <Button
                   onClick={generateDistances}
-                  className="w-full text-white hover:opacity-90"
-                  className="bg-emerald-600"
+                  className="w-full text-white hover:opacity-90 bg-emerald-600"
                   disabled={!currentSet.swingSpeed}
                 >
                   Generate Estimated Distances
@@ -428,8 +427,7 @@ export default function ClubDistanceCalculator() {
 
                   <Button
                     onClick={addClubDistance}
-                    className="w-full mt-3 text-white hover:opacity-90"
-                    className="bg-emerald-600"
+                    className="w-full mt-3 bg-emerald-600 text-white hover:opacity-90"
                     disabled={!selectedClub || !carryDistance}
                   >
                     Add/Update Club Distance
@@ -438,8 +436,7 @@ export default function ClubDistanceCalculator() {
 
                 <Button
                   onClick={saveDistanceSet}
-                  className="w-full text-white hover:opacity-90"
-                  className="bg-emerald-600"
+                  className="w-full text-white hover:opacity-90 bg-emerald-600"
                   disabled={!currentSet.name || distances.length === 0}
                 >
                   Save Distance Chart
@@ -483,7 +480,7 @@ export default function ClubDistanceCalculator() {
                 ) : (
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {distanceSets.map((set) => (
-                      <div key={set.id} className="p-3 rounded-lg" className="bg-emerald-100 rounded-xl">
+                      <div key={set.id} className="p-3 rounded-lg bg-emerald-100 rounded-xl">
                         <div className="flex items-center justify-between mb-2">
                           <div className="font-medium text-sm text-slate-900">
                             {set.name}
@@ -507,10 +504,10 @@ export default function ClubDistanceCalculator() {
                             </Button>
                           </div>
                         </div>
-                        <div className="text-xs" className="text-slate-900">
+                        <div className="text-xs text-slate-900">
                           {set.swingSpeed > 0 && `${set.swingSpeed}mph • `}{set.playerLevel} • {set.distances.length} clubs
                         </div>
-                        <div className="text-xs" className="text-slate-900">
+                        <div className="text-xs text-slate-900">
                           Created: {set.createdAt}
                         </div>
                       </div>

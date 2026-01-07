@@ -210,7 +210,7 @@ export default function SwingSpeedCalculator() {
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 rounded-xl">
                 <RotateCcw className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -234,15 +234,15 @@ export default function SwingSpeedCalculator() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Reverse Engineering from Ball Speed
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Swing Speed Categories
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Equipment Recommendations
                 </div>
               </div>
@@ -254,36 +254,36 @@ export default function SwingSpeedCalculator() {
                 <div className="grid md:grid-cols-4 gap-4 mb-4">
                   <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                     <div className="text-center">
-                      <h3 className="text-sm font-semibold mb-1" className="text-slate-900">Swing Speed</h3>
+                      <h3 className="text-sm font-semibold mb-1 text-slate-900">Swing Speed</h3>
                       <div className="text-2xl font-black text-emerald-600">{results.swingSpeed}</div>
-                      <div className="text-xs" className="text-slate-900">mph</div>
+                      <div className="text-xs text-slate-900">mph</div>
                     </div>
                   </div>
                   <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                     <div className="text-center">
-                      <h3 className="text-sm font-semibold mb-1" className="text-slate-900">Category</h3>
+                      <h3 className="text-sm font-semibold mb-1 text-slate-900">Category</h3>
                       <div className="text-lg font-black text-slate-900">{getSwingSpeedCategory(results.swingSpeed)}</div>
-                      <div className="text-xs" className="text-slate-900">player level</div>
+                      <div className="text-xs text-slate-900">player level</div>
                     </div>
                   </div>
                   <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                     <div className="text-center">
-                      <h3 className="text-sm font-semibold mb-1" className="text-slate-900">Est. Distance</h3>
+                      <h3 className="text-sm font-semibold mb-1 text-slate-900">Est. Distance</h3>
                       <div className="text-2xl font-black text-emerald-600">{results.estimatedDistance}</div>
-                      <div className="text-xs" className="text-slate-900">yards</div>
+                      <div className="text-xs text-slate-900">yards</div>
                     </div>
                   </div>
                   <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                     <div className="text-center">
-                      <h3 className="text-sm font-semibold mb-1" className="text-slate-900">Efficiency</h3>
+                      <h3 className="text-sm font-semibold mb-1 text-slate-900">Efficiency</h3>
                       <div className="text-2xl font-black text-emerald-600">{results.efficiency}%</div>
-                      <div className="text-xs" className="text-slate-900">contact quality</div>
+                      <div className="text-xs text-slate-900">contact quality</div>
                     </div>
                   </div>
                 </div>
                 {results.recommendation && (
                   <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-                    <h3 className="text-sm font-semibold mb-1" className="text-slate-900">Recommendation</h3>
+                    <h3 className="text-sm font-semibold mb-1 text-slate-900">Recommendation</h3>
                     <p className="text-sm text-slate-700">{results.recommendation}</p>
                   </div>
                 )}
@@ -353,8 +353,7 @@ export default function SwingSpeedCalculator() {
 
                 <Button
                   onClick={saveCalculation}
-                  className="w-full text-white hover:opacity-90"
-                  className="bg-emerald-600"
+                  className="w-full text-white hover:opacity-90 bg-emerald-600"
                   disabled={!currentCalc.ballSpeed || results.swingSpeed === 0}
                 >
                   Save Calculation
@@ -398,19 +397,19 @@ export default function SwingSpeedCalculator() {
                 ) : (
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {calculations.map((calc) => (
-                      <div key={calc.id} className="flex items-center justify-between p-3 rounded-lg" className="bg-emerald-100 rounded-xl">
+                      <div key={calc.id} className="flex items-center justify-between p-3 rounded-lg bg-emerald-100 rounded-xl">
                         <div className="flex-1">
                           <div className="font-medium text-sm text-slate-900">
                             {calc.clubType}
                           </div>
-                          <div className="text-xs" className="text-slate-900">
+                          <div className="text-xs text-slate-900">
                             Ball: {calc.ballSpeed}mph • Smash: {calc.smashFactor}
                           </div>
                           <div className="flex gap-2 mt-1">
-                            <span className="text-xs px-2 py-1 rounded text-white" className="bg-emerald-600">
+                            <span className="text-xs px-2 py-1 rounded text-white bg-emerald-600">
                               Swing: {calc.swingSpeed}mph
                             </span>
-                            <span className="text-xs px-2 py-1 rounded text-white" className="bg-emerald-600">
+                            <span className="text-xs px-2 py-1 rounded text-white bg-emerald-600">
                               {getSwingSpeedCategory(calc.swingSpeed)}
                             </span>
                           </div>

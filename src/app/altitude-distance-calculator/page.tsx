@@ -166,7 +166,7 @@ export default function AltitudeDistanceCalculator() {
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
                 <Mountain className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -189,15 +189,15 @@ export default function AltitudeDistanceCalculator() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Air Density Analysis
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Temperature Effects
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Club Selection
                 </div>
               </div>
@@ -317,8 +317,7 @@ export default function AltitudeDistanceCalculator() {
 
                 <Button
                   onClick={calculateAltitudeEffect}
-                  className="w-full text-white hover:opacity-90"
-                  className="bg-emerald-600"
+                  className="w-full bg-emerald-600 text-white hover:opacity-90"
                   disabled={!currentCalc.seaLevelDistance || !currentCalc.currentAltitude}
                 >
                   Calculate Altitude Distance

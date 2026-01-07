@@ -70,7 +70,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Book the Twenty Ten Course for the Ryder Cup experience. Spa packages available. The Roman Road offers excellent value. Consider midweek breaks for significant savings.",
-    whyVisit: "Experience the only resort to host the Ryder Cup with world-class facilities and luxury accommodation. The Twenty Ten Course was specially designed for the 2010 Ryder Cup and features dramatic elevation changes and water hazards. The Roman Road course offers a more traditional parkland experience, while the Montgomerie Course provides a challenging heathland-style layout. The resort's Forum Spa is one of Europe's finest, and dining options include multiple award-winning restaurants. Located just minutes from the M4, it's easily accessible from London and the Midlands.",
+    whyVisit: "Experience the only resort to host the Ryder Cup with world-class facilities and luxury accommodation. The Twenty Ten Course was specially designed for the 2010 Ryder Cup and features dramatic elevation changes and water hazards. The Roman Road course offers a more traditional parkland experience, while the Montgomerie Course provides a challenging heathland-style layout. The resort&apos;s Forum Spa is one of Europe&apos;s finest, and dining options include multiple award-winning restaurants. Located just minutes from the M4, it&apos;s easily accessible from London and the Midlands.",
     coordinates: { lat: 51.6108, lng: -2.8767 }
   },
   {
@@ -86,7 +86,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Must-play Brabazon Course. Golf packages include accommodation and breakfast. Book early for weekends and peak season. The Derby Course offers excellent value for money.",
-    whyVisit: "Relive Ryder Cup history on the most famous Ryder Cup venue with four dramatic competitions. The Brabazon Course features the legendary par-4 10th hole where Christy O'Connor Jr hit his famous 2-iron to within four feet in 1989. The course winds through mature woodland with strategic water hazards, including the climactic 18th hole where so many Ryder Cup dreams have been made and broken. The PGA National Course hosted the English Open and offers a stern test with tight fairways and strategic bunkering. The Derby Course provides a more forgiving experience perfect for higher handicappers. The resort features a luxury spa, multiple restaurants including the award-winning Ryder Grill, and the renowned PGA Golf Academy for lessons and custom fitting.",
+    whyVisit: "Relive Ryder Cup history on the most famous Ryder Cup venue with four dramatic competitions. The Brabazon Course features the legendary par-4 10th hole where Christy O&apos;Connor Jr hit his famous 2-iron to within four feet in 1989. The course winds through mature woodland with strategic water hazards, including the climactic 18th hole where so many Ryder Cup dreams have been made and broken. The PGA National Course hosted the English Open and offers a stern test with tight fairways and strategic bunkering. The Derby Course provides a more forgiving experience perfect for higher handicappers. The resort features a luxury spa, multiple restaurants including the award-winning Ryder Grill, and the renowned PGA Golf Academy for lessons and custom fitting.",
     coordinates: { lat: 52.5808, lng: -1.7308 }
   },
   {
@@ -102,7 +102,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Wales National hosts professional tournaments. Excellent corporate packages. Lake Course offers great value. Book spa treatments in advance during busy periods.",
-    whyVisit: "Wales' premier golf resort featuring European Tour venue with outstanding spa facilities. The Wales National Course is a Peter Johnson design that has hosted the ISPS Handa Wales Open on the European Tour, featuring challenging water hazards and strategic bunkering across rolling countryside. The Lake Course offers a more accessible but equally enjoyable experience with beautiful lake views and mature woodland. The resort's Vale Spa is award-winning with thermal suites, treatment rooms, and relaxation areas. Located just 15 minutes from Cardiff, it offers easy access to Wales' capital city while providing a tranquil countryside setting. The resort features multiple dining options and excellent conference facilities, making it perfect for golf groups and corporate events.",
+    whyVisit: "Wales&apos; premier golf resort featuring European Tour venue with outstanding spa facilities. The Wales National Course is a Peter Johnson design that has hosted the ISPS Handa Wales Open on the European Tour, featuring challenging water hazards and strategic bunkering across rolling countryside. The Lake Course offers a more accessible but equally enjoyable experience with beautiful lake views and mature woodland. The resort&apos;s Vale Spa is award-winning with thermal suites, treatment rooms, and relaxation areas. Located just 15 minutes from Cardiff, it offers easy access to Wales&apos; capital city while providing a tranquil countryside setting. The resort features multiple dining options and excellent conference facilities, making it perfect for golf groups and corporate events.",
     coordinates: { lat: 51.5408, lng: -3.4108 }
   },
   {
@@ -134,7 +134,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "July", "August", "September"],
     difficulty: "Championship Links",
     bookingTips: "Resort packages include meals. Book well in advance for summer. The Ailsa Course is the main attraction. Weather can change quickly - pack layers.",
-    whyVisit: "Dramatic clifftop links golf with luxury accommodation and stunning coastal views. The Ailsa Course is one of the world's most spectacular golf courses, hosting four Open Championships including memorable victories by Tom Watson and Greg Norman. The course features breathtaking holes along the Firth of Clyde, with views of Ailsa Craig island and the Mull of Kintyre. The famous lighthouse sits beside the 9th tee, creating one of golf's most photographed scenes. After a major renovation, the course now plays as a true championship test while maintaining its natural beauty. The King Robert the Bruce course offers an equally stunning but more accessible experience. The luxury resort features world-class dining including the 1906 restaurant, a luxury spa with treatments overlooking the sea, and opulent accommodations in the historic hotel building.",
+    whyVisit: "Dramatic clifftop links golf with luxury accommodation and stunning coastal views. The Ailsa Course is one of the world&apos;s most spectacular golf courses, hosting four Open Championships including memorable victories by Tom Watson and Greg Norman. The course features breathtaking holes along the Firth of Clyde, with views of Ailsa Craig island and the Mull of Kintyre. The famous lighthouse sits beside the 9th tee, creating one of golf&apos;s most photographed scenes. After a major renovation, the course now plays as a true championship test while maintaining its natural beauty. The King Robert the Bruce course offers an equally stunning but more accessible experience. The luxury resort features world-class dining including the 1906 restaurant, a luxury spa with treatments overlooking the sea, and opulent accommodations in the historic hotel building.",
     coordinates: { lat: 55.3108, lng: -4.8467 }
   },
   {
@@ -150,7 +150,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Excellent for corporate groups. Golf and spa packages available. The Arden Course is championship standard. Consider midweek packages for better value.",
-    whyVisit: "Convenient Midlands location with excellent golf and comprehensive resort facilities. The Arden Course is a Donald Steel design that hosted European Tour events, featuring mature parkland with strategic water hazards and undulating greens set within the ancient Forest of Arden. The course demands accuracy and strategic thinking, with the par-3 14th hole over water being particularly memorable. The Aylesford Course offers a more accessible but equally enjoyable experience with rolling fairways and scenic woodland holes. The DoubleTree hotel provides modern accommodation with excellent conference and wedding facilities, making it ideal for golf groups and corporate events. The resort's spa offers relaxation after golf, and the central Midlands location provides easy access from Birmingham, Coventry, and the M40 corridor. Additional amenities include fine dining restaurants and extensive practice facilities.",
+    whyVisit: "Convenient Midlands location with excellent golf and comprehensive resort facilities. The Arden Course is a Donald Steel design that hosted European Tour events, featuring mature parkland with strategic water hazards and undulating greens set within the ancient Forest of Arden. The course demands accuracy and strategic thinking, with the par-3 14th hole over water being particularly memorable. The Aylesford Course offers a more accessible but equally enjoyable experience with rolling fairways and scenic woodland holes. The DoubleTree hotel provides modern accommodation with excellent conference and wedding facilities, making it ideal for golf groups and corporate events. The resort&apos;s spa offers relaxation after golf, and the central Midlands location provides easy access from Birmingham, Coventry, and the M40 corridor. Additional amenities include fine dining restaurants and extensive practice facilities.",
     coordinates: { lat: 52.3408, lng: -1.7108 }
   },
   {
@@ -166,7 +166,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "September", "October"],
     difficulty: "Championship Links",
     bookingTips: "Combine with other Ayrshire courses. Modern links experience. Book accommodation in Troon for easy access to multiple courses. Weather can change quickly.",
-    whyVisit: "Scotland's newest championship links course with stunning coastal views and modern design. Dundonald Links is a Kyle Phillips design that opened in 2003, quickly establishing itself as one of Scotland's finest modern courses. The layout features dramatic dunes, strategic bunkering, and spectacular views over the Firth of Clyde to the Isle of Arran. Unlike traditional links, the course was built on a blank canvas, allowing for optimal hole routing and modern amenities while maintaining authentic links characteristics. The course hosted the Scottish Senior Open and has been praised for its challenging yet fair design. Each hole offers multiple route options, rewarding strategic thinking and accurate shot-making. The facility includes an excellent clubhouse with panoramic views, practice facilities, and professional coaching. Located on the Ayrshire coast, it's perfectly positioned for a links golf tour including nearby Royal Troon, Prestwick, and Western Gailes.",
+    whyVisit: "Scotland&apos;s newest championship links course with stunning coastal views and modern design. Dundonald Links is a Kyle Phillips design that opened in 2003, quickly establishing itself as one of Scotland&apos;s finest modern courses. The layout features dramatic dunes, strategic bunkering, and spectacular views over the Firth of Clyde to the Isle of Arran. Unlike traditional links, the course was built on a blank canvas, allowing for optimal hole routing and modern amenities while maintaining authentic links characteristics. The course hosted the Scottish Senior Open and has been praised for its challenging yet fair design. Each hole offers multiple route options, rewarding strategic thinking and accurate shot-making. The facility includes an excellent clubhouse with panoramic views, practice facilities, and professional coaching. Located on the Ayrshire coast, it&apos;s perfectly positioned for a links golf tour including nearby Royal Troon, Prestwick, and Western Gailes.",
     coordinates: { lat: 55.5308, lng: -4.6308 }
   },
   {
@@ -182,7 +182,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Known as \"Augusta of the North\". Beautiful Northumberland setting. The Hunting Course is the championship venue. Book spa treatments in advance.",
-    whyVisit: "Experience the \"Augusta of the North\" with two championship courses in stunning countryside. Slaley Hall earned its nickname through immaculate course conditioning and dramatic elevation changes reminiscent of Augusta National. The Hunting Course is a Dave Thomas design that winds through ancient woodland and across rolling Northumberland hills, featuring strategic water hazards and pristine fairways. The Priestman Course offers a more forgiving but equally scenic experience. The historic Edwardian mansion hotel provides luxury accommodation with period features and modern amenities. Located on the edge of Northumberland National Park, the resort offers easy access to Hadrian's Wall, historic castles, and the stunning Northumberland coast. The hotel features a luxury spa, award-winning Claret Jug restaurant, and beautiful grounds perfect for walks and outdoor activities.",
+    whyVisit: "Experience the &quot;Augusta of the North&quot; with two championship courses in stunning countryside. Slaley Hall earned its nickname through immaculate course conditioning and dramatic elevation changes reminiscent of Augusta National. The Hunting Course is a Dave Thomas design that winds through ancient woodland and across rolling Northumberland hills, featuring strategic water hazards and pristine fairways. The Priestman Course offers a more forgiving but equally scenic experience. The historic Edwardian mansion hotel provides luxury accommodation with period features and modern amenities. Located on the edge of Northumberland National Park, the resort offers easy access to Hadrian&apos;s Wall, historic castles, and the stunning Northumberland coast. The hotel features a luxury spa, award-winning Claret Jug restaurant, and beautiful grounds perfect for walks and outdoor activities.",
     coordinates: { lat: 54.9308, lng: -2.0508 }
   },
   {
@@ -214,7 +214,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "American-style course design. Excellent corporate facilities. Book early for tournaments and events. Consider packages with spa treatments.",
-    whyVisit: "Championship golf with American-style design and excellent resort amenities in Oxfordshire. The Oxfordshire is a Rees Jones design that brought American golf course architecture to England, featuring wide fairways, large greens, extensive water hazards, and strategic bunkering. The course demands accuracy and strategic thinking, with water coming into play on multiple holes including the signature island green par-3. The layout provides a refreshing change from traditional British parkland courses, offering a taste of American resort golf. The course has hosted numerous professional tournaments and corporate events, with excellent spectator facilities and championship-standard conditioning. The resort hotel provides modern accommodation with conference facilities, spa treatments, and multiple dining options. Located conveniently between Oxford and London with easy M40 access, it's popular for corporate golf days and weekend breaks. The practice facilities include a driving range, putting green, and short game area.",
+    whyVisit: "Championship golf with American-style design and excellent resort amenities in Oxfordshire. The Oxfordshire is a Rees Jones design that brought American golf course architecture to England, featuring wide fairways, large greens, extensive water hazards, and strategic bunkering. The course demands accuracy and strategic thinking, with water coming into play on multiple holes including the signature island green par-3. The layout provides a refreshing change from traditional British parkland courses, offering a taste of American resort golf. The course has hosted numerous professional tournaments and corporate events, with excellent spectator facilities and championship-standard conditioning. The resort hotel provides modern accommodation with conference facilities, spa treatments, and multiple dining options. Located conveniently between Oxford and London with easy M40 access, it&apos;s popular for corporate golf days and weekend breaks. The practice facilities include a driving range, putting green, and short game area.",
     coordinates: { lat: 51.6708, lng: -1.1608 }
   },
   {
@@ -230,7 +230,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "July", "August", "September"],
     difficulty: "Resort Championship",
     bookingTips: "Luxury resort experience. Book spa treatments in advance. The resort can arrange Old Course tee times. Consider helicopter transfers from Edinburgh.",
-    whyVisit: "Ultimate luxury golf experience with stunning views near the Home of Golf. The Fairmont St Andrews sits majestically overlooking St Andrews Bay, offering two championship courses designed by Bruce Devlin and Bob von Hagge. The Torrance Course features dramatic clifftop holes with spectacular North Sea views, while the Kittocks Course offers a more traditional Scottish links experience inland. Both courses provide challenging golf with immaculate conditioning and stunning scenery. The 5-star resort offers world-class accommodation with sea-view suites, multiple award-winning restaurants, and one of Scotland's finest spas featuring locally-inspired treatments. Located just minutes from the Old Course, guests enjoy priority access to St Andrews' historic courses and the town's golf shops and restaurants. The resort's concierge can arrange helicopter transfers, private golf lessons, and exclusive access to St Andrews' most prestigious venues. Additional amenities include indoor pool, fitness center, and extensive grounds overlooking the bay.",
+    whyVisit: "Ultimate luxury golf experience with stunning views near the Home of Golf. The Fairmont St Andrews sits majestically overlooking St Andrews Bay, offering two championship courses designed by Bruce Devlin and Bob von Hagge. The Torrance Course features dramatic clifftop holes with spectacular North Sea views, while the Kittocks Course offers a more traditional Scottish links experience inland. Both courses provide challenging golf with immaculate conditioning and stunning scenery. The 5-star resort offers world-class accommodation with sea-view suites, multiple award-winning restaurants, and one of Scotland&apos;s finest spas featuring locally-inspired treatments. Located just minutes from the Old Course, guests enjoy priority access to St Andrews&apos; historic courses and the town&apos;s golf shops and restaurants. The resort&apos;s concierge can arrange helicopter transfers, private golf lessons, and exclusive access to St Andrews&apos; most prestigious venues. Additional amenities include indoor pool, fitness center, and extensive grounds overlooking the bay.",
     coordinates: { lat: 56.3508, lng: -2.8108 }
   },
   {
@@ -246,23 +246,23 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Nicklaus course is the main attraction. Beautiful Cornwall setting. The Kernow Course offers great value. Book early for summer season in Cornwall.",
-    whyVisit: "Play Jack Nicklaus-designed golf in the beautiful Cornwall countryside with resort amenities. The Nicklaus Signature Course is the Golden Bear's only design in England, featuring dramatic elevation changes across the Cornish countryside with views over the Lynher Valley. This championship layout hosted European Tour events and demands strategic thinking with its undulating fairways, strategically placed bunkers, and challenging greens. The signature hole is the par-3 17th, playing over a deep valley to a well-protected green. The Kernow Course offers a more traditional parkland experience, winding through mature woodland and providing excellent value golf. The historic estate setting includes a grand country house hotel with spa facilities, multiple restaurants, and leisure amenities. Located in Cornwall's beautiful countryside, the resort provides easy access to Eden Project, coastal attractions, and charming Cornish villages. The location offers a perfect combination of championship golf and holiday atmosphere.",
+    whyVisit: "Play Jack Nicklaus-designed golf in the beautiful Cornwall countryside with resort amenities. The Nicklaus Signature Course is the Golden Bear&apos;s only design in England, featuring dramatic elevation changes across the Cornish countryside with views over the Lynher Valley. This championship layout hosted European Tour events and demands strategic thinking with its undulating fairways, strategically placed bunkers, and challenging greens. The signature hole is the par-3 17th, playing over a deep valley to a well-protected green. The Kernow Course offers a more traditional parkland experience, winding through mature woodland and providing excellent value golf. The historic estate setting includes a grand country house hotel with spa facilities, multiple restaurants, and leisure amenities. Located in Cornwall&apos;s beautiful countryside, the resort provides easy access to Eden Project, coastal attractions, and charming Cornish villages. The location offers a perfect combination of championship golf and holiday atmosphere.",
     coordinates: { lat: 50.4108, lng: -4.2708 }
   },
   {
     id: 13,
-    name: "Prince's Golf Club",
+    name: "Prince&apos;s Golf Club",
     region: "England",
     location: "Sandwich, Kent",
     priceRange: "£££",
     duration: "2-3 days",
     courses: ["Shore Course", "Dunes Course", "Himalayas Course"],
     accommodation: "The Bell Hotel, Premier Inn Sandwich",
-    highlights: ["Three links courses", "Open Championship venue", "Historic club", "Royal St George's neighbor", "Seaside location", "Golf heritage"],
+    highlights: ["Three links courses", "Open Championship venue", "Historic club", "Royal St George&apos;s neighbor", "Seaside location", "Golf heritage"],
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship Links",
-    bookingTips: "All three courses excellent. Historic links golf experience. The Shore Course is championship standard. Combine with Royal St George's nearby.",
-    whyVisit: "Experience three excellent links courses at this historic Open Championship venue. Prince's Golf Club sits on the same stretch of Kent coast as Royal St George's, offering 27 holes of authentic links golf across three distinct nine-hole courses. The Shore Course is the championship layout, featuring dramatic dunes, pot bunkers, and seaside winds that test every aspect of your game. The Dunes Course offers spectacular coastal views and challenging terrain, while the Himalayas Course provides a more traditional links experience. The club has a rich history dating back to 1906, hosting the 1932 Open Championship won by Gene Sarazen. The courses demand creativity and shot-making skills typical of seaside links golf. Located in the medieval town of Sandwich, golfers can explore historic streets, traditional pubs, and excellent restaurants. The nearby Royal St George's makes this area perfect for a links golf pilgrimage in the southeast of England.",
+    bookingTips: "All three courses excellent. Historic links golf experience. The Shore Course is championship standard. Combine with Royal St George&apos;s nearby.",
+    whyVisit: "Experience three excellent links courses at this historic Open Championship venue. Prince&apos;s Golf Club sits on the same stretch of Kent coast as Royal St George&apos;s, offering 27 holes of authentic links golf across three distinct nine-hole courses. The Shore Course is the championship layout, featuring dramatic dunes, pot bunkers, and seaside winds that test every aspect of your game. The Dunes Course offers spectacular coastal views and challenging terrain, while the Himalayas Course provides a more traditional links experience. The club has a rich history dating back to 1906, hosting the 1932 Open Championship won by Gene Sarazen. The courses demand creativity and shot-making skills typical of seaside links golf. Located in the medieval town of Sandwich, golfers can explore historic streets, traditional pubs, and excellent restaurants. The nearby Royal St George&apos;s makes this area perfect for a links golf pilgrimage in the southeast of England.",
     coordinates: { lat: 51.2908, lng: 1.3708 }
   },
   {
@@ -278,7 +278,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "July", "August"],
     difficulty: "Championship",
     bookingTips: "Beautiful Highland setting. Combine with outdoor activities. Book early for summer season. Weather can be changeable - pack layers.",
-    whyVisit: "Championship golf in the stunning Scottish Highlands with comprehensive resort facilities. The Spey Valley Championship Course is set against the backdrop of the Cairngorms National Park, offering breathtaking mountain views and challenging highland golf. Designed by Dave Thomas, the course features heather-lined fairways, strategic burns, and elevated greens that take full advantage of the dramatic Highland scenery. The layout demands accurate iron play and strategic course management, with the Highland winds adding an extra challenge. The Macdonald Aviemore Resort provides luxury accommodation with multiple restaurants, spa facilities, and access to outdoor pursuits including hiking, fishing, whisky distillery tours, and Highland games. Located in the heart of the Cairngorms, guests can explore Scotland's wilderness, spot wildlife, and experience traditional Highland culture. The resort offers year-round activities making it perfect for golf and adventure holidays.",
+    whyVisit: "Championship golf in the stunning Scottish Highlands with comprehensive resort facilities. The Spey Valley Championship Course is set against the backdrop of the Cairngorms National Park, offering breathtaking mountain views and challenging highland golf. Designed by Dave Thomas, the course features heather-lined fairways, strategic burns, and elevated greens that take full advantage of the dramatic Highland scenery. The layout demands accurate iron play and strategic course management, with the Highland winds adding an extra challenge. The Macdonald Aviemore Resort provides luxury accommodation with multiple restaurants, spa facilities, and access to outdoor pursuits including hiking, fishing, whisky distillery tours, and Highland games. Located in the heart of the Cairngorms, guests can explore Scotland&apos;s wilderness, spot wildlife, and experience traditional Highland culture. The resort offers year-round activities making it perfect for golf and adventure holidays.",
     coordinates: { lat: 57.1908, lng: -3.8308 }
   },
   {
@@ -294,7 +294,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "September", "October"],
     difficulty: "Championship",
     bookingTips: "Faldo Course is championship standard. Beautiful lakeside setting. Book spa treatments in advance. Consider helicopter tours of the lakes.",
-    whyVisit: "Nick Faldo-designed championship golf with stunning lake views and castle accommodation. Lough Erne Resort sits on a 600-acre peninsula surrounded by the tranquil waters of Lough Erne, offering a unique championship golf experience in Northern Ireland. The Faldo Course is Sir Nick Faldo's first Irish design, featuring strategic water hazards, elevated greens, and stunning lake views throughout. The course demands precision and course management, with multiple risk-reward holes that reward brave shot-making. The Castle Hume Course offers a more accessible parkland experience while maintaining the resort's high standards. The luxury accommodation features a restored castle and modern hotel wings, all overlooking the lake. The resort's Thai spa provides unique treatments, and dining options showcase local ingredients including fresh fish from the lake. Activities include boat trips, fishing, and exploring the historic Fermanagh countryside with its ancient castles and monastic sites.",
+    whyVisit: "Nick Faldo-designed championship golf with stunning lake views and castle accommodation. Lough Erne Resort sits on a 600-acre peninsula surrounded by the tranquil waters of Lough Erne, offering a unique championship golf experience in Northern Ireland. The Faldo Course is Sir Nick Faldo&apos;s first Irish design, featuring strategic water hazards, elevated greens, and stunning lake views throughout. The course demands precision and course management, with multiple risk-reward holes that reward brave shot-making. The Castle Hume Course offers a more accessible parkland experience while maintaining the resort&apos;s high standards. The luxury accommodation features a restored castle and modern hotel wings, all overlooking the lake. The resort&apos;s Thai spa provides unique treatments, and dining options showcase local ingredients including fresh fish from the lake. Activities include boat trips, fishing, and exploring the historic Fermanagh countryside with its ancient castles and monastic sites.",
     coordinates: { lat: 54.3408, lng: -7.6308 }
   },
   {
@@ -310,7 +310,7 @@ const golfBreaks = [
     bestMonths: ["May", "June", "July", "August"],
     difficulty: "Championship Links",
     bookingTips: "Spectacular coastal course. Stay in Aberdeen city center. Weather can be severe - check conditions. Book tee times well in advance.",
-    whyVisit: "Modern championship links golf along Scotland's dramatic North Sea coastline. Trump International Golf Links is built across spectacular sand dunes north of Aberdeen, creating one of Scotland's most dramatic golf experiences. The course features massive elevation changes, deep bunkers carved from natural dunes, and stunning views across the North Sea. Dr. Martin Hawtree's design maximizes the natural terrain, creating holes that play through towering dunes and alongside pristine beaches. The course is renowned for its environmental restoration, returning the area to natural dune ecosystem. The 4th and 14th holes offer particularly spectacular coastal views, while the finishing holes provide a dramatic conclusion with the sea as backdrop. Aberdeen offers excellent accommodation options, fine dining, and cultural attractions including the Maritime Museum and historic Old Town. The course represents modern links design at its finest, combining traditional Scottish golf with contemporary amenities.",
+    whyVisit: "Modern championship links golf along Scotland&apos;s dramatic North Sea coastline. Trump International Golf Links is built across spectacular sand dunes north of Aberdeen, creating one of Scotland&apos;s most dramatic golf experiences. The course features massive elevation changes, deep bunkers carved from natural dunes, and stunning views across the North Sea. Dr. Martin Hawtree&apos;s design maximizes the natural terrain, creating holes that play through towering dunes and alongside pristine beaches. The course is renowned for its environmental restoration, returning the area to natural dune ecosystem. The 4th and 14th holes offer particularly spectacular coastal views, while the finishing holes provide a dramatic conclusion with the sea as backdrop. Aberdeen offers excellent accommodation options, fine dining, and cultural attractions including the Maritime Museum and historic Old Town. The course represents modern links design at its finest, combining traditional Scottish golf with contemporary amenities.",
     coordinates: { lat: 57.2508, lng: -2.0808 }
   },
   {
@@ -322,11 +322,11 @@ const golfBreaks = [
     duration: "2-3 days",
     courses: ["Championship Course", "Burnside Course", "Buddon Links"],
     accommodation: "Carnoustie Golf Hotel, Station Hotel",
-    highlights: ["Open Championship venue", "Golf's toughest test", "Three courses", "Historic links", "Barry Burn", "Golf museum"],
+    highlights: ["Open Championship venue", "Golf&apos;s toughest test", "Three courses", "Historic links", "Barry Burn", "Golf museum"],
     bestMonths: ["May", "June", "September", "October"],
     difficulty: "Championship Links",
     bookingTips: "Championship Course is the main attraction. Book early for peak season. The Burnside Course offers excellent value. Consider playing all three courses over 2-3 days.",
-    whyVisit: "Test yourself on one of golf's toughest Open Championship venues with three quality courses. Carnoustie Championship Course is legendary for its difficulty, earning the nickname 'Car-nasty' among professionals. The course features the infamous Barry Burn that winds throughout, most notably at the treacherous 17th and 18th holes where Jean van de Velde famously came to grief in 1999. Eight Open Championships have been held here, with winners including Ben Hogan, Gary Player, and Padraig Harrington. The Burnside Course runs parallel to the Championship layout, offering similar challenges in a more accessible format. The Buddon Links provides a traditional seaside experience with natural terrain and smaller greens. The Carnoustie Golf Hotel sits adjacent to the 1st tee, offering convenient accommodation with golf packages. The town's Golf Museum showcases the area's rich golfing heritage, and the nearby Angus coastline provides beautiful scenery and excellent seafood dining.",
+    whyVisit: "Test yourself on one of golf&apos;s toughest Open Championship venues with three quality courses. Carnoustie Championship Course is legendary for its difficulty, earning the nickname &apos;Car-nasty&apos; among professionals. The course features the infamous Barry Burn that winds throughout, most notably at the treacherous 17th and 18th holes where Jean van de Velde famously came to grief in 1999. Eight Open Championships have been held here, with winners including Ben Hogan, Gary Player, and Padraig Harrington. The Burnside Course runs parallel to the Championship layout, offering similar challenges in a more accessible format. The Buddon Links provides a traditional seaside experience with natural terrain and smaller greens. The Carnoustie Golf Hotel sits adjacent to the 1st tee, offering convenient accommodation with golf packages. The town&apos;s Golf Museum showcases the area&apos;s rich golfing heritage, and the nearby Angus coastline provides beautiful scenery and excellent seafood dining.",
     coordinates: { lat: 56.5008, lng: -2.7108 }
   },
   {
@@ -336,13 +336,13 @@ const golfBreaks = [
     location: "Auchterarder, Perth",
     priceRange: "££££",
     duration: "3-4 days",
-    courses: ["King's Course", "Queen's Course", "PGA Centenary"],
+    courses: ["King&apos;s Course", "Queen&apos;s Course", "PGA Centenary"],
     accommodation: "Gleneagles Hotel",
     highlights: ["Luxury golf resort", "Three championship courses", "2014 Ryder Cup venue", "World-class spa", "Michelin-starred dining", "Country activities", "Historic estate"],
     bestMonths: ["May", "June", "July", "August", "September"],
     difficulty: "Championship",
-    bookingTips: "Scotland's premier golf resort. Package deals offer best value. Book the King's Course first. Consider off-season rates for significant savings.",
-    whyVisit: "Scotland's most famous golf resort with three championship courses and luxury accommodation. The King's Course is a James Braid masterpiece set in the heart of the Ochil Hills, offering panoramic views and challenging moorland golf. The Queen's Course provides a more accessible but equally scenic experience with strategic bunkering and undulating fairways. The PGA Centenary Course, designed by Jack Nicklaus, hosted the dramatic 2014 Ryder Cup where Europe secured victory. The resort epitomizes luxury with its grand Edwardian hotel, world-renowned ESPA spa, Michelin-starred Andrew Fairlie restaurant, and extensive country pursuits including falconry, fishing, and off-road driving. The estate spans 850 acres of Perthshire countryside, offering a complete luxury experience beyond golf. Additional activities include clay pigeon shooting, horseback riding, and access to the famous Gleneagles railway station for scenic Highland excursions.",
+    bookingTips: "Scotland&apos;s premier golf resort. Package deals offer best value. Book the King&apos;s Course first. Consider off-season rates for significant savings.",
+    whyVisit: "Scotland&apos;s most famous golf resort with three championship courses and luxury accommodation. The King&apos;s Course is a James Braid masterpiece set in the heart of the Ochil Hills, offering panoramic views and challenging moorland golf. The Queen&apos;s Course provides a more accessible but equally scenic experience with strategic bunkering and undulating fairways. The PGA Centenary Course, designed by Jack Nicklaus, hosted the dramatic 2014 Ryder Cup where Europe secured victory. The resort epitomizes luxury with its grand Edwardian hotel, world-renowned ESPA spa, Michelin-starred Andrew Fairlie restaurant, and extensive country pursuits including falconry, fishing, and off-road driving. The estate spans 850 acres of Perthshire countryside, offering a complete luxury experience beyond golf. Additional activities include clay pigeon shooting, horseback riding, and access to the famous Gleneagles railway station for scenic Highland excursions.",
     coordinates: { lat: 56.2826, lng: -3.7442 }
   },
   {
@@ -358,7 +358,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Resort Championship",
     bookingTips: "Convenient for Edinburgh visits. East Course is championship standard. Book restaurant reservations early. Excellent for combining golf with city sightseeing.",
-    whyVisit: "Quality golf resort just outside Edinburgh with two courses and excellent facilities. Dalmahoy sits in 1,000 acres of countryside just 20 minutes from Edinburgh city center, offering the perfect combination of championship golf and urban accessibility. The East Course is a James Braid design that has hosted professional tournaments, featuring mature parkland with strategic bunkering and undulating greens set against the backdrop of the Pentland Hills. The West Course provides a more accessible but equally scenic experience with shorter holes and forgiving fairways. The Georgian mansion hotel offers elegant accommodation with period features, multiple restaurants, and comprehensive conference facilities. The resort's location makes it ideal for exploring Edinburgh's historic Royal Mile, Edinburgh Castle, and cultural attractions. Spa facilities, indoor pool, and leisure amenities provide relaxation after golf. The combination of quality golf, luxury accommodation, and easy access to one of Europe's most beautiful cities makes Dalmahoy perfect for weekend breaks and extended stays.",
+    whyVisit: "Quality golf resort just outside Edinburgh with two courses and excellent facilities. Dalmahoy sits in 1,000 acres of countryside just 20 minutes from Edinburgh city center, offering the perfect combination of championship golf and urban accessibility. The East Course is a James Braid design that has hosted professional tournaments, featuring mature parkland with strategic bunkering and undulating greens set against the backdrop of the Pentland Hills. The West Course provides a more accessible but equally scenic experience with shorter holes and forgiving fairways. The Georgian mansion hotel offers elegant accommodation with period features, multiple restaurants, and comprehensive conference facilities. The resort&apos;s location makes it ideal for exploring Edinburgh&apos;s historic Royal Mile, Edinburgh Castle, and cultural attractions. Spa facilities, indoor pool, and leisure amenities provide relaxation after golf. The combination of quality golf, luxury accommodation, and easy access to one of Europe&apos;s most beautiful cities makes Dalmahoy perfect for weekend breaks and extended stays.",
     coordinates: { lat: 55.8708, lng: -3.4308 }
   },
   {
@@ -373,8 +373,8 @@ const golfBreaks = [
     highlights: ["Jack Nicklaus design", "Chester proximity", "Luxury spa", "1,000-acre estate", "Multiple restaurants", "Historic city access"],
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Championship",
-    bookingTips: "Nicklaus Course is championship standard. Excellent spa facilities. Book spa treatments in advance. Perfect base for exploring Chester's historic attractions.",
-    whyVisit: "Championship golf with Jack Nicklaus design near historic Chester with luxury spa. Carden Park sits on a magnificent 1,000-acre estate in the Cheshire countryside, just minutes from the historic Roman city of Chester. The Nicklaus Course is one of the Golden Bear's finest European designs, featuring strategic water hazards, undulating fairways, and challenging greens that demand precision and course management. The signature hole is the par-3 17th, playing over water to a well-protected green. The Cheshire Course offers a more traditional parkland experience with mature trees and rolling terrain. The luxury hotel provides elegant accommodation, award-winning restaurants, and one of the UK's finest spas featuring thermal experiences and extensive treatment menus. Chester's Roman walls, medieval architecture, unique covered galleries (The Rows), and excellent shopping are just 10 minutes away. The resort also offers extensive grounds for walking, cycling, and outdoor activities.",
+    bookingTips: "Nicklaus Course is championship standard. Excellent spa facilities. Book spa treatments in advance. Perfect base for exploring Chester&apos;s historic attractions.",
+    whyVisit: "Championship golf with Jack Nicklaus design near historic Chester with luxury spa. Carden Park sits on a magnificent 1,000-acre estate in the Cheshire countryside, just minutes from the historic Roman city of Chester. The Nicklaus Course is one of the Golden Bear&apos;s finest European designs, featuring strategic water hazards, undulating fairways, and challenging greens that demand precision and course management. The signature hole is the par-3 17th, playing over water to a well-protected green. The Cheshire Course offers a more traditional parkland experience with mature trees and rolling terrain. The luxury hotel provides elegant accommodation, award-winning restaurants, and one of the UK&apos;s finest spas featuring thermal experiences and extensive treatment menus. Chester&apos;s Roman walls, medieval architecture, unique covered galleries (The Rows), and excellent shopping are just 10 minutes away. The resort also offers extensive grounds for walking, cycling, and outdoor activities.",
     coordinates: { lat: 53.0908, lng: -2.7808 }
   },
   {
@@ -390,7 +390,7 @@ const golfBreaks = [
     bestMonths: ["April", "May", "September", "October"],
     difficulty: "Traditional",
     bookingTips: "Charming traditional course. Stay on-site at the hotel for convenience. Book early for summer season. Explore the unique village and coastal walks.",
-    whyVisit: "Traditional heathland golf in a charming Suffolk coastal village with character accommodation. Thorpeness Golf Course is a James Braid design from 1922, offering authentic traditional golf across natural heathland terrain. The course features gorse-lined fairways, natural hazards, and small undulating greens that reward precision and local knowledge. The layout winds through heather and bracken, providing a quintessentially English golf experience reminiscent of golf's earlier days. The nearby Suffolk coast offers beautiful beaches, and the village of Thorpeness is famous for its unique architecture including the distinctive House in the Clouds water tower. The Thorpeness Hotel provides comfortable accommodation with period character and excellent local cuisine featuring fresh Suffolk produce and North Sea seafood. The area offers excellent walking, birdwatching, and exploring historic sites including nearby Aldeburgh and its famous music festival. This represents excellent value traditional golf in one of England's most charming coastal settings.",
+    whyVisit: "Traditional heathland golf in a charming Suffolk coastal village with character accommodation. Thorpeness Golf Course is a James Braid design from 1922, offering authentic traditional golf across natural heathland terrain. The course features gorse-lined fairways, natural hazards, and small undulating greens that reward precision and local knowledge. The layout winds through heather and bracken, providing a quintessentially English golf experience reminiscent of golf&apos;s earlier days. The nearby Suffolk coast offers beautiful beaches, and the village of Thorpeness is famous for its unique architecture including the distinctive House in the Clouds water tower. The Thorpeness Hotel provides comfortable accommodation with period character and excellent local cuisine featuring fresh Suffolk produce and North Sea seafood. The area offers excellent walking, birdwatching, and exploring historic sites including nearby Aldeburgh and its famous music festival. This represents excellent value traditional golf in one of England&apos;s most charming coastal settings.",
     coordinates: { lat: 52.1708, lng: 1.5908 }
   }
 ]
@@ -510,7 +510,7 @@ export default function BestGolfBreaksUK() {
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": "What's the best time of year for a UK golf break?",
+                  "name": "What&apos;s the best time of year for a UK golf break?",
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "The best months are May, June, September, and October. These offer the ideal combination of good weather, reasonable prices, and course availability. July and August are peak season with highest prices but longest days."
@@ -555,9 +555,9 @@ export default function BestGolfBreaksUK() {
               Best Golf Breaks in the UK 2025
             </h1>
             <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8">
-              Discover the ultimate guide to Britain's finest golf holidays and weekend breaks. From Scotland's legendary championship
-              links courses and Open Championship venues to England's luxury golf resorts and spa hotels, Wales' spectacular
-              Ryder Cup courses, and Northern Ireland's hidden gems, we've curated the top 21 golf breaks in the UK for 2025.
+              Discover the ultimate guide to Britain&apos;s finest golf holidays and weekend breaks. From Scotland&apos;s legendary championship
+              links courses and Open Championship venues to England&apos;s luxury golf resorts and spa hotels, Wales&apos; spectacular
+              Ryder Cup courses, and Northern Ireland&apos;s hidden gems, we&apos;ve curated the top 21 golf breaks in the UK for 2025.
               Perfect for golf weekends, corporate golf days, and luxury golf vacations.
             </p>
 
@@ -595,10 +595,10 @@ export default function BestGolfBreaksUK() {
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">🏆 Top UK Golf Destinations</h3>
                 <ol className="text-slate-700 space-y-1">
                   <li><strong>1. Celtic Manor Resort</strong> - 2010 Ryder Cup venue, Wales</li>
-                  <li><strong>2. Gleneagles</strong> - Scotland's premier luxury golf resort</li>
+                  <li><strong>2. Gleneagles</strong> - Scotland&apos;s premier luxury golf resort</li>
                   <li><strong>3. Trump Turnberry</strong> - Open Championship clifftop links</li>
                   <li><strong>4. The Belfry</strong> - Four-time Ryder Cup host, England</li>
-                  <li><strong>5. Carnoustie Golf Links</strong> - \"Golf's toughest test\"</li>
+                  <li><strong>5. Carnoustie Golf Links</strong> - &quot;Golf&apos;s toughest test&quot;</li>
                 </ol>
               </div>
               <div>
@@ -652,7 +652,7 @@ export default function BestGolfBreaksUK() {
               <p className="mb-4">
                 What makes UK golf breaks special? <strong>Accessibility, heritage, and diversity.</strong> You can
                 play legendary Ryder Cup venues, championship links courses, and luxury resort golf all within a compact area.
-                Whether you're seeking the ultimate links challenge on Scotland's rugged coastline or a luxury spa resort experience
+                Whether you&apos;re seeking the ultimate links challenge on Scotland&apos;s rugged coastline or a luxury spa resort experience
                 in the English countryside, the UK delivers world-class golf tourism.
               </p>
               <p>
@@ -660,7 +660,7 @@ export default function BestGolfBreaksUK() {
                 best value, most memorable experiences, and highest quality golf across England, Scotland, Wales, and Northern Ireland.
                 Each destination has been chosen for its combination of outstanding championship golf,
                 excellent luxury accommodation, and overall golf holiday experience quality. From budget-friendly traditional courses
-                to exclusive luxury golf resorts, we've included options for every golfer and budget.
+                to exclusive luxury golf resorts, we&apos;ve included options for every golfer and budget.
               </p>
             </div>
           </Card>
@@ -671,9 +671,9 @@ export default function BestGolfBreaksUK() {
               Top UK Golf Breaks for 2025
             </h2>
             <p className="text-lg text-slate-700 mb-8">
-              From Scotland's legendary championship links courses and Open Championship venues to England's luxury resort venues and spa hotels,
-              Wales' premier golf destinations including Ryder Cup courses, and Northern Ireland's stunning lakeside courses,
-              discover the UK's finest golf break destinations that combine world-class championship golf with exceptional luxury accommodation,
+              From Scotland&apos;s legendary championship links courses and Open Championship venues to England&apos;s luxury resort venues and spa hotels,
+              Wales&apos; premier golf destinations including Ryder Cup courses, and Northern Ireland&apos;s stunning lakeside courses,
+              discover the UK&apos;s finest golf break destinations that combine world-class championship golf with exceptional luxury accommodation,
               award-winning spas, fine dining, and unforgettable golf holiday experiences. Each golf break includes greens fees,
               luxury accommodation, breakfast, and resort facilities.
             </p>
@@ -832,7 +832,7 @@ export default function BestGolfBreaksUK() {
 
               <div className="text-slate-700">
                 <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  What's Included in Golf Break Prices?
+                  What&apos;s Included in Golf Break Prices?
                 </h3>
                 <ul className="space-y-2 mb-6">
                   <li><strong>Accommodation:</strong> 2-4 nights hotel or resort stay</li>
@@ -1001,7 +1001,7 @@ export default function BestGolfBreaksUK() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    What's the best time of year for a UK golf break?
+                    What&apos;s the best time of year for a UK golf break?
                   </h3>
                   <p className="text-slate-700">
                     The best months are May, June, September, and October. These offer the ideal combination
@@ -1056,12 +1056,12 @@ export default function BestGolfBreaksUK() {
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    What's included in a typical golf break package?
+                    What&apos;s included in a typical golf break package?
                   </h3>
                   <p className="text-slate-700">
                     Standard packages include accommodation, breakfast, and greens fees for featured courses.
                     Premium packages may add meals, spa access, equipment hire, and transfers. Always check
-                    what's included before booking.
+                    what&apos;s included before booking.
                   </p>
                 </div>
               </div>

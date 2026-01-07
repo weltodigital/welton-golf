@@ -196,7 +196,7 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          "name": "What's the most important skill for breaking 90?",
+          "name": "What&apos;s the most important skill for breaking 90?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Course management is the most critical skill for breaking 90. Playing within your abilities, avoiding big numbers, and making smart decisions will lower your scores faster than perfect swing mechanics."
@@ -215,7 +215,7 @@ const jsonLd = {
           "name": "What clubs are essential for breaking 90?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Focus on becoming proficient with driver, 7-iron, pitching wedge, and putter. These four clubs can handle most situations you'll encounter and help you develop consistency before expanding your arsenal."
+            "text": "Focus on becoming proficient with driver, 7-iron, pitching wedge, and putter. These four clubs can handle most situations you&apos;ll encounter and help you develop consistency before expanding your arsenal."
           }
         },
         {
@@ -465,7 +465,7 @@ export default function HowToBreak90Page() {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Use 3-wood on tight holes</li>
                       <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Driver only when fairway is wide</li>
-                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Develop reliable \"go-to\" tee shot</li>
+                      <li className="flex items-center"><CheckCircle className="w-4 h-4 text-green-500 mr-2" />Develop reliable &quot;go-to&quot; tee shot</li>
                     </ul>
                   </div>
                 </div>

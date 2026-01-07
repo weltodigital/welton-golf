@@ -408,7 +408,7 @@ export default function ClubFittingEstimator() {
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 rounded-xl">
                 <Settings className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -432,15 +432,15 @@ export default function ClubFittingEstimator() {
               </p>
               <div className="grid md:grid-cols-3 gap-4 text-sm text-emerald-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Personalized Recommendations
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Scientific Fitting Methods
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Equipment Optimization
                 </div>
               </div>
@@ -469,15 +469,15 @@ export default function ClubFittingEstimator() {
                   {recommendations.map((rec, index) => (
                     <div key={index} className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold" className="text-emerald-700">{rec.category}</h4>
+                        <h4 className="font-semibold text-emerald-700">{rec.category}</h4>
                         <span className={`px-2 py-1 rounded-full text-xs border ${getPriorityColor(rec.priority)}`}>
                           {rec.priority}
                         </span>
                       </div>
-                      <div className="text-sm mb-2" className="text-emerald-700">
+                      <div className="text-sm mb-2 text-emerald-700">
                         <strong>Recommendation:</strong> {rec.recommendation}
                       </div>
-                      <div className="text-xs" className="text-emerald-700">
+                      <div className="text-xs text-emerald-700">
                         {rec.reasoning}
                       </div>
                     </div>
@@ -687,8 +687,7 @@ export default function ClubFittingEstimator() {
 
                 <Button
                   onClick={saveFittingSession}
-                  className="w-full text-white hover:opacity-90"
-                  className="bg-emerald-600"
+                  className="w-full text-white hover:opacity-90 bg-emerald-600"
                   disabled={!currentSession.name || !currentSession.handicap || !currentSession.swingSpeed}
                 >
                   Save Fitting Analysis
@@ -724,7 +723,7 @@ export default function ClubFittingEstimator() {
               </CardHeader>
               <CardContent>
                 {fittingSessions.length === 0 ? (
-                  <div className="text-center py-8 text-gray-600 text-gray-600">
+                  <div className="text-center py-8 text-gray-600">
                     <Settings className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No fitting sessions saved yet.</p>
                     <p className="text-sm">Complete your first analysis above.</p>
@@ -732,9 +731,9 @@ export default function ClubFittingEstimator() {
                 ) : (
                   <div className="space-y-3 max-h-96 overflow-y-auto">
                     {fittingSessions.map((session) => (
-                      <div key={session.id} className="p-3 rounded-lg" className="bg-emerald-100 rounded-xl">
+                      <div key={session.id} className="p-3 rounded-lg bg-emerald-100 rounded-xl">
                         <div className="flex items-center justify-between mb-2">
-                          <div className="font-medium text-sm" className="text-emerald-700">
+                          <div className="font-medium text-sm text-emerald-700">
                             {session.name}
                           </div>
                           <div className="flex gap-1">
@@ -756,10 +755,10 @@ export default function ClubFittingEstimator() {
                             </Button>
                           </div>
                         </div>
-                        <div className="text-xs" className="text-emerald-700">
+                        <div className="text-xs text-emerald-700">
                           {session.playerProfile.handicap} HCP • {session.playerProfile.swingSpeed}mph • {session.recommendations.length} recommendations
                         </div>
-                        <div className="text-xs" className="text-emerald-700">
+                        <div className="text-xs text-emerald-700">
                           Created: {session.createdAt}
                         </div>
                       </div>
@@ -850,11 +849,11 @@ export default function ClubFittingEstimator() {
                 <div>
                   <h4 className="font-bold text-slate-900 mb-3">Club Length Adjustments:</h4>
                   <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>+1 inch:</strong> Very tall players (6'4"+)</p>
-                    <p><strong>+0.5 inch:</strong> Tall players (6'1" - 6'3")</p>
-                    <p><strong>Standard:</strong> Average height (5'7" - 6'0")</p>
-                    <p><strong>-0.5 inch:</strong> Shorter players (5'4" - 5'6")</p>
-                    <p><strong>-1 inch:</strong> Very short players ({'<'} 5'4\")</p>
+                    <p><strong>+1 inch:</strong> Very tall players (6&apos;4&quot;+)</p>
+                    <p><strong>+0.5 inch:</strong> Tall players (6&apos;1&quot; - 6&apos;3&quot;)</p>
+                    <p><strong>Standard:</strong> Average height (5&apos;7&quot; - 6&apos;0&quot;)</p>
+                    <p><strong>-0.5 inch:</strong> Shorter players (5&apos;4&quot; - 5&apos;6&quot;)</p>
+                    <p><strong>-1 inch:</strong> Very short players ({'<'} 5&apos;4&quot;)</p>
                   </div>
                 </div>
               </div>

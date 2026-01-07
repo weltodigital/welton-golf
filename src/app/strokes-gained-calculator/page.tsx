@@ -228,7 +228,7 @@ export default function StrokesGainedCalculator() {
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center" className="bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 rounded-xl">
                 <TrendingUp className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -249,21 +249,21 @@ export default function StrokesGainedCalculator() {
                 Unlock insights into your game with strokes gained analysis. Compare your performance to tour averages
                 across driving, approach, short game, and putting to identify where to focus your practice efforts.
               </p>
-              <div className="grid md:grid-cols-4 gap-4 text-sm" className="text-slate-900">
+              <div className="grid md:grid-cols-4 gap-4 text-sm text-slate-900">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Driving Analysis
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Approach Play
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Short Game
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" className="bg-emerald-600"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Putting Stats
                 </div>
               </div>
@@ -354,8 +354,7 @@ export default function StrokesGainedCalculator() {
 
                 <Button
                   onClick={calculateStrokesGained}
-                  className="w-full text-white hover:opacity-90"
-                  className="bg-emerald-600"
+                  className="w-full text-white hover:opacity-90 bg-emerald-600"
                 >
                   Analyze Round Performance
                 </Button>

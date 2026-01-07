@@ -73,7 +73,7 @@ export default function CourseDirectory() {
               {searchTerm && (
                 <div className="mt-4 p-4 bg-emerald-50 rounded-lg">
                   <p className="text-emerald-700">
-                    Searching for: "{searchTerm}"
+                    Searching for: &quot;{searchTerm}&quot;
                   </p>
                 </div>
               )}

@@ -349,8 +349,7 @@ export default function StablefordCalculator() {
                         <td className="p-2 text-center">{parseInt(currentRound.courseHandicap) || 0}</td>
                         <td className="p-2 text-center">
                           <span
-                            className="px-3 py-1 rounded text-white font-bold"
-                            className="bg-emerald-600"
+                            className="px-3 py-1 rounded text-white font-bold bg-emerald-600"
                           >
                             {totalPoints}
                           </span>
