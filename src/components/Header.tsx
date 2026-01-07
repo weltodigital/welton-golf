@@ -175,19 +175,19 @@ export default function Header() {
                   </Link>
                   <div className="border-t border-slate-100 my-2"></div>
                   <Link
-                    href="/blog/how-to-break-80"
+                    href="/blog/how-to-break-80-golf"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                   >
                     How to Break 80
                   </Link>
                   <Link
-                    href="/blog/how-to-break-90"
+                    href="/blog/how-to-break-90-golf"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                   >
                     How to Break 90
                   </Link>
                   <Link
-                    href="/blog/how-to-break-100"
+                    href="/blog/how-to-break-100-golf"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                   >
                     How to Break 100

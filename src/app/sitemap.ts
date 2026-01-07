@@ -34,19 +34,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://www.weltongolf.com/blog/how-to-break-80',
+      url: 'https://www.weltongolf.com/blog/how-to-break-80-golf',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://www.weltongolf.com/blog/how-to-break-90',
+      url: 'https://www.weltongolf.com/blog/how-to-break-90-golf',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://www.weltongolf.com/blog/how-to-break-100',
+      url: 'https://www.weltongolf.com/blog/how-to-break-100-golf',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
