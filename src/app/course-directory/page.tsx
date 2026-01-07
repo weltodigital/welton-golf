@@ -15,10 +15,10 @@ interface GolfCourse {
   name: string
   course: string
   region: string
+  location: string
   type: string
   website: string
   established: number
-  designer: string
   tees: Array<{
     name: string
     par: number
@@ -114,8 +114,8 @@ export default function CourseDirectory() {
             Golf Course Directory
           </h1>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Discover {courses.length} golf courses across Hampshire and the Isle of Wight.
-            Find detailed information about course ratings, facilities, and green fees.
+            Discover {courses.length} golf courses across Hampshire, Isle of Wight, and the Channel Islands.
+            Find detailed information about course ratings, slope ratings, facilities, and green fees.
           </p>
         </div>
 
@@ -281,7 +281,7 @@ export default function CourseDirectory() {
                             </div>
                             <div className="flex items-center gap-4 text-sm text-slate-600">
                               <span>Est. {course.established}</span>
-                              <span>Designer: {course.designer}</span>
+                              <span>{course.location}</span>
                             </div>
                           </div>
                         </div>
