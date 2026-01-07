@@ -2,12 +2,12 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Badge } from '@/components/ui/badge'
-import { MapPin, ExternalLink, Filter, Calculator } from 'lucide-react'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { ArrowUpDown, Filter } from 'lucide-react'
 import golfCourses from '@/data/golfCourses.json'
 
 interface GolfCourse {
@@ -23,50 +23,114 @@ interface GolfCourse {
   }>
 }
 
+interface TeeRow {
+  id: string
+  courseName: string
+  county: string
+  courseType: string
+  teeColour: string
+  par: number | string | null
+  length: number
+  courseRating: string
+  slopeRating: string
+}
+
 export default function CourseDirectory() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedRegion, setSelectedRegion] = useState('all')
-  const [sortBy, setSortBy] = useState('name')
+  const [selectedCourseType, setSelectedCourseType] = useState('all')
+  const [selectedTeeColour, setSelectedTeeColour] = useState('all')
+  const [sortBy, setSortBy] = useState('courseName')
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc')
   const [showFilters, setShowFilters] = useState(false)
 
   const courses = golfCourses as GolfCourse[]
 
+  // Transform courses into individual tee rows
+  const teeRows = useMemo(() => {
+    const rows: TeeRow[] = []
+    courses.forEach(course => {
+      course.tees.forEach((tee, index) => {
+        rows.push({
+          id: `${course.id}-${index}`,
+          courseName: course.name,
+          county: course.region,
+          courseType: 'Unknown', // Not available in current data
+          teeColour: tee.name,
+          par: tee.par,
+          length: tee.yardage,
+          courseRating: 'N/A', // Not available in current data
+          slopeRating: 'N/A' // Not available in current data
+        })
+      })
+    })
+    return rows
+  }, [courses])
+
   // Get unique values for filters
-  const regions = Array.from(new Set(courses.map(course => course.region))).sort()
+  const regions = Array.from(new Set(teeRows.map(row => row.county))).sort()
+  const courseTypes = Array.from(new Set(teeRows.map(row => row.courseType))).sort()
+  const teeColours = Array.from(new Set(teeRows.map(row => row.teeColour))).sort()
 
-  // Filter and sort courses
-  const filteredAndSortedCourses = useMemo(() => {
-    let filtered = courses.filter(course => {
+  // Filter and sort tee rows
+  const filteredAndSortedRows = useMemo(() => {
+    let filtered = teeRows.filter(row => {
       const matchesSearch = searchTerm === '' ||
-        course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        course.region.toLowerCase().includes(searchTerm.toLowerCase())
+        row.courseName.toLowerCase().includes(searchTerm.toLowerCase())
 
-      const matchesRegion = selectedRegion === 'all' || course.region === selectedRegion
+      const matchesRegion = selectedRegion === 'all' || row.county === selectedRegion
+      const matchesCourseType = selectedCourseType === 'all' || row.courseType === selectedCourseType
+      const matchesTeeColour = selectedTeeColour === 'all' || row.teeColour === selectedTeeColour
 
-      return matchesSearch && matchesRegion
+      return matchesSearch && matchesRegion && matchesCourseType && matchesTeeColour
     })
 
-    // Sort courses
+    // Sort rows
     filtered.sort((a, b) => {
+      let result = 0
       switch (sortBy) {
-        case 'name':
-          return a.name.localeCompare(b.name)
-        case 'region':
-          return a.region.localeCompare(b.region)
-        case 'yardage':
-          return Math.max(...b.tees.map(t => t.yardage)) - Math.max(...a.tees.map(t => t.yardage))
+        case 'courseName':
+          result = a.courseName.localeCompare(b.courseName)
+          break
+        case 'county':
+          result = a.county.localeCompare(b.county)
+          break
+        case 'courseType':
+          result = a.courseType.localeCompare(b.courseType)
+          break
+        case 'teeColour':
+          result = a.teeColour.localeCompare(b.teeColour)
+          break
+        case 'par':
+          const parA = typeof a.par === 'number' ? a.par : parseInt(String(a.par).match(/\d+/)?.[0] || '0')
+          const parB = typeof b.par === 'number' ? b.par : parseInt(String(b.par).match(/\d+/)?.[0] || '0')
+          result = parA - parB
+          break
+        case 'length':
+          result = a.length - b.length
+          break
         default:
           return 0
       }
+      return sortDirection === 'asc' ? result : -result
     })
 
     return filtered
-  }, [courses, searchTerm, selectedRegion, sortBy])
+  }, [teeRows, searchTerm, selectedRegion, selectedCourseType, selectedTeeColour, sortBy, sortDirection])
 
-  const getMainTee = (course: GolfCourse) => {
-    return course.tees.find(tee => tee.name === 'White') ||
-           course.tees.find(tee => tee.name === 'Yellow') ||
-           course.tees[0]
+  const handleSort = (column: string) => {
+    if (sortBy === column) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortBy(column)
+      setSortDirection('asc')
+    }
+  }
+
+  const formatPar = (par: number | string | null): string => {
+    if (par === null) return 'N/A'
+    if (typeof par === 'number') return par.toString()
+    return par.toString()
   }
 
   return (
@@ -86,8 +150,7 @@ export default function CourseDirectory() {
             Golf Course Directory
           </h1>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Discover {courses.length} golf courses across Hampshire, Isle of Wight, and the Channel Islands.
-            Find detailed information about course ratings, slope ratings, facilities, and green fees.
+            Complete list of {courses.length} golf courses with {teeRows.length} individual tee options across Hampshire, Isle of Wight, and the Channel Islands.
           </p>
         </div>
 
@@ -123,15 +186,15 @@ export default function CourseDirectory() {
 
               {/* Filters */}
               {showFilters && (
-                <div className="grid md:grid-cols-2 gap-4 pt-4 border-t">
+                <div className="grid md:grid-cols-3 gap-4 pt-4 border-t">
                   <div>
-                    <label className="text-sm font-medium text-slate-600 mb-2 block">Region</label>
+                    <label className="text-sm font-medium text-slate-600 mb-2 block">County</label>
                     <Select value={selectedRegion} onValueChange={setSelectedRegion}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="all">All Regions</SelectItem>
+                        <SelectItem value="all">All Counties</SelectItem>
                         {regions.map(region => (
                           <SelectItem key={region} value={region}>{region}</SelectItem>
                         ))}
@@ -140,15 +203,31 @@ export default function CourseDirectory() {
                   </div>
 
                   <div>
-                    <label className="text-sm font-medium text-slate-600 mb-2 block">Sort By</label>
-                    <Select value={sortBy} onValueChange={setSortBy}>
+                    <label className="text-sm font-medium text-slate-600 mb-2 block">Course Type</label>
+                    <Select value={selectedCourseType} onValueChange={setSelectedCourseType}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="name">Name (A-Z)</SelectItem>
-                        <SelectItem value="region">Region</SelectItem>
-                        <SelectItem value="yardage">Length (Longest)</SelectItem>
+                        <SelectItem value="all">All Types</SelectItem>
+                        {courseTypes.map(type => (
+                          <SelectItem key={type} value={type}>{type}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium text-slate-600 mb-2 block">Tee Colour</label>
+                    <Select value={selectedTeeColour} onValueChange={setSelectedTeeColour}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Tees</SelectItem>
+                        {teeColours.map(colour => (
+                          <SelectItem key={colour} value={colour}>{colour}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
@@ -158,15 +237,17 @@ export default function CourseDirectory() {
               {/* Results Summary */}
               <div className="flex items-center justify-between text-sm text-slate-600">
                 <span>
-                  Showing {filteredAndSortedCourses.length} of {courses.length} courses
+                  Showing {filteredAndSortedRows.length} of {teeRows.length} tees from {courses.length} courses
                 </span>
-                {(searchTerm || selectedRegion !== 'all') && (
+                {(searchTerm || selectedRegion !== 'all' || selectedCourseType !== 'all' || selectedTeeColour !== 'all') && (
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => {
                       setSearchTerm('')
                       setSelectedRegion('all')
+                      setSelectedCourseType('all')
+                      setSelectedTeeColour('all')
                     }}
                   >
                     Clear all filters
@@ -177,95 +258,115 @@ export default function CourseDirectory() {
           </CardContent>
         </Card>
 
-        {/* Course Grid */}
-        <div className="grid gap-6">
-          {filteredAndSortedCourses.length === 0 ? (
-            <Card className="p-12 text-center">
-              <CardContent>
-                <p className="text-lg text-slate-600 mb-4">
-                  No courses found matching your criteria
-                </p>
-                <Button
-                  onClick={() => {
-                    setSearchTerm('')
-                    setSelectedRegion('all')
-                  }}
-                >
-                  Reset Filters
-                </Button>
-              </CardContent>
-            </Card>
-          ) : (
-            filteredAndSortedCourses.map((course) => {
-              const mainTee = getMainTee(course)
-              return (
-                <Card key={course.id} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="space-y-6">
-                      {/* Header */}
-                      <div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                          {course.name}
-                        </h3>
-                        <div className="flex items-center gap-2 text-slate-600 mb-2">
-                          <MapPin className="h-4 w-4" />
-                          <span>{course.region}</span>
+        {/* Course Table */}
+        <Card>
+          <CardContent className="p-0">
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>
+                      <Button variant="ghost" onClick={() => handleSort('courseName')} className="font-semibold">
+                        Course Name
+                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </TableHead>
+                    <TableHead>
+                      <Button variant="ghost" onClick={() => handleSort('county')} className="font-semibold">
+                        County
+                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </TableHead>
+                    <TableHead>
+                      <Button variant="ghost" onClick={() => handleSort('courseType')} className="font-semibold">
+                        Course Type
+                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </TableHead>
+                    <TableHead>
+                      <Button variant="ghost" onClick={() => handleSort('teeColour')} className="font-semibold">
+                        Tee Colour
+                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </TableHead>
+                    <TableHead>
+                      <Button variant="ghost" onClick={() => handleSort('par')} className="font-semibold">
+                        Par
+                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </TableHead>
+                    <TableHead>
+                      <Button variant="ghost" onClick={() => handleSort('length')} className="font-semibold">
+                        Length (yards)
+                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </TableHead>
+                    <TableHead className="font-semibold">Course Rating</TableHead>
+                    <TableHead className="font-semibold">Slope Rating</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredAndSortedRows.length === 0 ? (
+                    <TableRow>
+                      <TableCell colSpan={8} className="text-center py-8">
+                        <div className="space-y-2">
+                          <p className="text-lg text-slate-600">No tees found matching your criteria</p>
+                          <Button
+                            variant="outline"
+                            onClick={() => {
+                              setSearchTerm('')
+                              setSelectedRegion('all')
+                              setSelectedCourseType('all')
+                              setSelectedTeeColour('all')
+                            }}
+                          >
+                            Reset Filters
+                          </Button>
                         </div>
-                      </div>
-
-                      {/* Main Tee Info */}
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-2">Main Tee ({mainTee.name})</h4>
-                        <div className="flex items-center gap-4 text-sm text-slate-600">
-                          <span>Par {mainTee.par}</span>
-                          <span>{mainTee.yardage.toLocaleString()} yards</span>
-                        </div>
-                      </div>
-
-                      {/* All Tees */}
-                      <div>
-                        <h4 className="font-semibold text-slate-900 mb-2">All Tees</h4>
-                        <div className="space-y-1 text-sm">
-                          {course.tees.map((tee, index) => (
-                            <div key={index} className="flex justify-between">
-                              <span className="font-medium">{tee.name}:</span>
-                              <span>{tee.yardage} yds, Par {tee.par || 'N/A'}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Calculator Action */}
-                      <div>
-                        <Button variant="outline" className="w-full" asChild>
-                          <Link href={`/course-handicap-calculator?course=${encodeURIComponent(course.name)}`}>
-                            <Calculator className="h-4 w-4 mr-2" />
-                            Calculate Handicap
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              )
-            })
-          )}
-        </div>
+                      </TableCell>
+                    </TableRow>
+                  ) : (
+                    filteredAndSortedRows.map((row) => (
+                      <TableRow key={row.id} className="hover:bg-slate-50">
+                        <TableCell className="font-medium">{row.courseName}</TableCell>
+                        <TableCell>{row.county}</TableCell>
+                        <TableCell>{row.courseType}</TableCell>
+                        <TableCell>{row.teeColour}</TableCell>
+                        <TableCell>{formatPar(row.par)}</TableCell>
+                        <TableCell>{row.length.toLocaleString()}</TableCell>
+                        <TableCell>{row.courseRating}</TableCell>
+                        <TableCell>{row.slopeRating}</TableCell>
+                      </TableRow>
+                    ))
+                  )}
+                </TableBody>
+              </Table>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Stats Summary */}
-        <Card className="mt-12">
+        <Card className="mt-8">
           <CardHeader>
             <CardTitle>Directory Statistics</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-4 text-center">
+            <div className="grid md:grid-cols-4 gap-4 text-center">
               <div>
                 <div className="text-2xl font-bold text-emerald-600">{courses.length}</div>
                 <div className="text-sm text-slate-600">Total Courses</div>
               </div>
               <div>
+                <div className="text-2xl font-bold text-emerald-600">{teeRows.length}</div>
+                <div className="text-sm text-slate-600">Total Tees</div>
+              </div>
+              <div>
                 <div className="text-2xl font-bold text-emerald-600">{regions.length}</div>
-                <div className="text-sm text-slate-600">Regions</div>
+                <div className="text-sm text-slate-600">Counties</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-emerald-600">{teeColours.length}</div>
+                <div className="text-sm text-slate-600">Tee Colours</div>
               </div>
             </div>
           </CardContent>
