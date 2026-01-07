@@ -1,0 +1,198 @@
+[
+  {
+    "id": 1,
+    "name": "Liphook Golf Club",
+    "course": "Liphook",
+    "region": "Hampshire",
+    "type": "Heathland",
+    "website": "https://www.liphookgolfclub.com",
+    "established": 1922,
+    "designer": "Harry Colt",
+    "tees": [
+      { "name": "Green", "par": 67, "yardage": 5020, "rating": 65.5, "slope": 118 },
+      { "name": "Red", "par": 70, "yardage": 5546, "rating": 69.2, "slope": 122 },
+      { "name": "Yellow", "par": 71, "yardage": 6013, "rating": 72.1, "slope": 126 },
+      { "name": "White", "par": 71, "yardage": 6317, "rating": 74.5, "slope": 130 },
+      { "name": "Blue", "par": 71, "yardage": 6523, "rating": 76.2, "slope": 134 }
+    ],
+    "description": "Championship heathland course designed by Harry Colt, featuring heather, gorse, and strategic bunkering.",
+    "facilities": ["Pro Shop", "Driving Range", "Putting Green", "Restaurant", "Bar"],
+    "membership": "Private",
+    "greenFees": { "weekday": 85, "weekend": 95 },
+    "contact": { "phone": "01428 723785", "email": "info@liphookgolfclub.com" }
+  },
+  {
+    "id": 2,
+    "name": "Hayling Golf Club",
+    "course": "Hayling",
+    "region": "Hampshire",
+    "type": "Links",
+    "website": "https://www.haylinggolf.co.uk",
+    "established": 1883,
+    "designer": "Tom Simpson",
+    "tees": [
+      { "name": "Red", "par": 74, "yardage": 5813, "rating": 73.2, "slope": 125 },
+      { "name": "Yellow", "par": 71, "yardage": 6264, "rating": 75.8, "slope": 132 },
+      { "name": "White", "par": 71, "yardage": 6529, "rating": 77.1, "slope": 136 }
+    ],
+    "description": "Historic links course on Hayling Island with natural dunes and challenging sea breezes.",
+    "facilities": ["Pro Shop", "Driving Range", "Putting Green", "Clubhouse", "Restaurant"],
+    "membership": "Private",
+    "greenFees": { "weekday": 70, "weekend": 80 },
+    "contact": { "phone": "023 9246 4446", "email": "secretary@haylinggolf.co.uk" }
+  },
+  {
+    "id": 3,
+    "name": "Stoneham Golf Club",
+    "course": "Stoneham",
+    "region": "Hampshire",
+    "type": "Parkland",
+    "website": "https://www.stonehamgolfclub.co.uk",
+    "established": 1908,
+    "designer": "Willie Park Jr",
+    "tees": [
+      { "name": "Red", "par": 71, "yardage": 5343, "rating": 68.5, "slope": 120 },
+      { "name": "Yellow", "par": 72, "yardage": 5956, "rating": 71.2, "slope": 125 },
+      { "name": "White", "par": 72, "yardage": 6392, "rating": 73.8, "slope": 130 }
+    ],
+    "description": "Traditional parkland course with mature trees and strategic water hazards near Southampton.",
+    "facilities": ["Pro Shop", "Driving Range", "Short Game Area", "Clubhouse", "Bar"],
+    "membership": "Private",
+    "greenFees": { "weekday": 65, "weekend": 75 },
+    "contact": { "phone": "023 8076 9272", "email": "manager@stonehamgolfclub.co.uk" }
+  },
+  {
+    "id": 4,
+    "name": "North Hants Golf Club",
+    "course": "North Hants",
+    "region": "Hampshire",
+    "type": "Heathland",
+    "website": "https://www.northhantsgolf.co.uk",
+    "established": 1904,
+    "designer": "Harry Colt",
+    "tees": [
+      { "name": "Red", "par": 68, "yardage": 5699, "rating": 70.1, "slope": 122 },
+      { "name": "Yellow", "par": 70, "yardage": 6250, "rating": 73.5, "slope": 128 },
+      { "name": "White", "par": 69, "yardage": 6475, "rating": 75.2, "slope": 132 }
+    ],
+    "description": "Classic heathland course featuring heather, gorse, and strategic bunkering in beautiful countryside.",
+    "facilities": ["Pro Shop", "Driving Range", "Practice Area", "Restaurant", "Function Room"],
+    "membership": "Private",
+    "greenFees": { "weekday": 75, "weekend": 85 },
+    "contact": { "phone": "01252 616443", "email": "office@northhantsgolf.co.uk" }
+  },
+  {
+    "id": 5,
+    "name": "Rowlands Castle Golf Club",
+    "course": "Rowlands Castle",
+    "region": "Hampshire",
+    "type": "Downland",
+    "website": "https://www.rowlandscastlegc.co.uk",
+    "established": 1902,
+    "designer": "Harry Colt",
+    "tees": [
+      { "name": "Black", "par": 72, "yardage": 6642, "rating": 76.8, "slope": 135 }
+    ],
+    "description": "Challenging downland course with panoramic views across the South Downs.",
+    "facilities": ["Pro Shop", "Driving Range", "Putting Green", "Clubhouse", "Restaurant"],
+    "membership": "Private",
+    "greenFees": { "weekday": 60, "weekend": 70 },
+    "contact": { "phone": "023 9241 2784", "email": "office@rowlandscastlegc.co.uk" }
+  },
+  {
+    "id": 6,
+    "name": "Waterlooville Golf Club",
+    "course": "Waterlooville",
+    "region": "Hampshire",
+    "type": "Parkland",
+    "website": "https://waterloovillegolfclub.com",
+    "established": 1907,
+    "designer": "James Braid",
+    "tees": [
+      { "name": "Red", "par": 72, "yardage": 5729, "rating": 71.5, "slope": 125 },
+      { "name": "Yellow", "par": 72, "yardage": 6380, "rating": 74.2, "slope": 130 },
+      { "name": "White", "par": 72, "yardage": 6542, "rating": 75.8, "slope": 133 }
+    ],
+    "description": "Established parkland course with mature trees and well-maintained fairways.",
+    "facilities": ["Pro Shop", "Driving Range", "Practice Green", "Clubhouse", "Bar"],
+    "membership": "Private",
+    "greenFees": { "weekday": 55, "weekend": 65 },
+    "contact": { "phone": "023 9259 2806", "email": "secretary@waterloovillegolfclub.com" }
+  },
+  {
+    "id": 7,
+    "name": "Cowes Golf Club",
+    "course": "Cowes",
+    "region": "Isle of Wight",
+    "type": "Clifftop",
+    "website": "https://www.cowesgolfclub.co.uk",
+    "established": 1890,
+    "designer": "Traditional Layout",
+    "tees": [
+      { "name": "White", "par": 70, "yardage": 5945, "rating": 72.1, "slope": 128 }
+    ],
+    "description": "Spectacular clifftop course with stunning views over the Solent and challenging coastal winds.",
+    "facilities": ["Pro Shop", "Putting Green", "Clubhouse", "Restaurant"],
+    "membership": "Private",
+    "greenFees": { "weekday": 45, "weekend": 55 },
+    "contact": { "phone": "01983 292303", "email": "secretary@cowesgolfclub.co.uk" }
+  },
+  {
+    "id": 8,
+    "name": "Hockley Golf Club",
+    "course": "Hockley",
+    "region": "Hampshire",
+    "type": "Heathland",
+    "website": "https://www.hockleygolfclub.com",
+    "established": 1914,
+    "designer": "Harry Colt",
+    "tees": [
+      { "name": "Red", "par": 72, "yardage": 5677, "rating": 70.8, "slope": 123 },
+      { "name": "Yellow", "par": 71, "yardage": 6067, "rating": 72.5, "slope": 127 },
+      { "name": "White", "par": 71, "yardage": 6420, "rating": 75.1, "slope": 131 }
+    ],
+    "description": "Beautiful heathland course with natural hazards and strategic design by Harry Colt.",
+    "facilities": ["Pro Shop", "Driving Range", "Short Game Area", "Restaurant", "Bar"],
+    "membership": "Private",
+    "greenFees": { "weekday": 70, "weekend": 80 },
+    "contact": { "phone": "01962 713165", "email": "secretary@hockleygolfclub.com" }
+  },
+  {
+    "id": 9,
+    "name": "Corhampton Golf Club",
+    "course": "Corhampton",
+    "region": "Hampshire",
+    "type": "Downland",
+    "website": "https://www.corhamptongc.co.uk",
+    "established": 1891,
+    "designer": "Willie Park Jr",
+    "tees": [
+      { "name": "Red", "par": 72, "yardage": 5800, "rating": 71.2, "slope": 124 },
+      { "name": "Yellow", "par": 72, "yardage": 6088, "rating": 73.1, "slope": 128 },
+      { "name": "White", "par": 72, "yardage": 6398, "rating": 75.3, "slope": 132 }
+    ],
+    "description": "Historic downland course with panoramic views and challenging terrain in the Meon Valley.",
+    "facilities": ["Pro Shop", "Practice Area", "Clubhouse", "Restaurant"],
+    "membership": "Private",
+    "greenFees": { "weekday": 65, "weekend": 75 },
+    "contact": { "phone": "01489 877279", "email": "secretary@corhamptongc.co.uk" }
+  },
+  {
+    "id": 10,
+    "name": "Royal Winchester Golf Club",
+    "course": "Royal Winchester",
+    "region": "Hampshire",
+    "type": "Downland",
+    "website": "https://www.royalwinchestergolfclub.com",
+    "established": 1888,
+    "designer": "Traditional Layout",
+    "tees": [
+      { "name": "Blue", "par": 72, "yardage": 6479, "rating": 75.8, "slope": 133 }
+    ],
+    "description": "Historic Royal course with spectacular downland views and traditional design.",
+    "facilities": ["Pro Shop", "Driving Range", "Practice Green", "Clubhouse", "Dining"],
+    "membership": "Private",
+    "greenFees": { "weekday": 80, "weekend": 90 },
+    "contact": { "phone": "01962 852462", "email": "secretary@royalwinchestergolfclub.com" }
+  }
+]
