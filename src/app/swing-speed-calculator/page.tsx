@@ -533,6 +533,61 @@ export default function SwingSpeedCalculator() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Related Tools Section */}
+          <Card className="mt-8">
+            <CardHeader>
+              <CardTitle>Related Golf Calculators & Tools</CardTitle>
+              <CardDescription>
+                Continue your golf analysis with these complementary tools
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link
+                  href="/ball-speed-calculator"
+                  className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
+                >
+                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Ball Speed Calculator</h3>
+                  <p className="text-sm text-slate-600">Calculate ball speed from your swing speed and smash factor data</p>
+                </Link>
+
+                <Link
+                  href="/club-distance-calculator"
+                  className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
+                >
+                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Club Distance Calculator</h3>
+                  <p className="text-sm text-slate-600">Estimate your distance for each club based on swing speed</p>
+                </Link>
+
+                <Link
+                  href="/shaft-flex-calculator"
+                  className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
+                >
+                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Shaft Flex Calculator</h3>
+                  <p className="text-sm text-slate-600">Find the right shaft flexibility based on your swing speed</p>
+                </Link>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-3">More Golf Tools</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Link href="/handicap-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Handicap Calculator
+                  </Link>
+                  <Link href="/club-fitting-estimator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Club Fitting
+                  </Link>
+                  <Link href="/wind-elevation-adjuster" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Wind Adjuster
+                  </Link>
+                  <Link href="/course-directory" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Course Directory
+                  </Link>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

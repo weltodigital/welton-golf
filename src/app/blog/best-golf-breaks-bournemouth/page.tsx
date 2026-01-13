@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Card } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { MapPin, Star, Calendar, Phone, Globe, Car, Utensils, Bed, Trophy } from 'lucide-react'
 import bournemouthImages from '@/data/bournemouthImages.json'
@@ -870,6 +870,79 @@ export default function BournemouthGolfBreaks() {
               </Button>
             </div>
           </div>
+
+          {/* Related Articles and Tools */}
+          <Card className="mt-8">
+            <CardHeader>
+              <CardTitle>Continue Your Golf Journey</CardTitle>
+              <CardDescription>
+                Tools and guides to help you discover more coastal golf and plan perfect trips
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-4">Essential Planning Tools</h3>
+                  <div className="space-y-3">
+                    <Link href="/golf-trip-planner" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                      <MapPin className="h-5 w-5 text-emerald-600" />
+                      <div>
+                        <div className="font-medium text-slate-900">Golf Trip Planner</div>
+                        <div className="text-sm text-slate-600">Plan your coastal golf adventure</div>
+                      </div>
+                    </Link>
+                    <Link href="/course-directory" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                      <Star className="h-5 w-5 text-emerald-600" />
+                      <div>
+                        <div className="font-medium text-slate-900">Course Directory</div>
+                        <div className="text-sm text-slate-600">Discover Dorset golf courses</div>
+                      </div>
+                    </Link>
+                    <Link href="/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                      <Trophy className="h-5 w-5 text-emerald-600" />
+                      <div>
+                        <div className="font-medium text-slate-900">Handicap Calculator</div>
+                        <div className="text-sm text-slate-600">Check requirements for coastal courses</div>
+                      </div>
+                    </Link>
+                    <Link href="/distance-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                      <Car className="h-5 w-5 text-emerald-600" />
+                      <div>
+                        <div className="font-medium text-slate-900">Distance Calculator</div>
+                        <div className="text-sm text-slate-600">Calculate travel times to courses</div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-4">More Golf Destinations</h3>
+                  <div className="space-y-3">
+                    <Link href="/blog/best-golf-breaks-uk" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                      <Globe className="h-5 w-5 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-slate-900">Best Golf Breaks UK</div>
+                        <div className="text-sm text-slate-600">Explore golf across Britain</div>
+                      </div>
+                    </Link>
+                    <Link href="/blog/best-golf-breaks-wales" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-purple-300 hover:bg-purple-50 transition-colors">
+                      <Bed className="h-5 w-5 text-purple-600" />
+                      <div>
+                        <div className="font-medium text-slate-900">Best Golf Breaks Wales</div>
+                        <div className="text-sm text-slate-600">Welsh golf destinations</div>
+                      </div>
+                    </Link>
+                    <Link href="/blog/how-to-break-90-golf" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-colors">
+                      <Calendar className="h-5 w-5 text-green-600" />
+                      <div>
+                        <div className="font-medium text-slate-900">How to Break 90</div>
+                        <div className="text-sm text-slate-600">Improve your game for coastal courses</div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </>

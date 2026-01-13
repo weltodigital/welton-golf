@@ -269,6 +269,88 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Golf Tools Directory */}
+        <div className="bg-white rounded-lg p-8 shadow-lg mb-16">
+          <h2 className="text-4xl font-black text-slate-900 mb-8 text-center tracking-tight">
+            Complete Golf Calculator Suite
+          </h2>
+          <p className="text-center text-slate-700 mb-8 max-w-3xl mx-auto">
+            Professional golf tools and calculators to track performance, plan equipment, and improve your game.
+            All tools are WHS compliant and completely free to use.
+          </p>
+
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+            {/* Handicap & Scoring */}
+            <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
+              <h4 className="font-bold text-emerald-600 mb-2">Handicap & Scoring</h4>
+              <ul className="space-y-1 text-sm">
+                <li><Link href="/handicap-calculator" className="text-slate-700 hover:text-emerald-600">WHS Handicap Calculator</Link></li>
+                <li><Link href="/course-handicap-calculator" className="text-slate-700 hover:text-emerald-600">Course Handicap Calculator</Link></li>
+                <li><Link href="/stableford-calculator" className="text-slate-700 hover:text-emerald-600">Stableford Calculator</Link></li>
+                <li><Link href="/strokes-gained-calculator" className="text-slate-700 hover:text-emerald-600">Strokes Gained Calculator</Link></li>
+              </ul>
+            </div>
+
+            {/* Distance & Performance */}
+            <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
+              <h4 className="font-bold text-emerald-600 mb-2">Distance & Performance</h4>
+              <ul className="space-y-1 text-sm">
+                <li><Link href="/swing-speed-calculator" className="text-slate-700 hover:text-emerald-600">Swing Speed Calculator</Link></li>
+                <li><Link href="/ball-speed-calculator" className="text-slate-700 hover:text-emerald-600">Ball Speed Calculator</Link></li>
+                <li><Link href="/club-distance-calculator" className="text-slate-700 hover:text-emerald-600">Club Distance Calculator</Link></li>
+                <li><Link href="/altitude-distance-calculator" className="text-slate-700 hover:text-emerald-600">Altitude Distance Calculator</Link></li>
+                <li><Link href="/wind-elevation-adjuster" className="text-slate-700 hover:text-emerald-600">Wind & Elevation Adjuster</Link></li>
+                <li><Link href="/range-ball-distance-calculator" className="text-slate-700 hover:text-emerald-600">Range Ball Distance</Link></li>
+              </ul>
+            </div>
+
+            {/* Equipment & Fitting */}
+            <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
+              <h4 className="font-bold text-emerald-600 mb-2">Equipment & Fitting</h4>
+              <ul className="space-y-1 text-sm">
+                <li><Link href="/club-fitting-estimator" className="text-slate-700 hover:text-emerald-600">Club Fitting Estimator</Link></li>
+                <li><Link href="/club-length-calculator" className="text-slate-700 hover:text-emerald-600">Club Length Calculator</Link></li>
+                <li><Link href="/grip-size-calculator" className="text-slate-700 hover:text-emerald-600">Grip Size Calculator</Link></li>
+                <li><Link href="/shaft-flex-calculator" className="text-slate-700 hover:text-emerald-600">Shaft Flex Calculator</Link></li>
+              </ul>
+            </div>
+
+            {/* Course & Planning */}
+            <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
+              <h4 className="font-bold text-emerald-600 mb-2">Course & Planning</h4>
+              <ul className="space-y-1 text-sm">
+                <li><Link href="/tee-recommendation-calculator" className="text-slate-700 hover:text-emerald-600">Tee Recommendation</Link></li>
+                <li><Link href="/playing-time-estimator" className="text-slate-700 hover:text-emerald-600">Playing Time Estimator</Link></li>
+                <li><Link href="/golf-trip-planner" className="text-slate-700 hover:text-emerald-600">Golf Trip Planner</Link></li>
+                <li><Link href="/course-directory" className="text-slate-700 hover:text-emerald-600">Course Directory</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Golf Guides Section */}
+          <div className="border-t border-slate-200 pt-8">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Expert Golf Guides & Articles</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-4 bg-emerald-50 rounded-lg">
+                <h4 className="font-bold text-emerald-700 mb-3">Improve Your Scoring</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/blog/how-to-break-100-golf" className="text-slate-700 hover:text-emerald-600">How to Break 100 in Golf</Link></li>
+                  <li><Link href="/blog/how-to-break-90-golf" className="text-slate-700 hover:text-emerald-600">How to Break 90 in Golf</Link></li>
+                  <li><Link href="/blog/how-to-break-80-golf" className="text-slate-700 hover:text-emerald-600">How to Break 80 in Golf</Link></li>
+                </ul>
+              </div>
+              <div className="p-4 bg-blue-50 rounded-lg">
+                <h4 className="font-bold text-blue-700 mb-3">Best Golf Destinations</h4>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/blog/best-golf-breaks-uk" className="text-slate-700 hover:text-blue-600">Best Golf Breaks in the UK</Link></li>
+                  <li><Link href="/blog/best-golf-breaks-wales" className="text-slate-700 hover:text-blue-600">Best Golf Breaks in Wales</Link></li>
+                  <li><Link href="/blog/best-golf-breaks-bournemouth" className="text-slate-700 hover:text-blue-600">Best Golf Breaks in Bournemouth</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* FAQ Section */}
         <div className="bg-white rounded-lg p-8 shadow-lg mb-16">
           <h2 className="text-4xl font-black text-slate-900  mb-8 text-center tracking-tight">

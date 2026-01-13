@@ -441,6 +441,61 @@ export default function HandicapCalculator() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Related Tools Section */}
+          <Card className="mt-8">
+            <CardHeader>
+              <CardTitle>Related Golf Calculators & Tools</CardTitle>
+              <CardDescription>
+                Enhance your golf analysis with these complementary tools
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link
+                  href="/course-handicap-calculator"
+                  className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
+                >
+                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Course Handicap Calculator</h3>
+                  <p className="text-sm text-slate-600">Convert your handicap index to a course handicap for any tee</p>
+                </Link>
+
+                <Link
+                  href="/stableford-calculator"
+                  className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
+                >
+                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Stableford Calculator</h3>
+                  <p className="text-sm text-slate-600">Calculate Stableford points based on your handicap and scores</p>
+                </Link>
+
+                <Link
+                  href="/strokes-gained-calculator"
+                  className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
+                >
+                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Strokes Gained Calculator</h3>
+                  <p className="text-sm text-slate-600">Analyze your performance with advanced strokes gained metrics</p>
+                </Link>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-slate-200">
+                <h4 className="font-bold text-slate-900 mb-3">Popular Golf Resources</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Link href="/course-directory" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Course Directory
+                  </Link>
+                  <Link href="/blog/how-to-break-90-golf" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Break 90 Guide
+                  </Link>
+                  <Link href="/blog/how-to-break-80-golf" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Break 80 Guide
+                  </Link>
+                  <Link href="/swing-speed-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                    Swing Speed Calculator
+                  </Link>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
