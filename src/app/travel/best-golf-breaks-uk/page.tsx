@@ -540,14 +540,6 @@ export default function BestGolfBreaksUK() {
 
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-8 max-w-6xl">
-          {/* Breadcrumbs */}
-          <nav className="text-sm text-slate-600 mb-4">
-            <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-brand-primary">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2"><span className="text-brand-primary">Travel</span></li>
-              <li className="before:content-['/'] before:mx-2 text-slate-900">Best Golf Breaks UK</li>
-            </ol>
-          </nav>
 
           {/* Header Section */}
           <div className="text-center mb-12">

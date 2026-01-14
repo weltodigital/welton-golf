@@ -245,13 +245,6 @@ export default function ClubDistanceCalculator() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
 
-          {/* Breadcrumbs */}
-          <nav className="text-sm text-slate-600 mb-4">
-            <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-slate-900">Club Distance Calculator</li>
-            </ol>
-          </nav>
 
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">

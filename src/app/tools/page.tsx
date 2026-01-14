@@ -228,13 +228,6 @@ export default function ToolsPage() {
       <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-8 max-w-7xl">
 
-          {/* Breadcrumbs */}
-          <nav className="text-sm text-slate-600 mb-4">
-            <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-brand-primary">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2 text-slate-900">Tools</li>
-            </ol>
-          </nav>
 
           {/* Header */}
           <div className="text-center mb-12">

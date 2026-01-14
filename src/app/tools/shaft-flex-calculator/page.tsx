@@ -59,12 +59,6 @@ export default function ShaftFlexCalculator() {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <nav className="text-sm text-slate-600 mb-4">
-          <ol className="flex space-x-2">
-            <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-            <li><span className="mx-2 text-slate-400">Shaft Flex Calculator</span></li>
-          </ol>
-        </nav>
 
         <div className="text-center mb-8">
           <h1 className="text-4xl font-black text-slate-900 mb-4">
