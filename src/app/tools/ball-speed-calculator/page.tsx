@@ -6,7 +6,33 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Calculator, Plus, Trash2, Info, History, Zap } from 'lucide-react'
+import { Calculator, Plus, Trash2, Info, History, Zap, Target } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Free Golf Ball Speed Calculator 2026 - Distance & Smash Factor Calculator | Welton Golf',
+  description: 'Calculate golf ball speed, carry distance, and smash factor with our free physics-based calculator. Optimize your swing speed and launch conditions for maximum distance.',
+  keywords: 'ball speed calculator, golf ball speed, smash factor calculator, swing speed calculator, golf distance calculator, launch monitor calculator, carry distance, golf physics',
+  openGraph: {
+    title: 'Free Golf Ball Speed Calculator 2026 - Distance & Smash Factor Analysis',
+    description: 'Calculate ball speed, carry distance, and smash factor using physics-based models. Optimize your swing for maximum distance and efficiency.',
+    type: 'article',
+    url: 'https://www.weltongolf.com/tools/ball-speed-calculator',
+    images: [
+      {
+        url: 'https://www.weltongolf.com/ball-speed-calculator-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Free Golf Ball Speed Calculator - Distance Analysis',
+      }
+    ],
+    locale: 'en_GB',
+    siteName: 'Welton Golf',
+  },
+  alternates: {
+    canonical: 'https://www.weltongolf.com/tools/ball-speed-calculator',
+  },
+}
 
 interface BallSpeedCalculation {
   id: string
@@ -20,7 +46,7 @@ interface BallSpeedCalculation {
   spinRate: number
 }
 
-export default function BallSpeedCalculator() {
+function BallSpeedCalculator() {
   const [calculations, setCalculations] = useState<BallSpeedCalculation[]>([])
   const [currentCalc, setCurrentCalc] = useState({
     clubType: 'Driver',
@@ -218,10 +244,33 @@ export default function BallSpeedCalculator() {
 
   const clubTypes = ['Driver', '3-Wood', '5-Wood', '3-Iron', '5-Iron', '7-Iron', '9-Iron', 'Pitching Wedge', 'Sand Wedge']
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Ball Speed Calculator',
+    applicationCategory: 'Sports Application',
+    description: 'Calculate golf ball speed, carry distance, and smash factor using physics-based models for swing optimization.',
+    operatingSystem: 'Any',
+    permissions: 'browser',
+    isAccessibleForFree: true,
+    creator: {
+      '@type': 'Organization',
+      name: 'Welton Golf',
+      url: 'https://www.weltongolf.com'
+    },
+    dateModified: '2026-01-14',
+    version: '2.0'
+  }
+
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
 
 
           {/* Header */}
@@ -231,10 +280,10 @@ export default function BallSpeedCalculator() {
                 <Zap className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
-                  Golf Ball Speed Calculator
+                <h1 className="text-4xl font-black text-gray-900 mb-2 tracking-tight">
+                  Free Golf Ball Speed Calculator 2026
                 </h1>
-                <p className="text-slate-600 text-lg">
+                <p className="text-gray-700 text-lg">
                   Calculate ball speed, carry distance, and total distance based on clubhead speed and launch conditions.
                 </p>
               </div>
@@ -242,14 +291,14 @@ export default function BallSpeedCalculator() {
 
             {/* SEO-rich description */}
             <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h2 className="text-xl font-bold text-slate-900 mb-3">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">
                 Professional Ball Speed Calculator - Free & Accurate
               </h2>
-              <p className="text-slate-700 mb-3">
+              <p className="text-gray-700 mb-3">
                 Our ball speed calculator uses advanced physics models to calculate ball speed, carry distance, and total distance
                 based on your clubhead speed, smash factor, launch angle, and spin rate. Perfect for club fitting and swing analysis.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Physics-Based Calculations
@@ -270,30 +319,30 @@ export default function BallSpeedCalculator() {
               <div className="mt-6 grid md:grid-cols-4 gap-4">
                 <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Ball Speed</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">Ball Speed</h3>
                     <div className="text-2xl font-black text-emerald-600">{results.ballSpeed}</div>
-                    <div className="text-xs text-slate-700">mph</div>
+                    <div className="text-xs text-gray-700">mph</div>
                   </div>
                 </div>
                 <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Carry Distance</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">Carry Distance</h3>
                     <div className="text-2xl font-black text-emerald-600">{results.carryDistance}</div>
-                    <div className="text-xs text-slate-700">yards</div>
+                    <div className="text-xs text-gray-700">yards</div>
                   </div>
                 </div>
                 <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Total Distance</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">Total Distance</h3>
                     <div className="text-2xl font-black text-emerald-600">{results.totalDistance}</div>
-                    <div className="text-xs text-slate-700">yards</div>
+                    <div className="text-xs text-gray-700">yards</div>
                   </div>
                 </div>
                 <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
                   <div className="text-center">
-                    <h3 className="text-sm font-semibold text-slate-900 mb-1">Efficiency</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 mb-1">Efficiency</h3>
                     <div className="text-2xl font-black text-emerald-600">{results.efficiency}%</div>
-                    <div className="text-xs text-slate-700">smash factor</div>
+                    <div className="text-xs text-gray-700">smash factor</div>
                   </div>
                 </div>
               </div>
@@ -416,7 +465,7 @@ export default function BallSpeedCalculator() {
               </CardHeader>
               <CardContent>
                 {calculations.length === 0 ? (
-                  <div className="text-center py-8 text-slate-600">
+                  <div className="text-center py-8 text-gray-600">
                     <Zap className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No calculations saved yet.</p>
                     <p className="text-sm">Calculate your first ball speed above.</p>
@@ -426,10 +475,10 @@ export default function BallSpeedCalculator() {
                     {calculations.map((calc) => (
                       <div key={calc.id} className="flex items-center justify-between p-3 bg-emerald-50 rounded-lg">
                         <div className="flex-1">
-                          <div className="font-medium text-sm text-slate-900">
+                          <div className="font-medium text-sm text-gray-900">
                             {calc.clubType}
                           </div>
-                          <div className="text-xs text-slate-700">
+                          <div className="text-xs text-gray-700">
                             Clubhead: {calc.clubheadSpeed}mph • Smash: {calc.smashFactor}
                           </div>
                           <div className="flex gap-2 mt-1">
@@ -457,109 +506,177 @@ export default function BallSpeedCalculator() {
             </Card>
           </div>
 
-          {/* Information Section */}
-          <Card className="mt-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Info className="h-5 w-5" />
-                How Ball Speed Calculation Works
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none">
-              <div className="mb-6">
-                <h3 className="text-lg font-black text-slate-900 mb-3 tracking-tight">
-                  Complete Guide to Golf Ball Speed and Distance Calculation
-                </h3>
-                <p className="text-slate-700 mb-4">
-                  Ball speed is one of the most important factors in determining golf shot distance. Our calculator uses physics-based
-                  models to estimate ball speed, carry distance, and total distance based on your swing characteristics and launch conditions.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Ball Speed Guide Section */}
+          <div className="mt-12 space-y-12">
+            {/* Ball Speed Fundamentals */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Zap className="h-6 w-6 text-emerald-600" />
+                Understanding Golf Ball Speed and Its Impact
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Ball speed is the single most important factor in determining distance in golf. It's the velocity at which the golf ball
+                leaves the clubface after impact. Unlike clubhead speed (which you control), ball speed depends on how efficiently
+                energy transfers from club to ball - measured by smash factor.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Key Calculations:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Ball Speed</strong> = Clubhead Speed × Smash Factor</li>
-                    <li>• <strong>Smash Factor</strong> = Ball Speed ÷ Clubhead Speed</li>
-                    <li>• <strong>Optimal Smash Factor:</strong> 1.50 for driver, lower for irons</li>
-                    <li>• <strong>Distance</strong> depends on ball speed, launch angle, and spin</li>
-                    <li>• <strong>Efficiency</strong> shows how close to optimal your smash factor is</li>
+                  <h3 className="font-bold text-gray-900 mb-3">The Ball Speed Formula:</h3>
+                  <div className="bg-emerald-50 p-4 rounded border mb-4">
+                    <code className="text-emerald-900 font-mono">Ball Speed = Clubhead Speed × Smash Factor</code>
+                  </div>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• <strong>Clubhead Speed:</strong> How fast your club moves at impact</li>
+                    <li>• <strong>Smash Factor:</strong> Efficiency of energy transfer (1.50 max for driver)</li>
+                    <li>• <strong>Higher Ball Speed:</strong> Always equals more distance</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Factors Affecting Distance:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Ball Speed:</strong> Higher speed = more distance</li>
-                    <li>• <strong>Launch Angle:</strong> Optimal angle varies by club</li>
-                    <li>• <strong>Spin Rate:</strong> Too much spin reduces distance</li>
-                    <li>• <strong>Attack Angle:</strong> Affects launch and spin</li>
-                    <li>• <strong>Conditions:</strong> Wind, temperature, altitude</li>
-                  </ul>
+                  <h3 className="font-bold text-gray-900 mb-3">Ball Speed Benchmarks:</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-blue-50 rounded border">
+                      <p className="text-blue-900 font-medium">Tour Professional</p>
+                      <p className="text-blue-800">165-180 mph ball speed</p>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded border">
+                      <p className="text-green-900 font-medium">Scratch Golfer</p>
+                      <p className="text-green-800">150-165 mph ball speed</p>
+                    </div>
+                    <div className="p-3 bg-amber-50 rounded border">
+                      <p className="text-amber-900 font-medium">Average Golfer</p>
+                      <p className="text-amber-800">125-145 mph ball speed</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </Card>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {/* Smash Factor Analysis */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Target className="h-6 w-6 text-emerald-600" />
+                Mastering Smash Factor for Maximum Distance
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Smash factor is your efficiency rating - how well you transfer energy from clubhead to ball. Perfect center face contact
+                with optimal angle of attack produces the highest smash factors. Even small improvements in smash factor can add
+                significant distance to your shots.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Typical Smash Factors:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Driver:</strong> 1.40-1.50 (Optimal: 1.50)</p>
-                    <p><strong>3-Wood:</strong> 1.38-1.48</p>
-                    <p><strong>5-Iron:</strong> 1.32-1.42</p>
-                    <p><strong>7-Iron:</strong> 1.30-1.40</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Optimal Smash Factors by Club:</h3>
+                  <div className="space-y-2 text-gray-700">
+                    <p><strong>Driver:</strong> 1.45-1.50</p>
+                    <p><strong>3-Wood:</strong> 1.42-1.48</p>
+                    <p><strong>Hybrid:</strong> 1.40-1.45</p>
+                    <p><strong>7-Iron:</strong> 1.34-1.40</p>
                     <p><strong>Wedges:</strong> 1.25-1.35</p>
                   </div>
+                  <div className="mt-4 p-3 bg-green-50 rounded border">
+                    <p className="text-green-900 text-sm font-medium">Pro Tip:</p>
+                    <p className="text-green-800 text-sm">Focus on center face contact rather than swing speed for better smash factor</p>
+                  </div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Performance Benchmarks:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Tour Average (Driver):</strong> 167 mph ball speed</p>
-                    <p><strong>Scratch Golfer:</strong> 155 mph ball speed</p>
-                    <p><strong>15 Handicap:</strong> 140 mph ball speed</p>
-                    <p><strong>25 Handicap:</strong> 125 mph ball speed</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Factors Affecting Smash Factor:</h3>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• <strong>Contact Location:</strong> Center face is crucial</li>
+                    <li>• <strong>Angle of Attack:</strong> Slightly upward for driver</li>
+                    <li>• <strong>Club Face Angle:</strong> Square at impact</li>
+                    <li>• <strong>Dynamic Loft:</strong> Optimal launch conditions</li>
+                    <li>• <strong>Club Fitting:</strong> Proper shaft and lie angle</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Improving Your Smash Factor:</h3>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• Practice with impact tape for center contact</li>
+                    <li>• Work on consistent tempo and rhythm</li>
+                    <li>• Ensure proper weight transfer</li>
+                    <li>• Get properly fitted for your equipment</li>
+                    <li>• Focus on quality over quantity in practice</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Launch Conditions */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Calculator className="h-6 w-6 text-emerald-600" />
+                Optimizing Launch Conditions for Maximum Distance
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                While ball speed is king for distance, launch angle and spin rate determine how efficiently that speed translates
+                to carry distance. The "window" for optimal launch conditions varies significantly between different clubs and
+                swing speeds.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Launch Angle Guidelines:</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-blue-50 rounded border">
+                      <p className="text-blue-900 font-medium">Driver (Ball Speed 150+ mph)</p>
+                      <p className="text-blue-800">10-14° launch angle optimal</p>
+                    </div>
+                    <div className="p-3 bg-green-50 rounded border">
+                      <p className="text-green-900 font-medium">Driver (Ball Speed 130-150 mph)</p>
+                      <p className="text-green-800">12-16° launch angle optimal</p>
+                    </div>
+                    <div className="p-3 bg-amber-50 rounded border">
+                      <p className="text-amber-900 font-medium">Driver (Ball Speed <130 mph)</p>
+                      <p className="text-amber-800">14-18° launch angle optimal</p>
+                    </div>
                   </div>
+                  <p className="text-gray-700 text-sm mt-4">
+                    <strong>Rule:</strong> Lower ball speeds need higher launch angles for optimal carry
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Spin Rate Targets:</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-emerald-50 rounded border">
+                      <p className="text-emerald-900 font-medium">Driver Spin</p>
+                      <p className="text-emerald-800">1,800-2,800 rpm ideal range</p>
+                    </div>
+                    <div className="p-3 bg-blue-50 rounded border">
+                      <p className="text-blue-900 font-medium">Iron Spin (7-iron)</p>
+                      <p className="text-blue-800">6,000-7,500 rpm typical</p>
+                    </div>
+                    <div className="p-3 bg-purple-50 rounded border">
+                      <p className="text-purple-900 font-medium">Wedge Spin</p>
+                      <p className="text-purple-800">8,000-12,000 rpm for control</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-sm mt-4">
+                    <strong>Note:</strong> Too much spin reduces distance; too little reduces accuracy
+                  </p>
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
-                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Ball Speed Calculator?</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div className="mt-6 p-6 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-lg border">
+                <h4 className="font-bold text-gray-900 mb-3">Distance Optimization Strategy:</h4>
+                <div className="grid md:grid-cols-2 gap-4 text-gray-700">
                   <div>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Physics-Based Model:</strong> Accurate distance calculations
-                    </p>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Multiple Clubs:</strong> Driver through wedges supported
-                    </p>
-                    <p className="text-slate-700">
-                      <strong>✓ Optimization Tool:</strong> Find your ideal launch conditions
-                    </p>
+                    <p className="mb-2"><strong>1. Maximize Ball Speed:</strong> Focus on center face contact and proper technique</p>
+                    <p className="mb-2"><strong>2. Optimize Launch:</strong> Use proper equipment and setup for your swing</p>
                   </div>
                   <div>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Fitting Aid:</strong> Compare different equipment setups
-                    </p>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Progress Tracking:</strong> Monitor improvements over time
-                    </p>
-                    <p className="text-slate-700">
-                      <strong>✓ Free Forever:</strong> No registration required
-                    </p>
+                    <p className="mb-2"><strong>3. Control Spin:</strong> Work with a fitter to find optimal shaft and clubhead</p>
+                    <p><strong>4. Track Progress:</strong> Use launch monitor data to measure improvements</p>
                   </div>
                 </div>
               </div>
-
-              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                <p className="text-sm text-slate-700">
-                  <strong>Note:</strong> This calculator provides estimates based on typical conditions and physics models.
-                  Actual distances may vary due to factors like course conditions, altitude, temperature, and individual
-                  swing characteristics. For precise fitting, consult a certified club fitter with launch monitor data.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
+}
+
+export default function BallSpeedCalculatorPage() {
+  return <BallSpeedCalculator />
 }

@@ -6,7 +6,33 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Calculator, Plus, Trash2, Info, History } from 'lucide-react'
+import { Calculator, Plus, Trash2, Info, History, Target } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Free Course Handicap Calculator 2026 - WHS Formula | Calculate Golf Course Handicap | Welton Golf',
+  description: 'Calculate your exact course handicap for any golf course using the official WHS formula. Free calculator with handicap index, course rating, and slope rating. Get accurate stroke allocations.',
+  keywords: 'course handicap calculator, golf course handicap, WHS course handicap, handicap index calculator, slope rating calculator, course rating, golf strokes, handicap formula, free golf calculator',
+  openGraph: {
+    title: 'Free Course Handicap Calculator 2026 - Official WHS Formula Calculator',
+    description: 'Calculate your course handicap for any golf course using the official World Handicap System formula. Free, accurate, and includes stroke allocation guide.',
+    type: 'article',
+    url: 'https://www.weltongolf.com/tools/course-handicap-calculator',
+    images: [
+      {
+        url: 'https://www.weltongolf.com/course-handicap-calculator-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Free Course Handicap Calculator - WHS Formula',
+      }
+    ],
+    locale: 'en_GB',
+    siteName: 'Welton Golf',
+  },
+  alternates: {
+    canonical: 'https://www.weltongolf.com/tools/course-handicap-calculator',
+  },
+}
 
 interface CourseEntry {
   id: string
@@ -18,7 +44,7 @@ interface CourseEntry {
   courseHandicap: number
 }
 
-export default function CourseHandicapCalculator() {
+function CourseHandicapCalculator() {
   const [courses, setCourses] = useState<CourseEntry[]>([])
   const [currentEntry, setCurrentEntry] = useState({
     courseName: '',
@@ -106,10 +132,33 @@ export default function CourseHandicapCalculator() {
     localStorage.removeItem('golf-course-handicap-entries')
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Course Handicap Calculator',
+    applicationCategory: 'Sports Application',
+    description: 'Calculate your golf course handicap using the official World Handicap System formula with handicap index, course rating, and slope rating.',
+    operatingSystem: 'Any',
+    permissions: 'browser',
+    isAccessibleForFree: true,
+    creator: {
+      '@type': 'Organization',
+      name: 'Welton Golf',
+      url: 'https://www.weltongolf.com'
+    },
+    dateModified: '2026-01-14',
+    version: '2.0'
+  }
+
   return (
-    <div className="min-h-screen bg-white ">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
 
 
           {/* Header */}
@@ -119,26 +168,26 @@ export default function CourseHandicapCalculator() {
                 <Calculator className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
-                  Golf Course Handicap Calculator
+                <h1 className="text-4xl font-black text-gray-900 mb-2 tracking-tight">
+                  Free Course Handicap Calculator 2026
                 </h1>
-                <p className="text-slate-700 text-lg">
-                  Calculate your course handicap for any golf course using your handicap index, course rating, and slope rating.
+                <p className="text-gray-700 text-lg">
+                  Calculate your exact course handicap for any golf course using the official WHS formula. Get accurate stroke allocations instantly.
                 </p>
               </div>
             </div>
 
             {/* SEO-rich description */}
             <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
-              <h2 className="text-xl font-bold text-slate-900 mb-3">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">
                 Professional Course Handicap Calculator - Free & Accurate
               </h2>
-              <p className="text-slate-700 mb-3">
+              <p className="text-gray-700 mb-3">
                 Our course handicap calculator follows the exact WHS formula to determine how many strokes you receive
                 on a specific golf course. Calculate your course handicap using your current handicap index with
                 automatic adjustments for course rating and slope rating.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   WHS Course Handicap Formula
@@ -158,13 +207,13 @@ export default function CourseHandicapCalculator() {
             {calculatedHandicap !== null && (
               <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
                 <div className="text-center">
-                  <h2 className="text-2xl font-bold mb-2 text-slate-900">
+                  <h2 className="text-2xl font-bold mb-2 text-gray-900">
                     Your Course Handicap
                   </h2>
                   <div className="text-5xl font-bold mb-2 text-emerald-600">
                     {calculatedHandicap}
                   </div>
-                  <p className="text-sm text-slate-700">
+                  <p className="text-sm text-gray-700">
                     Strokes you receive on this course
                   </p>
                 </div>
@@ -295,10 +344,10 @@ export default function CourseHandicapCalculator() {
                     {courses.map((entry) => (
                       <div key={entry.id} className="flex items-center justify-between p-3 bg-emerald-50 rounded-lg">
                         <div className="flex-1">
-                          <div className="font-medium text-sm text-slate-900">
+                          <div className="font-medium text-sm text-gray-900">
                             {entry.courseName}
                           </div>
-                          <div className="text-xs text-slate-700">
+                          <div className="text-xs text-gray-700">
                             HI: {entry.handicapIndex} • CR: {entry.courseRating} • SR: {entry.slopeRating} • Par: {entry.par}
                           </div>
                           <div className="text-sm font-medium px-2 py-1 bg-emerald-600 rounded inline-block text-white mt-1">
@@ -321,115 +370,190 @@ export default function CourseHandicapCalculator() {
             </Card>
           </div>
 
-          {/* Information Section */}
-          <Card className="mt-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Info className="h-5 w-5" />
-                How Course Handicap Calculation Works
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none">
-              <div className="mb-6">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">
-                  Complete Guide to Course Handicap Calculation
-                </h3>
-                <p className="text-slate-700 mb-4">
-                  Course Handicap represents the number of strokes a player receives on a specific golf course.
-                  It adjusts your Handicap Index to account for the difficulty of the particular course and tees you&apos;re playing.
-                  This ensures fair play regardless of which course you&apos;re playing.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Course Handicap Guide Section */}
+          <div className="mt-12 space-y-12">
+            {/* What is Course Handicap */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Calculator className="h-6 w-6 text-emerald-600" />
+                What is Course Handicap and Why It Matters
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Course Handicap is the number of strokes a player receives on a specific golf course, calculated using your Handicap Index
+                adjusted for the course's difficulty. Unlike your Handicap Index (which is universal), Course Handicap varies for each
+                course and tee you play, ensuring fair competition regardless of course difficulty.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Course Handicap Formula:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Course Handicap</strong> = (Handicap Index × Slope Rating ÷ 113) + (Course Rating - Par)</li>
-                    <li>• <strong>Slope Rating 113</strong> is the standard difficulty baseline</li>
-                    <li>• <strong>Course Rating - Par</strong> adjusts for course difficulty relative to par</li>
-                    <li>• Result is <strong>rounded to nearest whole number</strong></li>
-                    <li>• Maximum course handicap is typically <strong>36 for men, 40 for women</strong></li>
+                  <h3 className="font-bold text-gray-900 mb-3">Course Handicap vs Handicap Index:</h3>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• <strong>Handicap Index:</strong> Universal measure of skill (e.g., 15.2)</li>
+                    <li>• <strong>Course Handicap:</strong> Course-specific strokes (e.g., 17 on tough course)</li>
+                    <li>• <strong>Playing Handicap:</strong> Final strokes after additional adjustments</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">When to Use Course Handicap:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Tournament Play:</strong> Determines strokes received in competitions</li>
-                    <li>• <strong>Match Play:</strong> Calculate stroke allocation between players</li>
-                    <li>• <strong>Different Tees:</strong> Adjust handicap when playing different tee boxes</li>
-                    <li>• <strong>Course Comparison:</strong> Compare difficulty across different courses</li>
-                    <li>• <strong>Stroke Index:</strong> Determine which holes you receive strokes on</li>
+                  <h3 className="font-bold text-gray-900 mb-3">When You Need Course Handicap:</h3>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• Tournament and competition play</li>
+                    <li>• Match play stroke allocation</li>
+                    <li>• Playing different tees or courses</li>
+                    <li>• Fair handicap in group games</li>
                   </ul>
                 </div>
               </div>
+            </Card>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Example Calculation:</h4>
-                  <p className="text-sm text-slate-700 mb-2">
-                    <strong>Player:</strong> Handicap Index 15.2<br/>
-                    <strong>Course:</strong> Rating 72.1, Slope 125, Par 72
-                  </p>
-                  <p className="text-sm text-slate-700 mb-2">
-                    <strong>Calculation:</strong><br/>
-                    (15.2 × 125 ÷ 113) + (72.1 - 72) = 16.8 + 0.1 = 16.9
-                  </p>
-                  <p className="text-xs text-slate-700">
-                    <strong>Course Handicap:</strong> 17 (rounded to nearest whole number)
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Important Notes:</h4>
-                  <p className="text-sm text-slate-700 mb-2">
-                    Your Course Handicap may differ from your Handicap Index because it accounts for the specific
-                    difficulty of the course and tees you&apos;re playing from.
-                  </p>
-                  <p className="text-xs text-slate-700">
-                    Always use your most current Handicap Index for accurate calculations.
-                  </p>
+            {/* WHS Formula Explained */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Calculator className="h-6 w-6 text-emerald-600" />
+                Official WHS Course Handicap Formula Explained
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                The World Handicap System uses a precise formula that accounts for both course difficulty (Slope Rating)
+                and how the course plays compared to par (Course Rating). This ensures accurate handicap calculation
+                across all golf courses worldwide.
+              </p>
+
+              <div className="bg-emerald-50 p-6 rounded-lg border border-emerald-200 mb-6">
+                <h3 className="font-bold text-gray-900 mb-4 text-xl">The Official Formula:</h3>
+                <div className="text-center p-4 bg-white rounded border">
+                  <code className="text-lg font-mono text-gray-900">
+                    Course Handicap = (Handicap Index × Slope Rating ÷ 113) + (Course Rating - Par)
+                  </code>
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
-                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Course Handicap Calculator?</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Official WHS Formula:</strong> Uses exact course handicap calculation method
-                    </p>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Instant Results:</strong> Calculate course handicap in real-time
-                    </p>
-                    <p className="text-slate-700">
-                      <strong>✓ Save History:</strong> Track calculations for different courses
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Tournament Ready:</strong> Get accurate stroke allocations
-                    </p>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Mobile Friendly:</strong> Calculate on the course or at home
-                    </p>
-                    <p className="text-slate-700">
-                      <strong>✓ Free Forever:</strong> No registration or payment required
-                    </p>
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-3">Formula Components:</h4>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• <strong>Handicap Index:</strong> Your official handicap</li>
+                    <li>• <strong>Slope Rating:</strong> Course difficulty (55-155)</li>
+                    <li>• <strong>113:</strong> Standard slope baseline</li>
+                    <li>• <strong>Course Rating:</strong> Expected score for scratch golfer</li>
+                    <li>• <strong>Par:</strong> Course par</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-3">Example Calculation:</h4>
+                  <div className="text-gray-700 space-y-1">
+                    <p><strong>Given:</strong></p>
+                    <p>• Handicap Index: 15.2</p>
+                    <p>• Slope Rating: 125</p>
+                    <p>• Course Rating: 72.1</p>
+                    <p>• Par: 72</p>
+                    <p className="mt-3"><strong>Result:</strong></p>
+                    <p>(15.2 × 125 ÷ 113) + (72.1 - 72) = 17</p>
                   </div>
                 </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-3">Important Notes:</h4>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• Result rounded to nearest whole number</li>
+                    <li>• Maximum usually 36 (men) or 40 (women)</li>
+                    <li>• Recalculate for each course/tee</li>
+                    <li>• Use current Handicap Index</li>
+                  </ul>
+                </div>
               </div>
+            </Card>
 
-              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                <p className="text-sm text-slate-700">
-                  <strong>Tournament Note:</strong> For official tournament play, verify course handicap calculations
-                  with the tournament committee or course pro shop, as some competitions may have specific
-                  handicap adjustments or maximums.
-                </p>
+            {/* Course Rating and Slope */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Target className="h-6 w-6 text-emerald-600" />
+                Understanding Course Rating and Slope Rating
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Course Rating and Slope Rating are the two key numbers that determine course difficulty. These ratings
+                are established by official course rating teams and represent how challenging a course plays for
+                different skill levels.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-6">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Course Rating:</h3>
+                  <ul className="text-gray-700 space-y-2 mb-4">
+                    <li>• Expected score for a scratch golfer (0 handicap)</li>
+                    <li>• Usually close to par but can vary significantly</li>
+                    <li>• Accounts for length, obstacles, and conditions</li>
+                    <li>• Example: 72.1 means scratch golfer expects to shoot 72.1</li>
+                  </ul>
+                  <div className="bg-blue-50 p-4 rounded border">
+                    <p className="text-blue-900 font-medium">Typical Course Ratings:</p>
+                    <p className="text-blue-800">• Easy course: Below par (e.g., 70.5 for par 72)</p>
+                    <p className="text-blue-800">• Average course: Near par (e.g., 71.8 for par 72)</p>
+                    <p className="text-blue-800">• Difficult course: Above par (e.g., 74.2 for par 72)</p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Slope Rating:</h3>
+                  <ul className="text-gray-700 space-y-2 mb-4">
+                    <li>• Measures relative difficulty for higher handicap players</li>
+                    <li>• Scale from 55 (easiest) to 155 (hardest)</li>
+                    <li>• 113 is the standard/average slope</li>
+                    <li>• Higher slope = bigger difference between skill levels</li>
+                  </ul>
+                  <div className="bg-emerald-50 p-4 rounded border">
+                    <p className="text-emerald-900 font-medium">Slope Rating Guide:</p>
+                    <p className="text-emerald-800">• 55-113: Easier for high handicappers</p>
+                    <p className="text-emerald-800">• 113: Standard difficulty</p>
+                    <p className="text-emerald-800">• 113-155: Harder for high handicappers</p>
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </Card>
+
+            {/* Using Course Handicap */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Info className="h-6 w-6 text-emerald-600" />
+                How to Use Your Course Handicap Effectively
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Once you have your Course Handicap, it's essential to understand how to apply it correctly in different
+                playing situations. The strokes are allocated based on the stroke index of each hole.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Stroke Allocation by Hole:</h3>
+                  <ul className="text-gray-700 space-y-2 mb-4">
+                    <li>• Strokes given on holes ranked by stroke index</li>
+                    <li>• Stroke Index 1 = hardest hole (first stroke received)</li>
+                    <li>• Stroke Index 18 = easiest hole (last stroke received)</li>
+                    <li>• Course handicap determines how many strokes you get</li>
+                  </ul>
+                  <div className="bg-amber-50 p-4 rounded border">
+                    <p className="text-amber-900 font-medium">Example: Course Handicap 12</p>
+                    <p className="text-amber-800">You receive strokes on the 12 hardest holes (stroke index 1-12)</p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Competition Applications:</h3>
+                  <ul className="text-gray-700 space-y-2 mb-4">
+                    <li>• <strong>Stroke Play:</strong> Subtract course handicap from gross score</li>
+                    <li>• <strong>Match Play:</strong> Give/receive strokes on designated holes</li>
+                    <li>• <strong>Stableford:</strong> Use course handicap for points calculation</li>
+                    <li>• <strong>Team Events:</strong> Combined course handicaps divided as required</li>
+                  </ul>
+                  <div className="bg-green-50 p-4 rounded border">
+                    <p className="text-green-900 font-medium">Tournament Reminder:</p>
+                    <p className="text-green-800">Always verify course handicap calculations with tournament committee</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
+}
+
+export default function CourseHandicapCalculatorPage() {
+  return <CourseHandicapCalculator />
 }

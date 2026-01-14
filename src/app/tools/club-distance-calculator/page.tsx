@@ -7,6 +7,32 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Calculator, Plus, Trash2, Info, History, Target } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Free Golf Club Distance Calculator 2026 - Build Your Personal Yardage Chart | Welton Golf',
+  description: 'Create personalized golf club distance charts with carry and total distances. Generate estimated distances based on swing speed or input your actual course measurements.',
+  keywords: 'club distance calculator, golf yardage chart, club distance chart, golf club distances, carry distance calculator, golf course management, yardage book, distance tracking',
+  openGraph: {
+    title: 'Free Golf Club Distance Calculator 2026 - Personal Yardage Charts',
+    description: 'Build personalized club distance charts for better course management. Calculate carry and total distances for all your clubs.',
+    type: 'article',
+    url: 'https://www.weltongolf.com/tools/club-distance-calculator',
+    images: [
+      {
+        url: 'https://www.weltongolf.com/club-distance-calculator-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Free Golf Club Distance Calculator - Yardage Charts',
+      }
+    ],
+    locale: 'en_GB',
+    siteName: 'Welton Golf',
+  },
+  alternates: {
+    canonical: 'https://www.weltongolf.com/tools/club-distance-calculator',
+  },
+}
 
 interface ClubDistance {
   club: string
@@ -23,7 +49,7 @@ interface DistanceSet {
   createdAt: string
 }
 
-export default function ClubDistanceCalculator() {
+function ClubDistanceCalculator() {
   const [distanceSets, setDistanceSets] = useState<DistanceSet[]>([])
   const [currentSet, setCurrentSet] = useState({
     name: '',
@@ -240,10 +266,33 @@ export default function ClubDistanceCalculator() {
     'Tour Professional', 'Low Handicap', 'Mid Handicap', 'High Handicap', 'Senior/Beginner'
   ]
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Club Distance Calculator',
+    applicationCategory: 'Sports Application',
+    description: 'Create personalized golf club distance charts with carry and total distances for better course management.',
+    operatingSystem: 'Any',
+    permissions: 'browser',
+    isAccessibleForFree: true,
+    creator: {
+      '@type': 'Organization',
+      name: 'Welton Golf',
+      url: 'https://www.weltongolf.com'
+    },
+    dateModified: '2026-01-14',
+    version: '2.0'
+  }
+
   return (
-    <div className="min-h-screen bg-white ">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
 
 
           {/* Header */}
@@ -253,10 +302,10 @@ export default function ClubDistanceCalculator() {
                 <Target className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-black text-slate-900 mb-2">
-                  Golf Club Distance Calculator
+                <h1 className="text-4xl font-black text-gray-900 mb-2">
+                  Free Club Distance Calculator 2026
                 </h1>
-                <p className="text-slate-600 text-lg">
+                <p className="text-gray-700 text-lg">
                   Create and track your personal club distance chart for better course management.
                 </p>
               </div>
@@ -264,14 +313,14 @@ export default function ClubDistanceCalculator() {
 
             {/* SEO-rich description */}
             <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h2 className="text-xl font-bold text-slate-900 mb-3">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">
                 Professional Club Distance Calculator - Free Golf Tool
               </h2>
-              <p className="text-slate-700 mb-3">
+              <p className="text-gray-700 mb-3">
                 Build your personalized club distance chart with carry and total distances. Generate estimated distances
                 based on swing speed and skill level, or input your actual on-course distances for precise yardage management.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                   Personalized Distance Charts
@@ -290,7 +339,7 @@ export default function ClubDistanceCalculator() {
             {/* Current Distance Chart */}
             {distances.length > 0 && (
               <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-4 text-slate-900">
+                <h3 className="text-lg font-semibold mb-4 text-gray-900">
                   Your Distance Chart ({distances.length} clubs)
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -511,134 +560,196 @@ export default function ClubDistanceCalculator() {
             </Card>
           </div>
 
-          {/* Information Section */}
-          <Card className="mt-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Info className="h-5 w-5" />
-                How to Use the Club Distance Calculator
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none">
-              <div className="mb-6">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">
-                  Complete Guide to Golf Club Distance Management
-                </h3>
-                <p className="text-slate-700 mb-4">
-                  Knowing your accurate club distances is crucial for course management and scoring. Our calculator helps you
-                  build personalized distance charts based on your swing speed and skill level, or input your actual distances
-                  from practice sessions and course play.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Club Distance Guide Section */}
+          <div className="mt-12 space-y-12">
+            {/* Distance Chart Fundamentals */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Target className="h-6 w-6 text-emerald-600" />
+                Why Every Golfer Needs a Personal Distance Chart
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Knowing your accurate club distances is the foundation of good course management and lower scores. A personal distance
+                chart eliminates guesswork, builds confidence, and helps you make better strategic decisions on every shot. Tour professionals
+                know their exact distances - and so should you.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Two Ways to Build Your Chart:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Auto-Generate:</strong> Enter swing speed and skill level for estimated distances</li>
-                    <li>• <strong>Manual Entry:</strong> Input your actual measured distances</li>
-                    <li>• <strong>Hybrid Approach:</strong> Generate estimates then fine-tune with real data</li>
-                    <li>• <strong>Multiple Charts:</strong> Save different sets for various conditions</li>
-                    <li>• <strong>Easy Updates:</strong> Modify individual clubs as your game improves</li>
+                  <h3 className="font-bold text-gray-900 mb-3">Benefits of Accurate Distance Knowledge:</h3>
+                  <ul className="text-gray-700 space-y-2">
+                    <li>• <strong>Better Club Selection:</strong> Choose the right club with confidence</li>
+                    <li>• <strong>Improved Course Management:</strong> Plan shots strategically</li>
+                    <li>• <strong>Lower Scores:</strong> Fewer mis-clubbed shots and penalty strokes</li>
+                    <li>• <strong>Gap Analysis:</strong> Identify and fill distance gaps in your set</li>
+                    <li>• <strong>Equipment Optimization:</strong> Make informed club fitting decisions</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Distance Factors:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Carry Distance:</strong> Ball flight distance in the air</li>
-                    <li>• <strong>Total Distance:</strong> Carry plus roll (conditions dependent)</li>
-                    <li>• <strong>Weather:</strong> Wind, temperature, humidity effects</li>
-                    <li>• <strong>Course Conditions:</strong> Firm vs soft fairways</li>
-                    <li>• <strong>Altitude:</strong> Higher elevation = more distance</li>
+                  <h3 className="font-bold text-gray-900 mb-3">Common Distance Mistakes:</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-red-50 rounded border border-red-200">
+                      <p className="text-red-900 font-medium">Using "Best Ever" Distances</p>
+                      <p className="text-red-800 text-sm">That one perfect 7-iron that went 170 yards isn't your real distance</p>
+                    </div>
+                    <div className="p-3 bg-amber-50 rounded border border-amber-200">
+                      <p className="text-amber-900 font-medium">Ignoring Conditions</p>
+                      <p className="text-amber-800 text-sm">Not accounting for wind, elevation, and course conditions</p>
+                    </div>
+                    <div className="p-3 bg-blue-50 rounded border border-blue-200">
+                      <p className="text-blue-900 font-medium">Outdated Information</p>
+                      <p className="text-blue-800 text-sm">Not updating distances as your swing or equipment changes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Building Your Distance Chart */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Calculator className="h-6 w-6 text-emerald-600" />
+                Building Your Personal Distance Chart
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                There are multiple approaches to creating your distance chart. The key is consistency in measurement and regular
+                updates as your swing and equipment evolve. Our calculator supports both automated estimation and manual input
+                for maximum flexibility.
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Method 1: Auto-Generation</h3>
+                  <div className="p-4 bg-emerald-50 rounded border border-emerald-200 mb-4">
+                    <p className="text-emerald-900 font-medium">Quick & Easy Start</p>
+                    <p className="text-emerald-800 text-sm">Input swing speed and skill level for instant estimates</p>
+                  </div>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Enter driver swing speed</li>
+                    <li>• Select skill level</li>
+                    <li>• Get complete set estimates</li>
+                    <li>• Refine with real data later</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Method 2: Manual Input</h3>
+                  <div className="p-4 bg-blue-50 rounded border border-blue-200 mb-4">
+                    <p className="text-blue-900 font-medium">Most Accurate</p>
+                    <p className="text-blue-800 text-sm">Input your actual measured distances</p>
+                  </div>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Measure each club individually</li>
+                    <li>• Record carry and total distances</li>
+                    <li>• Update club by club</li>
+                    <li>• Track seasonal changes</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Method 3: Hybrid Approach</h3>
+                  <div className="p-4 bg-purple-50 rounded border border-purple-200 mb-4">
+                    <p className="text-purple-900 font-medium">Best of Both</p>
+                    <p className="text-purple-800 text-sm">Start with estimates, refine with measurements</p>
+                  </div>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>• Generate baseline estimates</li>
+                    <li>• Measure key clubs first (7-iron, driver)</li>
+                    <li>• Adjust estimates based on real data</li>
+                    <li>• Fill gaps over time</li>
                   </ul>
                 </div>
               </div>
+            </Card>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {/* Measuring Techniques */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Info className="h-6 w-6 text-emerald-600" />
+                How to Accurately Measure Your Club Distances
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Accurate measurement is crucial for building a reliable distance chart. Different environments and tools offer
+                varying levels of precision. Here's how to get the most accurate data for each club in your bag.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Measuring Your Distances:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Driving Range:</strong> Use GPS or marked targets</p>
-                    <p><strong>On Course:</strong> GPS watches or rangefinders</p>
-                    <p><strong>Launch Monitor:</strong> Most accurate carry distances</p>
-                    <p><strong>Multiple Shots:</strong> Average 5-10 good strikes</p>
-                    <p><strong>Ideal Conditions:</strong> Calm wind, normal temperature</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Measurement Locations & Tools:</h3>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-green-50 rounded border border-green-200">
+                      <h4 className="font-medium text-green-900 mb-2">Launch Monitor (Most Accurate)</h4>
+                      <p className="text-green-800 text-sm mb-2">Indoor/outdoor facilities with Trackman, FlightScope</p>
+                      <ul className="text-green-800 text-sm space-y-1">
+                        <li>• Precise carry distance measurement</li>
+                        <li>• Weather-independent conditions</li>
+                        <li>• Multiple data points per session</li>
+                        <li>• Cost: £30-50 per session</li>
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-blue-50 rounded border border-blue-200">
+                      <h4 className="font-medium text-blue-900 mb-2">On-Course with GPS</h4>
+                      <p className="text-blue-800 text-sm mb-2">GPS watch, rangefinder, or course app</p>
+                      <ul className="text-blue-800 text-sm space-y-1">
+                        <li>• Real playing conditions</li>
+                        <li>• Account for roll and bounces</li>
+                        <li>• Multiple rounds of data</li>
+                        <li>• Weather and course impact</li>
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-amber-50 rounded border border-amber-200">
+                      <h4 className="font-medium text-amber-900 mb-2">Driving Range</h4>
+                      <p className="text-amber-800 text-sm mb-2">GPS-enabled range or marked targets</p>
+                      <ul className="text-amber-800 text-sm space-y-1">
+                        <li>• Convenient and accessible</li>
+                        <li>• Range balls may fly differently</li>
+                        <li>• Use GPS or marked distances</li>
+                        <li>• Good for relative comparisons</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Using Your Chart:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Course Management:</strong> Choose the right club for each shot</p>
-                    <p><strong>Gap Analysis:</strong> Identify distance gaps in your set</p>
-                    <p><strong>Club Selection:</strong> Account for pin position and hazards</p>
-                    <p><strong>Practice Focus:</strong> Work on consistent distances</p>
-                    <p><strong>Equipment Decisions:</strong> Optimize your club setup</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Measurement Best Practices:</h3>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-gray-50 rounded border">
+                      <h4 className="font-medium text-gray-900 mb-2">Data Collection Guidelines:</h4>
+                      <ul className="text-gray-700 text-sm space-y-1">
+                        <li>• Take 8-10 good swings per club</li>
+                        <li>• Exclude obvious mishits</li>
+                        <li>• Record both carry and total distance</li>
+                        <li>• Note wind and temperature conditions</li>
+                        <li>• Use your normal swing tempo</li>
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-emerald-50 rounded border border-emerald-200">
+                      <h4 className="font-medium text-emerald-900 mb-2">Creating Your Chart:</h4>
+                      <ul className="text-emerald-800 text-sm space-y-1">
+                        <li>• Use average distances, not maximum</li>
+                        <li>• Start with key clubs (7-iron, driver)</li>
+                        <li>• Fill gaps with shorter clubs</li>
+                        <li>• Test at different times of year</li>
+                        <li>• Update as equipment changes</li>
+                      </ul>
+                    </div>
+                    <div className="p-4 bg-blue-50 rounded border border-blue-200">
+                      <h4 className="font-medium text-blue-900 mb-2">Gap Analysis:</h4>
+                      <ul className="text-blue-800 text-sm space-y-1">
+                        <li>• Ideal gaps: 10-15 yards between clubs</li>
+                        <li>• Look for distance overlaps</li>
+                        <li>• Consider adding hybrids or wedges</li>
+                        <li>• Account for partial swings</li>
+                        <li>• Plan for different conditions</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Typical Distance Gaps:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Driver to 3-Wood:</strong> 20-30 yards</p>
-                    <p><strong>Woods to Hybrids:</strong> 15-20 yards</p>
-                    <p><strong>Long Irons:</strong> 12-15 yards between clubs</p>
-                    <p><strong>Mid Irons:</strong> 10-12 yards between clubs</p>
-                    <p><strong>Short Irons/Wedges:</strong> 8-12 yards</p>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Pro Tips:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>80% Rule:</strong> Use 80% swing for better accuracy</p>
-                    <p><strong>Pin Position:</strong> Adjust for front/back pins</p>
-                    <p><strong>Wind Compensation:</strong> Club up/down accordingly</p>
-                    <p><strong>Uphill/Downhill:</strong> Add/subtract for elevation</p>
-                    <p><strong>Regular Updates:</strong> Reassess distances seasonally</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
-                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Club Distance Calculator?</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Personalized Charts:</strong> Tailored to your swing and skill level
-                    </p>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Multiple Sets:</strong> Save charts for different conditions
-                    </p>
-                    <p className="text-slate-700">
-                      <strong>✓ Easy Updates:</strong> Modify distances as you improve
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Course Management:</strong> Make smarter club selections
-                    </p>
-                    <p className="text-slate-700 mb-2">
-                      <strong>✓ Gap Analysis:</strong> Optimize your club setup
-                    </p>
-                    <p className="text-slate-700">
-                      <strong>✓ Free Forever:</strong> No subscription required
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                <p className="text-sm text-slate-700">
-                  <strong>Note:</strong> Distance calculations are estimates based on typical conditions. Actual distances
-                  will vary based on weather, course conditions, altitude, and individual swing characteristics. Use this
-                  tool as a starting point and adjust based on your on-course experience.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
+}
+
+export default function ClubDistanceCalculatorPage() {
+  return <ClubDistanceCalculator />
 }
