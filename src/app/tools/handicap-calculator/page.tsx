@@ -1,13 +1,5 @@
-'use client'
-
-import { useState, useEffect, useCallback } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Calculator, Plus, Trash2, Info, History } from 'lucide-react'
 import { Metadata } from 'next'
+import { HandicapCalculatorComponent } from './HandicapCalculatorComponent'
 
 export const metadata: Metadata = {
   title: 'Free Golf Handicap Calculator (WHS) 2025 - Official World Handicap System | Welton Golf',
@@ -34,17 +26,9 @@ export const metadata: Metadata = {
   },
 }
 
-interface ScoreEntry {
-  id: string
-  date: string
-  adjustedGrossScore: number
-  courseRating: number
-  slopeRating: number
-  courseName: string
-  scoreDate: Date
+export default function HandicapCalculatorPage() {
+  return <HandicapCalculatorComponent />
 }
-
-export default function HandicapCalculator() {
   const [scores, setScores] = useState<ScoreEntry[]>([])
   const [currentScore, setCurrentScore] = useState({
     adjustedGrossScore: '',

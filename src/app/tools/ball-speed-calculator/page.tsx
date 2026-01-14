@@ -626,7 +626,7 @@ function BallSpeedCalculator() {
                       <p className="text-green-800">12-16° launch angle optimal</p>
                     </div>
                     <div className="p-3 bg-amber-50 rounded border">
-                      <p className="text-amber-900 font-medium">Driver (Ball Speed <130 mph)</p>
+                      <p className="text-amber-900 font-medium">Driver (Ball Speed &lt;130 mph)</p>
                       <p className="text-amber-800">14-18° launch angle optimal</p>
                     </div>
                   </div>
