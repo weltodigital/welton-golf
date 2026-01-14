@@ -45,6 +45,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2026-01-14'),
     },
     {
+      url: 'https://www.weltongolf.com/scoring/how-golf-scoring-works',
+      lastModified: new Date('2026-01-14'),
+    },
+    {
       url: 'https://www.weltongolf.com/travel',
       lastModified: new Date('2026-01-14'),
     },
