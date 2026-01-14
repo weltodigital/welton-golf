@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ScoringPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="bg-amber-600 text-white py-16">
+      <div className="bg-brand-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Scoring
@@ -27,7 +27,7 @@ export default function ScoringPage() {
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-8 mb-12">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-8 mb-12">
             <h2 className="text-2xl font-bold mb-4 text-gray-900">Coming Soon: Comprehensive Scoring Guides</h2>
             <p className="text-gray-700 mb-6">
               We're developing detailed guides and strategies to help you master golf scoring. This section will include:
@@ -43,7 +43,7 @@ export default function ScoringPage() {
               <li>Short game tactics around the green</li>
             </ul>
             <p className="text-gray-700">
-              In the meantime, use our <Link href="/tools/stableford-calculator" className="text-amber-600 hover:text-amber-700 font-medium">Stableford calculator</Link> and <Link href="/tools/strokes-gained-calculator" className="text-amber-600 hover:text-amber-700 font-medium">Strokes Gained calculator</Link> to track and analyze your scoring performance.
+              In the meantime, use our <Link href="/tools/stableford-calculator" className="text-brand-primary hover:text-brand-secondary font-medium">Stableford calculator</Link> and <Link href="/tools/strokes-gained-calculator" className="text-brand-primary hover:text-brand-secondary font-medium">Strokes Gained calculator</Link> to track and analyze your scoring performance.
             </p>
           </div>
 
@@ -54,13 +54,13 @@ export default function ScoringPage() {
                 Use our professional scoring calculators to track and improve your performance.
               </p>
               <div className="space-y-2">
-                <Link href="/tools/stableford-calculator" className="block text-amber-600 hover:text-amber-700 font-medium">
+                <Link href="/tools/stableford-calculator" className="block text-brand-primary hover:text-brand-secondary font-medium">
                   → Stableford Points Calculator
                 </Link>
-                <Link href="/tools/strokes-gained-calculator" className="block text-amber-600 hover:text-amber-700 font-medium">
+                <Link href="/tools/strokes-gained-calculator" className="block text-brand-primary hover:text-brand-secondary font-medium">
                   → Strokes Gained Analytics
                 </Link>
-                <Link href="/tools/handicap-calculator" className="block text-amber-600 hover:text-amber-700 font-medium">
+                <Link href="/tools/handicap-calculator" className="block text-brand-primary hover:text-brand-secondary font-medium">
                   → WHS Handicap Calculator
                 </Link>
               </div>
@@ -72,13 +72,13 @@ export default function ScoringPage() {
                 Explore other areas to improve your overall game and scoring ability.
               </p>
               <div className="space-y-2">
-                <Link href="/break-90" className="block text-amber-600 hover:text-amber-700 font-medium">
+                <Link href="/break-90" className="block text-brand-primary hover:text-brand-secondary font-medium">
                   → Break 90 Strategies
                 </Link>
-                <Link href="/break-80" className="block text-amber-600 hover:text-amber-700 font-medium">
+                <Link href="/break-80" className="block text-brand-primary hover:text-brand-secondary font-medium">
                   → Break 80 Techniques
                 </Link>
-                <Link href="/course-directory" className="block text-amber-600 hover:text-amber-700 font-medium">
+                <Link href="/course-directory" className="block text-brand-primary hover:text-brand-secondary font-medium">
                   → Course Directory
                 </Link>
               </div>
@@ -88,7 +88,7 @@ export default function ScoringPage() {
           <div className="text-center">
             <Link
               href="/tools"
-              className="bg-amber-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-amber-700 transition-colors inline-flex items-center"
+              className="bg-brand-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-brand-secondary transition-colors inline-flex items-center"
             >
               Explore Golf Tools
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
