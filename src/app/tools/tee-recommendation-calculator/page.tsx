@@ -6,7 +6,33 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Calculator, Plus, Trash2, Info, History, Target, Trophy } from 'lucide-react'
+import { Calculator, Plus, Trash2, Info, History, Target, Trophy, MapPin, Users } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Free Golf Tee Recommendation Calculator 2026 - Perfect Tee Selection | Welton Golf',
+  description: 'Find the perfect golf tee box for your skill level with our free tee recommendation calculator. Based on handicap, distance, age, and playing goals for optimal enjoyment.',
+  keywords: 'golf tee selection, tee box calculator, golf course tees, handicap tee guide, golf distance calculator, course management, golf tee recommendation',
+  openGraph: {
+    title: 'Free Golf Tee Recommendation Calculator 2026 - Smart Tee Selection',
+    description: 'Choose the perfect tee box based on your handicap, driving distance, age, and playing goals. Get personalized recommendations for optimal golf enjoyment.',
+    type: 'article',
+    url: 'https://www.weltongolf.com/tools/tee-recommendation-calculator',
+    images: [
+      {
+        url: 'https://www.weltongolf.com/tee-recommendation-calculator-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Free Golf Tee Recommendation Calculator - Perfect Tee Selection',
+      }
+    ],
+    locale: 'en_GB',
+    siteName: 'Welton Golf',
+  },
+  alternates: {
+    canonical: 'https://www.weltongolf.com/tools/tee-recommendation-calculator',
+  },
+}
 
 interface TeeRecommendation {
   id: string
@@ -23,7 +49,7 @@ interface TeeRecommendation {
   createdAt: string
 }
 
-export default function TeeRecommendationCalculator() {
+function TeeRecommendationCalculator() {
   const [recommendations, setRecommendations] = useState<TeeRecommendation[]>([])
   const [currentCalc, setCurrentCalc] = useState({
     playerName: '',
@@ -239,46 +265,70 @@ export default function TeeRecommendationCalculator() {
     return 'bg-gray-400 text-white'
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Golf Tee Recommendation Calculator',
+    applicationCategory: 'Sports Application',
+    description: 'Smart golf tee selection calculator that recommends the perfect tee box based on handicap, driving distance, age, experience, and playing goals.',
+    operatingSystem: 'Any',
+    permissions: 'browser',
+    isAccessibleForFree: true,
+    creator: {
+      '@type': 'Organization',
+      name: 'Welton Golf',
+      url: 'https://www.weltongolf.com'
+    },
+    dateModified: '2026-01-14',
+    version: '2.0'
+  }
+
   return (
-    <div className="min-h-screen bg-white ">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
 
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
                 <Target className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-black text-slate-900 mb-2">
-                  Golf Tee Recommendation Calculator
+                <h1 className="text-4xl font-black text-gray-900 mb-2 tracking-tight">
+                  Free Golf Tee Recommendation Calculator 2026
                 </h1>
-                <p className="text-slate-600 text-lg">
+                <p className="text-gray-700 text-lg">
                   Find the perfect tee box for your skill level, distance, and playing goals for maximum enjoyment.
                 </p>
               </div>
             </div>
 
+            {/* SEO-rich description */}
             <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h2 className="text-xl font-bold text-slate-900 mb-3">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">
                 Smart Tee Selection - Free Golf Course Management Tool
               </h2>
-              <p className="text-slate-700 mb-3">
-                Choose the right tee box for optimal challenge and enjoyment. Our calculator considers your handicap,
-                driving distance, age, experience, and playing goals to recommend the perfect starting position.
+              <p className="text-gray-700 mb-3">
+                Choose the optimal tee box for perfect challenge and enjoyment. Our intelligent calculator considers your handicap,
+                driving distance, age, experience, and playing goals to recommend the ideal starting position for every round.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-700">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Skill-Based Selection
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Distance Matching
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Goal Optimization
                 </div>
               </div>
@@ -434,7 +484,7 @@ export default function TeeRecommendationCalculator() {
                       <div key={recommendation.id} className="p-4 bg-gray-50 rounded-lg border">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h4 className="font-medium text-slate-900">
+                            <h4 className="font-medium text-gray-900">
                               {recommendation.playerName}
                             </h4>
                             <p className="text-sm text-gray-600">
@@ -472,14 +522,14 @@ export default function TeeRecommendationCalculator() {
                         </div>
 
                         <div className="text-xs space-y-1 pt-2 border-t">
-                          <p className="font-medium text-slate-600">Reasoning:</p>
+                          <p className="font-medium text-gray-600">Reasoning:</p>
                           {recommendation.reasoning.map((reason, idx) => (
                             <p key={idx} className="text-gray-600">• {reason}</p>
                           ))}
 
                           {recommendation.alternativeTees.length > 0 && (
                             <div className="mt-2">
-                              <p className="font-medium text-slate-600">Alternatives:</p>
+                              <p className="font-medium text-gray-600">Alternatives:</p>
                               {recommendation.alternativeTees.map((alt, idx) => (
                                 <p key={idx} className="text-gray-600">
                                   • {alt.tee}: {alt.reasoning}
@@ -497,125 +547,250 @@ export default function TeeRecommendationCalculator() {
           </div>
 
           {/* Educational Content */}
-          <Card className="mt-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Info className="h-5 w-5" />
-                Understanding Golf Tee Selection
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none">
-              <div className="mb-6">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">Complete Guide to Choosing the Right Tees</h3>
-                <p className="text-slate-700 mb-4">
-                  Selecting the appropriate tee box is crucial for enjoying golf and playing to your potential.
-                  The right tees challenge you appropriately while maintaining reasonable scoring opportunities and pace of play.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="mt-12 space-y-12">
+            {/* Tee Selection Fundamentals */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Target className="h-6 w-6 text-emerald-600" />
+                Mastering Golf Tee Selection: The Key to Enjoyable Golf
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Choosing the right tee box is one of the most important decisions you make before each round. The perfect tee
+                selection balances challenge with enjoyment, ensuring you can play shots that match your skill level while
+                maintaining good pace of play and scoring opportunities.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Standard Tee Colors & Distances:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Black/Gold (Championship):</strong> 6,800+ yards - Tour pros, +handicaps</li>
-                    <li>• <strong>Blue (Back Regular):</strong> 6,400-6,800 yards - Low handicaps (0-8)</li>
-                    <li>• <strong>White (Men&apos;s Regular):</strong> 6,000-6,400 yards - Mid handicaps (8-18)</li>
-                    <li>• <strong>Gold/Yellow (Forward):</strong> 5,400-6,000 yards - High handicaps, seniors</li>
-                    <li>• <strong>Red (Ladies/Forward):</strong> 5,000-5,600 yards - Beginners, juniors</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Key Selection Factors:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Handicap Index:</strong> Primary skill indicator</li>
-                    <li>• <strong>Driver Distance:</strong> Determines reachability of holes</li>
-                    <li>• <strong>Age & Physical Ability:</strong> Impacts stamina and distance</li>
-                    <li>• <strong>Playing Experience:</strong> Course management skills</li>
-                    <li>• <strong>Round Goals:</strong> Fun vs. challenge vs. scoring</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Handicap Guidelines:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>+handicap to 5:</strong> Blue or Black tees</p>
-                    <p><strong>6 to 15:</strong> White or Blue tees</p>
-                    <p><strong>16 to 25:</strong> White or Gold tees</p>
-                    <p><strong>25+:</strong> Gold or Forward tees</p>
-                    <p><strong>Beginners:</strong> Forward tees regardless of gender</p>
+                  <h3 className="font-bold text-gray-900 mb-3">Standard Tee System & Distances:</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-gray-800 text-white rounded border">
+                      <p className="font-medium">Black/Championship Tees</p>
+                      <p className="text-sm">6,800+ yards • Tour pros • +handicaps</p>
+                    </div>
+                    <div className="p-3 bg-blue-600 text-white rounded border">
+                      <p className="font-medium">Blue/Back Tees</p>
+                      <p className="text-sm">6,400-6,800 yards • 0-8 handicaps</p>
+                    </div>
+                    <div className="p-3 bg-gray-200 text-gray-800 rounded border">
+                      <p className="font-medium">White/Regular Tees</p>
+                      <p className="text-sm">6,000-6,400 yards • 8-18 handicaps</p>
+                    </div>
+                    <div className="p-3 bg-yellow-400 text-gray-800 rounded border">
+                      <p className="font-medium">Gold/Forward Tees</p>
+                      <p className="text-sm">5,400-6,000 yards • 18+ handicaps, seniors</p>
+                    </div>
+                    <div className="p-3 bg-red-500 text-white rounded border">
+                      <p className="font-medium">Red/Ladies Tees</p>
+                      <p className="text-sm">5,000-5,600 yards • Beginners, juniors</p>
+                    </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Distance Considerations:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>280+ yard driver:</strong> Can play back tees</p>
-                    <p><strong>250-280 yard driver:</strong> Blue or White tees</p>
-                    <p><strong>220-250 yard driver:</strong> White tees ideal</p>
-                    <p><strong>200-220 yard driver:</strong> Gold/Forward tees</p>
-                    <p><strong>{'<'}200 yard driver:</strong> Forward tees recommended</p>
+                  <h3 className="font-bold text-gray-900 mb-3">Key Selection Factors:</h3>
+                  <ul className="text-gray-700 space-y-3 mb-4">
+                    <li>• <strong>Handicap Index:</strong> Primary indicator of skill level and course management</li>
+                    <li>• <strong>Driver Distance:</strong> Determines reachability of holes and second shot positions</li>
+                    <li>• <strong>Age & Physical Condition:</strong> Affects stamina and distance over 18 holes</li>
+                    <li>• <strong>Experience Level:</strong> Course management and strategic thinking ability</li>
+                    <li>• <strong>Round Goals:</strong> Competition, casual play, learning, or socializing</li>
+                  </ul>
+                  <div className="p-4 bg-emerald-50 rounded border">
+                    <p className="text-emerald-900 text-sm font-medium">Golden Rule:</p>
+                    <p className="text-emerald-800 text-sm">Choose tees where you can reach most greens in regulation with well-struck shots</p>
                   </div>
                 </div>
               </div>
+            </Card>
+
+            {/* Handicap-Based Guidelines */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <MapPin className="h-6 w-6 text-emerald-600" />
+                Scientific Tee Selection: Handicap and Distance Guidelines
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Modern tee selection uses data-driven approaches combining handicap index with driving distance to optimize
+                the golf experience. These guidelines are based on extensive research and PGA recommendations for proper
+                course setup and player enjoyment.
+              </p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Age Adjustments:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Under 50:</strong> Play based on skill</p>
-                    <p><strong>50-65:</strong> Consider moving up one tee</p>
-                    <p><strong>65-75:</strong> Move up 1-2 tees</p>
-                    <p><strong>75+:</strong> Forward tees for enjoyment</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Handicap-Based Recommendations:</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-green-50 rounded border">
+                      <p className="text-green-900 font-medium">Scratch to 5 Handicap</p>
+                      <p className="text-green-800 text-sm">Blue or Black tees • Can handle longer courses</p>
+                    </div>
+                    <div className="p-3 bg-blue-50 rounded border">
+                      <p className="text-blue-900 font-medium">6-15 Handicap</p>
+                      <p className="text-blue-800 text-sm">White or Blue tees • Balance of challenge and scoring</p>
+                    </div>
+                    <div className="p-3 bg-amber-50 rounded border">
+                      <p className="text-amber-900 font-medium">16-25 Handicap</p>
+                      <p className="text-amber-800 text-sm">White or Gold tees • Focus on skill development</p>
+                    </div>
+                    <div className="p-3 bg-red-50 rounded border">
+                      <p className="text-red-900 font-medium">25+ Handicap</p>
+                      <p className="text-red-800 text-sm">Gold/Forward tees • Enjoyment over difficulty</p>
+                    </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Playing Goals:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Challenge:</strong> Play longer tees</p>
-                    <p><strong>Scoring:</strong> Move up one tee</p>
-                    <p><strong>Fun/Social:</strong> Prioritize enjoyment</p>
-                    <p><strong>Learning:</strong> Shorter is better</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Driver Distance Guidelines:</h3>
+                  <div className="space-y-2 text-gray-700">
+                    <p><strong>280+ yards:</strong> Championship/Black tees suitable</p>
+                    <p><strong>250-280 yards:</strong> Blue or White tees optimal</p>
+                    <p><strong>220-250 yards:</strong> White tees ideal choice</p>
+                    <p><strong>200-220 yards:</strong> Gold/Forward tees recommended</p>
+                    <p><strong>Under 200 yards:</strong> Forward tees strongly advised</p>
+                  </div>
+                  <div className="mt-4 p-3 bg-blue-50 rounded border">
+                    <p className="text-blue-900 text-sm font-medium">Distance Tip:</p>
+                    <p className="text-blue-800 text-sm">Use your average carry distance, not your best drive, for tee selection</p>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Course Factors:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Course Rating:</strong> Higher = more difficult</p>
-                    <p><strong>Slope Rating:</strong> 113+ is challenging</p>
-                    <p><strong>Course Conditions:</strong> Firm vs. soft</p>
-                    <p><strong>Weather:</strong> Wind affects distance</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Age Considerations:</h3>
+                  <div className="space-y-2 text-gray-700">
+                    <p><strong>Under 50:</strong> Play based purely on skill level</p>
+                    <p><strong>50-65:</strong> Consider moving up one tee set</p>
+                    <p><strong>65-75:</strong> Move forward 1-2 tee sets</p>
+                    <p><strong>75+:</strong> Prioritize enjoyment with forward tees</p>
+                  </div>
+                  <div className="mt-4">
+                    <h4 className="font-medium text-gray-900 mb-2">Senior Benefits:</h4>
+                    <div className="text-sm text-gray-700 space-y-1">
+                      <p>• Reduced walking distance</p>
+                      <p>• Better scoring opportunities</p>
+                      <p>• Faster pace of play</p>
+                      <p>• More enjoyable experience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Strategic Considerations */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Users className="h-6 w-6 text-emerald-600" />
+                Strategic Tee Selection: Goals, Groups, and Course Factors
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Beyond handicap and distance, successful tee selection considers your playing goals, group dynamics, and
+                specific course characteristics. Smart golfers adjust their tee selection based on these situational factors
+                for the best possible round experience.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Playing Goal Adjustments:</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium text-gray-900">Maximum Challenge:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Move back one tee set from normal</li>
+                        <li>• Test skills against course design</li>
+                        <li>• Accept higher scores for learning</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Best Scoring:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Move forward one tee set</li>
+                        <li>• Maximize birdie opportunities</li>
+                        <li>• Build confidence with easier shots</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Learning/Practice:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Choose tees that allow full shots</li>
+                        <li>• Focus on technique over distance</li>
+                        <li>• Prioritize course management lessons</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Social/Business Golf:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Ensure comfortable pace of play</li>
+                        <li>• Match playing partner abilities</li>
+                        <li>• Prioritize conversation over challenge</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Course-Specific Factors:</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium text-gray-900">Course Rating & Slope:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Higher ratings = more difficult</li>
+                        <li>• Slope over 130 = very challenging</li>
+                        <li>• Consider moving forward on tough courses</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Weather Conditions:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Headwinds: Move forward for distance loss</li>
+                        <li>• Rain: Shorter tees for softer conditions</li>
+                        <li>• Cold weather: Account for reduced distance</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Course Conditions:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Firm conditions: Ball runs farther</li>
+                        <li>• Soft conditions: Less roll, play shorter</li>
+                        <li>• Fast greens: Approach shot precision crucial</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Group Dynamics:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Match group's general skill level</li>
+                        <li>• Consider slowest player's capabilities</li>
+                        <li>• Ensure everyone can enjoy the round</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
-                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Tee Recommendation Calculator?</h4>
+              <div className="mt-6 p-6 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-lg border">
+                <h4 className="font-bold text-gray-900 mb-3">Why Use Our Tee Recommendation Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-slate-700 mb-2"><strong>✓ Personalized Analysis:</strong> Considers multiple factors</p>
-                    <p className="text-slate-700 mb-2"><strong>✓ Skill-Based Selection:</strong> Matches your abilities</p>
-                    <p className="text-slate-700"><strong>✓ Goal Optimization:</strong> Aligns with playing objectives</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Multi-Factor Analysis:</strong> Considers all relevant variables</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Personalized Recommendations:</strong> Tailored to your profile</p>
+                    <p className="text-gray-700"><strong>✓ Alternative Options:</strong> Multiple tee suggestions with reasoning</p>
                   </div>
                   <div>
-                    <p className="text-slate-700 mb-2"><strong>✓ Alternative Options:</strong> Provides backup choices</p>
-                    <p className="text-slate-700 mb-2"><strong>✓ Educational:</strong> Learn tee selection principles</p>
-                    <p className="text-slate-700"><strong>✓ Free Tool:</strong> No cost for recommendations</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Goal-Based Selection:</strong> Matches your round objectives</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Educational Value:</strong> Learn tee selection principles</p>
+                    <p className="text-gray-700"><strong>✓ Free Analysis:</strong> Professional recommendations at no cost</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                <p className="text-sm text-slate-700">
-                  <strong>Important:</strong> These recommendations are general guidelines based on typical course setups and playing standards.
-                  Specific course difficulty, conditions, and personal preference should also influence your tee selection.
-                  When in doubt, choose tees that allow you to enjoy the round and maintain reasonable pace of play.
+                <p className="text-sm text-gray-700">
+                  <strong>Important Note:</strong> These recommendations are based on general golf course standards and typical conditions.
+                  Individual course difficulty, specific hole layouts, weather conditions, and personal preferences should all factor
+                  into your final tee selection. When in doubt, choose tees that allow you to reach most greens in regulation and
+                  maintain reasonable pace of play for your group.
                 </p>
               </div>
-            </CardContent>
-          </Card>
+            </Card>
         </div>
       </div>
-    </div>
+    </>
   )
+}
+
+export default function TeeRecommendationCalculatorPage() {
+  return <TeeRecommendationCalculator />
 }

@@ -6,7 +6,33 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Calculator, Plus, Trash2, Info, History, TrendingUp, Award } from 'lucide-react'
+import { Calculator, Plus, Trash2, Info, History, TrendingUp, Award, Target, BarChart3 } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Free Golf Strokes Gained Calculator 2026 - Advanced Performance Analysis | Welton Golf',
+  description: 'Analyze your golf performance with our free strokes gained calculator. Compare driving, approach, short game, and putting to PGA Tour benchmarks for targeted practice insights.',
+  keywords: 'strokes gained calculator, golf performance analysis, golf statistics, PGA tour benchmarks, golf improvement, driving stats, putting analysis, golf analytics tool',
+  openGraph: {
+    title: 'Free Golf Strokes Gained Calculator 2026 - Performance Analytics Tool',
+    description: 'Advanced golf performance analysis using strokes gained methodology. Compare your driving, approach, short game, and putting to tour standards.',
+    type: 'article',
+    url: 'https://www.weltongolf.com/tools/strokes-gained-calculator',
+    images: [
+      {
+        url: 'https://www.weltongolf.com/strokes-gained-calculator-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Free Golf Strokes Gained Calculator - Performance Analysis',
+      }
+    ],
+    locale: 'en_GB',
+    siteName: 'Welton Golf',
+  },
+  alternates: {
+    canonical: 'https://www.weltongolf.com/tools/strokes-gained-calculator',
+  },
+}
 
 interface StrokesGainedAnalysis {
   id: string
@@ -34,7 +60,7 @@ interface HoleData {
   holed: boolean
 }
 
-export default function StrokesGainedCalculator() {
+function StrokesGainedCalculator() {
   const [analyses, setAnalyses] = useState<StrokesGainedAnalysis[]>([])
   const [currentRound, setCurrentRound] = useState({
     roundName: '',
@@ -213,50 +239,74 @@ export default function StrokesGainedCalculator() {
     return value > 0 ? `+${value.toFixed(2)}` : value.toFixed(2)
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Strokes Gained Calculator',
+    applicationCategory: 'Sports Application',
+    description: 'Advanced golf performance analysis using strokes gained methodology to compare driving, approach, short game, and putting performance to PGA Tour benchmarks.',
+    operatingSystem: 'Any',
+    permissions: 'browser',
+    isAccessibleForFree: true,
+    creator: {
+      '@type': 'Organization',
+      name: 'Welton Golf',
+      url: 'https://www.weltongolf.com'
+    },
+    dateModified: '2026-01-14',
+    version: '2.0'
+  }
+
   return (
-    <div className="min-h-screen bg-white ">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
 
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-emerald-100 rounded-xl">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
                 <TrendingUp className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-black text-slate-900 mb-2">
-                  Strokes Gained Calculator
+                <h1 className="text-4xl font-black text-gray-900 mb-2 tracking-tight">
+                  Free Golf Strokes Gained Calculator 2026
                 </h1>
-                <p className="text-slate-600 text-lg">
+                <p className="text-gray-700 text-lg">
                   Analyze your golf performance with advanced strokes gained statistics to identify strengths and improvement areas.
                 </p>
               </div>
             </div>
 
+            {/* SEO-rich description */}
             <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-100">
-              <h2 className="text-xl font-bold text-slate-900 mb-3">
+              <h2 className="text-xl font-bold text-gray-900 mb-3">
                 Professional Golf Analytics - Free Performance Analysis Tool
               </h2>
-              <p className="text-slate-700 mb-3">
-                Unlock insights into your game with strokes gained analysis. Compare your performance to tour averages
-                across driving, approach, short game, and putting to identify where to focus your practice efforts.
+              <p className="text-gray-700 mb-3">
+                Unlock insights into your game with advanced strokes gained analysis. Compare your performance to PGA Tour benchmarks
+                across driving, approach, short game, and putting to identify exactly where to focus your practice efforts for maximum improvement.
               </p>
-              <div className="grid md:grid-cols-4 gap-4 text-sm text-slate-900">
+              <div className="grid md:grid-cols-4 gap-4 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Driving Analysis
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Approach Play
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Short Game
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span className="w-2 h-2 bg-emerald-600 rounded-full"></span>
                   Putting Stats
                 </div>
               </div>
@@ -289,7 +339,7 @@ export default function StrokesGainedCalculator() {
 
                 <div className="border-t pt-4">
                   <h4 className="font-semibold mb-3">Hole-by-Hole Data (Simplified)</h4>
-                  <p className="text-sm text-slate-600 mb-4">
+                  <p className="text-sm text-gray-600 mb-4">
                     Enter basic data for each hole. Full strokes gained requires detailed shot tracking.
                   </p>
 
@@ -393,7 +443,7 @@ export default function StrokesGainedCalculator() {
                       <div key={analysis.id} className="p-4 bg-gray-50 rounded-lg border">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h4 className="font-medium text-slate-900">
+                            <h4 className="font-medium text-gray-900">
                               {analysis.roundName}
                             </h4>
                             <p className="text-sm text-gray-600">
@@ -463,125 +513,220 @@ export default function StrokesGainedCalculator() {
           </div>
 
           {/* Educational Content */}
-          <Card className="mt-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Info className="h-5 w-5" />
-                Understanding Strokes Gained
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none">
-              <div className="mb-6">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">Complete Guide to Strokes Gained Analysis</h3>
-                <p className="text-slate-700 mb-4">
-                  Strokes gained is the most advanced golf statistic, measuring how many strokes better or worse you perform
-                  compared to a baseline (typically PGA Tour averages) from any position on the golf course.
-                </p>
+          <div className="mt-12 space-y-12">
+            {/* Strokes Gained Fundamentals */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <TrendingUp className="h-6 w-6 text-emerald-600" />
+                Understanding Strokes Gained: The Ultimate Golf Statistic
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Strokes gained is the most sophisticated golf analytics tool used by PGA Tour professionals and top instructors.
+                It measures how many strokes better or worse you perform compared to a statistical baseline from any position
+                on the golf course, revealing exactly where your game excels and where it needs improvement.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-3">The Four Pillars of Strokes Gained:</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-emerald-50 rounded border">
+                      <p className="text-emerald-900 font-medium">Strokes Gained: Driving</p>
+                      <p className="text-emerald-800 text-sm">Tee shots on par 4s and par 5s - distance and accuracy</p>
+                    </div>
+                    <div className="p-3 bg-blue-50 rounded border">
+                      <p className="text-blue-900 font-medium">Strokes Gained: Approach</p>
+                      <p className="text-blue-800 text-sm">Shots from 50+ yards to the green - proximity and accuracy</p>
+                    </div>
+                    <div className="p-3 bg-amber-50 rounded border">
+                      <p className="text-amber-900 font-medium">Strokes Gained: Short Game</p>
+                      <p className="text-amber-800 text-sm">Shots from within 50 yards around the green</p>
+                    </div>
+                    <div className="p-3 bg-purple-50 rounded border">
+                      <p className="text-purple-900 font-medium">Strokes Gained: Putting</p>
+                      <p className="text-purple-800 text-sm">All putts on the green from any distance</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-3">How Strokes Gained Works:</h3>
+                  <ul className="text-gray-700 space-y-2 mb-4">
+                    <li>• Compares your performance to PGA Tour average from each position</li>
+                    <li>• Positive numbers = better than tour average</li>
+                    <li>• Negative numbers = worse than tour average</li>
+                    <li>• Accounts for distance, lie conditions, and pin position</li>
+                  </ul>
+                  <div className="p-4 bg-green-50 rounded border">
+                    <p className="text-green-900 text-sm font-medium">Example:</p>
+                    <p className="text-green-800 text-sm">From 150 yards, PGA Tour average is 2.8 strokes to hole. If you take 3 strokes, your Strokes Gained: Approach = 2.8 - 3 = -0.2</p>
+                  </div>
+                </div>
               </div>
+            </Card>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Four Main Categories:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• <strong>Strokes Gained: Driving</strong> - Tee shots on par 4s and 5s</li>
-                    <li>• <strong>Strokes Gained: Approach</strong> - Shots from 50+ yards to green</li>
-                    <li>• <strong>Strokes Gained: Short Game</strong> - Shots from {'<'}50 yards around green</li>
-                    <li>• <strong>Strokes Gained: Putting</strong> - All putts on the green</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">How It Works:</h4>
-                  <ul className="text-sm space-y-2 text-slate-700">
-                    <li>• Compares your result to statistical average from that position</li>
-                    <li>• Positive numbers = better than average</li>
-                    <li>• Negative numbers = worse than average</li>
-                    <li>• Accounts for distance and lie conditions</li>
-                  </ul>
-                </div>
-              </div>
+            {/* Performance Benchmarks */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <BarChart3 className="h-6 w-6 text-emerald-600" />
+                Strokes Gained Benchmarks and Performance Levels
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                Understanding where you stand compared to different skill levels helps set realistic goals and track improvement.
+                These benchmarks represent typical strokes gained totals compared to PGA Tour averages across all categories.
+              </p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Interpretation Guide:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>+2.0 or better:</strong> Exceptional performance</p>
-                    <p><strong>+1.0 to +2.0:</strong> Very good round</p>
-                    <p><strong>0 to +1.0:</strong> Above average</p>
-                    <p><strong>-1.0 to 0:</strong> Below average</p>
-                    <p><strong>-2.0 or worse:</strong> Poor performance</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Handicap Benchmarks (Total SG):</h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-green-50 rounded border">
+                      <p className="text-green-900 font-medium">Scratch Golfer (0 HCP)</p>
+                      <p className="text-green-800">-2.5 to -3.5 strokes gained</p>
+                    </div>
+                    <div className="p-3 bg-blue-50 rounded border">
+                      <p className="text-blue-900 font-medium">5 Handicap</p>
+                      <p className="text-blue-800">-4.0 to -5.0 strokes gained</p>
+                    </div>
+                    <div className="p-3 bg-amber-50 rounded border">
+                      <p className="text-amber-900 font-medium">10 Handicap</p>
+                      <p className="text-amber-800">-6.0 to -7.0 strokes gained</p>
+                    </div>
+                    <div className="p-3 bg-red-50 rounded border">
+                      <p className="text-red-900 font-medium">20+ Handicap</p>
+                      <p className="text-red-800">-10.0 or worse strokes gained</p>
+                    </div>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Benchmarks (vs PGA Tour):</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Scratch Golfer:</strong> -2.5 to -3.5 total</p>
-                    <p><strong>5 Handicap:</strong> -4.0 to -5.0 total</p>
-                    <p><strong>10 Handicap:</strong> -6.0 to -7.0 total</p>
-                    <p><strong>15 Handicap:</strong> -8.0 to -9.0 total</p>
-                    <p><strong>20+ Handicap:</strong> -10.0 or worse</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Performance Interpretation:</h3>
+                  <div className="space-y-2 text-gray-700">
+                    <p><strong>+2.0 or better:</strong> Exceptional round, tour-level performance</p>
+                    <p><strong>+1.0 to +2.0:</strong> Very strong round, well above average</p>
+                    <p><strong>0 to +1.0:</strong> Above average performance</p>
+                    <p><strong>-1.0 to 0:</strong> Slightly below average</p>
+                    <p><strong>-2.0 or worse:</strong> Below average round</p>
+                  </div>
+                  <div className="mt-4 p-3 bg-blue-50 rounded border">
+                    <p className="text-blue-900 text-sm font-medium">Remember:</p>
+                    <p className="text-blue-800 text-sm">Even PGA Tour players average 0.0 strokes gained by definition - negative numbers don't mean poor golf!</p>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Key Insights:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Putting:</strong> Usually biggest differentiator</p>
-                    <p><strong>Approach:</strong> Most important for scoring</p>
-                    <p><strong>Driving:</strong> Sets up other shots</p>
-                    <p><strong>Short Game:</strong> Saves strokes around green</p>
+                  <h3 className="font-bold text-gray-900 mb-4">Category Insights:</h3>
+                  <div className="space-y-2 text-gray-700">
+                    <p><strong>Putting:</strong> Usually the biggest differentiator between skill levels</p>
+                    <p><strong>Approach:</strong> Most important for consistent scoring</p>
+                    <p><strong>Driving:</strong> Sets up opportunities for other shots</p>
+                    <p><strong>Short Game:</strong> High impact on final score</p>
+                  </div>
+                  <div className="mt-4">
+                    <h4 className="font-medium text-gray-900 mb-2">Common Patterns:</h4>
+                    <div className="text-sm text-gray-700 space-y-1">
+                      <p><strong>Beginners:</strong> Lose strokes in all areas, especially driving</p>
+                      <p><strong>Mid-handicap:</strong> Weak short game and putting</p>
+                      <p><strong>Low-handicap:</strong> Minor losses across categories</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Using Data for Improvement */}
+            <Card className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <Target className="h-6 w-6 text-emerald-600" />
+                Using Strokes Gained Data to Transform Your Game
+              </h2>
+              <p className="text-gray-700 text-lg mb-6">
+                The real power of strokes gained analysis lies in how you use the data to prioritize practice time and
+                make strategic improvements. Focus your efforts where you'll see the biggest return on investment.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Practice Prioritization Strategy:</h3>
+                  <ol className="text-gray-700 space-y-3">
+                    <li><strong>1. Identify Your Biggest Loss:</strong> Focus practice time on the category where you lose the most strokes</li>
+                    <li><strong>2. Consider Impact Potential:</strong> Approach shots typically offer the highest improvement potential</li>
+                    <li><strong>3. Quick Wins:</strong> Putting improvements often show results fastest</li>
+                    <li><strong>4. Long-term Development:</strong> Driving accuracy and distance require sustained effort</li>
+                    <li><strong>5. Track Progress:</strong> Monitor changes in each category over multiple rounds</li>
+                  </ol>
+
+                  <div className="mt-6 p-4 bg-emerald-50 rounded border">
+                    <h4 className="font-medium text-emerald-900 mb-2">Pro Tip:</h4>
+                    <p className="text-emerald-800 text-sm">Even a 0.5 stroke improvement in one category can lower your handicap by 2-3 strokes over 18 holes!</p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-4">Category-Specific Improvement:</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium text-gray-900">Driving (SG: Off-the-Tee):</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Work on distance and accuracy balance</li>
+                        <li>• Practice with different tee heights</li>
+                        <li>• Focus on course management and club selection</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Approach (SG: Approach):</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Practice proximity control to pin</li>
+                        <li>• Work on consistent contact and distance control</li>
+                        <li>• Improve yardage knowledge and club selection</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Short Game:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Practice variety of lies and distances</li>
+                        <li>• Develop consistent setup and technique</li>
+                        <li>• Work on up-and-down percentages</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Putting:</h4>
+                      <ul className="text-sm text-gray-700 space-y-1">
+                        <li>• Focus on speed control first, then line</li>
+                        <li>• Practice from 3-8 feet extensively</li>
+                        <li>• Work on lag putting from long distances</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Common Patterns by Skill Level:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Beginners:</strong> Lose most strokes driving and approach</p>
-                    <p><strong>Mid-handicap:</strong> Short game and putting weaknesses</p>
-                    <p><strong>Low handicap:</strong> Small losses across all areas</p>
-                    <p><strong>Scratch golfers:</strong> Strong approach, adequate putting</p>
-                    <p><strong>Tour pros:</strong> Excel in approach and short game</p>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 mb-3">Practice Prioritization:</h4>
-                  <div className="text-sm text-slate-700 space-y-1">
-                    <p><strong>Biggest Losses:</strong> Focus practice time here first</p>
-                    <p><strong>Approach Shots:</strong> Highest impact on scoring</p>
-                    <p><strong>Putting:</strong> Easiest to improve quickly</p>
-                    <p><strong>Short Game:</strong> High return on investment</p>
-                    <p><strong>Driving:</strong> Distance vs. accuracy balance</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-blue-200">
-                <h4 className="font-bold text-slate-900 mb-3">Why Use Our Strokes Gained Calculator?</h4>
+              <div className="mt-6 p-6 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-lg border">
+                <h4 className="font-bold text-gray-900 mb-3">Why Our Strokes Gained Calculator?</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-slate-700 mb-2"><strong>✓ Advanced Analytics:</strong> Professional-level insights</p>
-                    <p className="text-slate-700 mb-2"><strong>✓ Strength Identification:</strong> Know your best skills</p>
-                    <p className="text-slate-700"><strong>✓ Weakness Analysis:</strong> Focus improvement efforts</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Professional Analytics:</strong> Tour-level insights for your game</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Targeted Practice:</strong> Know exactly where to improve</p>
+                    <p className="text-gray-700"><strong>✓ Progress Tracking:</strong> Monitor improvement over time</p>
                   </div>
                   <div>
-                    <p className="text-slate-700 mb-2"><strong>✓ Performance Tracking:</strong> Monitor progress over time</p>
-                    <p className="text-slate-700 mb-2"><strong>✓ Benchmarking:</strong> Compare to tour standards</p>
-                    <p className="text-slate-700"><strong>✓ Free Analysis:</strong> No cost for insights</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Benchmarking:</strong> Compare to relevant skill levels</p>
+                    <p className="text-gray-700 mb-2"><strong>✓ Free Analysis:</strong> No cost for professional insights</p>
+                    <p className="text-gray-700"><strong>✓ Easy to Use:</strong> Simplified data entry process</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                <p className="text-sm text-slate-700">
-                  <strong>Important:</strong> This simplified calculator provides basic strokes gained estimates.
-                  Professional strokes gained analysis requires detailed shot tracking with precise distances and lie conditions.
-                  Use these results as general performance indicators and practice guidance.
+                <p className="text-sm text-gray-700">
+                  <strong>Important Note:</strong> This simplified calculator provides basic strokes gained estimates based on limited data inputs.
+                  Professional strokes gained analysis requires detailed shot tracking with precise distances, lie conditions, and pin positions.
+                  Use these results as general performance indicators and practice guidance rather than exact statistical analysis.
                 </p>
               </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
+}
+
+export default function StrokesGainedCalculatorPage() {
+  return <StrokesGainedCalculator />
 }
