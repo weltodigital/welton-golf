@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calculator, BookOpen, MapPin, TrendingUp } from 'lucide-react'
 
 export default function Home() {
@@ -14,6 +15,18 @@ export default function Home() {
             Professional golf tools, expert guides, and comprehensive resources to master every aspect of your game.
           </p>
         </div>
+      </div>
+
+      {/* Hero Image */}
+      <div className="w-full">
+        <Image
+          src="/golf-course-hero.jpg"
+          alt="Beautiful golf course with lush fairways and trees"
+          width={1920}
+          height={600}
+          className="w-full h-auto object-cover"
+          priority
+        />
       </div>
 
       <div className="container mx-auto px-4 py-16">
