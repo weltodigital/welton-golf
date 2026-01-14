@@ -8,32 +8,6 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Zap, Target, Info, Calculator } from 'lucide-react'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Free Golf Shaft Flex Calculator 2026 - Find Your Perfect Shaft | Welton Golf',
-  description: 'Calculate your optimal golf shaft flex based on swing speed, ball flight, and tempo. Free shaft fitting calculator with expert recommendations for all skill levels.',
-  keywords: 'shaft flex calculator, golf shaft fitting, shaft flex guide, swing speed calculator, golf shaft selection, club fitting, driver shaft flex, iron shaft flex',
-  openGraph: {
-    title: 'Free Golf Shaft Flex Calculator 2026 - Professional Shaft Fitting',
-    description: 'Find your perfect shaft flex based on swing speed, ball flight, and tempo. Professional recommendations for optimal performance.',
-    type: 'article',
-    url: 'https://www.weltongolf.com/tools/shaft-flex-calculator',
-    images: [
-      {
-        url: 'https://www.weltongolf.com/shaft-flex-calculator-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Free Golf Shaft Flex Calculator - Shaft Fitting',
-      }
-    ],
-    locale: 'en_GB',
-    siteName: 'Welton Golf',
-  },
-  alternates: {
-    canonical: 'https://www.weltongolf.com/tools/shaft-flex-calculator',
-  },
-}
 
 function ShaftFlexCalculator() {
   const [swingSpeed, setSwingSpeed] = useState('')
@@ -319,7 +293,7 @@ function ShaftFlexCalculator() {
                   <div className="space-y-3">
                     <div className="p-3 bg-emerald-50 rounded border border-emerald-200">
                       <p className="text-emerald-900 font-medium">Ladies (L) Flex</p>
-                      <p className="text-emerald-800 text-sm">Swing Speed: <75 mph - Most flexible, highest launch</p>
+                      <p className="text-emerald-800 text-sm">Swing Speed: &lt;75 mph - Most flexible, highest launch</p>
                     </div>
                     <div className="p-3 bg-blue-50 rounded border border-blue-200">
                       <p className="text-blue-900 font-medium">Senior/Amateur (A) Flex</p>
@@ -335,7 +309,7 @@ function ShaftFlexCalculator() {
                     </div>
                     <div className="p-3 bg-red-50 rounded border border-red-200">
                       <p className="text-red-900 font-medium">Extra Stiff (X) Flex</p>
-                      <p className="text-red-800 text-sm">Swing Speed: >105 mph - Firmest, for tour-level speeds</p>
+                      <p className="text-red-800 text-sm">Swing Speed: &gt;105 mph - Firmest, for tour-level speeds</p>
                     </div>
                   </div>
                 </div>
