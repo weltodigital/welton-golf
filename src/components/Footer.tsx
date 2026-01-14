@@ -21,12 +21,13 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold mb-4 text-white">Golf Tools</h4>
+            <h4 className="font-bold mb-4 text-white">Categories</h4>
             <ul className="space-y-2 text-sm text-white">
-              <li><Link href="/tools/handicap-calculator" className="hover:text-white transition-colors">Handicap Calculator</Link></li>
-              <li><Link href="/tools/course-handicap-calculator" className="hover:text-white transition-colors">Course Handicap Calculator</Link></li>
-              <li><Link href="/tools/stableford-calculator" className="hover:text-white transition-colors">Stableford Calculator</Link></li>
-              <li><Link href="/ball-speed-calculator" className="hover:text-white transition-colors">Ball Speed Calculator</Link></li>
+              <li><Link href="/tools" className="hover:text-white transition-colors">Golf Tools</Link></li>
+              <li><Link href="/travel" className="hover:text-white transition-colors">Golf Travel</Link></li>
+              <li><Link href="/break-100" className="hover:text-white transition-colors">Break 100</Link></li>
+              <li><Link href="/break-90" className="hover:text-white transition-colors">Break 90</Link></li>
+              <li><Link href="/break-80" className="hover:text-white transition-colors">Break 80</Link></li>
               <li><Link href="/course-directory" className="hover:text-white transition-colors">Course Directory</Link></li>
             </ul>
           </div>
