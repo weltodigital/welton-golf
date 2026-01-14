@@ -7,6 +7,32 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Calculator, Plus, Trash2, Info, History, Target } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Free Stableford Calculator 2026 - Golf Stableford Points Calculator | Welton Golf',
+  description: 'Calculate your Stableford points with our free golf scoring calculator. Track your rounds, understand scoring system, and improve your competitive golf game. Complete guide included.',
+  keywords: 'stableford calculator, golf stableford points, stableford scoring system, golf competition scoring, stableford points calculator, modified stableford, golf scoring',
+  openGraph: {
+    title: 'Free Stableford Calculator - Golf Stableford Points Calculator',
+    description: 'Calculate your Stableford points and track your competitive golf rounds. Free calculator with complete scoring guide.',
+    type: 'article',
+    url: 'https://www.weltongolf.com/tools/stableford-calculator',
+    images: [
+      {
+        url: 'https://www.weltongolf.com/golf-stableford-calculator-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Golf Stableford Calculator - Points Scoring System',
+      }
+    ],
+    locale: 'en_GB',
+    siteName: 'Welton Golf',
+  },
+  alternates: {
+    canonical: 'https://www.weltongolf.com/tools/stableford-calculator',
+  },
+}
 
 interface HoleScore {
   hole: number
@@ -173,9 +199,43 @@ export default function StablefordCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+    <>
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Stableford Calculator",
+            "description": "Free golf Stableford points calculator with automatic handicap stroke allocation and competition scoring.",
+            "url": "https://www.weltongolf.com/tools/stableford-calculator",
+            "applicationCategory": "Sports",
+            "operatingSystem": "Web Browser",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "GBP"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Welton Golf",
+              "url": "https://www.weltongolf.com"
+            },
+            "featureList": [
+              "Stableford Points Calculation",
+              "Handicap Stroke Allocation",
+              "Round Tracking",
+              "Competition Scoring",
+              "Free to Use"
+            ]
+          })
+        }}
+      />
+
+      <div className="min-h-screen bg-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
 
 
           {/* Header */}
@@ -185,11 +245,11 @@ export default function StablefordCalculator() {
                 <Target className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-black text-slate-900 mb-2 tracking-tight">
-                  Stableford Points Calculator
+                <h1 className="text-4xl font-black text-gray-900 mb-2 tracking-tight">
+                  Free Stableford Points Calculator
                 </h1>
-                <p className="text-slate-600 text-lg">
-                  Calculate Stableford points for your golf round with automatic handicap stroke allocation and scoring.
+                <p className="text-gray-600 text-lg">
+                  Calculate Stableford points for your golf round with automatic handicap stroke allocation and scoring. Perfect for competitions and tracking performance.
                 </p>
               </div>
             </div>
@@ -539,8 +599,9 @@ export default function StablefordCalculator() {
               </div>
             </CardContent>
           </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
