@@ -20,6 +20,11 @@ const scoringArticles = [
     title: 'Handicap Index Explained',
     description: 'Understanding your handicap index made simple. Learn how the WHS handicap system works, what your handicap index means, and how to use it effectively.',
     href: '/scoring/handicap-index-explained',
+  },
+  {
+    title: 'Course Handicap vs Playing Handicap',
+    description: 'Understand the crucial difference between course handicap and playing handicap. Learn when to use each and how they affect your golf scoring and competition play.',
+    href: '/scoring/course-handicap-vs-playing-handicap',
   }
 ]
 

@@ -123,6 +123,9 @@ export default function Header() {
                   <Link href="/scoring/handicap-index-explained" className="block px-4 py-2 text-sm text-slate-900 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors">
                     Handicap Index Explained
                   </Link>
+                  <Link href="/scoring/course-handicap-vs-playing-handicap" className="block px-4 py-2 text-sm text-slate-900 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors">
+                    Course vs Playing Handicap
+                  </Link>
                 </div>
               </div>
             </div>
