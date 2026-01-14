@@ -195,9 +195,43 @@ export default function SwingSpeedCalculator() {
   const clubTypes = ['Driver', '3-Wood', '5-Wood', '3-Iron', '5-Iron', '7-Iron', '9-Iron', 'Pitching Wedge', 'Sand Wedge']
 
   return (
-    <div className="min-h-screen bg-white ">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
+    <>
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Golf Swing Speed Calculator",
+            "description": "Calculate your golf swing speed from ball speed measurements with equipment recommendations and performance analysis.",
+            "url": "https://www.weltongolf.com/tools/swing-speed-calculator",
+            "applicationCategory": "Sports",
+            "operatingSystem": "Web Browser",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "GBP"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Welton Golf",
+              "url": "https://www.weltongolf.com"
+            },
+            "featureList": [
+              "Ball Speed to Swing Speed Conversion",
+              "Smash Factor Analysis",
+              "Equipment Recommendations",
+              "Distance Estimates",
+              "Performance Tracking"
+            ]
+          })
+        }}
+      />
+
+      <div className="min-h-screen bg-white ">
+        <div className="container mx-auto px-4 py-8">
+          <div className="max-w-6xl mx-auto">
 
           {/* Header */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
@@ -206,11 +240,11 @@ export default function SwingSpeedCalculator() {
                 <RotateCcw className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
-                <h1 className="text-4xl font-black text-slate-900 mb-2">
+                <h1 className="text-4xl font-black text-gray-900 mb-2">
                   Golf Swing Speed Calculator
                 </h1>
-                <p className="text-slate-600 text-lg">
-                  Calculate your swing speed from ball speed and smash factor measurements.
+                <p className="text-gray-600 text-lg">
+                  Calculate your swing speed from ball speed and smash factor measurements. Get equipment recommendations and track your performance improvements.
                 </p>
               </div>
             </div>
@@ -580,8 +614,9 @@ export default function SwingSpeedCalculator() {
               </div>
             </CardContent>
           </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
