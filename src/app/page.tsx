@@ -20,7 +20,7 @@ export default function Home() {
       {/* Hero Image */}
       <div className="w-full">
         <Image
-          src="/golf-course-hero.jpg"
+          src="/welton-golf-homepage.png"
           alt="Beautiful golf course with lush fairways and trees"
           width={1920}
           height={600}
