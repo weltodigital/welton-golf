@@ -106,6 +106,24 @@ export default function Header() {
               Break 80
             </Link>
 
+            {/* Scoring Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-white hover:text-emerald-100 transition-colors text-sm font-semibold">
+                Scoring
+                <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-2">
+                  <Link href="/scoring" className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors border-b border-slate-100">
+                    All Scoring Guides
+                  </Link>
+                  <Link href="/scoring/how-golf-scoring-works" className="block px-4 py-2 text-sm text-slate-900 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors">
+                    How Golf Scoring Works
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             {/* Course Directory - Simple Link */}
             <Link
               href="/course-directory"
