@@ -123,7 +123,7 @@ export default function Home() {
           <p className="text-gray-600 mb-8 max-w-3xl">
             Master your game with expert strategies and proven techniques. From fundamentals to advanced tactics, achieve your scoring goals.
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link href="/break-100" className="group">
               <article className="border rounded-lg p-6 hover:border-brand-primary hover:shadow-md transition-all">
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-brand-primary">Break 100</h3>
@@ -140,6 +140,12 @@ export default function Home() {
               <article className="border rounded-lg p-6 hover:border-brand-primary hover:shadow-md transition-all">
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-brand-primary">Break 80</h3>
                 <p className="text-gray-600 text-sm">Elite techniques and precision strategies for competitive-level golf.</p>
+              </article>
+            </Link>
+            <Link href="/scoring" className="group">
+              <article className="border rounded-lg p-6 hover:border-brand-primary hover:shadow-md transition-all">
+                <h3 className="text-xl font-semibold mb-2 group-hover:text-brand-primary">Scoring Mastery</h3>
+                <p className="text-gray-600 text-sm">Course management, mental game, and scoring strategies for all levels.</p>
               </article>
             </Link>
           </div>

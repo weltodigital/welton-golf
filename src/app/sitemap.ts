@@ -29,16 +29,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Golf Improvement Articles
     {
-      url: 'https://www.weltongolf.com/break-80/how-to-break-80-golf',
-      lastModified: new Date('2024-12-08'),
+      url: 'https://www.weltongolf.com/break-80',
+      lastModified: new Date('2026-01-14'),
     },
     {
-      url: 'https://www.weltongolf.com/break-90/how-to-break-90-golf',
-      lastModified: new Date('2024-12-05'),
+      url: 'https://www.weltongolf.com/break-90',
+      lastModified: new Date('2026-01-14'),
     },
     {
-      url: 'https://www.weltongolf.com/break-100/how-to-break-100-golf',
-      lastModified: new Date('2024-12-03'),
+      url: 'https://www.weltongolf.com/break-100',
+      lastModified: new Date('2026-01-14'),
+    },
+    {
+      url: 'https://www.weltongolf.com/scoring',
+      lastModified: new Date('2026-01-14'),
+    },
+    {
+      url: 'https://www.weltongolf.com/travel',
+      lastModified: new Date('2026-01-14'),
     },
     // Handicap & Scoring Calculators
     {
