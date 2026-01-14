@@ -18,13 +18,13 @@ export default function Home() {
       </div>
 
       {/* Hero Image */}
-      <div className="w-full">
+      <div className="w-full h-64 md:h-80 overflow-hidden">
         <Image
           src="/welton-golf-homepage.png"
           alt="Beautiful golf course with lush fairways and trees"
           width={1920}
           height={600}
-          className="w-full h-auto object-cover"
+          className="w-full h-full object-cover"
           priority
         />
       </div>
