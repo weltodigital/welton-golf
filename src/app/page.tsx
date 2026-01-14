@@ -6,11 +6,11 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="bg-brand-primary text-white py-16">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Your Golf Authority
+            Helping You Become A Better Golfer
           </h1>
-          <p className="text-xl max-w-3xl mx-auto">
+          <p className="text-xl max-w-3xl">
             Professional golf tools, expert guides, and comprehensive resources to master every aspect of your game.
           </p>
         </div>
