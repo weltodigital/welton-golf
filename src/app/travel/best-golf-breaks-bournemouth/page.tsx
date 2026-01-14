@@ -334,10 +334,10 @@ export default function BournemouthGolfBreaks() {
 
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-slate-900 mb-6 font-cooper">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6 font-cooper">
               Best Golf Breaks in Bournemouth 2025
             </h1>
-            <p className="text-xl text-slate-700 max-w-4xl mx-auto mb-8">
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
               Discover Dorset&apos;s premier coastal golf destination where championship heathland courses meet stunning
               clifftop links golf. From historic tournament venues to luxury resort experiences and dramatic seaside
               golf, we&apos;ve curated the top 8 golf breaks around Bournemouth for 2025. Perfect for golf weekends,
@@ -348,7 +348,7 @@ export default function BournemouthGolfBreaks() {
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               {priceRanges.map((range, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-4 shadow-lg">
-                  <div className="text-2xl font-bold" style={{color: '#183a37'}}>{range.count}</div>
+                  <div className="text-2xl font-bold text-brand-primary">{range.count}</div>
                   <div className="font-semibold text-slate-900">{range.range}</div>
                   <div className="text-sm text-slate-600">{range.description}</div>
                 </div>
@@ -474,7 +474,7 @@ export default function BournemouthGolfBreaks() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-xl font-bold" style={{color: '#183a37'}}>
+                          <div className="text-xl font-bold text-brand-primary">
                             {golfBreak.priceRange}
                           </div>
                           <div className="text-sm text-slate-600">
@@ -531,8 +531,7 @@ export default function BournemouthGolfBreaks() {
 
                       <div className="space-y-2 mb-4">
                         <Button
-                          className="w-full text-white"
-                          style={{backgroundColor: '#183a37'}}
+                          className="w-full text-white bg-brand-primary"
                           asChild
                         >
                           <Link href="/tools/golf-trip-planner">Plan This Trip</Link>
@@ -569,17 +568,17 @@ export default function BournemouthGolfBreaks() {
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Price Guide Explanation</h3>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div className="text-center">
-                    <div className="text-2xl font-bold mb-2" style={{color: '#183a37'}}>££</div>
+                    <div className="text-2xl font-bold mb-2 text-brand-primary">££</div>
                     <div className="font-semibold">£150-£250</div>
                     <div className="text-slate-600">Excellent value</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold mb-2" style={{color: '#183a37'}}>£££</div>
+                    <div className="text-2xl font-bold mb-2 text-brand-primary">£££</div>
                     <div className="font-semibold">£250-£400</div>
                     <div className="text-slate-600">Premium experience</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold mb-2" style={{color: '#183a37'}}>££££</div>
+                    <div className="text-2xl font-bold mb-2 text-brand-primary">££££</div>
                     <div className="font-semibold">£400+</div>
                     <div className="text-slate-600">Luxury resort</div>
                   </div>
@@ -592,7 +591,7 @@ export default function BournemouthGolfBreaks() {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 {priceRanges.map((range, index) => (
                   <div key={index} className="bg-slate-100 p-6 rounded-lg text-center">
-                    <div className="text-3xl font-bold mb-2" style={{color: '#183a37'}}>
+                    <div className="text-3xl font-bold mb-2 text-brand-primary">
                       {range.range}
                     </div>
                     <div className="font-semibold text-slate-900 mb-2">
@@ -691,11 +690,11 @@ export default function BournemouthGolfBreaks() {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 rounded-lg" style={{backgroundColor: '#9CC69B'}}>
-                <h3 className="text-xl font-bold mb-4" style={{color: '#183a37'}}>
+              <div className="mt-8 p-6 rounded-lg bg-brand-light">
+                <h3 className="text-xl font-bold mb-4 text-brand-primary">
                   Essential Booking Checklist
                 </h3>
-                <div className="grid md:grid-cols-2 gap-4 text-sm" style={{color: '#183a37'}}>
+                <div className="grid md:grid-cols-2 gap-4 text-sm text-brand-primary">
                   <ul className="space-y-2">
                     <li>✓ Check weather forecasts for coastal conditions</li>
                     <li>✓ Confirm course availability and tee times</li>
@@ -725,40 +724,40 @@ export default function BournemouthGolfBreaks() {
 
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-slate-100 p-6 rounded-lg">
-                  <MapPin className="h-8 w-8 mb-4" style={{color: '#9CC69B'}} />
+                  <MapPin className="h-8 w-8 mb-4 text-brand-primary" />
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
                     Golf Trip Planner
                   </h3>
                   <p className="text-sm text-slate-700 mb-4">
                     Plan your coastal golf break with detailed itineraries and recommendations.
                   </p>
-                  <Button className="w-full text-white" style={{backgroundColor: '#183a37'}} asChild>
+                  <Button className="w-full text-white bg-brand-primary" asChild>
                     <Link href="/tools/golf-trip-planner">Plan Your Trip</Link>
                   </Button>
                 </div>
 
                 <div className="bg-slate-100 p-6 rounded-lg">
-                  <Trophy className="h-8 w-8 mb-4" style={{color: '#9CC69B'}} />
+                  <Trophy className="h-8 w-8 mb-4 text-brand-primary" />
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
                     Handicap Calculator
                   </h3>
                   <p className="text-sm text-slate-700 mb-4">
                     Calculate your handicap for championship course bookings.
                   </p>
-                  <Button className="w-full text-white" style={{backgroundColor: '#183a37'}} asChild>
+                  <Button className="w-full text-white bg-brand-primary" asChild>
                     <Link href="/tools/handicap-calculator">Calculate Handicap</Link>
                   </Button>
                 </div>
 
                 <div className="bg-slate-100 p-6 rounded-lg">
-                  <Calendar className="h-8 w-8 mb-4" style={{color: '#9CC69B'}} />
+                  <Calendar className="h-8 w-8 mb-4 text-brand-primary" />
                   <h3 className="text-lg font-bold text-slate-900 mb-2">
                     Course Directory
                   </h3>
                   <p className="text-sm text-slate-700 mb-4">
                     Discover additional courses near Bournemouth and Dorset.
                   </p>
-                  <Button className="w-full text-white" style={{backgroundColor: '#183a37'}} asChild>
+                  <Button className="w-full text-white bg-brand-primary" asChild>
                     <Link href="/course-directory">Browse Courses</Link>
                   </Button>
                 </div>
@@ -844,7 +843,7 @@ export default function BournemouthGolfBreaks() {
           </section>
 
           {/* Conclusion CTA */}
-          <div className="text-center rounded-lg p-12 text-white" style={{background: `linear-gradient(135deg, #183a37 0%, #9CC69B 100%)`}}>
+          <div className="text-center rounded-lg p-12 text-white bg-gradient-to-br from-brand-secondary to-brand-primary">
             <h2 className="text-3xl font-bold mb-4 font-cooper">
               Start Planning Your Perfect Bournemouth Golf Break
             </h2>
@@ -877,28 +876,28 @@ export default function BournemouthGolfBreaks() {
                   <h3 className="font-bold text-slate-900 mb-4">Essential Planning Tools</h3>
                   <div className="space-y-3">
                     <Link href="/tools/golf-trip-planner" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <MapPin className="h-5 w-5 text-emerald-600" />
+                      <MapPin className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Golf Trip Planner</div>
                         <div className="text-sm text-slate-600">Plan your coastal golf adventure</div>
                       </div>
                     </Link>
                     <Link href="/course-directory" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <Star className="h-5 w-5 text-emerald-600" />
+                      <Star className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Course Directory</div>
                         <div className="text-sm text-slate-600">Discover Dorset golf courses</div>
                       </div>
                     </Link>
                     <Link href="/tools/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <Trophy className="h-5 w-5 text-emerald-600" />
+                      <Trophy className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Handicap Calculator</div>
                         <div className="text-sm text-slate-600">Check requirements for coastal courses</div>
                       </div>
                     </Link>
                     <Link href="/tools/club-distance-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <Car className="h-5 w-5 text-emerald-600" />
+                      <Car className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Distance Calculator</div>
                         <div className="text-sm text-slate-600">Calculate travel times to courses</div>
