@@ -453,7 +453,7 @@ export default function HandicapCalculator() {
             <CardContent>
               <div className="grid md:grid-cols-3 gap-4">
                 <Link
-                  href="/course-handicap-calculator"
+                  href="/tools/course-handicap-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
                   <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Course Handicap Calculator</h3>
@@ -461,7 +461,7 @@ export default function HandicapCalculator() {
                 </Link>
 
                 <Link
-                  href="/stableford-calculator"
+                  href="/tools/stableford-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
                   <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Stableford Calculator</h3>
@@ -469,7 +469,7 @@ export default function HandicapCalculator() {
                 </Link>
 
                 <Link
-                  href="/strokes-gained-calculator"
+                  href="/tools/strokes-gained-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
                   <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Strokes Gained Calculator</h3>
@@ -489,7 +489,7 @@ export default function HandicapCalculator() {
                   <Link href="/blog/how-to-break-80-golf" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
                     Break 80 Guide
                   </Link>
-                  <Link href="/swing-speed-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                  <Link href="/tools/swing-speed-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
                     Swing Speed Calculator
                   </Link>
                 </div>

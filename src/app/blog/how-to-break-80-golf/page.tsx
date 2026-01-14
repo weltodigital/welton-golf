@@ -507,7 +507,7 @@ export default function HowToBreakEighty() {
             <p className="text-lg text-slate-700 mb-8">
               This proven system has helped thousands of golfers break 80 consistently. Each step builds on the previous one,
               creating a comprehensive approach to lower scoring. Follow this system and track your progress with our
-              <Link href="/handicap-calculator" className="text-blue-600 hover:underline"> handicap calculator</Link>.
+              <Link href="/tools/handicap-calculator" className="text-blue-600 hover:underline"> handicap calculator</Link>.
             </p>
 
             <div className="grid gap-8">
@@ -827,7 +827,7 @@ export default function HowToBreakEighty() {
                   <p className="text-slate-700">
                     Lessons can help, but focus on short game and course management lessons rather than swing overhauls.
                     Many golfers break 80 by improving their mental game, putting, and decision-making without major
-                    swing changes. Use our <Link href="/handicap-calculator" className="text-blue-600 hover:underline">handicap calculator</Link> to
+                    swing changes. Use our <Link href="/tools/handicap-calculator" className="text-blue-600 hover:underline">handicap calculator</Link> to
                     track your progress.
                   </p>
                 </div>
@@ -858,7 +858,7 @@ export default function HowToBreakEighty() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="text-lg px-8 py-3" asChild>
-                <Link href="/handicap-calculator">Calculate Your Handicap</Link>
+                <Link href="/tools/handicap-calculator">Calculate Your Handicap</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-white text-black hover:bg-white hover:text-black" asChild>
                 <Link href="/golf-trip-planner">Plan Your Golf Trip</Link>
@@ -879,7 +879,7 @@ export default function HowToBreakEighty() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-4">Advanced Golf Tools</h3>
                   <div className="space-y-3">
-                    <Link href="/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                    <Link href="/tools/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
                       <BarChart3 className="h-5 w-5 text-emerald-600" />
                       <div>
                         <div className="font-medium text-slate-900">Handicap Calculator</div>

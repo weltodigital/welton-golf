@@ -275,7 +275,7 @@ export default function HowToBreak90Page() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/handicap-calculator">
+            <Link href="/tools/handicap-calculator">
               <Button className="bg-green-600 hover:bg-green-700">
                 <BarChart3 className="w-4 h-4 mr-2" />
                 Calculate Your Handicap
@@ -809,7 +809,7 @@ export default function HowToBreak90Page() {
                 <BarChart3 className="w-12 h-12 text-blue-600 mx-auto" />
                 <h3 className="font-semibold">Handicap Calculator</h3>
                 <p className="text-sm text-gray-600">Track your improving handicap as you work toward breaking 90</p>
-                <Link href="/handicap-calculator">
+                <Link href="/tools/handicap-calculator">
                   <Button variant="outline" size="sm">Calculate Handicap</Button>
                 </Link>
               </div>
@@ -850,7 +850,7 @@ export default function HowToBreak90Page() {
                 Ready to take your game to the next level? Start with our golf tools and track your progress.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/handicap-calculator">
+                <Link href="/tools/handicap-calculator">
                   <Button className="bg-green-600 hover:bg-green-700">
                     <BarChart3 className="w-4 h-4 mr-2" />
                     Start Tracking Progress
@@ -880,7 +880,7 @@ export default function HowToBreak90Page() {
               <div>
                 <h3 className="font-bold text-slate-900 mb-4">Essential Golf Tools</h3>
                 <div className="space-y-3">
-                  <Link href="/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                  <Link href="/tools/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
                     <BarChart3 className="h-5 w-5 text-emerald-600" />
                     <div>
                       <div className="font-medium text-slate-900">Handicap Calculator</div>

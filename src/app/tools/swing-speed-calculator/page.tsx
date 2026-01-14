@@ -545,7 +545,7 @@ export default function SwingSpeedCalculator() {
             <CardContent>
               <div className="grid md:grid-cols-3 gap-4">
                 <Link
-                  href="/ball-speed-calculator"
+                  href="/tools/ball-speed-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
                   <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Ball Speed Calculator</h3>
@@ -553,7 +553,7 @@ export default function SwingSpeedCalculator() {
                 </Link>
 
                 <Link
-                  href="/club-distance-calculator"
+                  href="/tools/club-distance-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
                   <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Club Distance Calculator</h3>
@@ -572,7 +572,7 @@ export default function SwingSpeedCalculator() {
               <div className="mt-6 pt-6 border-t border-slate-200">
                 <h4 className="font-bold text-slate-900 mb-3">More Golf Tools</h4>
                 <div className="flex flex-wrap gap-2">
-                  <Link href="/handicap-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                  <Link href="/tools/handicap-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
                     Handicap Calculator
                   </Link>
                   <Link href="/club-fitting-estimator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">

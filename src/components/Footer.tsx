@@ -23,9 +23,9 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4 text-white">Golf Tools</h4>
             <ul className="space-y-2 text-sm text-emerald-100">
-              <li><Link href="/handicap-calculator" className="hover:text-white transition-colors">Handicap Calculator</Link></li>
-              <li><Link href="/course-handicap-calculator" className="hover:text-white transition-colors">Course Handicap Calculator</Link></li>
-              <li><Link href="/stableford-calculator" className="hover:text-white transition-colors">Stableford Calculator</Link></li>
+              <li><Link href="/tools/handicap-calculator" className="hover:text-white transition-colors">Handicap Calculator</Link></li>
+              <li><Link href="/tools/course-handicap-calculator" className="hover:text-white transition-colors">Course Handicap Calculator</Link></li>
+              <li><Link href="/tools/stableford-calculator" className="hover:text-white transition-colors">Stableford Calculator</Link></li>
               <li><Link href="/ball-speed-calculator" className="hover:text-white transition-colors">Ball Speed Calculator</Link></li>
               <li><Link href="/course-directory" className="hover:text-white transition-colors">Course Directory</Link></li>
             </ul>

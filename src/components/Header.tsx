@@ -25,10 +25,10 @@ export default function Header() {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-6">
-            {/* Calculators Dropdown */}
+            {/* Tools Dropdown */}
             <div className="relative group">
               <button className="flex items-center gap-1 text-white hover:text-emerald-100 transition-colors text-sm font-semibold">
-                Calculators
+                Tools
                 <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
               </button>
 
@@ -36,32 +36,38 @@ export default function Header() {
               <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="py-2">
                     <Link
-                      href="/handicap-calculator"
+                      href="/tools"
+                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors border-b border-slate-100"
+                    >
+                      All Tools & Calculators
+                    </Link>
+                    <Link
+                      href="/tools/handicap-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Handicap Calculator
                     </Link>
                     <Link
-                      href="/course-handicap-calculator"
+                      href="/tools/course-handicap-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Course Handicap
                     </Link>
                     <Link
-                      href="/stableford-calculator"
+                      href="/tools/stableford-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Stableford Calculator
                     </Link>
                     <div className="border-t border-slate-100 my-2"></div>
                     <Link
-                      href="/ball-speed-calculator"
+                      href="/tools/ball-speed-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Ball Speed Calculator
                     </Link>
                     <Link
-                      href="/swing-speed-calculator"
+                      href="/tools/swing-speed-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Swing Speed Calculator
@@ -74,38 +80,38 @@ export default function Header() {
                     </Link>
                     <div className="border-t border-slate-100 my-2"></div>
                     <Link
-                      href="/club-fitting-estimator"
+                      href="/tools/club-fitting-estimator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Club Fitting Estimator
                     </Link>
                     <Link
-                      href="/grip-size-calculator"
+                      href="/tools/grip-size-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Grip Size Calculator
                     </Link>
                     <Link
-                      href="/shaft-flex-calculator"
+                      href="/tools/shaft-flex-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Shaft Flex Calculator
                     </Link>
                     <Link
-                      href="/club-length-calculator"
+                      href="/tools/club-length-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Club Length Calculator
                     </Link>
                     <div className="border-t border-slate-100 my-2"></div>
                     <Link
-                      href="/wind-elevation-adjuster"
+                      href="/tools/wind-elevation-adjuster"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Wind & Elevation Adjuster
                     </Link>
                     <Link
-                      href="/playing-time-estimator"
+                      href="/tools/playing-time-estimator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Playing Time Estimator
@@ -117,26 +123,26 @@ export default function Header() {
                       Tee Recommendation
                     </Link>
                     <Link
-                      href="/strokes-gained-calculator"
+                      href="/tools/strokes-gained-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Strokes Gained Calculator
                     </Link>
                     <Link
-                      href="/range-ball-distance-calculator"
+                      href="/tools/range-ball-distance-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Range Ball Distance
                     </Link>
                     <Link
-                      href="/altitude-distance-calculator"
+                      href="/tools/altitude-distance-calculator"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Altitude Distance
                     </Link>
                     <div className="border-t border-slate-100 my-2"></div>
                     <Link
-                      href="/golf-trip-planner"
+                      href="/tools/golf-trip-planner"
                       className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                     >
                       Golf Trip Planner
@@ -155,6 +161,12 @@ export default function Header() {
               {/* Blog Dropdown Menu */}
               <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2">
+                  <Link
+                    href="/blog"
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors border-b border-slate-100"
+                  >
+                    All Blog Articles
+                  </Link>
                   <Link
                     href="/blog/best-golf-breaks-uk"
                     className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"

@@ -755,7 +755,7 @@ export default function BestGolfBreaksUK() {
                           style={{backgroundColor: '#183a37'}}
                           asChild
                         >
-                          <Link href="/golf-trip-planner">Plan This Trip</Link>
+                          <Link href="/tools/golf-trip-planner">Plan This Trip</Link>
                         </Button>
                         <Button variant="outline" className="w-full" asChild>
                           <Link href="/course-directory">Find Courses</Link>
@@ -861,7 +861,7 @@ export default function BestGolfBreaksUK() {
                   <li>Consider group bookings for discounts</li>
                   <li>Look for package deals including accommodation and multiple rounds</li>
                   <li>Book well in advance for premium courses and peak times</li>
-                  <li>Use our <Link href="/golf-trip-planner" className="text-blue-600 hover:underline">Golf Trip Planner</Link> to compare costs</li>
+                  <li>Use our <Link href="/tools/golf-trip-planner" className="text-blue-600 hover:underline">Golf Trip Planner</Link> to compare costs</li>
                 </ul>
               </div>
             </Card>
@@ -958,7 +958,7 @@ export default function BestGolfBreaksUK() {
                     Plan your entire UK golf break with detailed costs, itineraries, and recommendations.
                   </p>
                   <Button className="w-full text-white" style={{backgroundColor: '#183a37'}} asChild>
-                    <Link href="/golf-trip-planner">Plan Your Trip</Link>
+                    <Link href="/tools/golf-trip-planner">Plan Your Trip</Link>
                   </Button>
                 </div>
 
@@ -971,7 +971,7 @@ export default function BestGolfBreaksUK() {
                     Calculate your WHS handicap index for course bookings and competitions.
                   </p>
                   <Button className="w-full text-white" style={{backgroundColor: '#183a37'}} asChild>
-                    <Link href="/handicap-calculator">Calculate Handicap</Link>
+                    <Link href="/tools/handicap-calculator">Calculate Handicap</Link>
                   </Button>
                 </div>
 
@@ -1080,7 +1080,7 @@ export default function BestGolfBreaksUK() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="text-lg px-8 py-3" asChild>
-                <Link href="/golf-trip-planner">Plan My Golf Break</Link>
+                <Link href="/tools/golf-trip-planner">Plan My Golf Break</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-white text-black hover:bg-white hover:text-black" asChild>
                 <Link href="/course-directory">Browse Golf Courses</Link>
@@ -1101,7 +1101,7 @@ export default function BestGolfBreaksUK() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-4">Essential Planning Tools</h3>
                   <div className="space-y-3">
-                    <Link href="/golf-trip-planner" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                    <Link href="/tools/golf-trip-planner" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
                       <MapPin className="h-5 w-5 text-emerald-600" />
                       <div>
                         <div className="font-medium text-slate-900">Golf Trip Planner</div>
@@ -1115,14 +1115,14 @@ export default function BestGolfBreaksUK() {
                         <div className="text-sm text-slate-600">Discover golf courses near your destination</div>
                       </div>
                     </Link>
-                    <Link href="/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                    <Link href="/tools/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
                       <Trophy className="h-5 w-5 text-emerald-600" />
                       <div>
                         <div className="font-medium text-slate-900">Handicap Calculator</div>
                         <div className="text-sm text-slate-600">Ensure you meet course requirements</div>
                       </div>
                     </Link>
-                    <Link href="/distance-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
+                    <Link href="/tools/club-distance-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
                       <Car className="h-5 w-5 text-emerald-600" />
                       <div>
                         <div className="font-medium text-slate-900">Distance Calculator</div>

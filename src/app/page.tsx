@@ -22,7 +22,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow-lg border-0" asChild>
-                <Link href="/handicap-calculator">Track Your Handicap</Link>
+                <Link href="/tools/handicap-calculator">Track Your Handicap</Link>
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 font-semibold rounded-lg" asChild>
                 <Link href="/blog/best-golf-breaks-uk">Discover Golf Breaks</Link>
@@ -58,7 +58,7 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <Button asChild className="hover:opacity-90 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0">
-                  <Link href="/handicap-calculator">
+                  <Link href="/tools/handicap-calculator">
                     Explore Golf Tools
                   </Link>
                 </Button>
@@ -142,7 +142,7 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <Button asChild className="hover:opacity-90 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0">
-                  <Link href="/handicap-calculator">
+                  <Link href="/tools/handicap-calculator">
                     Track Your Game
                   </Link>
                 </Button>
@@ -284,9 +284,9 @@ export default function Home() {
             <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
               <h4 className="font-bold text-emerald-600 mb-2">Handicap & Scoring</h4>
               <ul className="space-y-1 text-sm">
-                <li><Link href="/handicap-calculator" className="text-slate-700 hover:text-emerald-600">WHS Handicap Calculator</Link></li>
-                <li><Link href="/course-handicap-calculator" className="text-slate-700 hover:text-emerald-600">Course Handicap Calculator</Link></li>
-                <li><Link href="/stableford-calculator" className="text-slate-700 hover:text-emerald-600">Stableford Calculator</Link></li>
+                <li><Link href="/tools/handicap-calculator" className="text-slate-700 hover:text-emerald-600">WHS Handicap Calculator</Link></li>
+                <li><Link href="/tools/course-handicap-calculator" className="text-slate-700 hover:text-emerald-600">Course Handicap Calculator</Link></li>
+                <li><Link href="/tools/stableford-calculator" className="text-slate-700 hover:text-emerald-600">Stableford Calculator</Link></li>
                 <li><Link href="/strokes-gained-calculator" className="text-slate-700 hover:text-emerald-600">Strokes Gained Calculator</Link></li>
               </ul>
             </div>
@@ -295,7 +295,7 @@ export default function Home() {
             <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
               <h4 className="font-bold text-emerald-600 mb-2">Distance & Performance</h4>
               <ul className="space-y-1 text-sm">
-                <li><Link href="/swing-speed-calculator" className="text-slate-700 hover:text-emerald-600">Swing Speed Calculator</Link></li>
+                <li><Link href="/tools/swing-speed-calculator" className="text-slate-700 hover:text-emerald-600">Swing Speed Calculator</Link></li>
                 <li><Link href="/ball-speed-calculator" className="text-slate-700 hover:text-emerald-600">Ball Speed Calculator</Link></li>
                 <li><Link href="/club-distance-calculator" className="text-slate-700 hover:text-emerald-600">Club Distance Calculator</Link></li>
                 <li><Link href="/altitude-distance-calculator" className="text-slate-700 hover:text-emerald-600">Altitude Distance Calculator</Link></li>
@@ -421,7 +421,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0" asChild>
-              <Link href="/handicap-calculator">Track Your Handicap</Link>
+              <Link href="/tools/handicap-calculator">Track Your Handicap</Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white font-semibold rounded-lg" asChild>
               <Link href="/course-directory">Find Golf Courses</Link>
