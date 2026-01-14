@@ -543,7 +543,7 @@ export default function BestGolfBreaksUK() {
 
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6 font-cooper">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
               Best Golf Breaks in the UK 2025
             </h1>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
@@ -659,7 +659,7 @@ export default function BestGolfBreaksUK() {
 
           {/* UK Golf Breaks */}
           <section id="uk-golf-breaks" className="mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-8 font-cooper">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
               Top UK Golf Breaks for 2025
             </h2>
             <p className="text-lg text-slate-700 mb-8">
@@ -677,10 +677,10 @@ export default function BestGolfBreaksUK() {
                     <div className="md:col-span-2">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                          <h3 className="text-2xl font-bold text-gray-900 mb-2">
                             {golfBreak.name}
                           </h3>
-                          <div className="flex items-center gap-2 text-slate-600 mb-2">
+                          <div className="flex items-center gap-2 text-gray-600 mb-2">
                             <MapPin className="h-4 w-4" />
                             <span>{golfBreak.location}</span>
                           </div>
@@ -695,22 +695,22 @@ export default function BestGolfBreaksUK() {
                         </div>
                       </div>
 
-                      <p className="text-slate-700 mb-4">
+                      <p className="text-gray-700 mb-4">
                         {golfBreak.whyVisit}
                       </p>
 
                       <div className="grid md:grid-cols-2 gap-4 mb-4">
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-2">Golf Courses</h4>
-                          <ul className="text-sm text-slate-700 space-y-1">
+                          <h4 className="font-semibold text-gray-900 mb-2">Golf Courses</h4>
+                          <ul className="text-sm text-gray-700 space-y-1">
                             {golfBreak.courses.map((course, index) => (
                               <li key={index}>• {course}</li>
                             ))}
                           </ul>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-2">Key Highlights</h4>
-                          <ul className="text-sm text-slate-700 space-y-1">
+                          <h4 className="font-semibold text-gray-900 mb-2">Key Highlights</h4>
+                          <ul className="text-sm text-gray-700 space-y-1">
                             {golfBreak.highlights.map((highlight, index) => (
                               <li key={index}>• {highlight}</li>
                             ))}
@@ -729,16 +729,16 @@ export default function BestGolfBreaksUK() {
                         ))}
                       </div>
 
-                      <div className="bg-slate-100 p-3 rounded-lg">
-                        <h5 className="font-semibold text-slate-900 mb-1">Booking Tips</h5>
-                        <p className="text-sm text-slate-700">{golfBreak.bookingTips}</p>
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <h5 className="font-semibold text-gray-900 mb-1">Booking Tips</h5>
+                        <p className="text-sm text-gray-700">{golfBreak.bookingTips}</p>
                       </div>
                     </div>
 
                     <div className="md:col-span-1 space-y-4">
                       <div>
-                        <h4 className="font-semibold text-slate-900 mb-2">Accommodation</h4>
-                        <p className="text-sm text-slate-700">{golfBreak.accommodation}</p>
+                        <h4 className="font-semibold text-gray-900 mb-2">Accommodation</h4>
+                        <p className="text-sm text-gray-700">{golfBreak.accommodation}</p>
                       </div>
 
                       <div className="space-y-2 mb-4">
@@ -772,12 +772,12 @@ export default function BestGolfBreaksUK() {
           {/* Price Guide */}
           <section id="price-guide" className="mb-16">
             <Card className="p-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 UK Golf Break Price Guide 2025
               </h2>
 
               <div className="bg-blue-50 p-6 rounded-lg mb-8">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">Price Guide Explanation</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Price Guide Explanation</h3>
                 <div className="grid md:grid-cols-4 gap-4 text-sm">
                   <div className="text-center">
                     <div className="text-2xl font-bold mb-2 text-brand-primary">£</div>
@@ -811,18 +811,18 @@ export default function BestGolfBreaksUK() {
                     <div className="text-3xl font-bold mb-2 text-brand-primary">
                       {range.range}
                     </div>
-                    <div className="font-semibold text-slate-900 mb-2">
+                    <div className="font-semibold text-gray-900 mb-2">
                       {range.description}
                     </div>
-                    <div className="text-sm text-slate-600">
+                    <div className="text-sm text-gray-600">
                       {range.count} destinations
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="text-slate-700">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
+              <div className="text-gray-700">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
                   What&apos;s Included in Golf Break Prices?
                 </h3>
                 <ul className="space-y-2 mb-6">
@@ -832,7 +832,7 @@ export default function BestGolfBreaksUK() {
                   <li><strong>Resort Facilities:</strong> Access to clubhouse, practice facilities</li>
                 </ul>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Additional Costs to Consider
                 </h3>
                 <ul className="space-y-2 mb-6">
@@ -843,7 +843,7 @@ export default function BestGolfBreaksUK() {
                   <li><strong>Golf Lessons:</strong> £50-150 per session with professionals</li>
                 </ul>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Money-Saving Tips for UK Golf Breaks
                 </h3>
                 <ul className="space-y-2">
@@ -1061,7 +1061,7 @@ export default function BestGolfBreaksUK() {
 
           {/* Conclusion CTA */}
           <div className="text-center rounded-lg p-12 text-white bg-gradient-to-br from-brand-secondary to-brand-primary">
-            <h2 className="text-3xl font-bold mb-4 font-cooper">
+            <h2 className="text-3xl font-bold mb-4">
               Start Planning Your Perfect UK Golf Break
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
