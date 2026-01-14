@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Calculator, TrendingUp, Ruler, Settings, MapPin, Clock, Wrench } from 'lucide-react'
+import { Calculator, TrendingUp, Ruler, Settings, MapPin, Clock, Wrench, Award } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Golf Tools & Calculators - Free Professional Golf Apps | Welton Golf',
-  description: 'Complete collection of free golf tools and calculators. WHS handicap calculator, swing speed, club fitting, stableford, and distance calculators. All professional-grade and free to use.',
+  description: 'Complete collection of free golf tools and calculators. WHS handicap system, scoring analysis, swing speed, club fitting, and distance calculators. All professional-grade and free to use.',
   keywords: 'golf tools, golf calculators, WHS handicap calculator, swing speed calculator, club fitting calculator, stableford calculator, golf apps UK, free golf tools',
   openGraph: {
     title: 'Golf Tools & Calculators - Free Professional Golf Apps | Welton Golf',
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
 const toolCategories = [
   {
     id: 'handicap',
-    title: 'Handicap & Scoring',
+    title: 'Handicap System',
     icon: Calculator,
-    description: 'Track your handicap and scoring performance with WHS-compliant calculators',
+    description: 'Official WHS handicap calculations and course handicap conversions',
     color: 'emerald',
     tools: [
       {
@@ -47,11 +47,21 @@ const toolCategories = [
         title: 'Course Handicap Calculator',
         slug: 'course-handicap-calculator',
         description: 'Convert your handicap index to course handicap for any tee'
-      },
+      }
+    ]
+  },
+  {
+    id: 'scoring',
+    title: 'Scoring',
+    icon: Award,
+    description: 'Track and analyze your golf scoring with different formats and metrics',
+    color: 'amber',
+    tools: [
       {
         title: 'Stableford Calculator',
         slug: 'stableford-calculator',
-        description: 'Calculate Stableford points based on your handicap and scores'
+        description: 'Calculate Stableford points based on your handicap and scores',
+        featured: true
       },
       {
         title: 'Strokes Gained Calculator',
@@ -163,6 +173,12 @@ const getColorClasses = (color: string) => {
       text: 'text-brand-primary',
       border: 'border-emerald-200',
       hover: 'hover:border-emerald-300'
+    },
+    amber: {
+      bg: 'bg-amber-100',
+      text: 'text-amber-600',
+      border: 'border-amber-200',
+      hover: 'hover:border-amber-300'
     },
     blue: {
       bg: 'bg-blue-100',
