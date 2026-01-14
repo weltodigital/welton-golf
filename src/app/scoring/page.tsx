@@ -15,6 +15,11 @@ const scoringArticles = [
     title: 'How Golf Scoring Works',
     description: 'Master the fundamentals of golf scoring systems and start playing with confidence. Complete guide to stroke play, Stableford, match play and handicaps.',
     href: '/scoring/how-golf-scoring-works',
+  },
+  {
+    title: 'Handicap Index Explained',
+    description: 'Understanding your handicap index made simple. Learn how the WHS handicap system works, what your handicap index means, and how to use it effectively.',
+    href: '/scoring/handicap-index-explained',
   }
 ]
 
