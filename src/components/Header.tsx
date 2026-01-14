@@ -163,6 +163,12 @@ export default function Header() {
                 <div className="py-2">
                   <div className="px-4 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">Golf Travel</div>
                   <Link
+                    href="/travel"
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors border-b border-slate-100"
+                  >
+                    All Travel Articles
+                  </Link>
+                  <Link
                     href="/travel/best-golf-breaks-uk"
                     className="block px-4 py-2 text-sm text-slate-900 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors"
                   >
@@ -183,22 +189,22 @@ export default function Header() {
                   <div className="border-t border-slate-100 my-2"></div>
                   <div className="px-4 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wide">Golf Improvement</div>
                   <Link
-                    href="/break-80/how-to-break-80-golf"
-                    className="block px-4 py-2 text-sm text-slate-900 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors"
+                    href="/break-80"
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors border-b border-slate-100"
                   >
-                    How to Break 80
+                    Break 80 Strategies
                   </Link>
                   <Link
-                    href="/break-90/how-to-break-90-golf"
-                    className="block px-4 py-2 text-sm text-slate-900 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors"
+                    href="/break-90"
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors border-b border-slate-100"
                   >
-                    How to Break 90
+                    Break 90 Tips
                   </Link>
                   <Link
-                    href="/break-100/how-to-break-100-golf"
-                    className="block px-4 py-2 text-sm text-slate-900 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors"
+                    href="/break-100"
+                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary font-medium transition-colors"
                   >
-                    How to Break 100
+                    Break 100 Guide
                   </Link>
                 </div>
               </div>
