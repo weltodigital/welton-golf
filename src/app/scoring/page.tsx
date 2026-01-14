@@ -16,7 +16,7 @@ export default function ScoringPage() {
       <div className="bg-amber-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Golf Scoring Mastery
+            Scoring
           </h1>
           <p className="text-xl max-w-3xl mx-auto">
             Master the art of scoring in golf. From course management to mental game strategies,

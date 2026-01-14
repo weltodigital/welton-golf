@@ -15,7 +15,7 @@ export default function Break90Page() {
       <div className="bg-brand-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Break 90 in Golf
+            Break 90
           </h1>
           <p className="text-xl max-w-3xl mx-auto">
             Master the strategies and techniques needed to consistently shoot under 90.

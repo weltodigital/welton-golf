@@ -15,7 +15,7 @@ export default function Break100Page() {
       <div className="bg-brand-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Break 100 in Golf
+            Break 100
           </h1>
           <p className="text-xl max-w-3xl mx-auto">
             Master the fundamentals and build the confidence needed to consistently break 100.
