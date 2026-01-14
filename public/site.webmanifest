@@ -1,0 +1,19 @@
+{
+  "name": "Welton Golf - Golf Tools & Calculators",
+  "short_name": "Welton Golf",
+  "description": "Professional golf tools, handicap calculators, and course directory for golfers in the UK",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#099669",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["sports", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

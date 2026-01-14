@@ -9,18 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Brand Colors
+        brand: {
+          primary: "#099669",      // Brand emerald green
+          secondary: "#0B4F6C",    // Brand dark blue-teal
+          light: "#E6F7F1",        // Light green tint
+          dark: "#064A42",         // Darker green for depth
+        },
+        // Override emerald with brand green
+        emerald: {
+          50: "#E6F7F1",
+          100: "#CCEFE4",
+          200: "#99DFC9",
+          300: "#66CFAD",
+          400: "#33BF92",
+          500: "#099669",  // Brand primary
+          600: "#087B54",
+          700: "#066240",
+          800: "#04482B",
+          900: "#022F17",
+        },
+        // Shadcn/ui colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#099669",  // Brand primary
+          foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#0B4F6C",  // Brand secondary
+          foreground: "#ffffff",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-slate-50">
 
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-emerald-50">
+      <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 to-emerald-100">
 
         {/* Content */}
         <div className="container mx-auto px-4 py-16">
@@ -21,11 +21,11 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg shadow-lg border-0" asChild>
+              <Button size="lg" className="text-lg px-8 py-4 bg-brand-primary hover:bg-brand-dark text-white font-semibold rounded-lg shadow-lg border-0" asChild>
                 <Link href="/tools/handicap-calculator">Track Your Handicap</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50 font-semibold rounded-lg" asChild>
-                <Link href="/blog/best-golf-breaks-uk">Discover Golf Breaks</Link>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-2 border-brand-primary text-brand-primary hover:bg-emerald-50 font-semibold rounded-lg" asChild>
+                <Link href="/travel/best-golf-breaks-uk">Discover Golf Breaks</Link>
               </Button>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function Home() {
             {/* Golf Tools & Calculators */}
             <div className="bg-white  rounded-lg p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <Calculator className="h-8 w-8 text-emerald-600" />
+                <Calculator className="h-8 w-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900  mb-4 text-center">
                 Golf Tools & Calculators
@@ -68,7 +68,7 @@ export default function Home() {
             {/* Golf Travel & Breaks */}
             <div className="bg-white  rounded-lg p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <MapPin className="h-8 w-8 text-emerald-600" />
+                <MapPin className="h-8 w-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900  mb-4 text-center">
                 Golf Travel & Breaks
@@ -79,7 +79,7 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <Button asChild className="hover:opacity-90 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0">
-                  <Link href="/blog/best-golf-breaks-uk">
+                  <Link href="/travel/best-golf-breaks-uk">
                     Plan Your Golf Trip
                   </Link>
                 </Button>
@@ -89,7 +89,7 @@ export default function Home() {
             {/* Golf Guides & Tips */}
             <div className="bg-white  rounded-lg p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <BookOpen className="h-8 w-8 text-emerald-600" />
+                <BookOpen className="h-8 w-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900  mb-4 text-center">
                 Golf Guides & Tips
@@ -100,7 +100,7 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <Button asChild className="hover:opacity-90 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0">
-                  <Link href="/blog/how-to-break-90-golf">
+                  <Link href="/break-90/how-to-break-90-golf">
                     Explore Golf Guides
                   </Link>
                 </Button>
@@ -110,7 +110,7 @@ export default function Home() {
             {/* Course Directory */}
             <div className="bg-white  rounded-lg p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <MapPin className="h-8 w-8 text-emerald-600" />
+                <MapPin className="h-8 w-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900  mb-4 text-center">
                 Course Directory
@@ -131,7 +131,7 @@ export default function Home() {
             {/* Performance Tracking */}
             <div className="bg-white  rounded-lg p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="h-8 w-8 text-emerald-600" />
+                <TrendingUp className="h-8 w-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900  mb-4 text-center">
                 Performance Tracking
@@ -152,7 +152,7 @@ export default function Home() {
             {/* Golf Community */}
             <div className="bg-white  rounded-lg p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-emerald-600" />
+                <Users className="h-8 w-8 text-brand-primary" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900  mb-4 text-center">
                 Golf Community
@@ -163,7 +163,7 @@ export default function Home() {
               </p>
               <div className="text-center">
                 <Button asChild className="hover:opacity-90 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg border-0">
-                  <Link href="/blog/best-golf-breaks-uk">
+                  <Link href="/travel/best-golf-breaks-uk">
                     Join the Community
                   </Link>
                 </Button>
@@ -182,19 +182,19 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
-                <div className="text-5xl font-black mb-2 text-emerald-600">15+</div>
+                <div className="text-5xl font-black mb-2 text-brand-primary">15+</div>
                 <div className="text-slate-700 font-medium">Professional Tools</div>
               </div>
               <div>
-                <div className="text-5xl font-black mb-2 text-emerald-600">100%</div>
+                <div className="text-5xl font-black mb-2 text-brand-primary">100%</div>
                 <div className="text-slate-700 font-medium">WHS Compliant</div>
               </div>
               <div>
-                <div className="text-5xl font-black mb-2 text-emerald-600">1000+</div>
+                <div className="text-5xl font-black mb-2 text-brand-primary">1000+</div>
                 <div className="text-slate-700 font-medium">Golf Courses Listed</div>
               </div>
               <div>
-                <div className="text-5xl font-black mb-2 text-emerald-600">24/7</div>
+                <div className="text-5xl font-black mb-2 text-brand-primary">24/7</div>
                 <div className="text-slate-700 font-medium">Access Available</div>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Trophy className="h-6 w-6 text-emerald-600" />
+                <Trophy className="h-6 w-6 text-brand-primary" />
               </div>
               <h3 className="font-bold text-slate-900  mb-2">Professional Tools</h3>
               <p className="text-sm text-slate-700">
@@ -250,19 +250,19 @@ export default function Home() {
             </h3>
             <div className="grid md:grid-cols-4 gap-6 text-sm text-center">
               <div>
-                <strong className="block text-emerald-600 text-2xl font-black mb-1">100%</strong>
+                <strong className="block text-brand-primary text-2xl font-black mb-1">100%</strong>
                 <span className="text-slate-700 font-medium">WHS Compliant</span>
               </div>
               <div>
-                <strong className="block text-emerald-600 text-2xl font-black mb-1">20</strong>
+                <strong className="block text-brand-primary text-2xl font-black mb-1">20</strong>
                 <span className="text-slate-700 font-medium">Rounds Tracking</span>
               </div>
               <div>
-                <strong className="block text-emerald-600 text-2xl font-black mb-1">0</strong>
+                <strong className="block text-brand-primary text-2xl font-black mb-1">0</strong>
                 <span className="text-slate-700 font-medium">Cost Forever</span>
               </div>
               <div>
-                <strong className="block text-emerald-600 text-2xl font-black mb-1">24/7</strong>
+                <strong className="block text-brand-primary text-2xl font-black mb-1">24/7</strong>
                 <span className="text-slate-700 font-medium">Access Available</span>
               </div>
             </div>
@@ -282,47 +282,47 @@ export default function Home() {
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
             {/* Handicap & Scoring */}
             <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
-              <h4 className="font-bold text-emerald-600 mb-2">Handicap & Scoring</h4>
+              <h4 className="font-bold text-brand-primary mb-2">Handicap & Scoring</h4>
               <ul className="space-y-1 text-sm">
-                <li><Link href="/tools/handicap-calculator" className="text-slate-700 hover:text-emerald-600">WHS Handicap Calculator</Link></li>
-                <li><Link href="/tools/course-handicap-calculator" className="text-slate-700 hover:text-emerald-600">Course Handicap Calculator</Link></li>
-                <li><Link href="/tools/stableford-calculator" className="text-slate-700 hover:text-emerald-600">Stableford Calculator</Link></li>
-                <li><Link href="/strokes-gained-calculator" className="text-slate-700 hover:text-emerald-600">Strokes Gained Calculator</Link></li>
+                <li><Link href="/tools/handicap-calculator" className="text-slate-700 hover:text-brand-primary">WHS Handicap Calculator</Link></li>
+                <li><Link href="/tools/course-handicap-calculator" className="text-slate-700 hover:text-brand-primary">Course Handicap Calculator</Link></li>
+                <li><Link href="/tools/stableford-calculator" className="text-slate-700 hover:text-brand-primary">Stableford Calculator</Link></li>
+                <li><Link href="/strokes-gained-calculator" className="text-slate-700 hover:text-brand-primary">Strokes Gained Calculator</Link></li>
               </ul>
             </div>
 
             {/* Distance & Performance */}
             <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
-              <h4 className="font-bold text-emerald-600 mb-2">Distance & Performance</h4>
+              <h4 className="font-bold text-brand-primary mb-2">Distance & Performance</h4>
               <ul className="space-y-1 text-sm">
-                <li><Link href="/tools/swing-speed-calculator" className="text-slate-700 hover:text-emerald-600">Swing Speed Calculator</Link></li>
-                <li><Link href="/ball-speed-calculator" className="text-slate-700 hover:text-emerald-600">Ball Speed Calculator</Link></li>
-                <li><Link href="/club-distance-calculator" className="text-slate-700 hover:text-emerald-600">Club Distance Calculator</Link></li>
-                <li><Link href="/altitude-distance-calculator" className="text-slate-700 hover:text-emerald-600">Altitude Distance Calculator</Link></li>
-                <li><Link href="/wind-elevation-adjuster" className="text-slate-700 hover:text-emerald-600">Wind & Elevation Adjuster</Link></li>
-                <li><Link href="/range-ball-distance-calculator" className="text-slate-700 hover:text-emerald-600">Range Ball Distance</Link></li>
+                <li><Link href="/tools/swing-speed-calculator" className="text-slate-700 hover:text-brand-primary">Swing Speed Calculator</Link></li>
+                <li><Link href="/ball-speed-calculator" className="text-slate-700 hover:text-brand-primary">Ball Speed Calculator</Link></li>
+                <li><Link href="/club-distance-calculator" className="text-slate-700 hover:text-brand-primary">Club Distance Calculator</Link></li>
+                <li><Link href="/altitude-distance-calculator" className="text-slate-700 hover:text-brand-primary">Altitude Distance Calculator</Link></li>
+                <li><Link href="/wind-elevation-adjuster" className="text-slate-700 hover:text-brand-primary">Wind & Elevation Adjuster</Link></li>
+                <li><Link href="/range-ball-distance-calculator" className="text-slate-700 hover:text-brand-primary">Range Ball Distance</Link></li>
               </ul>
             </div>
 
             {/* Equipment & Fitting */}
             <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
-              <h4 className="font-bold text-emerald-600 mb-2">Equipment & Fitting</h4>
+              <h4 className="font-bold text-brand-primary mb-2">Equipment & Fitting</h4>
               <ul className="space-y-1 text-sm">
-                <li><Link href="/club-fitting-estimator" className="text-slate-700 hover:text-emerald-600">Club Fitting Estimator</Link></li>
-                <li><Link href="/club-length-calculator" className="text-slate-700 hover:text-emerald-600">Club Length Calculator</Link></li>
-                <li><Link href="/grip-size-calculator" className="text-slate-700 hover:text-emerald-600">Grip Size Calculator</Link></li>
-                <li><Link href="/shaft-flex-calculator" className="text-slate-700 hover:text-emerald-600">Shaft Flex Calculator</Link></li>
+                <li><Link href="/club-fitting-estimator" className="text-slate-700 hover:text-brand-primary">Club Fitting Estimator</Link></li>
+                <li><Link href="/club-length-calculator" className="text-slate-700 hover:text-brand-primary">Club Length Calculator</Link></li>
+                <li><Link href="/grip-size-calculator" className="text-slate-700 hover:text-brand-primary">Grip Size Calculator</Link></li>
+                <li><Link href="/shaft-flex-calculator" className="text-slate-700 hover:text-brand-primary">Shaft Flex Calculator</Link></li>
               </ul>
             </div>
 
             {/* Course & Planning */}
             <div className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 transition-colors">
-              <h4 className="font-bold text-emerald-600 mb-2">Course & Planning</h4>
+              <h4 className="font-bold text-brand-primary mb-2">Course & Planning</h4>
               <ul className="space-y-1 text-sm">
-                <li><Link href="/tee-recommendation-calculator" className="text-slate-700 hover:text-emerald-600">Tee Recommendation</Link></li>
-                <li><Link href="/playing-time-estimator" className="text-slate-700 hover:text-emerald-600">Playing Time Estimator</Link></li>
-                <li><Link href="/golf-trip-planner" className="text-slate-700 hover:text-emerald-600">Golf Trip Planner</Link></li>
-                <li><Link href="/course-directory" className="text-slate-700 hover:text-emerald-600">Course Directory</Link></li>
+                <li><Link href="/tee-recommendation-calculator" className="text-slate-700 hover:text-brand-primary">Tee Recommendation</Link></li>
+                <li><Link href="/playing-time-estimator" className="text-slate-700 hover:text-brand-primary">Playing Time Estimator</Link></li>
+                <li><Link href="/golf-trip-planner" className="text-slate-700 hover:text-brand-primary">Golf Trip Planner</Link></li>
+                <li><Link href="/course-directory" className="text-slate-700 hover:text-brand-primary">Course Directory</Link></li>
               </ul>
             </div>
           </div>
@@ -334,17 +334,17 @@ export default function Home() {
               <div className="p-4 bg-emerald-50 rounded-lg">
                 <h4 className="font-bold text-emerald-700 mb-3">Improve Your Scoring</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/blog/how-to-break-100-golf" className="text-slate-700 hover:text-emerald-600">How to Break 100 in Golf</Link></li>
-                  <li><Link href="/blog/how-to-break-90-golf" className="text-slate-700 hover:text-emerald-600">How to Break 90 in Golf</Link></li>
-                  <li><Link href="/blog/how-to-break-80-golf" className="text-slate-700 hover:text-emerald-600">How to Break 80 in Golf</Link></li>
+                  <li><Link href="/break-100/how-to-break-100-golf" className="text-slate-700 hover:text-brand-primary">How to Break 100 in Golf</Link></li>
+                  <li><Link href="/break-90/how-to-break-90-golf" className="text-slate-700 hover:text-brand-primary">How to Break 90 in Golf</Link></li>
+                  <li><Link href="/break-80/how-to-break-80-golf" className="text-slate-700 hover:text-brand-primary">How to Break 80 in Golf</Link></li>
                 </ul>
               </div>
               <div className="p-4 bg-blue-50 rounded-lg">
                 <h4 className="font-bold text-blue-700 mb-3">Best Golf Destinations</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/blog/best-golf-breaks-uk" className="text-slate-700 hover:text-blue-600">Best Golf Breaks in the UK</Link></li>
-                  <li><Link href="/blog/best-golf-breaks-wales" className="text-slate-700 hover:text-blue-600">Best Golf Breaks in Wales</Link></li>
-                  <li><Link href="/blog/best-golf-breaks-bournemouth" className="text-slate-700 hover:text-blue-600">Best Golf Breaks in Bournemouth</Link></li>
+                  <li><Link href="/travel/best-golf-breaks-uk" className="text-slate-700 hover:text-brand-secondary">Best Golf Breaks in the UK</Link></li>
+                  <li><Link href="/travel/best-golf-breaks-wales" className="text-slate-700 hover:text-brand-secondary">Best Golf Breaks in Wales</Link></li>
+                  <li><Link href="/travel/best-golf-breaks-bournemouth" className="text-slate-700 hover:text-brand-secondary">Best Golf Breaks in Bournemouth</Link></li>
                 </ul>
               </div>
             </div>

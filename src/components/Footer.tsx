@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-emerald-600 border-t border-emerald-700 py-12 mt-16">
+    <footer className="bg-brand-secondary border-t border-brand-secondary py-12 mt-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -16,13 +16,13 @@ export default function Footer() {
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-emerald-100 text-sm">
+            <p className="text-white text-sm">
               Your premier destination for golf apps and tools to enhance your game.
             </p>
           </div>
           <div>
             <h4 className="font-bold mb-4 text-white">Golf Tools</h4>
-            <ul className="space-y-2 text-sm text-emerald-100">
+            <ul className="space-y-2 text-sm text-white">
               <li><Link href="/tools/handicap-calculator" className="hover:text-white transition-colors">Handicap Calculator</Link></li>
               <li><Link href="/tools/course-handicap-calculator" className="hover:text-white transition-colors">Course Handicap Calculator</Link></li>
               <li><Link href="/tools/stableford-calculator" className="hover:text-white transition-colors">Stableford Calculator</Link></li>
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-bold mb-4 text-white">Company</h4>
-            <ul className="space-y-2 text-sm text-emerald-100">
+            <ul className="space-y-2 text-sm text-white">
               <li><a href="mailto:weltongolf@weltodigital.com" className="hover:text-white transition-colors">weltongolf@weltodigital.com</a></li>
               <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
@@ -40,7 +40,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-sm text-emerald-100">
+        <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-sm text-white">
           <p>&copy; 2025 Welton Golf. All rights reserved. Enhancing your golf experience.</p>
         </div>
       </div>

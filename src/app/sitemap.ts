@@ -14,33 +14,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.weltongolf.com/tools',
       lastModified: new Date('2024-12-19'),
     },
+    // Golf Travel Articles
     {
-      url: 'https://www.weltongolf.com/blog',
-      lastModified: new Date('2024-12-17'),
-    },
-    // Blog Articles
-    {
-      url: 'https://www.weltongolf.com/blog/best-golf-breaks-uk',
+      url: 'https://www.weltongolf.com/travel/best-golf-breaks-uk',
       lastModified: new Date('2024-12-15'),
     },
     {
-      url: 'https://www.weltongolf.com/blog/best-golf-breaks-wales',
+      url: 'https://www.weltongolf.com/travel/best-golf-breaks-wales',
       lastModified: new Date('2024-12-12'),
     },
     {
-      url: 'https://www.weltongolf.com/blog/best-golf-breaks-bournemouth',
+      url: 'https://www.weltongolf.com/travel/best-golf-breaks-bournemouth',
       lastModified: new Date('2024-12-10'),
     },
+    // Golf Improvement Articles
     {
-      url: 'https://www.weltongolf.com/blog/how-to-break-80-golf',
+      url: 'https://www.weltongolf.com/break-80/how-to-break-80-golf',
       lastModified: new Date('2024-12-08'),
     },
     {
-      url: 'https://www.weltongolf.com/blog/how-to-break-90-golf',
+      url: 'https://www.weltongolf.com/break-90/how-to-break-90-golf',
       lastModified: new Date('2024-12-05'),
     },
     {
-      url: 'https://www.weltongolf.com/blog/how-to-break-100-golf',
+      url: 'https://www.weltongolf.com/break-100/how-to-break-100-golf',
       lastModified: new Date('2024-12-03'),
     },
     // Handicap & Scoring Calculators

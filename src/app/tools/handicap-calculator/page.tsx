@@ -126,7 +126,7 @@ export default function HandicapCalculator() {
           {/* Breadcrumbs */}
           <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-brand-primary">Home</Link></li>
               <li className="before:content-['/'] before:mx-2 text-slate-900">Handicap Calculator</li>
             </ol>
           </nav>
@@ -135,7 +135,7 @@ export default function HandicapCalculator() {
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                <Calculator className="h-6 w-6 text-emerald-600" />
+                <Calculator className="h-6 w-6 text-brand-primary" />
               </div>
               <div>
                 <h1 className="text-4xl font-black text-slate-900 mb-2">
@@ -157,7 +157,7 @@ export default function HandicapCalculator() {
                 Calculate your handicap index using up to 20 scores with automatic score differential calculations,
                 course rating adjustments, and slope rating considerations.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-emerald-700">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-brand-primary">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                   WHS Compliant Algorithm
@@ -266,7 +266,7 @@ export default function HandicapCalculator() {
 
                 <Button
                   onClick={addScore}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
+                  className="w-full bg-brand-primary hover:bg-brand-dark text-white font-semibold"
                   disabled={!currentScore.adjustedGrossScore || !currentScore.courseRating || !currentScore.slopeRating}
                 >
                   Add Score
@@ -456,7 +456,7 @@ export default function HandicapCalculator() {
                   href="/tools/course-handicap-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
-                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Course Handicap Calculator</h3>
+                  <h3 className="font-bold text-slate-900 group-hover:text-brand-dark mb-2">Course Handicap Calculator</h3>
                   <p className="text-sm text-slate-600">Convert your handicap index to a course handicap for any tee</p>
                 </Link>
 
@@ -464,7 +464,7 @@ export default function HandicapCalculator() {
                   href="/tools/stableford-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
-                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Stableford Calculator</h3>
+                  <h3 className="font-bold text-slate-900 group-hover:text-brand-dark mb-2">Stableford Calculator</h3>
                   <p className="text-sm text-slate-600">Calculate Stableford points based on your handicap and scores</p>
                 </Link>
 
@@ -472,7 +472,7 @@ export default function HandicapCalculator() {
                   href="/tools/strokes-gained-calculator"
                   className="p-4 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                 >
-                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-700 mb-2">Strokes Gained Calculator</h3>
+                  <h3 className="font-bold text-slate-900 group-hover:text-brand-dark mb-2">Strokes Gained Calculator</h3>
                   <p className="text-sm text-slate-600">Analyze your performance with advanced strokes gained metrics</p>
                 </Link>
               </div>
@@ -480,16 +480,16 @@ export default function HandicapCalculator() {
               <div className="mt-6 pt-6 border-t border-slate-200">
                 <h4 className="font-bold text-slate-900 mb-3">Popular Golf Resources</h4>
                 <div className="flex flex-wrap gap-2">
-                  <Link href="/course-directory" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                  <Link href="/course-directory" className="text-sm px-3 py-1 bg-emerald-100 text-brand-primary rounded-full hover:bg-emerald-200">
                     Course Directory
                   </Link>
-                  <Link href="/blog/how-to-break-90-golf" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                  <Link href="/break-90/how-to-break-90-golf" className="text-sm px-3 py-1 bg-emerald-100 text-brand-primary rounded-full hover:bg-emerald-200">
                     Break 90 Guide
                   </Link>
-                  <Link href="/blog/how-to-break-80-golf" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                  <Link href="/break-80/how-to-break-80-golf" className="text-sm px-3 py-1 bg-emerald-100 text-brand-primary rounded-full hover:bg-emerald-200">
                     Break 80 Guide
                   </Link>
-                  <Link href="/tools/swing-speed-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200">
+                  <Link href="/tools/swing-speed-calculator" className="text-sm px-3 py-1 bg-emerald-100 text-brand-primary rounded-full hover:bg-emerald-200">
                     Swing Speed Calculator
                   </Link>
                 </div>

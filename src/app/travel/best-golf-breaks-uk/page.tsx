@@ -543,8 +543,8 @@ export default function BestGolfBreaksUK() {
           {/* Breadcrumbs */}
           <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
-              <li className="before:content-['/'] before:mx-2"><Link href="/blog" className="hover:text-emerald-600">Blog</Link></li>
+              <li><Link href="/" className="hover:text-brand-primary">Home</Link></li>
+              <li className="before:content-['/'] before:mx-2"><span className="text-brand-primary">Travel</span></li>
               <li className="before:content-['/'] before:mx-2 text-slate-900">Best Golf Breaks UK</li>
             </ol>
           </nav>
@@ -1102,28 +1102,28 @@ export default function BestGolfBreaksUK() {
                   <h3 className="font-bold text-slate-900 mb-4">Essential Planning Tools</h3>
                   <div className="space-y-3">
                     <Link href="/tools/golf-trip-planner" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <MapPin className="h-5 w-5 text-emerald-600" />
+                      <MapPin className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Golf Trip Planner</div>
                         <div className="text-sm text-slate-600">Plan your perfect UK golf break</div>
                       </div>
                     </Link>
                     <Link href="/course-directory" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <Globe className="h-5 w-5 text-emerald-600" />
+                      <Globe className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Course Directory</div>
                         <div className="text-sm text-slate-600">Discover golf courses near your destination</div>
                       </div>
                     </Link>
                     <Link href="/tools/handicap-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <Trophy className="h-5 w-5 text-emerald-600" />
+                      <Trophy className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Handicap Calculator</div>
                         <div className="text-sm text-slate-600">Ensure you meet course requirements</div>
                       </div>
                     </Link>
                     <Link href="/tools/club-distance-calculator" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors">
-                      <Car className="h-5 w-5 text-emerald-600" />
+                      <Car className="h-5 w-5 text-brand-primary" />
                       <div>
                         <div className="font-medium text-slate-900">Distance Calculator</div>
                         <div className="text-sm text-slate-600">Calculate travel times between courses</div>
@@ -1134,21 +1134,21 @@ export default function BestGolfBreaksUK() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-4">More Golf Destinations</h3>
                   <div className="space-y-3">
-                    <Link href="/blog/best-golf-breaks-wales" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                    <Link href="/travel/best-golf-breaks-wales" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors">
                       <Star className="h-5 w-5 text-blue-600" />
                       <div>
                         <div className="font-medium text-slate-900">Best Golf Breaks Wales</div>
                         <div className="text-sm text-slate-600">Discover Wales' finest golf destinations</div>
                       </div>
                     </Link>
-                    <Link href="/blog/best-golf-breaks-bournemouth" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-purple-300 hover:bg-purple-50 transition-colors">
+                    <Link href="/travel/best-golf-breaks-bournemouth" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-purple-300 hover:bg-purple-50 transition-colors">
                       <Bed className="h-5 w-5 text-purple-600" />
                       <div>
                         <div className="font-medium text-slate-900">Best Golf Breaks Bournemouth</div>
                         <div className="text-sm text-slate-600">Coastal golf in England's south</div>
                       </div>
                     </Link>
-                    <Link href="/blog/how-to-break-90-golf" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-colors">
+                    <Link href="/break-90/how-to-break-90-golf" className="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-colors">
                       <Calendar className="h-5 w-5 text-green-600" />
                       <div>
                         <div className="font-medium text-slate-900">How to Break 90</div>

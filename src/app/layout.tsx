@@ -80,6 +80,21 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code',
   },
+  icons: {
+    icon: [
+      {
+        url: '/favicon.png',
+        type: 'image/png',
+      }
+    ],
+    apple: [
+      {
+        url: '/favicon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      }
+    ]
+  },
 }
 
 export default function RootLayout({
@@ -89,6 +104,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#099669" />
+      </head>
       <body className={inter.className}>
         <StructuredData
           organization={{

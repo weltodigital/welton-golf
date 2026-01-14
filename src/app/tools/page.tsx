@@ -160,7 +160,7 @@ const getColorClasses = (color: string) => {
   const colors = {
     emerald: {
       bg: 'bg-emerald-100',
-      text: 'text-emerald-600',
+      text: 'text-brand-primary',
       border: 'border-emerald-200',
       hover: 'hover:border-emerald-300'
     },
@@ -231,7 +231,7 @@ export default function ToolsPage() {
           {/* Breadcrumbs */}
           <nav className="text-sm text-slate-600 mb-4">
             <ol className="flex space-x-2">
-              <li><Link href="/" className="hover:text-emerald-600">Home</Link></li>
+              <li><Link href="/" className="hover:text-brand-primary">Home</Link></li>
               <li className="before:content-['/'] before:mx-2 text-slate-900">Tools</li>
             </ol>
           </nav>
@@ -240,7 +240,7 @@ export default function ToolsPage() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                <Calculator className="h-6 w-6 text-emerald-600" />
+                <Calculator className="h-6 w-6 text-brand-primary" />
               </div>
               <h1 className="text-5xl font-bold text-slate-900">
                 Golf Tools & Calculators
@@ -256,7 +256,7 @@ export default function ToolsPage() {
           {/* Quick Stats */}
           <div className="grid md:grid-cols-4 gap-4 mb-12">
             <div className="bg-emerald-50 rounded-lg p-4 text-center border border-emerald-200">
-              <div className="text-3xl font-bold text-emerald-600">{allTools.length}</div>
+              <div className="text-3xl font-bold text-brand-primary">{allTools.length}</div>
               <div className="text-emerald-800 font-medium">Total Tools</div>
             </div>
             <div className="bg-blue-50 rounded-lg p-4 text-center border border-blue-200">
@@ -291,7 +291,7 @@ export default function ToolsPage() {
                       <CardDescription>{tool.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <Button asChild className="w-full bg-emerald-600 hover:bg-emerald-700">
+                      <Button asChild className="w-full bg-brand-primary hover:bg-brand-dark">
                         <Link href={`/tools/${tool.slug}`}>
                           Use Tool
                         </Link>
@@ -371,13 +371,13 @@ export default function ToolsPage() {
                   to help golfers of all levels improve their game.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild className="bg-emerald-600 hover:bg-emerald-700">
+                  <Button asChild className="bg-brand-primary hover:bg-brand-dark">
                     <Link href="/tools/handicap-calculator">
                       Calculate Your Handicap
                     </Link>
                   </Button>
                   <Button asChild variant="outline">
-                    <Link href="/blog">
+                    <Link href="/">
                       Read Golf Tips
                     </Link>
                   </Button>
