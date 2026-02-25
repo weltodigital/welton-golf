@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Grip Size Calculator - Find Your Perfect Grip Size | Welton Golf',
+  title: 'Free Grip Size Calculator - Perfect Grip Size | Welton Golf',
   description: 'Calculate the ideal golf grip size based on your hand measurements and playing preferences. Get personalized grip recommendations for better control and comfort.',
   keywords: 'golf grip size calculator, grip size guide, golf grip fitting, hand measurement golf, golf grip recommendations, custom golf grips, grip size chart',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Course Directory - Find Golf Courses Near You | Welton Golf',
-  description: 'Discover golf courses across the UK with our comprehensive directory. Find detailed information, ratings, reviews, and booking options for golf courses near you.',
+  title: 'UK Golf Course Directory | Welton Golf',
+  description: 'Browse 70+ golf courses across Hampshire, Isle of Wight and the Channel Islands. Find par, tee options, course ratings and slope ratings.',
   keywords: 'golf course directory, golf courses near me, UK golf courses, golf course finder, golf course reviews, golf course ratings, book golf courses',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
   creator: 'Welton Golf',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: '/course-directory',
   },
   openGraph: {
-    title: 'Golf Course Directory - Find Golf Courses Near You | Welton Golf',
+    title: 'UK Golf Course Directory | Welton Golf',
     description: 'Discover golf courses across the UK with our comprehensive directory. Find detailed information, ratings, reviews, and booking options.',
     url: 'https://www.weltongolf.com/course-directory',
     siteName: 'Welton Golf',

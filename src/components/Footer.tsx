@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-white text-sm">
-              Your premier destination for golf apps and tools to enhance your game.
+              Free golf tools and guides to help improve your game.
             </p>
           </div>
           <div>
@@ -34,6 +34,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4 text-white">Company</h4>
             <ul className="space-y-2 text-sm text-white">
+              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
               <li><a href="mailto:weltongolf@weltodigital.com" className="hover:text-white transition-colors">weltongolf@weltodigital.com</a></li>
               <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
@@ -42,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-sm text-white">
-          <p>&copy; 2025 Welton Golf. All rights reserved. Enhancing your golf experience.</p>
+          <p>&copy; {new Date().getFullYear()} Welton Golf. All rights reserved. Enhancing your golf experience.</p>
         </div>
       </div>
     </footer>

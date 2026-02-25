@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Golf Scoring Tips & Strategies - Lower Your Scores - Welton Golf',
+  title: 'Golf Scoring Tips - Lower Your Scores | Welton Golf',
   description: 'Master golf scoring with expert strategies for course management, mental game, and shot selection. Learn proven techniques to consistently lower your golf scores.',
   keywords: 'golf scoring, lower golf scores, course management, golf strategy, golf mental game, scoring tips, golf improvement, break par',
   alternates: {

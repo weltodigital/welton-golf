@@ -128,7 +128,7 @@ export function HandicapCalculatorComponent() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             "name": "Golf Handicap Calculator (WHS)",
-            "description": "Free World Handicap System calculator for calculating official golf handicap index with course and slope rating support.",
+            "description": "Free World Handicap System calculator for calculating golf handicap index with course and slope rating support.",
             "url": "https://www.weltongolf.com/tools/handicap-calculator",
             "applicationCategory": "Sports",
             "operatingSystem": "Web Browser",
@@ -168,7 +168,7 @@ export function HandicapCalculatorComponent() {
                     Free Golf Handicap Calculator (WHS)
                   </h1>
                   <p className="text-gray-700 text-lg">
-                    Calculate your official World Handicap System index instantly. UK's most accurate WHS handicap calculator with course rating and slope rating support.
+                    Calculate your World Handicap System index instantly. Free WHS-compliant handicap calculator with course rating and slope rating support.
                   </p>
                 </div>
               </div>
@@ -176,10 +176,10 @@ export function HandicapCalculatorComponent() {
               {/* SEO-rich description */}
               <div className="mt-6 p-6 bg-emerald-50 rounded-lg border border-emerald-200">
                 <h2 className="text-xl font-bold text-emerald-900 mb-3">
-                  Official World Handicap System Calculator - Free & Accurate
+                  WHS-Compliant Handicap Calculator - Free & Accurate
                 </h2>
                 <p className="text-emerald-800 mb-3">
-                  Our golf handicap calculator follows the exact World Handicap System (WHS) rules implemented by R&A and USGA.
+                  Our golf handicap calculator follows the exact World Handicap System (WHS) rules implemented by the R&A and USGA.
                   Calculate your handicap index using up to 20 scores with automatic score differential calculations,
                   course rating adjustments, and slope rating considerations.
                 </p>

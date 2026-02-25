@@ -96,7 +96,7 @@ export function CourseHandicapCalculatorComponent() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             "name": "Course Handicap Calculator (WHS)",
-            "description": "Free World Handicap System calculator for calculating course handicap using official WHS formula with course rating and slope rating.",
+            "description": "Free World Handicap System calculator for calculating course handicap using WHS formula with course rating and slope rating.",
             "url": "https://www.weltongolf.com/tools/course-handicap-calculator",
             "applicationCategory": "Sports",
             "operatingSystem": "Web Browser",
@@ -135,7 +135,7 @@ export function CourseHandicapCalculatorComponent() {
                     Free Course Handicap Calculator (WHS)
                   </h1>
                   <p className="text-gray-600 text-lg">
-                    Calculate your course handicap for any golf course using the official World Handicap System formula. Get accurate stroke allocations for fair competition play.
+                    Calculate your course handicap for any golf course using the World Handicap System formula. Get accurate stroke allocations for fair competition play.
                   </p>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export function CourseHandicapCalculatorComponent() {
                   Course Handicap Calculator
                 </CardTitle>
                 <CardDescription>
-                  Enter your handicap index and course details to calculate your course handicap using the official WHS formula
+                  Enter your handicap index and course details to calculate your course handicap using the WHS formula
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -168,7 +168,7 @@ export function CourseHandicapCalculatorComponent() {
                     className="mt-2 text-lg font-medium"
                   />
                   <p className="text-sm text-emerald-700 mt-1">
-                    This is your official WHS handicap index from your golf club or handicap provider
+                    This is your WHS handicap index from your golf club or handicap provider
                   </p>
                 </div>
 
@@ -450,7 +450,7 @@ export function CourseHandicapCalculatorComponent() {
                       className="p-4 border border-gray-200 rounded-lg hover:border-emerald-300 hover:bg-emerald-50 transition-colors group"
                     >
                       <h3 className="font-bold text-gray-900 group-hover:text-emerald-600 mb-2">Handicap Calculator</h3>
-                      <p className="text-sm text-gray-600">Calculate your official WHS handicap index from your scores</p>
+                      <p className="text-sm text-gray-600">Calculate your WHS handicap index from your scores</p>
                     </Link>
 
                     <Link

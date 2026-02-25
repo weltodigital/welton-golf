@@ -3,11 +3,11 @@ import { CourseHandicapCalculatorComponent } from './CourseHandicapCalculatorCom
 
 export const metadata: Metadata = {
   title: 'Free Course Handicap Calculator 2026 - WHS Formula | Calculate Golf Course Handicap | Welton Golf',
-  description: 'Calculate your exact course handicap for any golf course using the official WHS formula. Free calculator with handicap index, course rating, and slope rating. Get accurate stroke allocations.',
+  description: 'Calculate your exact course handicap for any golf course using the WHS formula. Free calculator with handicap index, course rating, and slope rating. Get accurate stroke allocations.',
   keywords: 'course handicap calculator, golf course handicap, WHS course handicap, handicap index calculator, slope rating calculator, course rating, golf strokes, handicap formula, free golf calculator',
   openGraph: {
-    title: 'Free Course Handicap Calculator 2026 - Official WHS Formula Calculator',
-    description: 'Calculate your course handicap for any golf course using the official World Handicap System formula. Free, accurate, and includes stroke allocation guide.',
+    title: 'Free Course Handicap Calculator 2026 - WHS Formula Calculator',
+    description: 'Calculate your course handicap for any golf course using the World Handicap System formula. Free, accurate, and includes stroke allocation guide.',
     type: 'article',
     url: 'https://www.weltongolf.com/tools/course-handicap-calculator',
     images: [

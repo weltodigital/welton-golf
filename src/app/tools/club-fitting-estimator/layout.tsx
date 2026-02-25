@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Club Fitting Calculator - Custom Club Recommendations | Welton Golf',
+  title: 'Free Club Fitting Calculator - Custom Clubs | Welton Golf',
   description: 'Get personalized golf club fitting recommendations with our comprehensive calculator. Analyze swing speed, height, and preferences for optimal club specifications.',
   keywords: 'golf club fitting calculator, custom golf clubs, club fitting recommendations, golf club specifications, club fitting analysis, golf equipment fitting',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: '/club-fitting-estimator',
   },
   openGraph: {
-    title: 'Golf Club Fitting Calculator - Custom Club Recommendations | Welton Golf',
+    title: 'Free Club Fitting Calculator - Custom Clubs | Welton Golf',
     description: 'Get personalized golf club fitting recommendations with our comprehensive calculator. Analyze swing and preferences for optimal specs.',
     url: 'https://www.weltongolf.com/club-fitting-estimator',
     siteName: 'Welton Golf',

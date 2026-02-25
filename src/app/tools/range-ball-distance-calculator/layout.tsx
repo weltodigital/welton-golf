@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Range Ball Distance Calculator - Practice Ball Distance Conversion | Welton Golf',
+  title: 'Free Range Ball Calculator - Practice Distance | Welton Golf',
   description: 'Convert practice range ball distances to real golf ball distances. Account for range ball compression differences and improve your distance accuracy.',
   keywords: 'range ball calculator, practice ball distance, golf range calculator, range ball conversion, practice distance calculator, golf ball compression',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

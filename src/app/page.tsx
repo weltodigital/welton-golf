@@ -9,7 +9,7 @@ export default function Home() {
       <div className="bg-brand-primary text-white py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Helping You Become A Better Golfer
+            Free Golf Tools, Guides & Course Directory
           </h1>
           <p className="text-xl max-w-3xl">
             Professional golf tools, expert guides, and comprehensive resources to master every aspect of your game.

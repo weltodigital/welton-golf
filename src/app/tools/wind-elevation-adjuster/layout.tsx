@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Wind & Elevation Golf Calculator - Course Condition Adjustments | Welton Golf',
+  title: 'Free Wind Calculator - Course Adjustments | Welton Golf',
   description: 'Calculate distance adjustments for wind speed, direction, and elevation changes on the golf course. Factor in environmental conditions for more accurate club selection.',
   keywords: 'wind golf calculator, elevation golf calculator, golf course conditions, wind distance calculator, golf club selection, course management, environmental golf factors',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

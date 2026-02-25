@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Playing Time Estimator - Calculate Round Duration | Welton Golf',
+  title: 'Free Playing Time Estimator - Round Duration | Welton Golf',
   description: 'Estimate how long your golf round will take based on course difficulty, group size, playing pace, and course conditions. Plan your golf schedule accurately.',
   keywords: 'golf time calculator, golf round duration, playing time estimator, golf pace calculator, golf scheduling, round time planner, golf course timing',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

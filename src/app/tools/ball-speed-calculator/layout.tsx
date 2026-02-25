@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Ball Speed Calculator - Distance & Smash Factor | Welton Golf',
+  title: 'Free Ball Speed Calculator - Golf Distance | Welton Golf',
   description: 'Calculate golf ball speed, carry distance, and total distance with physics-based calculator. Analyze smash factor and launch angle for performance.',
   keywords: [
     'golf ball speed calculator',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'golf ball speed distance',
     'free golf calculator'
   ].join(', '),
-  authors: [{ name: 'Welton Golf', url: 'https://welton-golf.com' }],
+  authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
   creator: 'Welton Golf',
   publisher: 'Welton Golf',
   formatDetection: {
@@ -28,18 +28,18 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://welton-golf.com'),
+  metadataBase: new URL('https://www.weltongolf.com'),
   alternates: {
-    canonical: '/ball-speed-calculator',
+    canonical: '/tools/ball-speed-calculator',
   },
   openGraph: {
     title: 'Free Golf Ball Speed Calculator - Distance & Smash Factor Calculator',
     description: 'Calculate golf ball speed and distance with physics-based models. Analyze smash factor and launch conditions for optimal performance.',
-    url: 'https://welton-golf.com/ball-speed-calculator',
+    url: 'https://www.weltongolf.com/tools/ball-speed-calculator',
     siteName: 'Welton Golf',
     images: [
       {
-        url: '/ball-speed-calculator-og.jpg',
+        url: '/tools/ball-speed-calculator-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Golf Ball Speed Calculator - Distance & Performance Analysis',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Golf Ball Speed Calculator - Distance & Smash Factor Calculator',
     description: 'Calculate golf ball speed and distance with physics-based models. Free golf performance calculator.',
-    images: ['/ball-speed-calculator-twitter.jpg'],
+    images: ['/tools/ball-speed-calculator-twitter.jpg'],
     creator: '@weltongolf',
   },
   robots: {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'mb6qbP4ykod04up5ttlVGOuXtTJf90pBVZdsG6OmtcM',
   },
 }
 
@@ -76,57 +76,6 @@ export default function BallSpeedCalculatorLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Golf Ball Speed Calculator',
-    description: 'Calculate golf ball speed, carry distance, and total distance using physics-based models. Analyze smash factor, launch angle, and spin rate for optimal golf performance and club fitting.',
-    url: 'https://welton-golf.com/ball-speed-calculator',
-    applicationCategory: 'SportsApplication',
-    operatingSystem: 'Any',
-    permissions: 'browser',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'GBP',
-      availability: 'https://schema.org/InStock',
-    },
-    creator: {
-      '@type': 'Organization',
-      name: 'Welton Golf',
-      url: 'https://welton-golf.com',
-    },
-    applicationSubCategory: 'Golf Performance Calculator',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '432',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    featureList: [
-      'Physics-Based Ball Speed Calculation',
-      'Smash Factor Analysis',
-      'Distance Estimation (Carry & Total)',
-      'Launch Angle Optimization',
-      'Spin Rate Analysis',
-      'Multiple Club Types Support',
-      'Performance Efficiency Tracking',
-      'Calculation History Storage',
-      'Mobile and Desktop Compatible',
-      'Free to Use - No Registration Required'
-    ],
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Golfers, Club Fitters, Golf Instructors, Equipment Testers',
-    },
-    inLanguage: 'en-GB',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Welton Golf',
-      url: 'https://welton-golf.com',
-    },
-  }
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -169,10 +118,6 @@ export default function BallSpeedCalculatorLayout({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

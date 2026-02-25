@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Course Handicap Calculator (WHS) - Course Handicap | Welton',
+  title: 'Free Course Handicap Calculator (WHS) | Welton Golf',
   description: 'Calculate your golf course handicap using the World Handicap System formula. Course handicap calculator with index, course rating, and slope support.',
   keywords: [
     'golf course handicap calculator',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'course rating handicap calculator',
     'tournament handicap calculator'
   ].join(', '),
-  authors: [{ name: 'Welton Golf', url: 'https://welton-golf.com' }],
+  authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
   creator: 'Welton Golf',
   publisher: 'Welton Golf',
   formatDetection: {
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://welton-golf.com'),
+  metadataBase: new URL('https://www.weltongolf.com'),
   alternates: {
-    canonical: '/course-handicap-calculator',
+    canonical: '/tools/course-handicap-calculator',
   },
   openGraph: {
     title: 'Free Golf Course Handicap Calculator (WHS) - Calculate Course Handicap',
-    description: 'Calculate your golf course handicap using the official World Handicap System formula. Free course handicap calculator for tournaments and match play.',
-    url: 'https://welton-golf.com/course-handicap-calculator',
+    description: 'Calculate your golf course handicap using the World Handicap System formula. Free course handicap calculator for tournaments and match play.',
+    url: 'https://www.weltongolf.com/tools/course-handicap-calculator',
     siteName: 'Welton Golf',
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Free Golf Course Handicap Calculator (WHS) - Calculate Course Handicap',
-    description: 'Calculate your golf course handicap using the official WHS formula. Free course handicap calculator.',
+    description: 'Calculate your golf course handicap using the WHS formula. Free course handicap calculator.',
     images: ['/golf-course-handicap-calculator-twitter.jpg'],
     creator: '@weltongolf',
   },
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'mb6qbP4ykod04up5ttlVGOuXtTJf90pBVZdsG6OmtcM',
   },
 }
 
@@ -76,55 +76,6 @@ export default function CourseHandicapCalculatorLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Golf Course Handicap Calculator (WHS)',
-    description: 'Calculate your golf course handicap using the official World Handicap System formula. Determine strokes received on any golf course based on handicap index, course rating, and slope rating.',
-    url: 'https://welton-golf.com/course-handicap-calculator',
-    applicationCategory: 'SportsApplication',
-    operatingSystem: 'Any',
-    permissions: 'browser',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'GBP',
-      availability: 'https://schema.org/InStock',
-    },
-    creator: {
-      '@type': 'Organization',
-      name: 'Welton Golf',
-      url: 'https://welton-golf.com',
-    },
-    applicationSubCategory: 'Golf Course Handicap Calculator',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '892',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    featureList: [
-      'Official WHS Course Handicap Formula',
-      'Handicap Index to Course Handicap Conversion',
-      'Course Rating and Slope Rating Support',
-      'Tournament-Ready Calculations',
-      'Calculation History Storage',
-      'Mobile and Desktop Compatible',
-      'Free to Use - No Registration Required',
-      'Real-time Course Handicap Updates'
-    ],
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Golfers, Tournament Players, Golf Club Members, Course Professionals',
-    },
-    inLanguage: 'en-GB',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Welton Golf',
-      url: 'https://welton-golf.com',
-    },
-  }
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -159,7 +110,7 @@ export default function CourseHandicapCalculatorLayout({
         name: 'Is this course handicap calculator approved for tournament play?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'This calculator uses the official World Handicap System formula and provides accurate results. However, for tournament play, verify your course handicap with the tournament committee or course pro shop, as some events may have specific handicap policies.'
+          text: 'This calculator uses the World Handicap System formula and provides accurate results. However, for tournament play, verify your course handicap with the tournament committee or course pro shop, as some events may have specific handicap policies.'
         }
       }
     ]
@@ -167,10 +118,6 @@ export default function CourseHandicapCalculatorLayout({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

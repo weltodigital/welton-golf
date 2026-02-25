@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Swing Speed Calculator - Estimate Club Head Speed | Welton Golf',
+  title: 'Free Swing Speed Calculator - Club Head Speed | Welton Golf',
   description: 'Calculate your golf swing speed from ball speed data. Free swing speed calculator with club recommendations and distance estimates. Improve your game with accurate measurements.',
   keywords: 'swing speed calculator, golf swing speed, clubhead speed calculator, ball speed to swing speed, golf club fitting, swing analysis, golf distance calculator, golf performance tools',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: '/swing-speed-calculator',
   },
   openGraph: {
-    title: 'Swing Speed Calculator - Estimate Club Head Speed | Welton Golf',
+    title: 'Free Swing Speed Calculator - Club Head Speed | Welton Golf',
     description: 'Calculate your golf swing speed from ball speed data. Free swing speed calculator with club recommendations and distance estimates.',
     url: 'https://www.weltongolf.com/swing-speed-calculator',
     siteName: 'Welton Golf',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Swing Speed Calculator - Estimate Club Head Speed | Welton Golf',
+    title: 'Free Swing Speed Calculator - Club Head Speed | Welton Golf',
     description: 'Calculate your golf swing speed from ball speed data. Free swing speed calculator with club recommendations and distance estimates.',
     images: ['/golf-swing-speed-calculator-twitter.jpg'],
     creator: '@weltongolf',

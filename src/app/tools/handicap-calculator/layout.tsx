@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'Golf Handicap Calculator (WHS) - Official Index | Welton Golf',
-  description: 'Calculate your official World Handicap System index for free. Accurate golf handicap calculator with course rating and slope rating support.',
+  title: 'Free Golf Handicap Calculator (WHS) | Welton Golf',
+  description: 'Calculate your World Handicap System index for free. Accurate golf handicap calculator with course rating and slope rating support.',
   keywords: [
     'golf handicap calculator',
     'WHS handicap calculator',
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.weltongolf.com'),
   alternates: {
-    canonical: '/handicap-calculator',
+    canonical: '/tools/handicap-calculator',
   },
   openGraph: {
-    title: 'Golf Handicap Calculator (WHS) - Official Index | Welton Golf',
-    description: 'Calculate your official World Handicap System index for free. Accurate golf handicap calculator with course rating and slope rating support.',
-    url: 'https://www.weltongolf.com/handicap-calculator',
+    title: 'Golf Handicap Calculator (WHS) - WHS-Compliant Calculator | Welton Golf',
+    description: 'Calculate your World Handicap System index for free. Accurate golf handicap calculator with course rating and slope rating support.',
+    url: 'https://www.weltongolf.com/tools/handicap-calculator',
     siteName: 'Welton Golf',
     images: [
       {
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Golf Handicap Calculator (WHS) - Official Index | Welton Golf',
-    description: 'Calculate your official World Handicap System index for free. Accurate golf handicap calculator with course rating support.',
+    title: 'Golf Handicap Calculator (WHS) - WHS-Compliant Calculator | Welton Golf',
+    description: 'Calculate your World Handicap System index for free. Accurate golf handicap calculator with course rating support.',
     images: ['/golf-handicap-calculator-twitter.jpg'],
     creator: '@weltongolf',
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'mb6qbP4ykod04up5ttlVGOuXtTJf90pBVZdsG6OmtcM',
   },
 }
 
@@ -78,55 +78,6 @@ export default function HandicapCalculatorLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Golf Handicap Calculator (WHS)',
-    description: 'Calculate your official World Handicap System (WHS) index. Free golf handicap calculator with course rating, slope rating, and score tracking.',
-    url: 'https://www.weltongolf.com/handicap-calculator',
-    applicationCategory: 'SportsApplication',
-    operatingSystem: 'Any',
-    permissions: 'browser',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'GBP',
-      availability: 'https://schema.org/InStock',
-    },
-    creator: {
-      '@type': 'Organization',
-      name: 'Welton Golf',
-      url: 'https://www.weltongolf.com',
-    },
-    applicationSubCategory: 'Golf Handicap Calculator',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '1247',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    featureList: [
-      'World Handicap System (WHS) Compliance',
-      'Course Rating and Slope Rating Input',
-      'Score Differential Calculation',
-      'Automatic Handicap Index Calculation',
-      'Score History Tracking (20 rounds)',
-      'Local Storage for Data Persistence',
-      'Mobile and Desktop Compatible',
-      'Free to Use - No Registration Required'
-    ],
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Golfers, Golf Club Members, Amateur Golfers, Professional Golfers',
-    },
-    inLanguage: 'en-GB',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Welton Golf',
-      url: 'https://www.weltongolf.com',
-    },
-  }
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -142,7 +93,7 @@ export default function HandicapCalculatorLayout({
       },
       {
         '@type': 'Question',
-        name: 'How many scores do I need for an official golf handicap?',
+        name: 'How many scores do I need for a golf handicap?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Under the World Handicap System, you need a minimum of 3 scores to establish a handicap index. However, for the most accurate handicap, you should submit up to 20 of your most recent scores. The system uses different numbers of your best differentials depending on how many scores you have submitted.'
@@ -169,10 +120,6 @@ export default function HandicapCalculatorLayout({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

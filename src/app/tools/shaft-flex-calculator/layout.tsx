@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Shaft Flex Calculator - Find Your Perfect Shaft Flex | Welton Golf',
+  title: 'Free Shaft Flex Calculator - Perfect Flex | Welton Golf',
   description: 'Determine the ideal shaft flex for your golf clubs based on swing speed, tempo, and playing style. Get personalized shaft recommendations for optimal performance.',
   keywords: 'shaft flex calculator, golf shaft finder, shaft flex guide, swing speed shaft, golf club shaft, shaft flex recommendation, custom golf shafts',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

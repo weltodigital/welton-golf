@@ -13,7 +13,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Welton Golf - Your Complete Golf Companion | Tools, Guides & Course Directory',
+  title: 'Welton Golf — Free Golf Tools, Guides & Course Directory',
   description: 'Your complete golf companion offering professional handicap tools, course directories, expert guides, and golf travel inspiration. Everything you need to improve your game in one place.',
   keywords: [
     'free golf handicap calculator',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'mb6qbP4ykod04up5ttlVGOuXtTJf90pBVZdsG6OmtcM',
   },
   icons: {
     icon: [

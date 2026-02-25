@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Stableford Points Calculator - Golf Scoring System | Welton Golf',
+  title: 'Free Stableford Calculator - Golf Points System | Welton Golf',
   description: 'Calculate Stableford points for golf rounds with automatic handicap allocation. Free Stableford scoring calculator with 18-hole scorecard.',
   keywords: [
     'stableford calculator',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'stableford golf scoring calculator',
     'free stableford calculator'
   ].join(', '),
-  authors: [{ name: 'Welton Golf', url: 'https://welton-golf.com' }],
+  authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
   creator: 'Welton Golf',
   publisher: 'Welton Golf',
   formatDetection: {
@@ -28,18 +28,18 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://welton-golf.com'),
+  metadataBase: new URL('https://www.weltongolf.com'),
   alternates: {
-    canonical: '/stableford-calculator',
+    canonical: '/tools/stableford-calculator',
   },
   openGraph: {
     title: 'Free Stableford Points Calculator - Golf Scoring System Calculator',
     description: 'Calculate Stableford points with automatic handicap allocation. Free golf scoring calculator for competitions and casual rounds.',
-    url: 'https://welton-golf.com/stableford-calculator',
+    url: 'https://www.weltongolf.com/tools/stableford-calculator',
     siteName: 'Welton Golf',
     images: [
       {
-        url: '/stableford-calculator-og.jpg',
+        url: '/tools/stableford-calculator-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Stableford Points Calculator - Golf Scoring System',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Stableford Points Calculator - Golf Scoring System Calculator',
     description: 'Calculate Stableford points with automatic handicap allocation. Free golf scoring calculator.',
-    images: ['/stableford-calculator-twitter.jpg'],
+    images: ['/tools/stableford-calculator-twitter.jpg'],
     creator: '@weltongolf',
   },
   robots: {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'mb6qbP4ykod04up5ttlVGOuXtTJf90pBVZdsG6OmtcM',
   },
 }
 
@@ -76,55 +76,6 @@ export default function StablefordCalculatorLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Stableford Points Calculator',
-    description: 'Calculate Stableford points for golf rounds with automatic handicap stroke allocation. Features 18-hole scorecard, real-time scoring, and competition-ready calculations.',
-    url: 'https://welton-golf.com/stableford-calculator',
-    applicationCategory: 'SportsApplication',
-    operatingSystem: 'Any',
-    permissions: 'browser',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'GBP',
-      availability: 'https://schema.org/InStock',
-    },
-    creator: {
-      '@type': 'Organization',
-      name: 'Welton Golf',
-      url: 'https://welton-golf.com',
-    },
-    applicationSubCategory: 'Golf Scoring Calculator',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '654',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    featureList: [
-      'Official Stableford Scoring System',
-      'Automatic Handicap Stroke Allocation',
-      '18-Hole Interactive Scorecard',
-      'Real-time Points Calculation',
-      'Round History Storage',
-      'Competition Scoring Ready',
-      'Mobile and Desktop Compatible',
-      'Free to Use - No Registration Required'
-    ],
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Golfers, Competition Players, Golf Club Members, Tournament Organizers',
-    },
-    inLanguage: 'en-GB',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Welton Golf',
-      url: 'https://welton-golf.com',
-    },
-  }
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -167,10 +118,6 @@ export default function StablefordCalculatorLayout({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

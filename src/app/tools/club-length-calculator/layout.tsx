@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Club Length Calculator - Find Your Perfect Club Length | Welton Golf',
+  title: 'Free Club Length Calculator - Perfect Sizing | Welton Golf',
   description: 'Calculate the optimal golf club length based on your height, arm length, swing characteristics, and posture. Get custom club length recommendations.',
   keywords: 'golf club length calculator, custom club length, club fitting length, golf club sizing, club length guide, golf club measurements, personalized club length',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

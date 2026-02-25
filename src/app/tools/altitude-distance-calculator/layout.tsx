@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Altitude Distance Calculator - High Elevation Course Adjustments | Welton Golf',
+  title: 'Free Altitude Calculator - High Elevation Golf | Welton Golf',
   description: 'Calculate distance adjustments for high-altitude golf courses. Account for air density, temperature, and humidity effects to improve your mountain golf game.',
   keywords: 'golf altitude calculator, high elevation golf, mountain golf calculator, golf distance adjustments, altitude distance calculator, golf course elevation',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

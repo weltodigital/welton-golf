@@ -34,13 +34,13 @@ const toolCategories = [
     id: 'handicap',
     title: 'Handicap System',
     icon: Calculator,
-    description: 'Official WHS handicap calculations and course handicap conversions',
+    description: 'WHS-compliant handicap calculations and course handicap conversions',
     color: 'emerald',
     tools: [
       {
         title: 'WHS Handicap Calculator',
         slug: 'handicap-calculator',
-        description: 'Calculate your official World Handicap System index with up to 20 rounds',
+        description: 'Calculate your World Handicap System index with up to 20 rounds',
         featured: true
       },
       {
@@ -285,7 +285,7 @@ export default function ToolsPage() {
           {/* Featured Tools */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Most Popular Tools
+              Featured Golf Tools
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {featuredTools.map((tool) => {

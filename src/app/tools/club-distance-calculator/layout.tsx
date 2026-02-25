@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Club Distance Calculator - Build Your Golf Distance Chart | Welton Golf',
+  title: 'Free Club Distance Calculator - Golf Yardage | Welton Golf',
   description: 'Create a personalized golf club distance chart with our free calculator. Track your distances for better course management and improved scoring.',
   keywords: 'golf club distance calculator, golf distance chart, club yardage calculator, golf course management, golf club distances, personalized golf distances',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: '/club-distance-calculator',
   },
   openGraph: {
-    title: 'Club Distance Calculator - Build Your Golf Distance Chart | Welton Golf',
+    title: 'Free Club Distance Calculator - Golf Yardage | Welton Golf',
     description: 'Create a personalized golf club distance chart with our free calculator. Track your distances for better course management.',
     url: 'https://www.weltongolf.com/club-distance-calculator',
     siteName: 'Welton Golf',

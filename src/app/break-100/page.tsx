@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Break 100 in Golf - Beginner Tips & Fundamentals - Welton Golf',
+  title: 'Break 100 in Golf - Beginner Tips | Welton Golf',
   description: 'Master the fundamentals to consistently break 100 in golf. Essential tips for beginners on swing basics, course strategy, and building confidence on the course.',
   alternates: {
     canonical: '/break-100',

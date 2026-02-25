@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Trip Planner - Plan Your Perfect Golf Holiday | Welton Golf',
+  title: 'Free Golf Trip Planner - Perfect Golf Holiday | Welton Golf',
   description: 'Plan the ultimate golf trip with our comprehensive trip planner. Find courses, accommodation, calculate costs, and create detailed itineraries for your golf holiday.',
   keywords: 'golf trip planner, golf holiday planner, golf vacation planner, golf travel guide, golf trip calculator, golf break planner, golf tour planner',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],

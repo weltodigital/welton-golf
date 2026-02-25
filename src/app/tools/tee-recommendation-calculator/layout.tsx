@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Golf Tee Recommendation Calculator - Find Your Perfect Tee Height | Welton Golf',
+  title: 'Free Tee Height Calculator - Perfect Height | Welton Golf',
   description: 'Calculate the optimal tee height for your golf clubs based on club type, swing characteristics, and playing preferences. Improve your tee shot consistency.',
   keywords: 'golf tee calculator, tee height calculator, golf tee recommendations, optimal tee height, golf tee selection, driver tee height, iron tee height',
   authors: [{ name: 'Welton Golf', url: 'https://www.weltongolf.com' }],
